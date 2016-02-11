@@ -204,6 +204,12 @@ Fan M, Kuwahara H, Wang X, Wang S, Gao X (2015) Parameter estimation methods
 \newblock Briefings in bioinformatics : bbv015.
 \bibAnnoteFile{fan2015parameter}
 
+\bibitem{luan2007computationally}
+Luan D, Zai M, Varner JD (2007) Computationally derived points of fragility of
+  a human cascade are consistent with current therapeutic strategies.
+\newblock PLoS computational biology 3: e142.
+\bibAnnoteFile{luan2007computationally}
+
 \bibitem{mann2003dynamics}
 Mann KG, Butenas S, Brummel K (2003) The dynamics of thrombin formation.
 \newblock Arteriosclerosis, thrombosis, and vascular biology 23: 17--25.
@@ -260,12 +266,6 @@ Mann KG, Brummel-Ziedins K, Orfeo T, Butenas S (2006) Models of blood
   coagulation.
 \newblock Blood Cells, Molecules, and Diseases 36: 108--117.
 \bibAnnoteFile{mann2006models}
-
-\bibitem{luan2007computationally}
-Luan D, Zai M, Varner JD (2007) Computationally derived points of fragility of
-  a human cascade are consistent with current therapeutic strategies.
-\newblock PLoS computational biology 3: e142.
-\bibAnnoteFile{luan2007computationally}
 
 \bibitem{zhao2008dynamic}
 Zhao SZ, Liang JJ, Suganthan PN, Tasgetiren MF (2008) Dynamic multi-swarm

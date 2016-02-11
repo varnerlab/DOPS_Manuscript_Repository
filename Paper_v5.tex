@@ -126,7 +126,7 @@ Biochemical models often also have many local extrema which further complicates 
 Toward these challenges, we developed Dynamic Optimization with Particle Swarms (DOPS), a novel global meta-heuristic that combined features of multi-swarm particle swarm optimization with dynamically dimensioned search (DDS).
 DOPS uses a multi-swarm particle swarm optimization technique to generate candidate solution vectors, the best of which is greedily updated using dynamically dimensioned search.
 We tested the performance of DOPS on a model of human coagulation cascade.
-We performed N = 25 trials with M = 4000 function evaluations per trial, and compared the performance of DOPS with other commonly
+We performed $\mathcal{T}$ = 25 trials with $\mathcal{N}$ = 4000 function evaluations per trial, and compared the performance of DOPS with other commonly
 used meta-heuristics such as differential evolution (DE), simulated annealing (SA) and dynamically dimensioned search (DDS).
 We further tested the predictive power of the coagulation model parameters against data not used in training, and found good agreement between simulations and experimental measurements.
 Lastly, we tested the performance of DOPS on commonly used test functions for global optimization and on published biochemical parameter estimation benchmark problems.
@@ -200,76 +200,92 @@ Taken together, these studies suggest DOPS is a promising meta-heuristic approac
 %this algorithm (25 trials with 4000 function evaluations in each trial) on a biochemical network of coagulation (148 parameters and 92 species) and compared it's performance against other meta-heuristics  The new algorithm outperforms all the other meta-heuristics on the coagulation model. The parameter vectors obtained using this approach fit the experimental data well and also make accurate enough predictions on unseen experimental data. We also performed this comparison on  and found the same behavior. Further we used two recently published benchmark problems, a genome wide kinetic model with 1759 parameters and a metabolic model of Chinese Hamster Ovary cells with 117 parameters to evaluate the performance of our approach. We  surprisingly performed well on these benchmarks and obtained the nominal parameter vector with just 4000 function evaluations in both cases.
 %took into cognizance the fact that it may not be necessary to obtain the exact solution for high dimensional biological systems and that good enough solutions can be quickly obtained without expending a lot of objective function evaluations. Hence our current approach uses the power of population based heuristics along with DDS to obtain near optimal or good solutions. Though in theory we can combine any meta-heuristic with DDS, for the current purpose we used Particle Swarm Optimization (PSO). PSO unlike Genetic Algorithm (GA) or Differential Evolution (DE) does not have complex operations like cross over, mutation or recombination. It is simple to use and does not have a lot of parameters associated with other heuristics. However PSO is known to rapidly converge to a local optimum and thus several variants \cite{peer2003using,zhan2009adaptive,li2007fast} have been developed of which Multi swarm particle swarm optimization approaches (MLSPSO) \cite{zhao2008dynamic,liang2005dynamic} are one of the effective ones. We used MLSPSO to preclude bad regions of search and thereafter search within these regions using DDS.
 
-\section*{Problem Formulation}
+\clearpage
 
-The problem of parameter estimation in dynamic biological systems consists of finding an optimal parameter vector that results in the best fit between the model predictions and observed experimental data.The cost function or objective that measures the goodness of fit is generally the Euclidean norm which is minimized under certain constraints. This can be mathematically expressed as follows.
+\section*{Results}
+
+\subsection*{Optimization problem formulation.}
+The problem of parameter estimation in a dynamic biological model consists of finding an optimal parameter vector
+which minimizes the difference between model simulations and $\mathcal{E}$ experimental measurements. This difference is quantified by an objective function $K\left(\mathbf{p}\right)$
+which is typically the Euclidean norm of the simulation error subject to problem specific and parameter bounds constraints:
 
 \begin{equation}\label{eq:static_opt}
 \begin{aligned}
 & \text{minimize}
-& & K(\mathbf{p})=(\sum_{i=1}^N (g_i(t_i,\mathbf{x,p,u})-y_i)^2) \\
+& & K(\mathbf{p})=\sum_{i=1}^\mathcal{E} \left(g_i(t_i,\mathbf{x,p,u})-y_i\right)^2 \\
 & \text{subject to}
-&&\dot{x}=f(t,\mathbf{x(t,\mathbf{p}),p,u(\mathbf{t})})\\
-&&&x(t_0) = x_0\\
-&&&c(t,\mathbf{x,p,u}) \geqslant 0 \\
+&&\dot{\mathbf{x}}=\mathbf{f}(t,\mathbf{x}(t,\mathbf{p}),\mathbf{u}(t),\mathbf{p})\\
+&&&\mathbf{x}(t_0) = \mathbf{x}_0\\
+&&&\mathbf{c}(t,\mathbf{x,p,u}) \geqslant \mathbf{0} \\
 &&& \mathbf{p}^L \leqslant \mathbf{p} \leqslant \mathbf{p}^U\\
 \end{aligned}
 \end{equation}
-
-where t is time, x is the state variable with an initial state x\textsubscript{0}, u is the input vector \, p is the parameter vector and f is the system of equations (like differential equations or set of algebraic constraints), c in the set of linear and non-linear constraints, g is the set of observables and p\textsuperscript{L} and p\textsuperscript{U} are the lower and upper bounds. Thus the problem eventually is to find {p}\textsuperscript{*} where
-
+where t is time, $\mathbf{x}\left(t,\mathbf{p}\right)$ is the state variable vector with an initial state $\mathbf{x}_{0}$, $\mathbf{u}(t)$ is a model input vector,
+$\mathbf{f}$ is the system of model equations (e.g., differential equations or algebraic constraints) and $\mathbf{p}$ is the model parameter vector.
+The parameter search (or model simulations) can be subject to $\mathbf{c}$ linear or non-linear constraints, and parameter bound constraints where
+p\textsuperscript{L} and p\textsuperscript{U} denote the lower and upper parameter bounds, respectively.
+The problem eventually is to find:
 \begin{equation}\label{eq:static_opt_2}
-\mathbf{p^{*}}= \arg\min_{p} K(\mathbf{p})
+\mathbf{p^{*}}= \arg\min_{\mathbf{p}} K\left(\mathbf{\mathbf{p}}\right)
 \end{equation}
 
-\section*{Results}
-\subsection*{Dynamic Optimization with Particle Swarms (DOPS).}
-DOPS is a novel meta-heuristic that combines multi-swarm based particle swarm methods with dynamically dimensioned search (Fig. \ref{fig-algorithm}).
-The goal of this approach is to obtain optimal or near optimal parameters for high-dimensional complex biological systems within a pre-specified number of function evaluations. We randomly initialized a swarm of $\mathcal{K}$-dimensional particles (represented as ${x}_{i}$), wherein each of these particles corresponds to a $\mathcal{K}$-dimensional parameter vector. After initialization, the particles were grouped into different sub-swarms randomly. Thereafter within each sub-swarm ${S}_{k}$,  particles were updated according to the following rule.
+\subsection*{Dynamic optimization with particle swarms (DOPS).}
+DOPS is a novel meta-heuristic which combines multi-swarm particle swarm methods with dynamically dimensioned search (Fig. \ref{fig-algorithm}).
+The goal of DOPS is to estimate optimal or near optimal parameter vectors for high-dimensional biological models within a specified number of function evaluations.
+Toward this objective, DOPS begins by using a particle swarm search and then dynamically switches, using an adaptive switching criteria, to the DDS search phase.
+We began the particle swarm phase by randomly initializing a swarm of $\mathcal{K}$-dimensional particles (represented as $z_{i}$), wherein each particle corresponded to a $\mathcal{K}$-dimensional parameter vector.
+After initialization, particles were randomly partitioned into $k$ equal sized sub-swarms $\mathcal{S}_{1},\hdots,\mathcal{S}_{k}$.
+Thereafter within each sub-swarm $\mathcal{S}_{k}$, particles were updated according to the rule:
+\begin{equation}\label{eqn:update-rule}
+	\mathbf{z}_{i,j} = \theta_{1,j-1}\mathbf{z}_{i,j-1} + \theta_{2}\mathbf{r}_{1}\left(\mathcal{L}_{i} - \mathbf{z}_{i,j-1}\right) + \theta_{3}\mathbf{r}_{2}\left(\mathcal{G}_{k} - \mathbf{z}_{i,j-1}\right)
+\end{equation}
+where $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ were adjustable parameters, $\mathcal{L}_{i}$ denotes the best solution found by particle $i$ within sub-swarm $k$ for function evaluation $1\rightarrow j-1$, and
+$\mathcal{G}_{k}$ denotes the best solution found over all particles within sub-swarm $\mathcal{S}_{k}$.
+The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model parameters ($\mathcal{K}\times{1}$).
+Equation (3) is similar to the general particle swarm update rule, however, it does not contain velocity terms.
+In DOPS the parameter $\theta_{1,j-1}$ depends upon the function evaluations and is updated according to:
 \begin{eqnarray}
-	\mathbf{x}_{i,j} &=&\theta_{1,j-1}\mathbf{x}_{i,j-1} + \theta_{2}\mathbf{r}_{1}\left(\mathcal{L}_{i} - \mathbf{x}_{i,j-1}\right) + \theta_{3}\mathbf{r}_{2}\left(\mathcal{GL}_{k} - \mathbf{x}_{i,j-1}\right)
+	\mathbf \theta_{1,j}&=&\frac{(\mathcal{N}-{j})*(\mathbf{w}_{max}-\mathbf{w}_{min}))}{(\mathcal{N}-{1})} + \mathbf{w}_{min}
 \end{eqnarray}
-where $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ are adjustable parameters, $\mathcal{L}_{i}$ denotes the best solution found by particle $i$ within the sub-swarm till function evaluation $j$-$1$, and
-$\mathcal{GL}_{k}$ denotes the best solution found over the population of all particles within the sub-swarm ${S}_{k}$. The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model
-parameters ($\mathcal{K}\times{1}$). Equation (3) is suggested by the general form of particle swarm equations. However this equation does not contain the velocity terms that are generally associated with particle swarm optimization. In our algorithm the parameter $\theta_{1,j-1}$ depends on the function evaluations and is controlled according to the following equation
-\begin{eqnarray}
-	\mathbf \theta_{1,j}&=&((\mathbf{N}-{j})*(\mathbf{w}_{max}-\mathbf{w}_{min}))/(\mathbf{N}-{1}) + \mathbf{w}_{min}
-\end{eqnarray}
-where $\mathbf{N}$ represents the total number of function evaluations, $\mathbf{w}_{max}$ and $\mathbf{w}_{min}$ are the maximum and minimum inertia weights respectively. While updating the particle, we made sure all dimensions of the solution represented by the particle were within bounds using a set of reflection boundary conditions shown below.
+where $\mathcal{N}$ represents the total number of function evaluations, $\mathbf{w}_{max}$ and $\mathbf{w}_{min}$ are the maximum and minimum inertia weights, respectively.
+While updating the particles, we made sure all dimensions of the solution represented by the particle were within bounds using a set of reflection boundary conditions:
 
-\begin{eqnarray}
-\end{eqnarray}
+\begin{eqnarray*}
+\end{eqnarray*}
 
 \begin{algorithm}
-\If{$x_{i,j}^{old} < x_{i}^{min}$}{
-  ${x}_{i,j}^{new}={x}_{i,j}^{old}+(x_{i}^{min} - {x}_{i,j}^{old})$
-  \If{${x}_{i,j}^{new}>x_{i}^{max}$}{
-    ${x}_{i,j}^{new}=x_{i}^{max}$
+\If{$z_{i,j}^{old} < z_{i}^{min}$}{
+  ${z}_{i,j}^{new}={z}_{i,j}^{old}+(z_{i}^{min} - {z}_{i,j}^{old})$
+  \If{${z}_{i,j}^{new}>z_{i}^{max}$}{
+    ${z}_{i,j}^{new}=z_{i}^{max}$
   }
 }
-\If{$x_{i,j}^{old} > x_{i}^{max}$}{
-  ${x}_{i,j}^{new}={x}_{i,j}^{old}+({x}_{i,j}^{old}-x_{i}^{max})$
-  \If{${x}_{i,j}^{new}<x_{i}^{min}$}{
-    ${x}_{i,j}^{new}=x_{i}^{min}$
+\If{$z_{i,j}^{old} > z_{i}^{max}$}{
+  ${z}_{i,j}^{new}={z}_{i,j}^{old}+({z}_{i,j}^{old}-z_{i}^{max})$
+  \If{${z}_{i,j}^{new}<z_{i}^{min}$}{
+    ${z}_{i,j}^{new}=z_{i}^{min}$
   }
 }
 \end{algorithm}
 
-After every $\mathbf{g}$  function evaluations, the particles within all sub-swarms were mixed and then randomly redistributed to a new sub-swarm. The particles were then again updated according Eq.1. This process continued till $\mathcal{FR}*\mathbf{N}$ number of functions evaluations, where $\mathcal{FR}$ represents the fraction of evaluations with the multi-swarms. The fraction of evaluations within the swam phase is based on the drop in error. If the error does not drop by 1\% for a certain number of evaluations the search within swarm phase is terminated. At the end of these function evaluations, we froze all the solutions represented by various particles and chose the particle with best solution among $\mathcal{GL}_{1} \cdots \mathcal{GL}_{NS}$ as the initial candidate vector $\mathcal{G}$ for the remaining $({1}-\mathcal{FR})*\mathbf{N}$ number of function evaluations.
-
-This particle was then updated according to the following rule
-
+After every $\mathcal{M}$ function evaluations, particles were randomly redistributed to a new sub-swarm, and updated according to Eqn. \eqref{eqn:update-rule}.
+This process continued till $\mathcal{F}*\mathbf{N}$ number of functions evaluations, where $\mathcal{F}$ is the fraction of evaluations with the multi-swarms.
+The fraction of evaluations within the swam phase is based on the drop in error.
+If the error does not drop by 1\% for a certain number of evaluations the search within swarm phase is terminated.
+At the end of these function evaluations, we froze all the solutions represented by various particles and chose the particle with best solution among $\mathcal{G}_{1} \cdots \mathcal{G}_{NS}$
+as the initial candidate vector $\mathcal{G}$ for the remaining $({1}-\mathcal{F})*\mathbf{N}$ number of function evaluations.
+This particle was then updated according to the rule:
 \begin{equation}
   \mathcal{G}_{new}(\mathbf{J})=\begin{cases}
     \mathcal{G}(\mathbf{J})+\mathbf{r}_{normal}(\mathbf{J})\sigma(\mathbf{J}), & \text{if $\mathcal{G}_{new}(\mathbf{J})<\mathcal{G}(\mathbf{J})$}.\\
     \mathcal{G}(\mathbf{J}), & \text{otherwise}.
   \end{cases}
 \end{equation}
-
-where $\mathbf{J}$ represents the set containing the specific dimensions being perturbed, ${r}_{normal}$ denotes a normal random vector of the same dimensions as $\mathcal{G}$. $\sigma$ is the amplitude of perturbation given by following equation:
-\begin{eqnarray}
-	\sigma& = &\mathbf{R}(\mathcal{MAX} -\mathcal{MIN})
-\end{eqnarray}
+where $\mathbf{J}$ represents the set containing the specific dimensions being perturbed, ${r}_{normal}$ denotes a normal random vector of the same dimensions as $\mathcal{G}$,
+and $\sigma$ is the amplitude of perturbation:
+\begin{equation}
+	\sigma = \mathbf{R}(\mathcal{MAX} -\mathcal{MIN})
+\end{equation}
 where $\mathbf{R}$ is the scalar perturbation size parameter, $\mathcal{MAX}$ and $\mathcal{MIN}$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a probability function $\mathcal{P}_{j}$ that represented the probability whether a specific dimension $j$ was perturbed or not.  This function is a monotonically decreasing function that decreases with the number of function evaluations. $\mathcal{P}_{j}$ can be any monotonically decreasing function, in our approach we used the following function:
 \begin{eqnarray}
 	%\mathcal{P}_{j}&=&{1}-\log(j/ (\beta({1}-\mathcal{FR})*\mathbf{N}))
@@ -280,16 +296,44 @@ Thus the number of dimensions of the candidate vector that are updated or pertur
 %Equation 5 describing the reflection boundary conditions, equations 6,7 and 8 are the means by which DDS ideas are incorporated into DOPS.
 The fraction of evaluations $\mathcal{FR}$  within the swarm phase is based on a switching strategy wherein the switch from swarm phase to DDS phase happens when the error due to the best solution does not drop more than 1\% of the original error, continuously for more than a prescribed number of function evaluations. This allows the solution to quickly jump out of local optima and avoid any convergence issues that are generally associated with swarm based searches.
 
+\clearpage
 
 \subsection*{Performance of DOPS on a model of the human coagulation cascade.}
-We compared the performance of DOPS on a model of blood coagulation against commonly used meta-heuristics like simulated annealing (SA), differential evolution (DE), and dynamically dimensioned search (DDS). Coagulation is an archetype biochemical network that is highly interconnected and tightly regulated with multiple positive and negative feedback loops (Fig. \ref{fig-coagulation-network}). The biochemistry underlying coagulation, though quite complex has been well studied \cite{mann2003dynamics,mann2003all,mann2003thrombin,vogler2009contact,diamond2013systems,fogelson2005coagulation,anand2003model}, and reliable experimental coagulation models have been developed \cite{hockin2002model,chatterjee2010systems,mann2006models,luan2007computationally}. This makes it an ideal system for mathematical modeling and parameter estimation. Coagulation is regulated by a set of serine proteases also known as coagulation factors and blood platelets.
+We compared the performance of DOPS with simulated annealing (SA), differential evolution (DE), and dynamically dimensioned search (DDS) for a model of the human coagulation cascade.
+Coagulation is an archetype biochemical network that is highly interconnected, containing both positive and negative feedback (Fig. \ref{fig-coagulation-network}).
+In this study, we used the coagulation model of Luan et al \cite{luan2007computationally} which modeled coagulation as a system of coupled non-linear ordinary differential equations.
+The Luan model contained 148 parameters and 92 species and has been validated using 21 published datasets.
 
-%Added a little more description here
-The coagulation factors are generally in an inactive state and are known as zymogens. These zymogens are activated through certain triggers. Trigger events like injury or trauma or sepsis expose factors like collagen, tissue factor and von Willebrand factor (vWF) to blood. The exposure of these factors to blood kick-starts a series of convergent cascades that lead to conversion of zymogen prothrombinase to thrombin.  For example when coagulation is initiated through the tissue factor pathway, tissue factor and activated factor VIIa (FVIIa) form a complex that activates factors X (fX) and IX (fIX). Activated factor X (fXa) thereafter activates downstream factors VIII and IX. The initial activation leads to the production of picomolar amounts of thrombin (fIIa) which activates platelets and amplifies its own production through the formation of a prothrombinase complex (FXa-FVa) on the surface of the activated platelets. Thrombin also  downregulates its own production by forming a complex with thrombomodulin which then activates protein C (PC). PC inhibits the formation of prothrombinase complex. In addition, Tissue factor pathway inhibitor (TFPI) downregulates FXa formation and activity by sequestering free FXa and TF-FVIIa in a FXa-dependent manner. Antithrombin III (ATIII)  inhibits all proteases. surface protein thrombomodulin (TM). Luan et al. modeled coagulation using coupled non-linear ordinary differential equations with 148 reactions and 92 species \cite{luan2007computationally} and validated model using 21 published datasets.
+The biochemistry underlying coagulation, though quite complex, has been well studied \cite{mann2003dynamics,mann2003all,mann2003thrombin,vogler2009contact,diamond2013systems,fogelson2005coagulation,anand2003model},
+and reliable experimental coagulation models have been developed \cite{hockin2002model,chatterjee2010systems,mann2006models,luan2007computationally}.
+Coagulation is mediated by a family proteases in the circulation, called factors and a key group of blood cells, called platelets.
+The central process in coagulation is the conversion of prothrombin (fII), an inactive coagulation factor, to the master protease thrombin (FIIa).
+Thrombin generation involves three phases, initiation, amplification and termination [13,14].
+Initiation requires a trigger event, for example vessel injury, which leads to the activation of factor VII (FVIIa).
+Two converging pathways, the extrinsic and intrinsic cascades, then process and amplify this initial coagulation signal.
+The extrinsic cascade is generally believed to be the main mechanism of thrombinogenesis in the blood [15–17].
+Initially, thrombin is produced upon cleavage of prothrombin by fluid phase activated factor X (FXa), which itself has been activated by Tissue Factor/activated factor VII (TF/FVIIa) [10].
+Picomolar amounts of thrombin then activate the cofactors factors V and VIII (fV and fVIII) and platelets, leading to the formation of the tenase and prothrombinase complexes on activated platelets.
+These complexes amplify the early coagulation signal by further activating FXa, and directly converting prothrombin to thrombin.
+There are several control points in the cascade that inhibit thrombin formation, and eventually terminate thrombin generation. Tissue Factor Pathway Inhibitor (TFPI) inhibits FXa formation catalyzed by TF/FVIIa, while antithrombin III (ATIII) neutralizes several of the proteases generated during coagulation, including thrombin.
+Thrombin itself also inadvertently plays a role in its own inhibition; thrombin, through interaction with thrombomodulin, protein C and endothelial cell protein C receptor (EPCR), converts protein C to activated protein C (APC) which attenuates the coagulation response by proteolytic cleavage of fV/FVa and fVIII/FVIIIa.
+Termination occurs after either prothrombin is consumed, or thrombin formation is neutralized by inhibitors such as APC or ATIII.
 
-To train the model parameters, we used data sets from TF-VIIa initiated coagulation with no anticoagulants. The objective function was a weighted linear combination of two different error functions that used data sets representing coagulation initiated with different concentrations of TF-VIIa (5pM, 5nM) \cite{hockin2002model}. This choice of using a linear combination of two different error functions was motivated by poor validation results while using a single error function.  We restricted the number of function evaluations to 4000 for each algorithm and performed 25 trials of this experiment. DOPS exhibits a much faster rate of error convergence and has a much lower final error as compared to the other algorithms (Fig.\ref{fig-convergence}).
+%Coagulation is regulated by a set of serine proteases known as coagulation factors and a type of blood cell called a platelet.
+%In the circulation, coagulation factors are generally in an inactive state known as a zymogen.
+%These zymogens are activated through certain triggers. Trigger events like injury or trauma or sepsis expose factors like collagen, tissue factor and von Willebrand factor (vWF) to blood. The exposure of these factors to blood kick-starts a series of convergent cascades that lead to conversion of zymogen prothrombinase to thrombin.  For example when coagulation is initiated through the tissue factor pathway, tissue factor and activated factor VIIa (FVIIa) form a complex that activates factors X (fX) and IX (fIX). Activated factor X (fXa) thereafter activates downstream factors VIII and IX. The initial activation leads to the production of picomolar amounts of thrombin (fIIa) which activates platelets and amplifies its own production through the formation of a prothrombinase complex (FXa-FVa) on the surface of the activated platelets. Thrombin also  downregulates its own production by forming a complex with thrombomodulin which then activates protein C (PC). PC inhibits the formation of prothrombinase complex. In addition, Tissue factor pathway inhibitor (TFPI) downregulates FXa formation and activity by sequestering free FXa and TF-FVIIa in a FXa-dependent manner. Antithrombin III (ATIII)  inhibits all proteases. surface protein thrombomodulin (TM).
+%This choice of using a linear combination of two different error functions was motivated by poor validation results while using a single error function.
 
- Within the first 1000 function evaluations  of DOPS there is a very rapid drop in error. Approximately between 500-1000 function evaluations a switch to dynamically dimensioned search phase happens (this switch varies from trial to trial since the switch is based on the error from the swarm phase). Overall at the end of 4000 function evaluations DOPS minimizes the error (final objective error is 5.5916e+04) to a much greater extent than any of the other algorithms. Using the parameters obtained at the end of 4000 function evaluations we examined the 'fits' between models predictions and experimental data (Fig.\ref{fig-train}). The solid lines represent the mean value of prediction over 25 trials and the shaded region represents the 99\% confidence interval. Subsequently we used these optimal parameters to make model predictions that was compared against completely 'unseen' or untrained experimental data where coagulation was initiated with 500pM,50pM,10pM concentrations of TF-VIIa respectively (Fig.\ref{fig-validation}).
+To estimate coagulation model parameters, we used data sets from TF-VIIa initiated coagulation in the absence of anticoagulants.
+The objective function was a linear combination of two error functions that used data sets representing coagulation initiated with different concentrations of TF-VIIa (5pM, 5nM) \cite{hockin2002model}.
+We restricted the number of function evaluations to 4000 for each algorithm we tested, and performed 25 trials of each experiment.
+DOPS convergences faster and has a lower final error compared to the other algorithms (Fig. \ref{fig-convergence}).
+Within the first 1000 function evaluations of DOPS there is a very rapid drop in error.
+Approximately between 500-1000 function evaluations a switch to dynamically dimensioned search phase happens (this switch varies from trial to trial since the switch is based on the error from the swarm phase).
+Overall at the end of 4000 function evaluations DOPS minimizes the error (final objective error is 5.5916e+04) to a much greater extent than any of the other algorithms.
+Using the parameters obtained at the end of 4000 function evaluations we examined the 'fits' between models predictions and experimental data (Fig.\ref{fig-train}).
+The solid lines represent the mean value of prediction over 25 trials and the shaded region represents the 99\% confidence interval.
+Subsequently we used these optimal parameters to make model predictions that was compared against completely 'unseen' or untrained experimental data where coagulation was initiated with 500pM,50pM,10pM concentrations of TF-VIIa respectively (Fig.\ref{fig-validation}).
 
 \subsection*{Performance of DOPS on benchmark problems and test functions.}
 Villaverde and co-workers recently published a set of benchmark biochemical problems to evaluate parameter estimation methods \cite{villaverde2015biopredyn}. From a computational cost perspective problems they categorized the problems as most expensive, intermediate and least expensive. We evaluated the performance of our algorithms on a problem from the most expensive and least expensive categories. The first problem (most expensive) is a genome wide kinetic model of \textit{Saccharomyces cerevisiae} with 261 reactions, 262 variables and 1759 parameters (henceforth referred to as problem B1). The reactions were modeled using modular rate law and generalized form of Michaelis-Menten kinetics.   The second problem (henceforth referred to as problem B4, least expensive) is a metabolic model of Chinese Hamster Ovary (CHO) with 35 metabolites, 32 reactions and 117 parameters. In both cases pseudo time series data was generated by the authors.  For problem B1, the time series data consisted of 44 observables and for problem B4 the data corresponded to 13 different metabolites. For a detailed description about the model architectures please refer to the work of Villaverde et al. \cite{villaverde2015biopredyn}
