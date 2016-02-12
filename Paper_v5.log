@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 FEB 2016 22:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 FEB 2016 06:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -863,11 +863,6 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 121.
  [1] [1] [2] [3]
-Overfull \hbox (7.76897pt too wide) in paragraph at lines 233--239
-\OT1/phv/m/n/12 which com-bines multi-swarm par-ti-cle swarm meth-ods with dy-n
-am-i-cally di-men-sioned search
- []
-
 [4
 
 ] [5] [6] [7] [8
@@ -884,14 +879,14 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 ) [17] [18]
 [19]) [20]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 373.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 380.
  [21
 
 ] <./figs/Figure_1_Algorithm.pdf, id=88, 1517.67pt x 867.24pt>
 File: ./figs/Figure_1_Algorithm.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_1_Algorithm.pdf>
-Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 397.
+Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 406.
 (pdftex.def)             Requested size: 469.75496pt x 310.22122pt.
  [22
 
@@ -901,86 +896,89 @@ File: ./figs/Figure_2_CoagulationNetwork.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_2_CoagulationNetwork.pdf>
 Package pdftex.def Info: ./figs/Figure_2_CoagulationNetwork.pdf used on input l
-ine 407.
+ine 416.
 (pdftex.def)             Requested size: 469.75618pt x 434.31146pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [23 <./figs/Figure_2_CoagulationNetwork.pdf>]
-<./figs/Figure_3_Errors_convergence.pdf, id=468, 867.24pt x 607.26875pt>
-File: ./figs/Figure_3_Errors_convergence.pdf Graphic file (type pdf)
+<./figs/Figure_3_Errors_convergence_v2.pdf, id=468, 853.1875pt x 632.3625pt>
+File: ./figs/Figure_3_Errors_convergence_v2.pdf Graphic file (type pdf)
 
-<use ./figs/Figure_3_Errors_convergence.pdf>
-Package pdftex.def Info: ./figs/Figure_3_Errors_convergence.pdf used on input l
-ine 415.
-(pdftex.def)             Requested size: 469.75827pt x 310.22188pt.
+<use ./figs/Figure_3_Errors_convergence_v2.pdf>
+Package pdftex.def Info: ./figs/Figure_3_Errors_convergence_v2.pdf used on inpu
+t line 424.
+(pdftex.def)             Requested size: 469.75502pt x 348.17676pt.
  [24
 
 
- <./figs/Figure_3_Errors_convergence.pdf>]
-<./figs/Figure_4_Sim_Train_E1_E5.pdf, id=490, 867.24pt x 607.26875pt>
+ <./figs/Figure_3_Errors_convergence_v2.pdf>]
+<./figs/Figure_4_Sim_Train_E1_E5.pdf, id=487, 867.24pt x 607.26875pt>
 File: ./figs/Figure_4_Sim_Train_E1_E5.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_4_Sim_Train_E1_E5.pdf>
 Package pdftex.def Info: ./figs/Figure_4_Sim_Train_E1_E5.pdf used on input line
- 424.
-(pdftex.def)             Requested size: 469.75827pt x 310.22188pt.
+ 433.
+(pdftex.def)             Requested size: 469.75502pt x 328.93951pt.
  [25
 
  <./figs/Figure_4_Sim_Train_E1_E5.pdf>]
-<./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf, id=508, 867.24pt x 607.26875pt>
+<./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf, id=505, 867.24pt x 607.26875pt>
 File: ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>
 Package pdftex.def Info: ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf used on inpu
-t line 433.
+t line 442.
 (pdftex.def)             Requested size: 469.75827pt x 310.22188pt.
 
-<./figs/Figure_6_Ackley_Rast.pdf, id=509, 1027.84pt x 770.88pt>
+<./figs/Figure_6_Ackley_Rast.pdf, id=506, 1027.84pt x 770.88pt>
 File: ./figs/Figure_6_Ackley_Rast.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_6_Ackley_Rast.pdf>
-Package pdftex.def Info: ./figs/Figure_6_Ackley_Rast.pdf used on input line 440
+Package pdftex.def Info: ./figs/Figure_6_Ackley_Rast.pdf used on input line 449
 .
-(pdftex.def)             Requested size: 469.75385pt x 310.20503pt.
+(pdftex.def)             Requested size: 469.75502pt x 352.31538pt.
 
-<./figs/Figure_B1_B4_params_measuredstates.pdf, id=510, 1027.84pt x 770.88pt>
+<./figs/Figure_B1_B4_params_measuredstates.pdf, id=507, 1027.84pt x 770.88pt>
 File: ./figs/Figure_B1_B4_params_measuredstates.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_B1_B4_params_measuredstates.pdf>
 Package pdftex.def Info: ./figs/Figure_B1_B4_params_measuredstates.pdf used on 
-input line 447.
-(pdftex.def)             Requested size: 469.75385pt x 434.28941pt.
+input line 456.
+(pdftex.def)             Requested size: 469.75502pt x 352.31538pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 449.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 458.
 
-<./figs/B1_sims.pdf, id=511, 596.2275pt x 659.46375pt>
+<./figs/B1_sims.pdf, id=508, 596.2275pt x 659.46375pt>
 File: ./figs/B1_sims.pdf Graphic file (type pdf)
 
 <use ./figs/B1_sims.pdf>
-Package pdftex.def Info: ./figs/B1_sims.pdf used on input line 454.
-(pdftex.def)             Requested size: 469.75908pt x 434.31158pt.
- <./figs/FigB4_sims.pdf, id=512, 614.295pt x 794.97pt>
+Package pdftex.def Info: ./figs/B1_sims.pdf used on input line 463.
+(pdftex.def)             Requested size: 469.75502pt x 519.582pt.
+ <./figs/FigB4_sims.pdf, id=509, 614.295pt x 794.97pt>
 File: ./figs/FigB4_sims.pdf Graphic file (type pdf)
 
 <use ./figs/FigB4_sims.pdf>
-Package pdftex.def Info: ./figs/FigB4_sims.pdf used on input line 461.
-(pdftex.def)             Requested size: 469.75604pt x 434.31146pt.
- [26
+Package pdftex.def Info: ./figs/FigB4_sims.pdf used on input line 470.
+(pdftex.def)             Requested size: 469.75502pt x 607.9196pt.
 
- <./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>]
-[27 <./figs/Figure_6_Ackley_Rast.pdf>] [28 <./figs/Figure_B1_B4_params_measured
-states.pdf>] [29 <./figs/B1_sims.pdf>] [30 <./figs/FigB4_sims.pdf>]
-(./Paper_v5.aux) )
+
+LaTeX Warning: Float too large for page by 21.4896pt on input line 473.
+
+[26
+
+ <./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>] [27 <./figs/Figure_6_Ackley_Rast.
+pdf>] [28 <./figs/Figure_B1_B4_params_measuredstates.pdf>] [29 <./figs/B1_sims.
+pdf>] [30 <./figs/FigB4_sims.pdf>] (./Paper_v5.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 48 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
  7174 strings out of 493089
- 105544 string characters out of 6134842
- 194002 words of memory out of 5000000
+ 105559 string characters out of 6134842
+ 193922 words of memory out of 5000000
  10441 multiletter control sequences out of 15000+600000
  34615 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1001,10 +999,10 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v5.pdf (32 pages, 2502577 bytes).
+Output written on Paper_v5.pdf (32 pages, 2506007 bytes).
 PDF statistics:
- 683 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
+ 680 PDF objects out of 1000 (max. 8388607)
+ 380 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
