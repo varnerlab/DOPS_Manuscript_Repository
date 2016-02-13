@@ -1,0 +1,309 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{assmus2006dynamics}
+Assmus HE, Herwig R, Cho KH, Wolkenhauer O (2006) Dynamics of biological
+  systems: role of systems biology in medical research.
+\newblock Expert Review of Molecular Diagnostics .
+\bibAnnoteFile{assmus2006dynamics}
+
+\bibitem{Riel:2006aa}
+van Riel NAW (2006) Dynamic modelling and analysis of biochemical networks:
+  mechanism-based models and model-based experiments.
+\newblock Briefings in Bioinformatics 7: 364--374.
+\bibAnnote{Riel:2006aa}{10.1093/bib/bbl040}
+
+\bibitem{Jaqaman:2006aa}
+Jaqaman K, Danuser G (2006) Linking data to models: data regression.
+\newblock Nat Rev Mol Cell Biol 7: 813--819.
+\bibAnnote{Jaqaman:2006aa}{10.1038/nrm2030}
+
+\bibitem{kitano2002systems}
+Kitano H (2002) Systems biology: a brief overview.
+\newblock Science 295: 1662--1664.
+\bibAnnoteFile{kitano2002systems}
+
+\bibitem{hood2004systems}
+Hood L, Heath JR, Phelps ME, Lin B (2004) Systems biology and new technologies
+  enable predictive and preventative medicine.
+\newblock Science 306: 640--643.
+\bibAnnoteFile{hood2004systems}
+
+\bibitem{Aldridge:2006aa}
+Aldridge BB, Burke JM, Lauffenburger DA, Sorger PK (2006) Physicochemical
+  modelling of cell signalling pathways.
+\newblock Nat Cell Biol 8: 1195--1203.
+\bibAnnote{Aldridge:2006aa}{10.1038/ncb1497}
+
+\bibitem{banga2008optimization}
+Banga JR (2008) Optimization in computational systems biology.
+\newblock BMC systems biology 2: 47.
+\bibAnnoteFile{banga2008optimization}
+
+\bibitem{ashyraliyev2009systems}
+Ashyraliyev M, Fomekong-Nanfack Y, Kaandorp JA, Blom JG (2009) Systems biology:
+  parameter estimation for biochemical models.
+\newblock Febs Journal 276: 886--902.
+\bibAnnoteFile{ashyraliyev2009systems}
+
+\bibitem{moles2003parameter}
+Moles CG, Mendes P, Banga JR (2003) Parameter estimation in biochemical
+  pathways: a comparison of global optimization methods.
+\newblock Genome research 13: 2467--2474.
+\bibAnnoteFile{moles2003parameter}
+
+\bibitem{nieman1971review}
+Nieman R, Fisher D, Seborg D (1971) A review of process identification and
+  parameter estimation techniques†.
+\newblock International Journal of Control 13: 209--264.
+\bibAnnoteFile{nieman1971review}
+
+\bibitem{beck1977parameter}
+Beck JV, Arnold KJ (1977) Parameter estimation in engineering and science.
+\newblock James Beck.
+\bibAnnoteFile{beck1977parameter}
+
+\bibitem{young1981parameter}
+Young P (1981) Parameter estimation for continuous-time models---a survey.
+\newblock Automatica 17: 23--39.
+\bibAnnoteFile{young1981parameter}
+
+\bibitem{beck1998inverse}
+Beck JV, Woodbury KA (1998) Inverse problems and parameter estimation:
+  integration of measurements and analysis.
+\newblock Measurement Science and Technology 9: 839.
+\bibAnnoteFile{beck1998inverse}
+
+\bibitem{hooke1961direct}
+Hooke R, Jeeves TA (1961) ``direct search''solution of numerical and
+  statistical problems.
+\newblock Journal of the ACM (JACM) 8: 212--229.
+\bibAnnoteFile{hooke1961direct}
+
+\bibitem{nelder1965simplex}
+Nelder JA, Mead R (1965) A simplex method for function minimization.
+\newblock The computer journal 7: 308--313.
+\bibAnnoteFile{nelder1965simplex}
+
+\bibitem{more1978levenberg}
+Mor{\'e} JJ (1978) The levenberg-marquardt algorithm: implementation and
+  theory.
+\newblock In: Numerical analysis, Springer. pp. 105--116.
+\bibAnnoteFile{more1978levenberg}
+
+\bibitem{esposito2000deterministic}
+Esposito WR, Floudas CA (2000) Deterministic global optimization in nonlinear
+  optimal control problems.
+\newblock Journal of Global Optimization 17: 97--126.
+\bibAnnoteFile{esposito2000deterministic}
+
+\bibitem{horst2013global}
+Horst R, Tuy H (2013) Global optimization: Deterministic approaches.
+\newblock Springer Science \& Business Media.
+\bibAnnoteFile{horst2013global}
+
+\bibitem{kirkpatrick1983optimization}
+Kirkpatrick S, Gelatt CD, Vecchi MP, et~al. (1983) Optimization by simulated
+  annealing.
+\newblock science 220: 671--680.
+\bibAnnoteFile{kirkpatrick1983optimization}
+
+\bibitem{storn1997differential}
+Storn R, Price K (1997) Differential evolution--a simple and efficient
+  heuristic for global optimization over continuous spaces.
+\newblock Journal of global optimization 11: 341--359.
+\bibAnnoteFile{storn1997differential}
+
+\bibitem{sun2012parameter}
+Sun J, Garibaldi JM, Hodgman C (2012) Parameter estimation using metaheuristics
+  in systems biology: a comprehensive review.
+\newblock Computational Biology and Bioinformatics, IEEE/ACM Transactions on 9:
+  185--202.
+\bibAnnoteFile{sun2012parameter}
+
+\bibitem{mendes1998non}
+Mendes P, Kell D (1998) Non-linear optimization of biochemical pathways:
+  applications to metabolic engineering and parameter estimation.
+\newblock Bioinformatics 14: 869--883.
+\bibAnnoteFile{mendes1998non}
+
+\bibitem{modchang2008mathematical}
+Modchang C, Triampo W, Lenbury Y (2008) Mathematical modeling and application
+  of genetic algorithm to parameter estimation in signal transduction:
+  Trafficking and promiscuous coupling of g-protein coupled receptors.
+\newblock Computers in Biology and Medicine 38: 574--582.
+\bibAnnoteFile{modchang2008mathematical}
+
+\bibitem{tsai2005evolutionary}
+Tsai KY, Wang FS (2005) Evolutionary optimization with data collocation for
+  reverse engineering of biological networks.
+\newblock Bioinformatics 21: 1180--1188.
+\bibAnnoteFile{tsai2005evolutionary}
+
+\bibitem{wang2001hybrid}
+Wang FS, Su TL, Jang HJ (2001) Hybrid differential evolution for problems of
+  kinetic parameter estimation and dynamic optimization of an ethanol
+  fermentation process.
+\newblock Industrial \& engineering chemistry research 40: 2876--2885.
+\bibAnnoteFile{wang2001hybrid}
+
+\bibitem{noman2007inferring}
+Noman N, Iba H (2007) Inferring gene regulatory networks using differential
+  evolution with local search heuristics.
+\newblock IEEE/ACM Transactions on Computational Biology and Bioinformatics
+  (TCBB) 4: 634--647.
+\bibAnnoteFile{noman2007inferring}
+
+\bibitem{tashkova2011parameter}
+Tashkova K, Koro{\v{s}}ec P, {\v{S}}ilc J, Todorovski L, D{\v{z}}eroski S
+  (2011) Parameter estimation with bio-inspired meta-heuristic optimization:
+  modeling the dynamics of endocytosis.
+\newblock BMC systems biology 5: 159.
+\bibAnnoteFile{tashkova2011parameter}
+
+\bibitem{villaverde2012cooperative}
+Villaverde AF, Egea JA, Banga JR (2012) A cooperative strategy for parameter
+  estimation in large scale systems biology models.
+\newblock BMC systems biology 6: 75.
+\bibAnnoteFile{villaverde2012cooperative}
+
+\bibitem{rodriguez2006novel}
+Rodriguez-Fernandez M, Egea JA, Banga JR (2006) Novel metaheuristic for
+  parameter estimation in nonlinear dynamic biological systems.
+\newblock BMC bioinformatics 7: 483.
+\bibAnnoteFile{rodriguez2006novel}
+
+\bibitem{egea2007scatter}
+Egea JA, Rodr{\'\i}guez-Fern{\'a}ndez M, Banga JR, Mart{\'\i} R (2007) Scatter
+  search for chemical and bio-process optimization.
+\newblock Journal of Global Optimization 37: 481--503.
+\bibAnnoteFile{egea2007scatter}
+
+\bibitem{villaverde2015biopredyn}
+Villaverde AF, Henriques D, Smallbone K, Bongard S, Schmid J, et~al. (2015)
+  Biopredyn-bench: a suite of benchmark problems for dynamic modelling in
+  systems biology.
+\newblock BMC systems biology 9: 8.
+\bibAnnoteFile{villaverde2015biopredyn}
+
+\bibitem{fan2015parameter}
+Fan M, Kuwahara H, Wang X, Wang S, Gao X (2015) Parameter estimation methods
+  for gene circuit modeling from time-series mrna data: a comparative study.
+\newblock Briefings in bioinformatics : bbv015.
+\bibAnnoteFile{fan2015parameter}
+
+\bibitem{gutenkunst2007universally}
+Gutenkunst RN, Waterfall JJ, Casey FP, Brown KS, Myers CR, et~al. (2007)
+  Universally sloppy parameter sensitivities in systems biology models.
+\newblock PLoS computational biology 3: e189.
+\bibAnnoteFile{gutenkunst2007universally}
+
+\bibitem{song2010ensembles}
+Song SO, Chakrabarti A, Varner JD (2010) Ensembles of signal transduction
+  models using pareto optimal ensemble techniques (poets).
+\newblock Biotechnology journal 5: 768--780.
+\bibAnnoteFile{song2010ensembles}
+
+\bibitem{luan2010ensembles}
+Luan D, Szlam F, Tanaka KA, Barie PS, Varner JD (2010) Ensembles of uncertain
+  mathematical models can identify network response to therapeutic
+  interventions.
+\newblock Molecular bioSystems 6: 2272--2286.
+\bibAnnoteFile{luan2010ensembles}
+
+\bibitem{sagar2015dynamic}
+Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
+  using reduced order effective kinetic models.
+\newblock Processes 3: 178--203.
+\bibAnnoteFile{sagar2015dynamic}
+
+\bibitem{tolson2007dynamically}
+Tolson BA, Shoemaker CA (2007) Dynamically dimensioned search algorithm for
+  computationally efficient watershed model calibration.
+\newblock Water Resources Research 43.
+\bibAnnoteFile{tolson2007dynamically}
+
+\bibitem{mann2003dynamics}
+Mann KG, Butenas S, Brummel K (2003) The dynamics of thrombin formation.
+\newblock Arteriosclerosis, thrombosis, and vascular biology 23: 17--25.
+\bibAnnoteFile{mann2003dynamics}
+
+\bibitem{mann2003all}
+Mann K, Brummel K, Butenas S (2003) What is all that thrombin for?
+\newblock Journal of Thrombosis and Haemostasis 1: 1504--1514.
+\bibAnnoteFile{mann2003all}
+
+\bibitem{mann2003thrombin}
+Mann KG (2003) Thrombin formation.
+\newblock CHEST Journal 124: 4S--10S.
+\bibAnnoteFile{mann2003thrombin}
+
+\bibitem{vogler2009contact}
+Vogler EA, Siedlecki CA (2009) Contact activation of blood-plasma coagulation.
+\newblock Biomaterials 30: 1857--1869.
+\bibAnnoteFile{vogler2009contact}
+
+\bibitem{diamond2013systems}
+Diamond SL (2013) Systems biology of coagulation.
+\newblock Journal of Thrombosis and Haemostasis 11: 224--232.
+\bibAnnoteFile{diamond2013systems}
+
+\bibitem{fogelson2005coagulation}
+Fogelson AL, Tania N (2005) Coagulation under flow: the influence of
+  flow-mediated transport on the initiation and inhibition of coagulation.
+\newblock Pathophysiology of haemostasis and thrombosis 34: 91--108.
+\bibAnnoteFile{fogelson2005coagulation}
+
+\bibitem{anand2003model}
+Anand M, Rajagopal K, Rajagopal K (2003) A model incorporating some of the
+  mechanical and biochemical factors underlying clot formation and dissolution
+  in flowing blood: review article.
+\newblock Journal of Theoretical Medicine 5: 183--218.
+\bibAnnoteFile{anand2003model}
+
+\bibitem{hockin2002model}
+Hockin MF, Jones KC, Everse SJ, Mann KG (2002) A model for the stoichiometric
+  regulation of blood coagulation.
+\newblock Journal of Biological Chemistry 277: 18322--18333.
+\bibAnnoteFile{hockin2002model}
+
+\bibitem{chatterjee2010systems}
+Chatterjee MS, Denney WS, Jing H, Diamond SL (2010) Systems biology of
+  coagulation initiation: kinetics of thrombin generation in resting and
+  activated human blood.
+\newblock PLoS computational biology .
+\bibAnnoteFile{chatterjee2010systems}
+
+\bibitem{mann2006models}
+Mann KG, Brummel-Ziedins K, Orfeo T, Butenas S (2006) Models of blood
+  coagulation.
+\newblock Blood Cells, Molecules, and Diseases 36: 108--117.
+\bibAnnoteFile{mann2006models}
+
+\bibitem{luan2007computationally}
+Luan D, Zai M, Varner JD (2007) Computationally derived points of fragility of
+  a human cascade are consistent with current therapeutic strategies.
+\newblock PLoS computational biology 3: e142.
+\bibAnnoteFile{luan2007computationally}
+
+\bibitem{zhao2008dynamic}
+Zhao SZ, Liang JJ, Suganthan PN, Tasgetiren MF (2008) Dynamic multi-swarm
+  particle swarm optimizer with local search for large scale global
+  optimization.
+\newblock In: Evolutionary Computation, 2008. CEC 2008.(IEEE World Congress on
+  Computational Intelligence). IEEE Congress on. IEEE, pp. 3845--3852.
+\bibAnnoteFile{zhao2008dynamic}
+
+\end{thebibliography}
