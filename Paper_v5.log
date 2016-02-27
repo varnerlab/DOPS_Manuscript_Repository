@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 FEB 2016 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 FEB 2016 08:28
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **Paper_v5.tex
 (./Paper_v5.tex
@@ -863,275 +862,14 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 121.
- [1]
-
-Package natbib Warning: Citation `assmus2006dynamics' on page 1 undefined on in
-put line 156.
-
-
-Package natbib Warning: Citation `Riel:2006aa' on page 1 undefined on input lin
-e 156.
-
-
-Package natbib Warning: Citation `Jaqaman:2006aa' on page 1 undefined on input 
-line 156.
-
-
-Package natbib Warning: Citation `kitano2002systems' on page 1 undefined on inp
-ut line 156.
-
-
-Package natbib Warning: Citation `hood2004systems' on page 1 undefined on input
- line 156.
-
-
-Package natbib Warning: Citation `Aldridge:2006aa' on page 1 undefined on input
- line 157.
-
-
-Package natbib Warning: Citation `banga2008optimization' on page 1 undefined on
- input line 157.
-
-
-Package natbib Warning: Citation `ashyraliyev2009systems' on page 1 undefined o
-n input line 157.
-
-
-Package natbib Warning: Citation `moles2003parameter' on page 1 undefined on in
-put line 158.
-
-
-Package natbib Warning: Citation `nieman1971review' on page 1 undefined on inpu
-t line 162.
-
-
-Package natbib Warning: Citation `beck1977parameter' on page 1 undefined on inp
-ut line 162.
-
-
-Package natbib Warning: Citation `young1981parameter' on page 1 undefined on in
-put line 162.
-
-
-Package natbib Warning: Citation `beck1998inverse' on page 1 undefined on input
- line 162.
-
-
-Package natbib Warning: Citation `moles2003parameter' on page 1 undefined on in
-put line 164.
-
-
-Package natbib Warning: Citation `banga2008optimization' on page 1 undefined on
- input line 164.
-
-
-Package natbib Warning: Citation `hooke1961direct' on page 1 undefined on input
- line 165.
-
-
-Package natbib Warning: Citation `nelder1965simplex' on page 1 undefined on inp
-ut line 165.
-
-
-Package natbib Warning: Citation `more1978levenberg' on page 1 undefined on inp
-ut line 166.
-
-
-Package natbib Warning: Citation `esposito2000deterministic' on page 1 undefine
-d on input line 167.
-
-
-Package natbib Warning: Citation `horst2013global' on page 1 undefined on input
- line 167.
-
-
-Package natbib Warning: Citation `kirkpatrick1983optimization' on page 1 undefi
-ned on input line 170.
-
-
-Package natbib Warning: Citation `storn1997differential' on page 1 undefined on
- input line 171.
-
-
-Package natbib Warning: Citation `sun2012parameter' on page 1 undefined on inpu
-t line 171.
-
-
-Package natbib Warning: Citation `mendes1998non' on page 1 undefined on input l
-ine 174.
-
-
-Package natbib Warning: Citation `modchang2008mathematical' on page 1 undefined
- on input line 175.
-
-
-Package natbib Warning: Citation `tsai2005evolutionary' on page 1 undefined on 
-input line 176.
-
-
-Package natbib Warning: Citation `wang2001hybrid' on page 1 undefined on input 
-line 176.
-
-
-Package natbib Warning: Citation `noman2007inferring' on page 1 undefined on in
-put line 176.
-
-
-Package natbib Warning: Citation `tashkova2011parameter' on page 1 undefined on
- input line 177.
-
-
-Package natbib Warning: Citation `villaverde2012cooperative' on page 1 undefine
-d on input line 178.
-
-
-Package natbib Warning: Citation `rodriguez2006novel' on page 1 undefined on in
-put line 178.
-
-
-Package natbib Warning: Citation `egea2007scatter' on page 1 undefined on input
- line 178.
-
-
-Package natbib Warning: Citation `villaverde2015biopredyn' on page 1 undefined 
-on input line 180.
-
-
-Package natbib Warning: Citation `fan2015parameter' on page 1 undefined on inpu
-t line 181.
-
-[1]
-
-Package natbib Warning: Citation `villaverde2015biopredyn' on page 2 undefined 
-on input line 192.
-
-[2] [3]
-
-LaTeX Warning: Reference `fig-algorithm' on page 4 undefined on input line 233.
-
-
+ [1] [1] [2] [3]
 [4
 
-] [5]
+] [5] [6] [7] [8
 
-LaTeX Warning: Reference `eqn:update-rule' on page 6 undefined on input line 27
-4.
+] [9] [10] [11] [12
 
-[6] [7]
-
-LaTeX Warning: Reference `fig-coagulation-network' on page 8 undefined on input
- line 309.
-
-
-Package natbib Warning: Citation `mann2003dynamics' on page 8 undefined on inpu
-t line 310.
-
-
-Package natbib Warning: Citation `mann2003all' on page 8 undefined on input lin
-e 310.
-
-
-Package natbib Warning: Citation `mann2003thrombin' on page 8 undefined on inpu
-t line 310.
-
-
-Package natbib Warning: Citation `vogler2009contact' on page 8 undefined on inp
-ut line 310.
-
-
-Package natbib Warning: Citation `diamond2013systems' on page 8 undefined on in
-put line 310.
-
-
-Package natbib Warning: Citation `fogelson2005coagulation' on page 8 undefined 
-on input line 310.
-
-
-Package natbib Warning: Citation `anand2003model' on page 8 undefined on input 
-line 310.
-
-
-Package natbib Warning: Citation `hockin2002model' on page 8 undefined on input
- line 311.
-
-
-Package natbib Warning: Citation `chatterjee2010systems' on page 8 undefined on
- input line 311.
-
-
-Package natbib Warning: Citation `mann2006models' on page 8 undefined on input 
-line 311.
-
-
-Package natbib Warning: Citation `luan2007computationally' on page 8 undefined 
-on input line 311.
-
-
-Package natbib Warning: Citation `luan2007computationally' on page 8 undefined 
-on input line 314.
-
-[8
-
-]
-
-Package natbib Warning: Citation `hockin2002model' on page 9 undefined on input
- line 333.
-
-
-LaTeX Warning: Reference `fig-convergence' on page 9 undefined on input line 33
-4.
-
-
-LaTeX Warning: Reference `fig-train' on page 9 undefined on input line 338.
-
-
-LaTeX Warning: Reference `fig-validation' on page 9 undefined on input line 341
-.
-
-
-Package natbib Warning: Citation `villaverde2015biopredyn' on page 9 undefined 
-on input line 345.
-
-
-Package natbib Warning: Citation `villaverde2015biopredyn' on page 9 undefined 
-on input line 345.
-
-[9]
-
-LaTeX Warning: Reference `fig-sims-b1' on page 10 undefined on input line 347.
-
-
-LaTeX Warning: Reference `fig-sims-b4' on page 10 undefined on input line 347.
-
-
-LaTeX Warning: Reference `fig-benchmark' on page 10 undefined on input line 347
-.
-
-
-LaTeX Warning: Reference `table:benchmark-problems' on page 10 undefined on inp
-ut line 347.
-
-
-LaTeX Warning: Reference `fig-testfunctions' on page 10 undefined on input line
- 348.
-
-
-LaTeX Warning: Reference `table:benchmark-problems' on page 10 undefined on inp
-ut line 348.
-
-[10] [11]
-
-Package natbib Warning: Citation `zhao2008dynamic' on page 12 undefined on inpu
-t line 356.
-
-[12
-
-]
-
-Package natbib Warning: Citation `villaverde2015biopredyn' on page 13 undefined
- on input line 359.
-
-[13] [14] [15] (./Paper_v5.bbl [16
+] [13] [14] [15] (./Paper_v5.bbl [16
 
 ]
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 69.
@@ -1143,12 +881,13 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 379.
 
-./Paper_v5.tex:389: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <template> ... width\arrayrulewidth }\endtemplate 
                                                   
 l.389 & 10pM &
                0.0823 \\
-? 
+? r
+OK, entering \nonstopmode...
 [21
 
 ] <./figs/Figure_1_Algorithm.pdf, id=88, 1517.67pt x 867.24pt>
@@ -1167,14 +906,6 @@ File: ./figs/Figure_2_CoagulationNetwork.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./figs/Figure_2_CoagulationNetwork.pdf used on input l
 ine 436.
 (pdftex.def)             Requested size: 469.75618pt x 434.31146pt.
-
-
-Package natbib Warning: Citation `luan2007computationally' on page 23 undefined
- on input line 437.
-
-
-Package natbib Warning: Citation `luan2007computationally' on page 23 undefined
- on input line 437.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1247,23 +978,7 @@ LaTeX Warning: Float too large for page by 21.4896pt on input line 493.
 
  <./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>] [27 <./figs/Figure_6_Ackley_Rast.
 pdf>] [28 <./figs/Figure_B1_B4_params_measuredstates.pdf>] [29 <./figs/B1_sims.
-pdf>] [30 <./figs/FigB4_sims.pdf>]
-
-Package natbib Warning: There were undefined citations.
-
-(./Paper_v5.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
+pdf>] [30 <./figs/FigB4_sims.pdf>] (./Paper_v5.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 48 (\begingroup)
@@ -1271,11 +986,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Here is how much of TeX's memory you used:
  7175 strings out of 493089
  105581 string characters out of 6134842
- 192942 words of memory out of 5000000
+ 193931 words of memory out of 5000000
  10442 multiletter control sequences out of 15000+600000
  34615 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,14n,39p,2217b,1052s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,14n,41p,2217b,1056s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -1292,7 +1007,7 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v5.pdf (32 pages, 2504869 bytes).
+Output written on Paper_v5.pdf (32 pages, 2503865 bytes).
 PDF statistics:
  680 PDF objects out of 1000 (max. 8388607)
  380 compressed objects within 4 object streams
