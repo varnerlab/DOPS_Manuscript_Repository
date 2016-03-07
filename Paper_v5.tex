@@ -379,15 +379,15 @@ This study was supported by an award from the Army Research Office (ARO \#59155-
 \caption{Error Analysis.}
 \label{table:Error-Analysis}
 \begin{center}
-\begin{tabular}{ |c|c|c|c| } 
-\hline
-Simulation&Concentration& Normalized Standard Error  \\
-\hline
-\multirow{3}{4em}{FVIIa-TF level} & 5nM & 0.0376\\ 
-& 500pM & 0.0564\\
-& 50pM & 0.1125\ 
-& 10pM & 0.0823 \\
-& 5pM & 0.0338 \\ 
+\begin{tabular}{ r|l }
+\hline\\
+TF/FVIIa concentration& Normalized S.E.  \\\\
+\hline\\
+5~nM & 0.0376 \\
+500~pM & 0.0564\\
+50~pM & 0.1125 \\
+10~pM & 0.0823 \\
+5~pM & 0.0338 \\\\
 \hline
 \end{tabular}
 \end{center}
@@ -423,7 +423,7 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth,height=0.5\textheight]{./figs/Figure_1_Algorithm.pdf}
+\includegraphics[width=1.0\textwidth]{./figs/Figure_1_Algorithm.pdf}
 \caption{Dynamic Optimization with Particle Swarms.\textbf{A}: Each particle represents an N dimensional parameter vector. Particles are given randomly generated initial solutions and grouped into different sub-swarms. Within each swarm the magnitude and direction of the movement a particle is influenced by the position of the best particle and also by its own experience. After every $\mathbf{g}$ number of function evaluations the particles are mixed and randomly assigned to different swarms. When the error due to the global best particle (best particle amongst all the sub-swarms - orange color) does not drop over a certain number of function evaluations, the swarm search is stopped and the search switches to a Dynamically Dimensioned Search with global best particle as the initial solution vector or candidate vector.
 \textbf{B}: The candidate vector performs a greedy global search for the remaining number of function evaluations. The search neighborhood is dynamically adjusted by varying the number of dimensions that are perturbed (in black) in each evaluation step. The probability that a dimension is perturbed decreases as the number of function evaluations increase. Thus as the evaluations increase the optimality of the solution is preserved.
 }\label{fig-algorithm}
@@ -433,7 +433,7 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.00\textwidth,height=0.7\textheight]{./figs/Figure_2_CoagulationNetwork.pdf}
+\includegraphics[width=1.00\textwidth]{./figs/Figure_2_Coagulation_v4.pdf}
 \caption{Schematic of the extrinsic and intrinsic coagulation cascade\cite{luan2007computationally}. Inactive zymogens upstream (grey) are activated by exposure to tissue factor (TF)  following vessel injury. Tissue factor and activated factor VIIa (FVIIa) form a complex that activates factor X (fX) and IX (fIX). FXa activates downstream factors including factor VIII (fVIII) and fIX. Factor V (fV) is primarily activated by thrombin (FIIa). In addition, we included a secondary fV activation route involving FXa. FXa and FVa form a complex (prothrombinase) on activated platelets that converts prothrombin (fII) to FIIa. FIXa and FVIIIa can also form a complex (tenase) on activated platelets which catalyzes FXa formation.  Thrombin also activates upstream coagulation factors, forming a strong positive feedback ensuring rapid activation. Tissue factor pathway inhibitor (TFPI) downregulates FXa formation and activity by sequestering free FXa and TF-FVIIa in a FXa-dependent manner. Antithrombin III (ATIII)  inhibits all proteases. Thrombin inhibits itself binding the surface protein thrombomodulin (TM). The IIa-TM complex catalyzes the conversion of protein C (PC) to activated protein C (APC), which attenuates the coagulation response by the proteolytic cleavage of fV/FVa and fVIII/FVIIIa. }\label{fig-coagulation-network}
 \end{figure}
 
@@ -459,14 +459,14 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth,height=0.5\textheight]{./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf}
+\includegraphics[width=1.0\textwidth]{./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf}
 \caption{Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $N$= 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - Orange respectively) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
 }\label{fig-validation}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./figs/Figure_6_Ackley_Rast}
+\includegraphics[width=0.7\textwidth]{./figs/Figure_6_TestFunctions-crop.pdf}
 \caption{Error convergence on 300 dimensional Ackley function and Rastrigin function. \textbf {(A)} Error convergence of 4 different meta-heuristics on 300 dimensional Ackley function \textbf {(B)} Error convergence of 4 different meta-heuristics on 300 dimensional Rastrigin function
 }\label{fig-testfunctions}
 \end{figure}
