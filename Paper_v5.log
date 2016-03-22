@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 MAR 2016 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 MAR 2016 13:39
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **Paper_v5.tex
 (./Paper_v5.tex
@@ -879,7 +880,7 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 ) [17] [18]
 [19]) [20]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 379.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 381.
  [21
 
 ]
@@ -887,7 +888,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 File: ./figs/Figure_1_Algorithm.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_1_Algorithm.pdf>
-Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 426.
+Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 428.
 (pdftex.def)             Requested size: 469.75502pt x 405.64464pt.
 
 
@@ -899,7 +900,7 @@ File: ./figs/Figure_2_Coagulation_v4.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_2_Coagulation_v4.pdf>
 Package pdftex.def Info: ./figs/Figure_2_Coagulation_v4.pdf used on input line 
-436.
+438.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
 
 
@@ -911,7 +912,7 @@ File: ./figs/Figure_3_Errors_convergence_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_3_Errors_convergence_v2.pdf>
 Package pdftex.def Info: ./figs/Figure_3_Errors_convergence_v2.pdf used on inpu
-t line 444.
+t line 446.
 (pdftex.def)             Requested size: 469.75502pt x 348.17676pt.
  [24
 
@@ -923,7 +924,7 @@ File: ./figs/Figure_4_Sim_Train_E1_E5.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_4_Sim_Train_E1_E5.pdf>
 Package pdftex.def Info: ./figs/Figure_4_Sim_Train_E1_E5.pdf used on input line
- 453.
+ 455.
 (pdftex.def)             Requested size: 469.75502pt x 328.93951pt.
  [25
 
@@ -933,7 +934,7 @@ File: ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>
 Package pdftex.def Info: ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf used on inpu
-t line 462.
+t line 464.
 (pdftex.def)             Requested size: 469.75502pt x 328.93951pt.
 
 <./figs/Figure_6_TestFunctions-crop.pdf, id=1137, 326.21875pt x 566.115pt>
@@ -941,7 +942,7 @@ File: ./figs/Figure_6_TestFunctions-crop.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_6_TestFunctions-crop.pdf>
 Package pdftex.def Info: ./figs/Figure_6_TestFunctions-crop.pdf used on input l
-ine 469.
+ine 471.
 (pdftex.def)             Requested size: 328.82707pt x 570.69186pt.
 
 <./figs/Figure_B1_B4_params_measuredstates.pdf, id=1138, 1027.84pt x 770.88pt>
@@ -949,32 +950,32 @@ File: ./figs/Figure_B1_B4_params_measuredstates.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_B1_B4_params_measuredstates.pdf>
 Package pdftex.def Info: ./figs/Figure_B1_B4_params_measuredstates.pdf used on 
-input line 476.
+input line 478.
 (pdftex.def)             Requested size: 469.75502pt x 352.31538pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 478.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 480.
 
 <./figs/B1_sims.pdf, id=1139, 596.2275pt x 659.46375pt>
 File: ./figs/B1_sims.pdf Graphic file (type pdf)
 
 <use ./figs/B1_sims.pdf>
-Package pdftex.def Info: ./figs/B1_sims.pdf used on input line 483.
+Package pdftex.def Info: ./figs/B1_sims.pdf used on input line 485.
 (pdftex.def)             Requested size: 469.75502pt x 519.582pt.
 
 
-LaTeX Warning: File `./figs/FigB4_sims.pdf' not found on input line 490.
+LaTeX Warning: File `./figs/FigB4_sims.pdf' not found on input line 492.
 
 
-! Package pdftex.def Error: File `./figs/FigB4_sims.pdf' not found.
+./Paper_v5.tex:492: Package pdftex.def Error: File `./figs/FigB4_sims.pdf' not 
+found.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.490 ...th=1.00\textwidth]{./figs/FigB4_sims.pdf}
+l.492 ...th=1.00\textwidth]{./figs/FigB4_sims.pdf}
                                                   
-? r
-OK, entering \nonstopmode...
+? 
 [26
 
  <./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>] [27 <./figs/Figure_6_TestFunction
@@ -1009,7 +1010,7 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v5.pdf (32 pages, 2124349 bytes).
+Output written on Paper_v5.pdf (32 pages, 2125689 bytes).
 PDF statistics:
  1319 PDF objects out of 1440 (max. 8388607)
  881 compressed objects within 9 object streams
