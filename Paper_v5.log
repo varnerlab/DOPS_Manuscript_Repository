@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 FEB 2016 08:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 MAR 2016 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -880,38 +880,33 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 [19]) [20]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 379.
+ [21
 
-! Extra alignment tab has been changed to \cr.
-<template> ... width\arrayrulewidth }\endtemplate 
-                                                  
-l.389 & 10pM &
-               0.0823 \\
-? r
-OK, entering \nonstopmode...
-[21
-
-] <./figs/Figure_1_Algorithm.pdf, id=88, 1517.67pt x 867.24pt>
+]
+<./figs/Figure_1_Algorithm.pdf, id=88, 676.5275pt x 584.1825pt>
 File: ./figs/Figure_1_Algorithm.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_1_Algorithm.pdf>
 Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 426.
-(pdftex.def)             Requested size: 469.75496pt x 310.22122pt.
- [22
-
- <./figs/Figure_1_Algorithm.pdf>]
-<./figs/Figure_2_CoagulationNetwork.pdf, id=384, 1003.75pt x 794.97pt>
-File: ./figs/Figure_2_CoagulationNetwork.pdf Graphic file (type pdf)
-
-<use ./figs/Figure_2_CoagulationNetwork.pdf>
-Package pdftex.def Info: ./figs/Figure_2_CoagulationNetwork.pdf used on input l
-ine 436.
-(pdftex.def)             Requested size: 469.75618pt x 434.31146pt.
+(pdftex.def)             Requested size: 469.75502pt x 405.64464pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23 <./figs/Figure_2_CoagulationNetwork.pdf>]
-<./figs/Figure_3_Errors_convergence_v2.pdf, id=468, 853.1875pt x 632.3625pt>
+[22 <./figs/Figure_1_Algorithm.pdf>]
+<./figs/Figure_2_Coagulation_v4.pdf, id=169, 794.97pt x 614.295pt>
+File: ./figs/Figure_2_Coagulation_v4.pdf Graphic file (type pdf)
+
+<use ./figs/Figure_2_Coagulation_v4.pdf>
+Package pdftex.def Info: ./figs/Figure_2_Coagulation_v4.pdf used on input line 
+436.
+(pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23 <./figs/Figure_2_Coagulation_v4.pdf>]
+<./figs/Figure_3_Errors_convergence_v2.pdf, id=1099, 853.1875pt x 632.3625pt>
 File: ./figs/Figure_3_Errors_convergence_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_3_Errors_convergence_v2.pdf>
@@ -921,8 +916,9 @@ t line 444.
  [24
 
 
+
  <./figs/Figure_3_Errors_convergence_v2.pdf>]
-<./figs/Figure_4_Sim_Train_E1_E5.pdf, id=487, 867.24pt x 607.26875pt>
+<./figs/Figure_4_Sim_Train_E1_E5.pdf, id=1118, 867.24pt x 607.26875pt>
 File: ./figs/Figure_4_Sim_Train_E1_E5.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_4_Sim_Train_E1_E5.pdf>
@@ -932,23 +928,23 @@ Package pdftex.def Info: ./figs/Figure_4_Sim_Train_E1_E5.pdf used on input line
  [25
 
  <./figs/Figure_4_Sim_Train_E1_E5.pdf>]
-<./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf, id=505, 867.24pt x 607.26875pt>
+<./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf, id=1136, 867.24pt x 607.26875pt>
 File: ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>
 Package pdftex.def Info: ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf used on inpu
 t line 462.
-(pdftex.def)             Requested size: 469.75827pt x 310.22188pt.
+(pdftex.def)             Requested size: 469.75502pt x 328.93951pt.
 
-<./figs/Figure_6_Ackley_Rast.pdf, id=506, 1027.84pt x 770.88pt>
-File: ./figs/Figure_6_Ackley_Rast.pdf Graphic file (type pdf)
+<./figs/Figure_6_TestFunctions-crop.pdf, id=1137, 326.21875pt x 566.115pt>
+File: ./figs/Figure_6_TestFunctions-crop.pdf Graphic file (type pdf)
 
-<use ./figs/Figure_6_Ackley_Rast.pdf>
-Package pdftex.def Info: ./figs/Figure_6_Ackley_Rast.pdf used on input line 469
-.
-(pdftex.def)             Requested size: 469.75502pt x 352.31538pt.
+<use ./figs/Figure_6_TestFunctions-crop.pdf>
+Package pdftex.def Info: ./figs/Figure_6_TestFunctions-crop.pdf used on input l
+ine 469.
+(pdftex.def)             Requested size: 328.82707pt x 570.69186pt.
 
-<./figs/Figure_B1_B4_params_measuredstates.pdf, id=507, 1027.84pt x 770.88pt>
+<./figs/Figure_B1_B4_params_measuredstates.pdf, id=1138, 1027.84pt x 770.88pt>
 File: ./figs/Figure_B1_B4_params_measuredstates.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_B1_B4_params_measuredstates.pdf>
@@ -958,37 +954,42 @@ input line 476.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 478.
 
-<./figs/B1_sims.pdf, id=508, 596.2275pt x 659.46375pt>
+<./figs/B1_sims.pdf, id=1139, 596.2275pt x 659.46375pt>
 File: ./figs/B1_sims.pdf Graphic file (type pdf)
 
 <use ./figs/B1_sims.pdf>
 Package pdftex.def Info: ./figs/B1_sims.pdf used on input line 483.
 (pdftex.def)             Requested size: 469.75502pt x 519.582pt.
- <./figs/FigB4_sims.pdf, id=509, 614.295pt x 794.97pt>
-File: ./figs/FigB4_sims.pdf Graphic file (type pdf)
-
-<use ./figs/FigB4_sims.pdf>
-Package pdftex.def Info: ./figs/FigB4_sims.pdf used on input line 490.
-(pdftex.def)             Requested size: 469.75502pt x 607.9196pt.
 
 
-LaTeX Warning: Float too large for page by 21.4896pt on input line 493.
+LaTeX Warning: File `./figs/FigB4_sims.pdf' not found on input line 490.
 
+
+! Package pdftex.def Error: File `./figs/FigB4_sims.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.490 ...th=1.00\textwidth]{./figs/FigB4_sims.pdf}
+                                                  
+? r
+OK, entering \nonstopmode...
 [26
 
- <./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>] [27 <./figs/Figure_6_Ackley_Rast.
-pdf>] [28 <./figs/Figure_B1_B4_params_measuredstates.pdf>] [29 <./figs/B1_sims.
-pdf>] [30 <./figs/FigB4_sims.pdf>] (./Paper_v5.aux) )
+ <./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>] [27 <./figs/Figure_6_TestFunction
+s-crop.pdf>] [28 <./figs/Figure_B1_B4_params_measuredstates.pdf>] [29 <./figs/B
+1_sims.pdf>] [30] (./Paper_v5.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 48 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7175 strings out of 493089
- 105581 string characters out of 6134842
- 193931 words of memory out of 5000000
- 10442 multiletter control sequences out of 15000+600000
- 34615 words of font info for 77 fonts, out of 8000000 for 9000
+ 7173 strings out of 493089
+ 105510 string characters out of 6134842
+ 193939 words of memory out of 5000000
+ 10439 multiletter control sequences out of 15000+600000
+ 34784 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,14n,41p,2217b,1056s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
@@ -1003,14 +1004,15 @@ cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v5.pdf (32 pages, 2503865 bytes).
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on Paper_v5.pdf (32 pages, 2124349 bytes).
 PDF statistics:
- 680 PDF objects out of 1000 (max. 8388607)
- 380 compressed objects within 4 object streams
+ 1319 PDF objects out of 1440 (max. 8388607)
+ 881 compressed objects within 9 object streams
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
