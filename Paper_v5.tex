@@ -389,6 +389,8 @@ We also observe that when these convergence rates are compared with DOPS, DOPS s
 \emph{Update particles within sub-swarms according to equation 3}\;
 }
 
+\emph{Find best particle $\mathcal{G}$ amongst all sub-swarms}\;
+
 \eIf{$besterror(j)\geq 0.99*besterror(j+1)$} {
  $failurecounter\leftarrow failurecounter+1$\;
  }
@@ -396,11 +398,16 @@ We also observe that when these convergence rates are compared with DOPS, DOPS s
  $failurecounter\leftarrow 0$\;
  }
  
- \If{$failurecounter\geq threshold$} {
- 	\emph{Run Dynamically Dimensioned Search with N-j function evaluations}\;
-}
-
-$j\leftarrow j+1$\;
+	 \eIf{$failurecounter\geq threshold$} {
+ 		
+		$\mathcal{G} \leftarrow DDS(\mathcal{G}, N-j)$\;
+		\Return $\mathcal{G}$ 
+	
+	}
+	{
+		$j\leftarrow j+1$\;
+	}
+			\Return $\mathcal{G}$
 }
 \caption{Dynamic Optimization with Particle Swarms}\label{algo_disjdecomp}
 \end{algorithm}\DecMargin{1em}
