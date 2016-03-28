@@ -30,9 +30,11 @@
 \usepackage{textcomp}
 \usepackage{multirow}
 \usepackage{amsmath}
+\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 
 \usepackage{algorithm2e}
+\usepackage{algpseudocode}
 %\usepackage[space]{cite}
 \urlstyle{rm}
 
@@ -352,6 +354,59 @@ We attempted to quantify the influence of sub-swarms and DDS phase on the error 
 
 We also observe that when these convergence rates are compared with DOPS, DOPS shows a very rapid drop when the swarm searches begin to saturate. The green region indicates when swarm search switches to a DDS based search. As we see in (Fig. ) the error convergence rates tend to remain mostly flat for the purely swarm searches with different swarm numbers. However in DOPS as soon as convergence rate begins to saturate it automatically switches to a DDS phase which leads to a more pronounced drop. Thus this automated switching strategy appears to be crucial in leading the algorithm out of local optima or saddle point regions. 
  
+\newpage
+%\section*{Pseudo Code.} 
+%\begin{algorithm}[H]
+%
+% \While{$besterror\leq $}{
+%  read current\;
+%  \eIf{understand}{
+%   go to next section\;
+%   current section becomes this one\;
+%   }{
+%   go back to the beginning of current section\;
+%  }
+% }
+% \caption{Dynamic Optimization with Particle Swarms}
+%\end{algorithm}
+
+\IncMargin{1em}
+\begin{algorithm}
+\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+\Input{A randomized swarm of particles of size $NP\times K$ and fixed number of function evaluations N}
+\Output{Optimized parameter vector of size $1\times K$ }
+\BlankLine
+\emph{Initialize the particles randomly and assign particles randomly to various sub-swarms}\;
+\While{$j\leq N$}{
+
+\If{mod(j,G)=0} {
+ \emph{Reassign particles to different sub-swarms}\;
+}
+
+\For{$i\leftarrow 1$ \KwTo $NS$}{\label{forins}
+\emph{Update particles within sub-swarms according to equation 3}\;
+}
+
+\eIf{$besterror(j)\geq 0.99*besterror(j+1)$} {
+ $failurecounter\leftarrow failurecounter+1$\;
+ }
+ {
+ $failurecounter\leftarrow 0$\;
+ }
+ 
+ \If{$failurecounter\geq threshold$} {
+ 	\emph{Run Dynamically Dimensioned Search with N-j function evaluations}\;
+}
+
+$j\leftarrow j+1$\;
+}
+\caption{Dynamic Optimization with Particle Swarms}\label{algo_disjdecomp}
+\end{algorithm}\DecMargin{1em}
+
+
+
 \clearpage
 \section*{Discussion}
 Our study presents a novel approach for high-dimensional parameter estimation in complex biological systems with relatively few function evaluations. In this approach we combined a variant of a well known meta heuristic particle swarm optimization with Dynamically Dimensioned Search (DDS). We tested our approach on an ODE model of coagulation with 148 parameters and 92 species. Coagulation is an ideal system to test our approach since the biology is well known and complex, with multiple feed back loops that are tightly regulated. We used experimental data under different conditions to obtain optimal parameters and used these parameters to make predictions against unseen experimental data. We obtained good fits and made sufficiently accurate enough predictions using parameters obtained from 4000 function evaluations. Further, we also used high-dimensional forms of commonly used test functions of global optimization and showed that we were able to find the global minimum for 300 dimensional Ackley and Rastrigin functions faster than other meta-heuristics. We also considered two recently published benchmark problems to test parameter optimization approaches and showed that we were able to retrieve the nominal parameter vector within 4000 function evaluations.
