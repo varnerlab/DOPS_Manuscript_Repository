@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 MAR 2016 13:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 APR 2016 16:09
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **Paper_v5.tex
 (./Paper_v5.tex
@@ -770,43 +769,62 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count123
 \algocf@algoframe=\box63
 \algocf@algobox=\box64
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count124
+\c@ALG@rem=\count125
+\c@ALG@nested=\count126
+\ALG@tlm=\skip75
+\ALG@thistlm=\skip76
+\c@ALG@Lnr=\count127
+\c@ALG@blocknr=\count128
+\c@ALG@storecount=\count129
+\c@ALG@tmpcounter=\count130
+\ALG@tmplength=\skip77
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (./Paper_v5.aux)
 \openout1 = `Paper_v5.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 96.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 94.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 96.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
+\scratchcounter=\count131
 \scratchdimen=\dimen161
 \scratchbox=\box65
-\nofMPsegments=\count125
-\nofMParguments=\count126
+\nofMPsegments=\count132
+\nofMParguments=\count133
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count127
+\MPscratchCnt=\count134
 \MPscratchDim=\dimen162
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
 \everyMPtoPDFconversion=\toks26
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -822,177 +840,176 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 126.
 )
-\CenteringLeftskip=\skip75
-\RaggedLeftLeftskip=\skip76
-\RaggedRightLeftskip=\skip77
-\CenteringRightskip=\skip78
-\RaggedLeftRightskip=\skip79
-\RaggedRightRightskip=\skip80
-\CenteringParfillskip=\skip81
-\RaggedLeftParfillskip=\skip82
-\RaggedRightParfillskip=\skip83
-\JustifyingParfillskip=\skip84
-\CenteringParindent=\skip85
-\RaggedLeftParindent=\skip86
-\RaggedRightParindent=\skip87
-\JustifyingParindent=\skip88
+\CenteringLeftskip=\skip78
+\RaggedLeftLeftskip=\skip79
+\RaggedRightLeftskip=\skip80
+\CenteringRightskip=\skip81
+\RaggedLeftRightskip=\skip82
+\RaggedRightRightskip=\skip83
+\CenteringParfillskip=\skip84
+\RaggedLeftParfillskip=\skip85
+\RaggedRightParfillskip=\skip86
+\JustifyingParfillskip=\skip87
+\CenteringParindent=\skip88
+\RaggedLeftParindent=\skip89
+\RaggedRightParindent=\skip90
+\JustifyingParindent=\skip91
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 96.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 96.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
 
-Overfull \hbox (20.09163pt too wide) in paragraph at lines 96--98
+Overfull \hbox (20.09163pt too wide) in paragraph at lines 98--100
 []\OT1/phv/b/n/17.28 Dynamic Op-ti-miza-tion with Par-ti-cle Swarms (DOPS): A m
 eta-
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 98.
+LaTeX Font Info:    Try loading font information for U+msa on input line 100.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 98.
+LaTeX Font Info:    Try loading font information for U+msb on input line 100.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 106.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 108.
  [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 121.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 123.
  [1] [1] [2] [3]
 [4
 
-] [5] [6] [7] [8
+]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 267.
+ [5] [6] [7] [8
 
-] [9] [10] [11] [12
+] [9] [10] [11] [12] [13
 
-] [13] [14] [15] (./Paper_v5.bbl [16
+] [14] [15] [16] (./Paper_v5.bbl
+[17
 
 ]
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 69.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1phv.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
-) [17] [18]
-[19]) [20]
+) [18]
+[19] [20]) [21]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 381.
- [21
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 443.
+ [22
 
 ]
-<./figs/Figure_1_Algorithm.pdf, id=88, 676.5275pt x 584.1825pt>
+<./figs/Figure_1_Algorithm.pdf, id=91, 676.5275pt x 584.1825pt>
 File: ./figs/Figure_1_Algorithm.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_1_Algorithm.pdf>
-Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 428.
+Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 490.
 (pdftex.def)             Requested size: 469.75502pt x 405.64464pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22 <./figs/Figure_1_Algorithm.pdf>]
-<./figs/Figure_2_Coagulation_v4.pdf, id=169, 794.97pt x 614.295pt>
+[23 <./figs/Figure_1_Algorithm.pdf>]
+<./figs/Figure_2_Coagulation_v4.pdf, id=173, 794.97pt x 614.295pt>
 File: ./figs/Figure_2_Coagulation_v4.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_2_Coagulation_v4.pdf>
 Package pdftex.def Info: ./figs/Figure_2_Coagulation_v4.pdf used on input line 
-438.
+500.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23 <./figs/Figure_2_Coagulation_v4.pdf>]
-<./figs/Figure_3_Errors_convergence_v2.pdf, id=1099, 853.1875pt x 632.3625pt>
+[24 <./figs/Figure_2_Coagulation_v4.pdf>]
+<./figs/Figure_3_Errors_convergence_v2.pdf, id=1102, 853.1875pt x 632.3625pt>
 File: ./figs/Figure_3_Errors_convergence_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_3_Errors_convergence_v2.pdf>
 Package pdftex.def Info: ./figs/Figure_3_Errors_convergence_v2.pdf used on inpu
-t line 446.
+t line 508.
 (pdftex.def)             Requested size: 469.75502pt x 348.17676pt.
- [24
+ [25
 
 
 
  <./figs/Figure_3_Errors_convergence_v2.pdf>]
-<./figs/Figure_4_Sim_Train_E1_E5.pdf, id=1118, 867.24pt x 607.26875pt>
+<./figs/Figure_4_Sim_Train_E1_E5.pdf, id=1121, 867.24pt x 607.26875pt>
 File: ./figs/Figure_4_Sim_Train_E1_E5.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_4_Sim_Train_E1_E5.pdf>
 Package pdftex.def Info: ./figs/Figure_4_Sim_Train_E1_E5.pdf used on input line
- 455.
+ 517.
 (pdftex.def)             Requested size: 469.75502pt x 328.93951pt.
- [25
+ [26
 
  <./figs/Figure_4_Sim_Train_E1_E5.pdf>]
-<./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf, id=1136, 867.24pt x 607.26875pt>
+<./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf, id=1139, 867.24pt x 607.26875pt>
 File: ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>
 Package pdftex.def Info: ./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf used on inpu
-t line 464.
+t line 526.
 (pdftex.def)             Requested size: 469.75502pt x 328.93951pt.
 
-<./figs/Figure_6_TestFunctions-crop.pdf, id=1137, 326.21875pt x 566.115pt>
+<./figs/Figure_6_TestFunctions-crop.pdf, id=1140, 326.21875pt x 566.115pt>
 File: ./figs/Figure_6_TestFunctions-crop.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_6_TestFunctions-crop.pdf>
 Package pdftex.def Info: ./figs/Figure_6_TestFunctions-crop.pdf used on input l
-ine 471.
+ine 533.
 (pdftex.def)             Requested size: 328.82707pt x 570.69186pt.
 
-<./figs/Figure_B1_B4_params_measuredstates.pdf, id=1138, 1027.84pt x 770.88pt>
+<./figs/Figure_B1_B4_params_measuredstates.pdf, id=1141, 1027.84pt x 770.88pt>
 File: ./figs/Figure_B1_B4_params_measuredstates.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_B1_B4_params_measuredstates.pdf>
 Package pdftex.def Info: ./figs/Figure_B1_B4_params_measuredstates.pdf used on 
-input line 478.
+input line 540.
 (pdftex.def)             Requested size: 469.75502pt x 352.31538pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 480.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 542.
 
-<./figs/B1_sims.pdf, id=1139, 596.2275pt x 659.46375pt>
+<./figs/B1_sims.pdf, id=1142, 596.2275pt x 659.46375pt>
 File: ./figs/B1_sims.pdf Graphic file (type pdf)
 
 <use ./figs/B1_sims.pdf>
-Package pdftex.def Info: ./figs/B1_sims.pdf used on input line 485.
+Package pdftex.def Info: ./figs/B1_sims.pdf used on input line 547.
 (pdftex.def)             Requested size: 469.75502pt x 519.582pt.
 
+<./figs/FigB4_sims.pdf, id=1143, 614.295pt x 794.97pt>
+File: ./figs/FigB4_sims.pdf Graphic file (type pdf)
 
-LaTeX Warning: File `./figs/FigB4_sims.pdf' not found on input line 492.
+<use ./figs/FigB4_sims.pdf>
+Package pdftex.def Info: ./figs/FigB4_sims.pdf used on input line 554.
+(pdftex.def)             Requested size: 469.75502pt x 607.9196pt.
 
 
-./Paper_v5.tex:492: Package pdftex.def Error: File `./figs/FigB4_sims.pdf' not 
-found.
+LaTeX Warning: Float too large for page by 21.4896pt on input line 557.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.492 ...th=1.00\textwidth]{./figs/FigB4_sims.pdf}
-                                                  
-? 
-[26
+[27
 
- <./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>] [27 <./figs/Figure_6_TestFunction
-s-crop.pdf>] [28 <./figs/Figure_B1_B4_params_measuredstates.pdf>] [29 <./figs/B
-1_sims.pdf>] [30] (./Paper_v5.aux) )
+ <./figs/Figure_5_Sim_Validate_E2_E4_E6.pdf>] [28 <./figs/Figure_6_TestFunction
+s-crop.pdf>] [29 <./figs/Figure_B1_B4_params_measuredstates.pdf>] [30 <./figs/B
+1_sims.pdf>] [31 <./figs/FigB4_sims.pdf>] (./Paper_v5.aux) )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 48 (\begingroup)
+### semi simple group (level 1) entered at line 50 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7173 strings out of 493089
- 105510 string characters out of 6134842
- 193939 words of memory out of 5000000
- 10439 multiletter control sequences out of 15000+600000
- 34784 words of font info for 78 fonts, out of 8000000 for 9000
+ 7639 strings out of 493089
+ 112319 string characters out of 6134842
+ 201449 words of memory out of 5000000
+ 10898 multiletter control sequences out of 15000+600000
+ 36248 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,14n,41p,2217b,1056s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,15n,41p,2217b,1127s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -1005,15 +1022,14 @@ cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v5.pdf (32 pages, 2125689 bytes).
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on Paper_v5.pdf (33 pages, 2142135 bytes).
 PDF statistics:
- 1319 PDF objects out of 1440 (max. 8388607)
- 881 compressed objects within 9 object streams
+ 1322 PDF objects out of 1440 (max. 8388607)
+ 883 compressed objects within 9 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
