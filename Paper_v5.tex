@@ -209,7 +209,7 @@ Taken together, these studies suggest DOPS is a promising meta-heuristic approac
 DOPS is a novel meta-heuristic which combines multi-swarm particle swarm methods with the dynamically dimensioned search approach of Shoemaker and colleagues (Fig. \ref{fig-algorithm}).
 The goal of DOPS is to estimate optimal or near optimal parameter vectors for high-dimensional biological models within a specified number of function evaluations.
 Toward this objective, DOPS begins by using a particle swarm search and then dynamically switches, using an adaptive switching criteria, to the DDS search phase.
-The particle swarm search uses multiple sub-swarms wherein each solution represented by a particle is updated using Equation \ref{eqn:update-rule}. The particle update is influenced by the best particle amongst all particles in the sub-swarm and the best solution found by the particle till the current iteration. This update rule however differs from a conventional PSO update wherein there are no velocity terms involved. The particle updates continue to happen within the sub-swarms for a certain number of iterations (or function evaluations) after which the sub-swarms are reorganized which is similar to the regrouping strategy described by Zhao et al. \cite{zhao2008dynamic}. DOPS switches out of this PSO phase based on an adaptive switching criteria that is a function of rate of error convergence. If the error represented by the best particle does not drop for a threshold number of function evaluations, DOPS switches automatically to the DDS search phase. The DDS search uses the best particle from the PSO search phase as its initial solution or candidate vector. Thereafter, the particle is greedily updated by perturbing a subset of dimensions for the remaining number of function evaluations. The number of dimensions perturbed is a monotonically decreasing function that generally depends on the number of function evaluations within the DDS phase.  
+The particle swarm search uses multiple sub-swarms wherein each solution represented by a particle is updated using equation \ref{eqn:update-rule}. The particle update is influenced by the best particle amongst all particles in the sub-swarm and the best solution found by the particle till the current iteration. This update rule however differs from a conventional PSO update wherein there are no velocity terms involved. The particle updates continue to happen within the sub-swarms for a certain number of iterations (or function evaluations) after which the sub-swarms are reorganized which is similar to the regrouping strategy described by Zhao et al. \cite{zhao2008dynamic}. DOPS switches out of this PSO phase based on an adaptive switching criteria that is a function of error convergence rate. If the error represented by the best particle does not drop for a threshold number of function evaluations, DOPS switches automatically to the DDS search phase. The DDS search uses the best particle from the PSO search phase as its initial solution or candidate vector. Thereafter, the particle is greedily updated by perturbing a subset of dimensions for the remaining number of function evaluations. The number of dimensions perturbed is a monotonically decreasing function that generally depends on the number of function evaluations within the DDS phase.  
 
 \subsection*{DOPS minimized benchmark problems with a fixed number of function evaluations.}
 We tested DOPS and four other meta-heuristic approaches on the minimization of the Ackley and Rastrigin functions.
@@ -367,7 +367,7 @@ where $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ were adjustable parameters
 $\mathcal{G}_{k}$ denotes the best solution found over all particles within sub-swarm $\mathcal{S}_{k}$.
 The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model parameters ($\mathcal{K}\times{1}$).
 Equation (3) is similar to the general particle swarm update rule, however, it does not contain velocity terms.
-In DOPS, the parameter $\theta_{1,j-1}$ is similar to the inertia weight parameter for the velocity term described by Shi and Eberhart \cite{shi1999empirical}. In this study Shi and Eberhart propose a linearly decreasing inertia weight to improve convergence properties of PSO. $\theta_{1,j-1}$ is an analogous equivalent to the inertia weight and uses the same rule described by Shi and Eberhart to adaptively change with the number of function evaluations and is updated according to:
+In DOPS, the parameter $\theta_{1,j-1}$ is similar to the inertia weight parameter for the velocity term described by Shi and Eberhart \cite{shi1999empirical}. In this study Shi and Eberhart propose a linearly decreasing inertia weight to improve convergence properties of PSO. $\theta_{1,j-1}$ is inspired from this idea and also from the idea of decreasing perturbation probability proposed by Tolson and Shoemaker \cite{tolson2007dynamically}. It is an analogous equivalent to inertia weight on velocity. However $\theta_{1,j-1}$ places inertia on the position rather than velocity and uses the same rule described by Shi and Eberhart to adaptively change with the number of function evaluations. It is updated according to:
 \begin{eqnarray}
 	\mathbf \theta_{1,j}&=&\frac{(\mathcal{N}-{j})*({w}_{max}-{w}_{min}))}{(\mathcal{N}-{1})} + {w}_{min}
 \end{eqnarray}
@@ -499,7 +499,7 @@ This study was supported by an award from the Army Research Office (ARO \#59155-
 
 \begin{table}[h]
 \centering
-\caption{Error Analysis.}
+\caption[.]{Error Analysis. Normalized standard error showing the agreement between coagulation model dynamics and the coagulation experimental data. The model is trained on the 5~nM and the 5~pM cases to obtain the optimal parameters. Using these optimal parameters, dynamics of coagulation are predicted with varying initiator concentrations (500~pM, 50~pM and 10~pM). The normalized S.E. is defined as \( N.S.E.=(1/max(\mathbf{X}))*(\lVert (\mathbf{Y},\mathbf{X}) \rVert /sqrt$(N)$) \) where \textbf{X} is the experimental data, \textbf{Y} is the model simulation data interpolated on experimental time and $N$ is the total number of experimental time points.}
 \label{table:Error-Analysis}
 \begin{center}
 \begin{tabular}{ r|ll}
@@ -507,9 +507,9 @@ This study was supported by an award from the Army Research Office (ARO \#59155-
 TF/FVIIa concentration& Normalized S.E.& Data Set Category\\\\
 \hline\\
 5~nM & 0.0376 & Training \\
-500~pM & 0.0564 & Validation\\
-50~pM & 0.1125 & Validation\\
-10~pM & 0.0823 & Validation\\
+500~pM & 0.0564 & Prediction\\
+50~pM & 0.1125 & Prediction\\
+10~pM & 0.0823 & Prediction\\
 5~pM & 0.0338 & Training\\\\
 \hline
 \end{tabular}
@@ -520,7 +520,7 @@ TF/FVIIa concentration& Normalized S.E.& Data Set Category\\\\
 
 \begin{table}[h]
 \centering
-\caption{Table with optimization settings and results for the coagulation problem, the benchmarks and test functions using DOPS. For each problem the bounds on the parameter vector, the total number of function evaluations, the best initial objective value and the best final objective value are specified. Here pnom indicates the nominal or true parameter vector of the model. Nominal objective value represents the objective value using the true parameter vector or the nominal parameter vector. The CPU time is the time taken for the problem on a 2.4GHz Intel Xeon Architecture running Matlab 2014b.}
+\caption{Table with optimization settings and results for the coagulation problem, the benchmarks and test functions using DOPS. For each problem the bounds on the parameter vector, the total number of function evaluations, the best initial objective value and the best final objective value are specified. Here $pnom$ indicates the nominal or true parameter vector of the model. Nominal objective value represents the objective value using the true parameter vector or the nominal parameter vector. The CPU time is the time taken for the problem on a 2.4GHz Intel Xeon Architecture running Matlab 2014b.}
 \label{table:benchmark-problems}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{r|lllll}
@@ -603,7 +603,8 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure_7_ErrorSwarms_v2.pdf}
-\caption{Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $N$= 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - Orange respectively) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
+\caption{DOPS begins by using a particle swarm search (color:pale brown) and then dynamically switches (color:green), using an adaptive switching criteria, to the DDS search phase (color:white).
+The particle swarm search uses multiple sub-swarms wherein each solution represented by a particle is updated using equation \ref{eqn:update-rule}. The particle update is influenced by the best particle amongst all particles in the sub-swarm and the best solution found by the particle till the current iteration. This update rule however contains no velocity terms. The particle updates continue to happen within the sub-swarms for a certain number of iterations (or function evaluations) after which the sub-swarms are reorganized which is similar to the regrouping strategy described by Zhao et al. \cite{zhao2008dynamic}. DOPS switches out of this PSO phase based on an adaptive switching criteria (color:green) that is a function of error convergence rate. If the error represented by the best particle does not drop for a threshold number of function evaluations, DOPS switches automatically to the DDS search phase. Since the algorithm is stochastic, the switch out can happen at a different function evaluation in each trial. The DDS search then uses the best particle from the PSO search phase as its initial solution or candidate vector. This particle is greedily updated by perturbing a subset of dimensions for the remaining number of function evaluations. The number of dimensions perturbed is a monotonically decreasing function that generally depends on the number of function evaluations within the DDS phase.  
 }\label{fig-sub-swarms}
 \end{figure}
 
