@@ -279,7 +279,7 @@ A differentiating feature of DOPS compared to other meta-heuristics was the rapi
 This drop occurred during the swarm phase and was punctuated by the switch to the dynamically dimensioned search phase of the approach.
 We quantified the influence of the number of sub-swarms and switch to the DDS phase on error convergence by comparing DOPS with and without DDS for different numbers of sub-swarms (Fig. \ref{fig-sub-swarms}).
 We considered only the multi swarm search without the DDS phase for $\mathcal{N}$ = 4000 function evaluations on the coagulation model.
-While doing the multi swarm search without DDS, we used one, two, four, five and eight sub-swarms, with a total of 40 particles dived evenly amongst the swarms.
+While doing the multi swarm search without DDS, we used one, two, four, five and eight sub-swarms, with a total of 40 particles divided evenly amongst the swarms.
 Hence we did not consider swarm numbers of three and seven.
 All the other parameters remained the same for each of these searches.
 Generally, the higher sub-swarm numbers had faster convergence.
@@ -398,7 +398,7 @@ If the simulation error stagnates for example, does not change by more than 1\% 
 exploring parameter space using a DDS approach.
 
 \subsubsection*{Phase 2: DDS phase.}
-At the conclusion of the swarm phase, the overall best particle, $\mathcal{G}_{k}$, over the k sub-swarms was to initalize the DDS phase.
+At the conclusion of the swarm phase, the overall best particle, $\mathcal{G}_{k}$, over the k sub-swarms was to initialize the DDS phase.
 DOPS takes $\left(1-\mathcal{F}\right)*\mathcal{N}$ function evaluations in the DDS phase and then terminates the search.
 For the DDS phase, the best parameter estimate was updated using the rule:
 \begin{equation}
@@ -412,16 +412,16 @@ and $\sigma$ denotes the perturbation amplitude:
 \begin{equation}
 	\sigma = {R}(\mathbf{p}^U - \mathbf{p}^L)
 \end{equation}
-where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a probability function $\mathcal{P}_{j}$ that represented the probability whether a specific dimension $j$ was perturbed or not.  This function is a monotonically decreasing function that decreases with the number of function evaluations. $\mathcal{P}_{j}$ can be any monotonically decreasing function, in our approach we used the following function:
+where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a probability function $\mathcal{P}_{i}$ that represents a threshold probability for determining whether a specific dimension $j$ was perturbed or not.  This function is a monotonically decreasing function that decreases with the number of function evaluations. $\mathcal{P}_{i}$ can be any monotonically decreasing function, in our approach we used the following function:
 \begin{eqnarray}
 	%\mathcal{P}_{j}&=&{1}-\log(j/ (\beta({1}-\mathcal{FR})*\mathbf{N}))
-	\mathcal{P}_{j}&=&{1}-\log(i/ (({1}-\mathcal{FR})*\mathbf{N}))
+	\mathcal{P}_{i}&=&{1}-\log(i/ (({1}-\mathcal{F})*\mathbf{N}))
 \end{eqnarray}
 %where $\beta$ is the perturbation frequency probability modulator.
-where $i$ is the current iteration. Thus the probability that a dimension $j$ is perturbed decreases as the number of iterations or function evaluations indicated by $i$ increase.
+where $i$ is the current iteration. After $\mathcal{P}_{i}$ is determined, we assign a probability $\mathcal{P}_{j}$ from a uniform distribution for each dimension $j$. If $\mathcal{P}_{j}$ is less than $\mathcal{P}_{i}$ the dimension is included in \textbf{J}. Thus the probability that a dimension $j$ is perturbed decreases as the number of iterations or function evaluations indicated by $i$ increase.
 %Thus the number of dimensions of the candidate vector that are updated or perturbed decreases with the as the number of function evaluations increase. T
 These updates are greedy in nature, so $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than the old one $\mathcal{G}$. The reflection boundary conditions in equation 5, the update function described in equations 6 and 7, the selection probability in equation 8 are the means by which DDS ideas are incorporated into DOPS.
-The fraction of evaluations $\mathcal{FR}$  within the swarm phase is based on a switching strategy wherein the switch from swarm phase to DDS phase happens when the error due to the best solution does not drop more than 1\% of the original error, continuously for more than a prescribed number of function evaluations. This allows the solution to quickly jump out of local optima and avoid any convergence issues that are generally associated with swarm based searches.
+The fraction of evaluations $\mathcal{F}$  within the swarm phase is based on a switching strategy wherein the switch from swarm phase to DDS phase happens when the error due to the best solution does not drop more than 1\% of the original error, continuously for more than a prescribed number of function evaluations. This allows the solution to quickly jump out of local optima and avoid any convergence issues that are generally associated with swarm based searches.
 
 \newpage
 %\section*{Pseudo Code.}
@@ -603,8 +603,9 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure_7_ErrorSwarms_v2.pdf}
-\caption{DOPS begins by using a particle swarm search (color:pale brown) and then dynamically switches (color:green), using an adaptive switching criteria, to the DDS search phase (color:white).
+\caption{DOPS (color:black) begins by using a particle swarm search (color:pale brown) and then dynamically switches (color:green), using an adaptive switching criteria, to the DDS search phase (color:white).
 The particle swarm search uses multiple sub-swarms wherein each solution represented by a particle is updated using equation \ref{eqn:update-rule}. The particle update is influenced by the best particle amongst all particles in the sub-swarm and the best solution found by the particle till the current iteration. This update rule however contains no velocity terms. The particle updates continue to happen within the sub-swarms for a certain number of iterations (or function evaluations) after which the sub-swarms are reorganized which is similar to the regrouping strategy described by Zhao et al. \cite{zhao2008dynamic}. DOPS switches out of this PSO phase based on an adaptive switching criteria (color:green) that is a function of error convergence rate. If the error represented by the best particle does not drop for a threshold number of function evaluations, DOPS switches automatically to the DDS search phase. Since the algorithm is stochastic, the switch out can happen at a different function evaluation in each trial. The DDS search then uses the best particle from the PSO search phase as its initial solution or candidate vector. This particle is greedily updated by perturbing a subset of dimensions for the remaining number of function evaluations. The number of dimensions perturbed is a monotonically decreasing function that generally depends on the number of function evaluations within the DDS phase.  
+We compared the performance of DOPS with multi-swarm searches without DDS to quantify the effect of number of sub-swarms. We used one, two, four, five and eight sub-swarms, with a total of 40 particles divided evenly amongst the swarms. The convergence rates with higher swarm numbers is typically higher but there is no pronounced difference amongst four, five and eight. When the multi-swarm only searches tend to saturate DOPS shows a rapid drop due to a switch to  the DDS phase. 
 }\label{fig-sub-swarms}
 \end{figure}
 
