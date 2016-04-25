@@ -155,7 +155,7 @@ Taken together, DOPS is a promising meta-heuristic approach for the estimation o
 \section*{Introduction}
 
 Cells process nutrients and respond to changes in their environment using complex biochemical networks. These networks contain thousands of components
-interconnected through nonlinear enzyme catalyzed reactions. Mathematical modeling has evolved as a powerful paradigm to analyze, and ultimately design these complex networks \cite{assmus2006dynamics, Riel:2006aa,Jaqaman:2006aa,kitano2002systems,hood2004systems}. Mathematical modeling of biochemical networks is often an iterative process.
+interconnected through nonlinear enzyme catalyzed reactions. Mathematical modeling has evolved as a powerful paradigm to analyze, and ultimately design these complex networks \cite{assmus2006dynamics, Riel2006aa,Jaqaman:2006aa,kitano2002systems,hood2004systems}. Mathematical modeling of biochemical networks is often an iterative process.
 First, models are formulated from biochemical knowledge, and then model parameters are estimated using experimental data \cite{Aldridge:2006aa,banga2008optimization,ashyraliyev2009systems}.
 Parameter estimation is typically framed as a non-linear optimization problem wherein the residual (or objective function) between experimental data and model simulations is minimized using an optimization strategy \cite{moles2003parameter}. Optimal parameters obtained from model training are then used to validate the model on unseen experimental data.
 If validation fails, model construction and calibration are repeated iteratively until satisfactory results are obtained.
@@ -169,13 +169,13 @@ steepest descent methods or Levenberg-Marquardt \cite{more1978levenberg} incapab
 Though deterministic global optimization techniques (for example algorithms based on branch and bound) can handle non-linearity and multi-modality \cite{esposito2000deterministic,horst2013global},
 the absence of derivative information, discontinuity of the objective functions, non-smooth regions or the lack of knowledge about the objective function hampers these techniques.
 
-Meta-heuristic stochastic optimization approaches like Genetic Algorithms (GAs) [ADI-REF], Simulated Annealing (SA) \cite{kirkpatrick1983optimization},
-Evolutionary Programming [ADI-REF] and population based searches like Differential Evolution (DE) \cite{storn1997differential} have shown promise on nonlinear multi-modal problems \cite{sun2012parameter}.
+Meta-heuristic stochastic optimization approaches like Genetic Algorithms (GAs) \cite{goldberg2006genetic}, Simulated Annealing (SA) \cite{kirkpatrick1983optimization},
+Evolutionary Programming \cite{fogel2009artificial} and population based searches like Differential Evolution (DE) \cite{storn1997differential} have shown promise on nonlinear multi-modal problems \cite{sun2012parameter}.
 These techniques do not make any assumptions about the structure of objective function nor do they require \textit{a~priori} information about the objective function.
 Though they do not guarantee strong convergence, these approaches are effective in finding near optimal solutions.
 Mendes et al. \cite{mendes1998non} used simulated annealing to estimate rate constants for the irreversible inhibition of HIV proteinase,
-Modchang et al. \cite{modchang2008mathematical} used a genetic algorithm to estimate parameters for a model of signal transduction [ADI-EXPAND],
-differential evolution approaches have also been effective on various biological problems \cite{tsai2005evolutionary,wang2001hybrid,noman2007inferring}.
+Modchang et al. \cite{modchang2008mathematical} used a genetic algorithm (GA) to estimate parameters for a model of G-protein-coupled receptors(GPCRs) mediated signal transduction. The parameters obtained using GA helped qualitatively ascertain the efficacy and potency of two G-protein agonists - CPA and NECA. 
+Differential evolution approaches have also been effective on various biological problems \cite{tsai2005evolutionary,wang2001hybrid,noman2007inferring}.
 Tashkova et al. compared different meta-heuristics for parameter estimation on a dynamic model of endocytosis and showed that DE was the most effective \cite{tashkova2011parameter}.
 Banga and co-workers have also successfully applied scatter-search methods to estimate parameters on non-linear biological processes \cite{villaverde2012cooperative,rodriguez2006novel,egea2007scatter}.
 Hybrid approaches that combine a meta-heuristic with a local optimization search, wherein a near globally optimal solution obtained using a meta-heuristic is refined using a local search have also become popular.
@@ -192,8 +192,7 @@ Thus performing a large number of function evaluations is not desirable (and per
 In this study, we developed Dynamic Optimization with Particle Swarms (DOPS), a novel meta-heuristic that combines the global search capability of multi-swarm particle swarm optimization and dynamically dimensioned search (DDS). The objective of DOPS is to obtain near optimal parameter estimates for large biochemical models within a relatively few function evaluations.
 DOPS uses a multi-swarm particle swarm optimization technique to generate candidate solution vectors which are then greedily updated using dynamically dimensioned search. We first considered a model of human coagulation cascade to test the performance of DOPS. Coagulation is a large, complex biochemical network involving strong positive feedback.
 We then tested the performance of DOPS on commonly used test functions for global optimization (Ackley and Rosenbrock) and published biochemical parameter estimation benchmark problems \cite{villaverde2015biopredyn}. DOPS outperformed common meta-heuristic approaches like Differential Evolution (DE), Simulated Annealing (SA) and dynamically dimensioned search (DDS) on both the test functions and the coagulation model.
-DOPS also performed well on the benchmark problems where it outperformed enhanced scatter search (eSS) and recovered the nominal parameters with only 4000 function evaluations ([ADI-compared with what?])
-across all the benchmark problems considered.
+We also compared the performance of DOPS against enhanced scatter search (eSS) on two benchmark problems published by Villaverde and co-workers\cite{villaverde2015biopredyn}. We fixed the number of function evaluations to 4000 for both the benchmark problems without pre-optimizing any algorithmic parameters. DOPS recovered the nominal parameters and surprisingly did so faster than eSS which took nearly an order of function evaluations more than DOPS in both the cases.
 Taken together, these studies suggest DOPS is a promising meta-heuristic approach for the estimation of biochemical model parameters in relatively few function evaluations.
 
 % Extra text from the introduction -
@@ -210,12 +209,11 @@ Taken together, these studies suggest DOPS is a promising meta-heuristic approac
 DOPS is a novel meta-heuristic which combines multi-swarm particle swarm methods with the dynamically dimensioned search approach of Shoemaker and colleagues (Fig. \ref{fig-algorithm}).
 The goal of DOPS is to estimate optimal or near optimal parameter vectors for high-dimensional biological models within a specified number of function evaluations.
 Toward this objective, DOPS begins by using a particle swarm search and then dynamically switches, using an adaptive switching criteria, to the DDS search phase.
-[FINISH GENERIC DESCRIPTION OF APPROACH]
-
+The particle swarm search uses multiple sub-swarms wherein each solution represented by a particle is updated using Equation \ref{eqn:update-rule}. The particle update is influenced by the best particle amongst all particles in the sub-swarm and the best solution found by the particle till the current iteration. This update rule however differs from a conventional PSO update wherein there are no velocity terms involved. The particle updates continue to happen within the sub-swarms for a certain number of iterations (or function evaluations) after which the sub-swarms are reorganized which is similar to the regrouping strategy described by Zhao et al. \cite{zhao2008dynamic}. DOPS switches out of this PSO phase based on an adaptive switching criteria that is a function of rate of error convergence. If the error represented by the best particle does not drop for a threshold number of function evaluations, DOPS switches automatically to the DDS search phase. The DDS search uses the best particle from the PSO search phase as its initial solution or candidate vector. Thereafter, the particle is greedily updated by perturbing a subset of dimensions for the remaining number of function evaluations. The number of dimensions perturbed is a monotonically decreasing function that generally depends on the number of function evaluations within the DDS phase.  
 
 \subsection*{DOPS minimized benchmark problems with a fixed number of function evaluations.}
 We tested DOPS and four other meta-heuristic approaches on the minimization of the Ackley and Rastrigin functions.
-DOPS performed similarly or outperformed the other meta-heuristic approaches on both of these test functions (Fig. \ref{fig-testfunctions}).
+DOPS performed similarly or outperformed the other meta-heuristic approaches on both of these test functions (Fig.\ref{fig-testfunctions}).
 The Ackley and Rastrigin functions both have multiple local extrema and attain a global minimum value of zero.
 In each case, we fixed the maximum number of function evaluations at $\mathcal{N}$ = 4000 and ran 25 independent experiments with different initial parameter vectors.
 DOPS found optimal or near optimal solutions for both the 10-dimensional Ackley (Fig. \ref{fig-testfunctions}A) and Rastrigin (Fig. \ref{fig-testfunctions}B) functions within the budget of function evaluations.
@@ -369,11 +367,11 @@ where $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ were adjustable parameters
 $\mathcal{G}_{k}$ denotes the best solution found over all particles within sub-swarm $\mathcal{S}_{k}$.
 The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model parameters ($\mathcal{K}\times{1}$).
 Equation (3) is similar to the general particle swarm update rule, however, it does not contain velocity terms.
-In DOPS the parameter $\theta_{1,j-1}$ depends upon the function evaluations and is updated according to:
+In DOPS, the parameter $\theta_{1,j-1}$ is similar to the inertia weight parameter for the velocity term described by Shi and Eberhart \cite{shi1999empirical}. In this study Shi and Eberhart propose a linearly decreasing inertia weight to improve convergence properties of PSO. $\theta_{1,j-1}$ is an analogous equivalent to the inertia weight and uses the same rule described by Shi and Eberhart to adaptively change with the number of function evaluations and is updated according to:
 \begin{eqnarray}
-	\mathbf \theta_{1,j}&=&\frac{(\mathcal{N}-{j})*(\mathbf{w}_{max}-\mathbf{w}_{min}))}{(\mathcal{N}-{1})} + \mathbf{w}_{min}
+	\mathbf \theta_{1,j}&=&\frac{(\mathcal{N}-{j})*({w}_{max}-{w}_{min}))}{(\mathcal{N}-{1})} + {w}_{min}
 \end{eqnarray}
-where $\mathcal{N}$ represents the total number of function evaluations, $\mathbf{w}_{max}$ and $\mathbf{w}_{min}$ are the maximum and minimum inertia weights, respectively.
+where $\mathcal{N}$ represents the total number of function evaluations, ${w}_{max}$ and ${w}_{min}$ are the maximum and minimum inertia weights, respectively.
 While updating the particles, we made sure all dimensions of the solution represented by the particle were within bounds using a set of reflection boundary conditions:
 
 \begin{eqnarray*}
@@ -404,24 +402,25 @@ At the conclusion of the swarm phase, the overall best particle, $\mathcal{G}_{k
 DOPS takes $\left(1-\mathcal{F}\right)*\mathcal{N}$ function evaluations in the DDS phase and then terminates the search.
 For the DDS phase, the best parameter estimate was updated using the rule:
 \begin{equation}
-  \mathcal{G}_{new}(\mathbf{J})=\begin{cases}
+  \mathcal{G}_{new}({J})=\begin{cases}
     \mathcal{G}(\mathbf{J})+\mathbf{r}_{normal}(\mathbf{J})\sigma(\mathbf{J}), & \text{if $\mathcal{G}_{new}(\mathbf{J})<\mathcal{G}(\mathbf{J})$}.\\
     \mathcal{G}(\mathbf{J}), & \text{otherwise}.
   \end{cases}
 \end{equation}
-where $\mathbf{J}$ represents the set containing the specific dimensions being perturbed, ${r}_{normal}$ denotes a normal random vector of the same dimensions as $\mathcal{G}$,
+where $\mathbf{J}$ is a vector representing the subset of dimensions that are being perturbed, $\mathbf{r}_{normal}$ denotes a normal random vector of the same dimensions as $\mathcal{G}$,
 and $\sigma$ denotes the perturbation amplitude:
 \begin{equation}
-	\sigma = \mathbf{R}(\mathcal{MAX} -\mathcal{MIN})
+	\sigma = {R}(\mathbf{p}^U - \mathbf{p}^L)
 \end{equation}
-where $\mathbf{R}$ is the scalar perturbation size parameter, $\mathcal{MAX}$ and $\mathcal{MIN}$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a probability function $\mathcal{P}_{j}$ that represented the probability whether a specific dimension $j$ was perturbed or not.  T
-his function is a monotonically decreasing function that decreases with the number of function evaluations. $\mathcal{P}_{j}$ can be any monotonically decreasing function, in our approach we used the following function:
+where ${R}$ is the scalar perturbation size parameter, $\mathbf{p}^U$ and $\mathbf{p}^L$ are ($\mathcal{K}\times{1}$) vectors that represent the maximum and minimum bounds on each dimension. The set $\mathbf{J}$ was constructed using a probability function $\mathcal{P}_{j}$ that represented the probability whether a specific dimension $j$ was perturbed or not.  This function is a monotonically decreasing function that decreases with the number of function evaluations. $\mathcal{P}_{j}$ can be any monotonically decreasing function, in our approach we used the following function:
 \begin{eqnarray}
 	%\mathcal{P}_{j}&=&{1}-\log(j/ (\beta({1}-\mathcal{FR})*\mathbf{N}))
-	\mathcal{P}_{j}&=&{1}-\log(j/ (({1}-\mathcal{FR})*\mathbf{N}))
+	\mathcal{P}_{j}&=&{1}-\log(i/ (({1}-\mathcal{FR})*\mathbf{N}))
 \end{eqnarray}
 %where $\beta$ is the perturbation frequency probability modulator.
-Thus the number of dimensions of the candidate vector that are updated or perturbed decreases with the as the number of function evaluations increase. These updates are greedy in nature, so $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than the old one $\mathcal{G}$. The decrease of weight function in equation 4, reflection boundary conditions in equation 5, the update function described in equations 6 and 7, the selection probability in equation 8 are the means by which DDS ideas are incorporated into DOPS.
+where $i$ is the current iteration. Thus the probability that a dimension $j$ is perturbed decreases as the number of iterations or function evaluations indicated by $i$ increase.
+%Thus the number of dimensions of the candidate vector that are updated or perturbed decreases with the as the number of function evaluations increase. T
+These updates are greedy in nature, so $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than the old one $\mathcal{G}$. The reflection boundary conditions in equation 5, the update function described in equations 6 and 7, the selection probability in equation 8 are the means by which DDS ideas are incorporated into DOPS.
 The fraction of evaluations $\mathcal{FR}$  within the swarm phase is based on a switching strategy wherein the switch from swarm phase to DDS phase happens when the error due to the best solution does not drop more than 1\% of the original error, continuously for more than a prescribed number of function evaluations. This allows the solution to quickly jump out of local optima and avoid any convergence issues that are generally associated with swarm based searches.
 
 \newpage
@@ -503,15 +502,15 @@ This study was supported by an award from the Army Research Office (ARO \#59155-
 \caption{Error Analysis.}
 \label{table:Error-Analysis}
 \begin{center}
-\begin{tabular}{ r|l }
+\begin{tabular}{ r|ll}
 \hline\\
-TF/FVIIa concentration& Normalized S.E.  \\\\
+TF/FVIIa concentration& Normalized S.E.& Data Set Category\\\\
 \hline\\
-5~nM & 0.0376 \\
-500~pM & 0.0564\\
-50~pM & 0.1125 \\
-10~pM & 0.0823 \\
-5~pM & 0.0338 \\\\
+5~nM & 0.0376 & Training \\
+500~pM & 0.0564 & Validation\\
+50~pM & 0.1125 & Validation\\
+10~pM & 0.0823 & Validation\\
+5~pM & 0.0338 & Training\\\\
 \hline
 \end{tabular}
 \end{center}
@@ -521,7 +520,7 @@ TF/FVIIa concentration& Normalized S.E.  \\\\
 
 \begin{table}[h]
 \centering
-\caption{Table with optimization settings and results for the coagulation problem, the benchmarks and test functions using DOPS. For each problem the bounds on the parameter vector, the total number of function evaluations, the best initial objective value and the best final objective value are specified. Nominal objective value represents the objective value using the true parameter vector or the nominal parameter vector. The CPU time is the time taken for the problem on a 2.4GHz Intel Xeon Architecture running Matlab 2014b.}
+\caption{Table with optimization settings and results for the coagulation problem, the benchmarks and test functions using DOPS. For each problem the bounds on the parameter vector, the total number of function evaluations, the best initial objective value and the best final objective value are specified. Here pnom indicates the nominal or true parameter vector of the model. Nominal objective value represents the objective value using the true parameter vector or the nominal parameter vector. The CPU time is the time taken for the problem on a 2.4GHz Intel Xeon Architecture running Matlab 2014b.}
 \label{table:benchmark-problems}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{r|lllll}
