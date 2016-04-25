@@ -174,7 +174,7 @@ Evolutionary Programming \cite{fogel2009artificial} and population based searche
 These techniques do not make any assumptions about the structure of objective function nor do they require \textit{a~priori} information about the objective function.
 Though they do not guarantee strong convergence, these approaches are effective in finding near optimal solutions.
 Mendes et al. \cite{mendes1998non} used simulated annealing to estimate rate constants for the irreversible inhibition of HIV proteinase,
-Modchang et al. \cite{modchang2008mathematical} used a genetic algorithm (GA) to estimate parameters for a model of G-protein-coupled receptors(GPCRs) mediated signal transduction. The parameters obtained using GA helped qualitatively ascertain the efficacy and potency of two G-protein agonists - CPA and NECA. 
+Modchang et al. \cite{modchang2008mathematical} used a genetic algorithm (GA) to estimate parameters for a model of G-protein-coupled receptors (GPCRs) mediated signal transduction. The parameters obtained using GA helped qualitatively ascertain the efficacy and potency of two G-protein agonists - N6-cyclopentyladenosine (CPA) and 5'-N-ethylcarboxamidoadenosine (NECA). 
 Differential evolution approaches have also been effective on various biological problems \cite{tsai2005evolutionary,wang2001hybrid,noman2007inferring}.
 Tashkova et al. compared different meta-heuristics for parameter estimation on a dynamic model of endocytosis and showed that DE was the most effective \cite{tashkova2011parameter}.
 Banga and co-workers have also successfully applied scatter-search methods to estimate parameters on non-linear biological processes \cite{villaverde2012cooperative,rodriguez2006novel,egea2007scatter}.
@@ -226,9 +226,9 @@ Next, we tested DOPS on benchmark biochemical models of varying complexity.
 Villaverde and co-workers published a set of benchmark biochemical problems to evaluate parameter estimation methods \cite{villaverde2015biopredyn}.
 They ranked ordered these example problems by computational cost from most to least expensive.
 We evaluated the performance of DOPS on problems from the least and most expensive categories.
-The least expensive problem (henceforth referred to as problem B4) was a metabolic model of Chinese Hamster Ovary (CHO) with 35 metabolites, 32 reactions and 117 parameters.
+The least expensive problem (henceforth referred to as problem B4) was a metabolic model of Chinese Hamster Ovary (CHO) with 35 metabolites, 32 reactions and 117 parameters \cite{villaverde2014high}.
 The biochemical reactions were modeled using modular rate laws and the generalized form of Michaelis-Menten kinetics.
-The expensive problem was a genome scale kinetic model of \textit{Saccharomyces~cerevisiae} with 261 reactions, 262 variables and 1759 parameters (henceforth referred to as problem B1). In both cases, synthetic time series data sets were generated using known parameter values, these data were then used by the parameter estimation methods.
+The expensive problem was a genome scale kinetic model of \textit{Saccharomyces~cerevisiae} with 261 reactions, 262 variables and 1759 parameters \cite {smallbone2013large}(henceforth referred to as problem B1). In both cases, synthetic time series data sets were generated using known parameter values, these data were then used by the parameter estimation methods.
 For problem B1, the time series data consisted of 44 observables, and for problem B4 the data corresponded to 13 different metabolite measurement sets.
 We fixed the number of function evaluations at $\mathcal{N}$ = 4000, and trained both models against the synthetic experimental data.
 In both cases we found good fits  (Fig. \ref{fig-sims-b1} and Fig. \ref{fig-sims-b4}) to the problems.
