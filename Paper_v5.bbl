@@ -19,16 +19,16 @@ Assmus HE, Herwig R, Cho KH, Wolkenhauer O (2006) Dynamics of biological
 \newblock Expert Review of Molecular Diagnostics .
 \bibAnnoteFile{assmus2006dynamics}
 
-\bibitem{Riel2006aa}
+\bibitem{Riel:2006aa}
 van Riel NAW (2006) Dynamic modelling and analysis of biochemical networks:
   mechanism-based models and model-based experiments.
-\newblock Briefings in Bioinformatics 7: 364--374.
-\bibAnnote{Riel2006aa}{10.1093/bib/bbl040}
+\newblock Brief Bioinform 7: 364-74.
+\bibAnnoteFile{Riel:2006aa}
 
 \bibitem{Jaqaman:2006aa}
 Jaqaman K, Danuser G (2006) Linking data to models: data regression.
-\newblock Nat Rev Mol Cell Biol 7: 813--819.
-\bibAnnote{Jaqaman:2006aa}{10.1038/nrm2030}
+\newblock Nat Rev Mol Cell Biol 7: 813-9.
+\bibAnnoteFile{Jaqaman:2006aa}
 
 \bibitem{kitano2002systems}
 Kitano H (2002) Systems biology: a brief overview.
@@ -44,8 +44,8 @@ Hood L, Heath JR, Phelps ME, Lin B (2004) Systems biology and new technologies
 \bibitem{Aldridge:2006aa}
 Aldridge BB, Burke JM, Lauffenburger DA, Sorger PK (2006) Physicochemical
   modelling of cell signalling pathways.
-\newblock Nat Cell Biol 8: 1195--1203.
-\bibAnnote{Aldridge:2006aa}{10.1038/ncb1497}
+\newblock Nat Cell Biol 8: 1195-203.
+\bibAnnoteFile{Aldridge:2006aa}
 
 \bibitem{banga2008optimization}
 Banga JR (2008) Optimization in computational systems biology.
@@ -136,26 +136,6 @@ Storn R, Price K (1997) Differential evolution--a simple and efficient
 \newblock Journal of global optimization 11: 341--359.
 \bibAnnoteFile{storn1997differential}
 
-\bibitem{sun2012parameter}
-Sun J, Garibaldi JM, Hodgman C (2012) Parameter estimation using metaheuristics
-  in systems biology: a comprehensive review.
-\newblock Computational Biology and Bioinformatics, IEEE/ACM Transactions on 9:
-  185--202.
-\bibAnnoteFile{sun2012parameter}
-
-\bibitem{mendes1998non}
-Mendes P, Kell D (1998) Non-linear optimization of biochemical pathways:
-  applications to metabolic engineering and parameter estimation.
-\newblock Bioinformatics 14: 869--883.
-\bibAnnoteFile{mendes1998non}
-
-\bibitem{modchang2008mathematical}
-Modchang C, Triampo W, Lenbury Y (2008) Mathematical modeling and application
-  of genetic algorithm to parameter estimation in signal transduction:
-  Trafficking and promiscuous coupling of g-protein coupled receptors.
-\newblock Computers in Biology and Medicine 38: 574--582.
-\bibAnnoteFile{modchang2008mathematical}
-
 \bibitem{tsai2005evolutionary}
 Tsai KY, Wang FS (2005) Evolutionary optimization with data collocation for
   reverse engineering of biological networks.
@@ -175,6 +155,26 @@ Noman N, Iba H (2007) Inferring gene regulatory networks using differential
 \newblock IEEE/ACM Transactions on Computational Biology and Bioinformatics
   (TCBB) 4: 634--647.
 \bibAnnoteFile{noman2007inferring}
+
+\bibitem{sun2012parameter}
+Sun J, Garibaldi JM, Hodgman C (2012) Parameter estimation using metaheuristics
+  in systems biology: a comprehensive review.
+\newblock Computational Biology and Bioinformatics, IEEE/ACM Transactions on 9:
+  185--202.
+\bibAnnoteFile{sun2012parameter}
+
+\bibitem{mendes1998non}
+Mendes P, Kell D (1998) Non-linear optimization of biochemical pathways:
+  applications to metabolic engineering and parameter estimation.
+\newblock Bioinformatics 14: 869--883.
+\bibAnnoteFile{mendes1998non}
+
+\bibitem{modchang2008mathematical}
+Modchang C, Triampo W, Lenbury Y (2008) Mathematical modeling and application
+  of genetic algorithm to parameter estimation in signal transduction:
+  Trafficking and promiscuous coupling of g-protein coupled receptors.
+\newblock Computers in Biology and Medicine 38: 574--582.
+\bibAnnoteFile{modchang2008mathematical}
 
 \bibitem{tashkova2011parameter}
 Tashkova K, Koro{\v{s}}ec P, {\v{S}}ilc J, Todorovski L, D{\v{z}}eroski S
@@ -207,31 +207,6 @@ Villaverde AF, Henriques D, Smallbone K, Bongard S, Schmid J, et~al. (2015)
   systems biology.
 \newblock BMC systems biology 9: 8.
 \bibAnnoteFile{villaverde2015biopredyn}
-
-\bibitem{gutenkunst2007universally}
-Gutenkunst RN, Waterfall JJ, Casey FP, Brown KS, Myers CR, et~al. (2007)
-  Universally sloppy parameter sensitivities in systems biology models.
-\newblock PLoS computational biology 3: e189.
-\bibAnnoteFile{gutenkunst2007universally}
-
-\bibitem{song2010ensembles}
-Song SO, Chakrabarti A, Varner JD (2010) Ensembles of signal transduction
-  models using pareto optimal ensemble techniques (poets).
-\newblock Biotechnology journal 5: 768--780.
-\bibAnnoteFile{song2010ensembles}
-
-\bibitem{luan2010ensembles}
-Luan D, Szlam F, Tanaka KA, Barie PS, Varner JD (2010) Ensembles of uncertain
-  mathematical models can identify network response to therapeutic
-  interventions.
-\newblock Molecular bioSystems 6: 2272--2286.
-\bibAnnoteFile{luan2010ensembles}
-
-\bibitem{sagar2015dynamic}
-Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
-  using reduced order effective kinetic models.
-\newblock Processes 3: 178--203.
-\bibAnnoteFile{sagar2015dynamic}
 
 \bibitem{tolson2007dynamically}
 Tolson BA, Shoemaker CA (2007) Dynamically dimensioned search algorithm for
