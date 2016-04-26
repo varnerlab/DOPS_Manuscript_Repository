@@ -19,11 +19,11 @@ Assmus HE, Herwig R, Cho KH, Wolkenhauer O (2006) Dynamics of biological
 \newblock Expert Review of Molecular Diagnostics .
 \bibAnnoteFile{assmus2006dynamics}
 
-\bibitem{Riel:2006aa}
+\bibitem{Riel2006aa}
 van Riel NAW (2006) Dynamic modelling and analysis of biochemical networks:
   mechanism-based models and model-based experiments.
 \newblock Briefings in Bioinformatics 7: 364--374.
-\bibAnnote{Riel:2006aa}{10.1093/bib/bbl040}
+\bibAnnote{Riel2006aa}{10.1093/bib/bbl040}
 
 \bibitem{Jaqaman:2006aa}
 Jaqaman K, Danuser G (2006) Linking data to models: data regression.
@@ -114,11 +114,21 @@ Horst R, Tuy H (2013) Global optimization: Deterministic approaches.
 \newblock Springer Science \& Business Media.
 \bibAnnoteFile{horst2013global}
 
+\bibitem{goldberg2006genetic}
+Goldberg DE (2006) Genetic algorithms.
+\newblock Pearson Education India .
+\bibAnnoteFile{goldberg2006genetic}
+
 \bibitem{kirkpatrick1983optimization}
 Kirkpatrick S, Gelatt CD, Vecchi MP, et~al. (1983) Optimization by simulated
   annealing.
 \newblock science 220: 671--680.
 \bibAnnoteFile{kirkpatrick1983optimization}
+
+\bibitem{fogel2009artificial}
+Fogel D (2009) Artificial intelligence through simulated evolution.
+\newblock Wiley-IEEE Press .
+\bibAnnoteFile{fogel2009artificial}
 
 \bibitem{storn1997differential}
 Storn R, Price K (1997) Differential evolution--a simple and efficient
@@ -198,11 +208,56 @@ Villaverde AF, Henriques D, Smallbone K, Bongard S, Schmid J, et~al. (2015)
 \newblock BMC systems biology 9: 8.
 \bibAnnoteFile{villaverde2015biopredyn}
 
-\bibitem{fan2015parameter}
-Fan M, Kuwahara H, Wang X, Wang S, Gao X (2015) Parameter estimation methods
-  for gene circuit modeling from time-series mrna data: a comparative study.
-\newblock Briefings in bioinformatics : bbv015.
-\bibAnnoteFile{fan2015parameter}
+\bibitem{gutenkunst2007universally}
+Gutenkunst RN, Waterfall JJ, Casey FP, Brown KS, Myers CR, et~al. (2007)
+  Universally sloppy parameter sensitivities in systems biology models.
+\newblock PLoS computational biology 3: e189.
+\bibAnnoteFile{gutenkunst2007universally}
+
+\bibitem{song2010ensembles}
+Song SO, Chakrabarti A, Varner JD (2010) Ensembles of signal transduction
+  models using pareto optimal ensemble techniques (poets).
+\newblock Biotechnology journal 5: 768--780.
+\bibAnnoteFile{song2010ensembles}
+
+\bibitem{luan2010ensembles}
+Luan D, Szlam F, Tanaka KA, Barie PS, Varner JD (2010) Ensembles of uncertain
+  mathematical models can identify network response to therapeutic
+  interventions.
+\newblock Molecular bioSystems 6: 2272--2286.
+\bibAnnoteFile{luan2010ensembles}
+
+\bibitem{sagar2015dynamic}
+Sagar A, Varner JD (2015) Dynamic modeling of the human coagulation cascade
+  using reduced order effective kinetic models.
+\newblock Processes 3: 178--203.
+\bibAnnoteFile{sagar2015dynamic}
+
+\bibitem{tolson2007dynamically}
+Tolson BA, Shoemaker CA (2007) Dynamically dimensioned search algorithm for
+  computationally efficient watershed model calibration.
+\newblock Water Resources Research 43.
+\bibAnnoteFile{tolson2007dynamically}
+
+\bibitem{zhao2008dynamic}
+Zhao SZ, Liang JJ, Suganthan PN, Tasgetiren MF (2008) Dynamic multi-swarm
+  particle swarm optimizer with local search for large scale global
+  optimization.
+\newblock Evolutionary Computation, 2008 CEC 2008 : 3845--3852.
+\bibAnnoteFile{zhao2008dynamic}
+
+\bibitem{villaverde2014high}
+Villaverde AF, Bongard S, Mauch K, M{\"u}ller D, Balsa-Canto E, et~al. (2014)
+  High-confidence predictions in systems biology dynamic models.
+\newblock 8th International Conference on Practical Applications of
+  Computational Biology \& Bioinformatics (PACBB 2014) : 161--171.
+\bibAnnoteFile{villaverde2014high}
+
+\bibitem{smallbone2013large}
+Smallbone K, Mendes P (2013) Large-scale metabolic models: From reconstruction
+  to differential equations.
+\newblock Industrial Biotechnology 9: 179--184.
+\bibAnnoteFile{smallbone2013large}
 
 \bibitem{mann2003dynamics}
 Mann KG, Butenas S, Brummel K (2003) The dynamics of thrombin formation.
@@ -267,12 +322,10 @@ Luan D, Zai M, Varner JD (2007) Computationally derived points of fragility of
 \newblock PLoS computational biology 3: e142.
 \bibAnnoteFile{luan2007computationally}
 
-\bibitem{zhao2008dynamic}
-Zhao SZ, Liang JJ, Suganthan PN, Tasgetiren MF (2008) Dynamic multi-swarm
-  particle swarm optimizer with local search for large scale global
-  optimization.
-\newblock In: Evolutionary Computation, 2008. CEC 2008.(IEEE World Congress on
-  Computational Intelligence). IEEE Congress on. IEEE, pp. 3845--3852.
-\bibAnnoteFile{zhao2008dynamic}
+\bibitem{shi1999empirical}
+Shi Y, Eberhart RC (1999) Empirical study of particle swarm optimization.
+\newblock Evolutionary Computation, 1999 CEC 99 Proceedings of the 1999
+  Congress on .
+\bibAnnoteFile{shi1999empirical}
 
 \end{thebibliography}

@@ -1,6 +1,6 @@
 \relax 
 \bibstyle{plos2009}
-\citation{assmus2006dynamics,Riel:2006aa,Jaqaman:2006aa,kitano2002systems,hood2004systems}
+\citation{assmus2006dynamics,Riel2006aa,Jaqaman:2006aa,kitano2002systems,hood2004systems}
 \citation{Aldridge:2006aa,banga2008optimization,ashyraliyev2009systems}
 \citation{moles2003parameter}
 \citation{nieman1971review,beck1977parameter,young1981parameter,beck1998inverse}
@@ -9,7 +9,9 @@
 \citation{nelder1965simplex}
 \citation{more1978levenberg}
 \citation{esposito2000deterministic,horst2013global}
+\citation{goldberg2006genetic}
 \citation{kirkpatrick1983optimization}
+\citation{fogel2009artificial}
 \citation{storn1997differential}
 \citation{sun2012parameter}
 \citation{mendes1998non}
@@ -18,25 +20,32 @@
 \citation{tashkova2011parameter}
 \citation{villaverde2012cooperative,rodriguez2006novel,egea2007scatter}
 \citation{villaverde2015biopredyn}
-\citation{fan2015parameter}
+\citation{gutenkunst2007universally}
+\citation{song2010ensembles,luan2010ensembles}
+\citation{sagar2015dynamic}
+\citation{tolson2007dynamically}
+\citation{zhao2008dynamic}
 \citation{villaverde2015biopredyn}
-\citation{villaverde2015biopredyn}
+\citation{villaverde2014high}
+\citation{smallbone2013large}
 \citation{mann2003dynamics,mann2003all,mann2003thrombin,vogler2009contact,diamond2013systems,fogelson2005coagulation,anand2003model}
 \citation{hockin2002model,chatterjee2010systems,mann2006models,luan2007computationally}
 \citation{luan2007computationally}
 \citation{hockin2002model}
 \citation{zhao2008dynamic}
 \citation{villaverde2015biopredyn}
-\newlabel{eq:static_opt}{{1}{13}}
-\newlabel{eq:static_opt_2}{{2}{13}}
-\newlabel{eqn:update-rule}{{3}{14}}
+\newlabel{eq:static_opt}{{1}{15}}
+\newlabel{eq:static_opt_2}{{2}{15}}
+\citation{shi1999empirical}
+\citation{tolson2007dynamically}
+\newlabel{eqn:update-rule}{{3}{16}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{forins}{{6}{17}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Dynamic Optimization with Particle Swarms\relax }}{17}}
-\newlabel{algo_ddspso}{{1}{17}}
+\newlabel{forins}{{6}{20}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Dynamic Optimization with Particle Swarms\relax }}{20}}
+\newlabel{algo_ddspso}{{1}{20}}
 \bibdata{References_v2}
 \bibcite{assmus2006dynamics}{{1}{}{{}}{{}}}
-\bibcite{Riel:2006aa}{{2}{}{{}}{{}}}
+\bibcite{Riel2006aa}{{2}{}{{}}{{}}}
 \bibcite{Jaqaman:2006aa}{{3}{}{{}}{{}}}
 \bibcite{kitano2002systems}{{4}{}{{}}{{}}}
 \bibcite{hood2004systems}{{5}{}{{}}{{}}}
@@ -53,52 +62,63 @@
 \bibcite{more1978levenberg}{{16}{}{{}}{{}}}
 \bibcite{esposito2000deterministic}{{17}{}{{}}{{}}}
 \bibcite{horst2013global}{{18}{}{{}}{{}}}
-\bibcite{kirkpatrick1983optimization}{{19}{}{{}}{{}}}
-\bibcite{storn1997differential}{{20}{}{{}}{{}}}
-\bibcite{sun2012parameter}{{21}{}{{}}{{}}}
-\bibcite{mendes1998non}{{22}{}{{}}{{}}}
-\bibcite{modchang2008mathematical}{{23}{}{{}}{{}}}
-\bibcite{tsai2005evolutionary}{{24}{}{{}}{{}}}
-\bibcite{wang2001hybrid}{{25}{}{{}}{{}}}
-\bibcite{noman2007inferring}{{26}{}{{}}{{}}}
-\bibcite{tashkova2011parameter}{{27}{}{{}}{{}}}
-\bibcite{villaverde2012cooperative}{{28}{}{{}}{{}}}
-\bibcite{rodriguez2006novel}{{29}{}{{}}{{}}}
-\bibcite{egea2007scatter}{{30}{}{{}}{{}}}
-\bibcite{villaverde2015biopredyn}{{31}{}{{}}{{}}}
-\bibcite{fan2015parameter}{{32}{}{{}}{{}}}
-\bibcite{mann2003dynamics}{{33}{}{{}}{{}}}
-\bibcite{mann2003all}{{34}{}{{}}{{}}}
-\bibcite{mann2003thrombin}{{35}{}{{}}{{}}}
-\bibcite{vogler2009contact}{{36}{}{{}}{{}}}
-\bibcite{diamond2013systems}{{37}{}{{}}{{}}}
-\bibcite{fogelson2005coagulation}{{38}{}{{}}{{}}}
-\bibcite{anand2003model}{{39}{}{{}}{{}}}
-\bibcite{hockin2002model}{{40}{}{{}}{{}}}
-\bibcite{chatterjee2010systems}{{41}{}{{}}{{}}}
-\bibcite{mann2006models}{{42}{}{{}}{{}}}
-\bibcite{luan2007computationally}{{43}{}{{}}{{}}}
-\bibcite{zhao2008dynamic}{{44}{}{{}}{{}}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Error Analysis.\relax }}{24}}
-\newlabel{table:Error-Analysis}{{1}{24}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Table with optimization settings and results for the coagulation problem, the benchmarks and test functions using DOPS. For each problem the bounds on the parameter vector, the total number of function evaluations, the best initial objective value and the best final objective value are specified. Nominal objective value represents the objective value using the true parameter vector or the nominal parameter vector. The CPU time is the time taken for the problem on a 2.4GHz Intel Xeon Architecture running Matlab 2014b.\relax }}{24}}
-\newlabel{table:benchmark-problems}{{2}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Dynamic Optimization with Particle Swarms. \textbf  {A}: Each particle represents an N dimensional parameter vector. Particles are given randomly generated initial solutions and grouped into different sub-swarms. Within each swarm the magnitude and direction of the movement a particle is influenced by the position of the best particle and also by its own experience. After every $\mathbf  {g}$ number of function evaluations the particles are mixed and randomly assigned to different swarms. When the error due to the global best particle (best particle amongst all the sub-swarms) does not drop over a certain number of function evaluations, the swarm search is stopped and the search switches to a Dynamically Dimensioned Search with global best particle as the initial solution vector or candidate vector. \textbf  {B}: The candidate vector performs a greedy global search for the remaining number of function evaluations. The search neighborhood is dynamically adjusted by varying the number of dimensions that are perturbed (in black) in each evaluation step. The probability that a dimension is perturbed decreases as the number of function evaluations increase. Thus as the evaluations increase the optimality of the solution is preserved. \relax }}{25}}
-\newlabel{fig-algorithm}{{1}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Performance of DOPS and other meta-heuristics for the Ackley and Rastrigin functions. \textbf  {A}: Mean scaled error versus the number of function evaluations for the 10-dimensional Ackley function. DOPS, DDS and DE find optimal or near optimal solutions within the specified number of function evaluations. \textbf  {B}: Mean scaled error versus the number of function evaluations for the 10-dimensional Rastrigin function. DOPS and DDS find optimal or near optimal solutions within the specified number of function evaluations. \textbf  {C}: Mean scaled error versus the number of function evaluations for the 300-dimensional Rastrigin function. DOPS is the only algorithm that finds an optimal or near optimal solution within the specified number of function evaluations. In all cases, the maximum number of function evaluations was 4000. Mean and standard deviation were calculated over 25 trials. \relax }}{26}}
-\newlabel{fig-testfunctions}{{2}{26}}
+\bibcite{goldberg2006genetic}{{19}{}{{}}{{}}}
+\bibcite{kirkpatrick1983optimization}{{20}{}{{}}{{}}}
+\bibcite{fogel2009artificial}{{21}{}{{}}{{}}}
+\bibcite{storn1997differential}{{22}{}{{}}{{}}}
+\bibcite{sun2012parameter}{{23}{}{{}}{{}}}
+\bibcite{mendes1998non}{{24}{}{{}}{{}}}
+\bibcite{modchang2008mathematical}{{25}{}{{}}{{}}}
+\bibcite{tsai2005evolutionary}{{26}{}{{}}{{}}}
+\bibcite{wang2001hybrid}{{27}{}{{}}{{}}}
+\bibcite{noman2007inferring}{{28}{}{{}}{{}}}
+\bibcite{tashkova2011parameter}{{29}{}{{}}{{}}}
+\bibcite{villaverde2012cooperative}{{30}{}{{}}{{}}}
+\bibcite{rodriguez2006novel}{{31}{}{{}}{{}}}
+\bibcite{egea2007scatter}{{32}{}{{}}{{}}}
+\bibcite{villaverde2015biopredyn}{{33}{}{{}}{{}}}
+\bibcite{gutenkunst2007universally}{{34}{}{{}}{{}}}
+\bibcite{song2010ensembles}{{35}{}{{}}{{}}}
+\bibcite{luan2010ensembles}{{36}{}{{}}{{}}}
+\bibcite{sagar2015dynamic}{{37}{}{{}}{{}}}
+\bibcite{tolson2007dynamically}{{38}{}{{}}{{}}}
+\bibcite{zhao2008dynamic}{{39}{}{{}}{{}}}
+\bibcite{villaverde2014high}{{40}{}{{}}{{}}}
+\bibcite{smallbone2013large}{{41}{}{{}}{{}}}
+\bibcite{mann2003dynamics}{{42}{}{{}}{{}}}
+\bibcite{mann2003all}{{43}{}{{}}{{}}}
+\bibcite{mann2003thrombin}{{44}{}{{}}{{}}}
+\bibcite{vogler2009contact}{{45}{}{{}}{{}}}
+\bibcite{diamond2013systems}{{46}{}{{}}{{}}}
+\bibcite{fogelson2005coagulation}{{47}{}{{}}{{}}}
+\bibcite{anand2003model}{{48}{}{{}}{{}}}
+\bibcite{hockin2002model}{{49}{}{{}}{{}}}
+\bibcite{chatterjee2010systems}{{50}{}{{}}{{}}}
+\bibcite{mann2006models}{{51}{}{{}}{{}}}
+\bibcite{luan2007computationally}{{52}{}{{}}{{}}}
+\bibcite{shi1999empirical}{{53}{}{{}}{{}}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces .}}{28}}
+\newlabel{table:Error-Analysis}{{1}{28}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Table with optimization settings and results for the coagulation problem, the benchmarks and test functions using DOPS. For each problem the bounds on the parameter vector, the total number of function evaluations, the best initial objective value and the best final objective value are specified. Here $pnom$ indicates the nominal or true parameter vector of the model. Nominal objective value represents the objective value using the true parameter vector or the nominal parameter vector. The CPU time is the time taken for the problem on a 2.4GHz Intel Xeon Architecture running Matlab 2014b.\relax }}{29}}
+\newlabel{table:benchmark-problems}{{2}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Dynamic Optimization with Particle Swarms. \textbf  {A}: Each particle represents an N dimensional parameter vector. Particles are given randomly generated initial solutions and grouped into different sub-swarms. Within each swarm the magnitude and direction of the movement a particle is influenced by the position of the best particle and also by its own experience. After every $\mathbf  {g}$ number of function evaluations the particles are mixed and randomly assigned to different swarms. When the error due to the global best particle (best particle amongst all the sub-swarms) does not drop over a certain number of function evaluations, the swarm search is stopped and the search switches to a Dynamically Dimensioned Search with global best particle as the initial solution vector or candidate vector. \textbf  {B}: The candidate vector performs a greedy global search for the remaining number of function evaluations. The search neighborhood is dynamically adjusted by varying the number of dimensions that are perturbed (in black) in each evaluation step. The probability that a dimension is perturbed decreases as the number of function evaluations increase. Thus as the evaluations increase the optimality of the solution is preserved. \relax }}{30}}
+\newlabel{fig-algorithm}{{1}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Performance of DOPS and other meta-heuristics for the Ackley and Rastrigin functions. \textbf  {A}: Mean scaled error versus the number of function evaluations for the 10-dimensional Ackley function. DOPS, DDS and DE find optimal or near optimal solutions within the specified number of function evaluations. \textbf  {B}: Mean scaled error versus the number of function evaluations for the 10-dimensional Rastrigin function. DOPS and DDS find optimal or near optimal solutions within the specified number of function evaluations. \textbf  {C}: Mean scaled error versus the number of function evaluations for the 300-dimensional Rastrigin function. DOPS is the only algorithm that finds an optimal or near optimal solution within the specified number of function evaluations. In all cases, the maximum number of function evaluations was 4000. Mean and standard deviation were calculated over 25 trials. \relax }}{31}}
+\newlabel{fig-testfunctions}{{2}{31}}
 \citation{luan2007computationally}
 \citation{luan2007computationally}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Schematic of the extrinsic and intrinsic coagulation cascade\cite  {luan2007computationally}. Inactive zymogens upstream (grey) are activated by exposure to tissue factor (TF) following vessel injury. Tissue factor and activated factor VIIa (FVIIa) form a complex that activates factor X (fX) and IX (fIX). FXa activates downstream factors including factor VIII (fVIII) and fIX. Factor V (fV) is primarily activated by thrombin (FIIa). In addition, we included a secondary fV activation route involving FXa. FXa and FVa form a complex (prothrombinase) on activated platelets that converts prothrombin (fII) to FIIa. FIXa and FVIIIa can also form a complex (tenase) on activated platelets which catalyzes FXa formation. Thrombin also activates upstream coagulation factors, forming a strong positive feedback ensuring rapid activation. Tissue factor pathway inhibitor (TFPI) downregulates FXa formation and activity by sequestering free FXa and TF-FVIIa in a FXa-dependent manner. Antithrombin III (ATIII) inhibits all proteases. Thrombin inhibits itself binding the surface protein thrombomodulin (TM). The IIa-TM complex catalyzes the conversion of protein C (PC) to activated protein C (APC), which attenuates the coagulation response by the proteolytic cleavage of fV/FVa and fVIII/FVIIIa. \relax }}{27}}
-\newlabel{fig-coagulation-network}{{3}{27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Error convergence rates of the five different algorithms on the coagulation model. The objective error is the mean over $N$= 25 trials. DOPS, DDS and SA have the steepest drop in error during first 300 function evaluations. Thereafter the error drop in DDS and SA remains nearly constant whereas DOPS continues to drops further. At the end of 4000 function evaluations DOPS attains the lowest error. The next best estimate using DDS is nearly 3 times greater than the lowest error using DDS. \relax }}{28}}
-\newlabel{fig-convergence}{{4}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Model fits on experimental data using DOPS. The model parameters were estimated using DOPS. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor TF/VIIa (5nM and 5pM) to synthetic plasma containing 200 $\mu $mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations. \relax }}{29}}
-\newlabel{fig-train}{{5}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $N$= 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - Orange respectively) to synthetic plasma containing 200 $\mu $mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations. \relax }}{30}}
-\newlabel{fig-validation}{{6}{30}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $N$= 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - Orange respectively) to synthetic plasma containing 200 $\mu $mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations. \relax }}{31}}
-\newlabel{fig-sub-swarms}{{7}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Schematic of the extrinsic and intrinsic coagulation cascade\cite  {luan2007computationally}. Inactive zymogens upstream (grey) are activated by exposure to tissue factor (TF) following vessel injury. Tissue factor and activated factor VIIa (FVIIa) form a complex that activates factor X (fX) and IX (fIX). FXa activates downstream factors including factor VIII (fVIII) and fIX. Factor V (fV) is primarily activated by thrombin (FIIa). In addition, we included a secondary fV activation route involving FXa. FXa and FVa form a complex (prothrombinase) on activated platelets that converts prothrombin (fII) to FIIa. FIXa and FVIIIa can also form a complex (tenase) on activated platelets which catalyzes FXa formation. Thrombin also activates upstream coagulation factors, forming a strong positive feedback ensuring rapid activation. Tissue factor pathway inhibitor (TFPI) downregulates FXa formation and activity by sequestering free FXa and TF-FVIIa in a FXa-dependent manner. Antithrombin III (ATIII) inhibits all proteases. Thrombin inhibits itself binding the surface protein thrombomodulin (TM). The IIa-TM complex catalyzes the conversion of protein C (PC) to activated protein C (APC), which attenuates the coagulation response by the proteolytic cleavage of fV/FVa and fVIII/FVIIIa. \relax }}{32}}
+\newlabel{fig-coagulation-network}{{3}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Error convergence rates of the five different algorithms on the coagulation model. The objective error is the mean over $N$= 25 trials. DOPS, DDS and SA have the steepest drop in error during first 300 function evaluations. Thereafter the error drop in DDS and SA remains nearly constant whereas DOPS continues to drops further. At the end of 4000 function evaluations DOPS attains the lowest error. The next best estimate using DDS is nearly 3 times greater than the lowest error using DDS. \relax }}{33}}
+\newlabel{fig-convergence}{{4}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Model fits on experimental data using DOPS. The model parameters were estimated using DOPS. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor TF/VIIa (5nM and 5pM) to synthetic plasma containing 200 $\mu $mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations. \relax }}{34}}
+\newlabel{fig-train}{{5}{34}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $N$= 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - Orange respectively) to synthetic plasma containing 200 $\mu $mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations. \relax }}{35}}
+\newlabel{fig-validation}{{6}{35}}
+\citation{zhao2008dynamic}
+\citation{zhao2008dynamic}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces DOPS (color:black) begins by using a particle swarm search (color:pale brown) and then dynamically switches (color:green), using an adaptive switching criteria, to the DDS search phase (color:white). The particle swarm search uses multiple sub-swarms wherein each solution represented by a particle is updated using equation 3\hbox {}. The particle update is influenced by the best particle amongst all particles in the sub-swarm and the best solution found by the particle till the current iteration. This update rule however contains no velocity terms. The particle updates continue to happen within the sub-swarms for a certain number of iterations (or function evaluations) after which the sub-swarms are reorganized which is similar to the regrouping strategy described by Zhao et al. \cite  {zhao2008dynamic}. DOPS switches out of this PSO phase based on an adaptive switching criteria (color:green) that is a function of error convergence rate. If the error represented by the best particle does not drop for a threshold number of function evaluations, DOPS switches automatically to the DDS search phase. Since the algorithm is stochastic, the switch out can happen at a different function evaluation in each trial. The DDS search then uses the best particle from the PSO search phase as its initial solution or candidate vector. This particle is greedily updated by perturbing a subset of dimensions for the remaining number of function evaluations. The number of dimensions perturbed is a monotonically decreasing function that generally depends on the number of function evaluations within the DDS phase. We compared the performance of DOPS with multi-swarm searches without DDS to quantify the effect of number of sub-swarms. We used one, two, four, five and eight sub-swarms, with a total of 40 particles divided evenly amongst the swarms. The convergence rates with higher swarm numbers is typically higher but there is no pronounced difference amongst four, five and eight. When the multi-swarm only searches tend to saturate DOPS shows a rapid drop due to a switch to the DDS phase. \relax }}{36}}
+\newlabel{fig-sub-swarms}{{7}{36}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
 \@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces \textbf  {(Data fits for Problem B1)} Pseudo-experimental data (red circles) vs. optimal solution obtained using DOPS (solid blue lines) for the 44 observed states. X axis: time [s]; Y axis: metabolite concentrations [mM]. \relax }}{S-1}}
 \newlabel{fig-sims-b1}{{S1}{S-1}}
