@@ -263,13 +263,17 @@ The biochemistry of coagulation, though complex, has been well studied \cite{man
 and reliable experimental protocols have been developed to interrogate the system \cite{hockin2002model,chatterjee2010systems,mann2006models,luan2007computationally}.
 Coagulation is mediated by a family proteases in the circulation, called factors and a key group of blood cells, called platelets.
 The central process in coagulation is the conversion of prothrombin (fII), an inactive coagulation factor, to the master protease thrombin (FIIa).
-Thrombin generation involves three phases, initiation, amplification and termination [13,14].
-Initiation requires a trigger event, for example a vessel injury which exposes tissue factor (TF), which leads to the activation of factor VII (FVIIa) and the formation of the TF/FVIIa complex. Two converging pathways, the extrinsic and intrinsic cascades, then process and amplify this initial coagulation signal.
+Thrombin generation involves three phases, initiation, amplification and termination.
+Initiation requires a trigger event, for example a vessel injury which exposes tissue factor (TF), which leads to the activation of factor VII (FVIIa) and the formation of the TF/FVIIa complex.
+Two converging pathways, the extrinsic and intrinsic cascades, then process and amplify this initial coagulation signal.
 There are several control points in the cascade that inhibit thrombin formation, and eventually terminate thrombin generation.
-Tissue Factor Pathway Inhibitor (TFPI) inhibits upstream activation events, while antithrombin III (ATIII) neutralizes several of the proteases generated during coagulation, including thrombin.Thrombin itself also inadvertently plays a role in its own inhibition; thrombin, through interaction with thrombomodulin, protein C and endothelial cell protein C receptor (EPCR), converts protein C to activated protein C (APC) which attenuates the coagulation response by proteolytic cleavage of amplification complexes.
+Tissue Factor Pathway Inhibitor (TFPI) inhibits upstream activation events, while antithrombin III (ATIII) neutralizes several of the proteases generated during coagulation, including thrombin.
+Thrombin itself also inadvertently plays a role in its own inhibition; thrombin, through interaction with thrombomodulin, protein C and endothelial cell protein C receptor (EPCR), converts protein C to activated protein C (APC) which attenuates the coagulation response by proteolytic cleavage of amplification complexes.
 Termination occurs after either prothrombin is consumed, or thrombin formation is neutralized by inhibitors such as APC or ATIII.
 Thus, the human coagulation cascade is an ideal test case;
-coagulation is challenging because it contains both fast and slow dynamics, but also accessible because of the availability of comprehensive data sets for model identification and validation. In this study, we used the coagulation model of Luan et al \cite{luan2007computationally}, which is a coupled system of non-linear ordinary differential equations where biochemical interactions are modeled using mass action kinetics. The Luan model contained 148 parameters and 92 species and has been validated using 21 published experimental datasets.
+coagulation is challenging because it contains both fast and slow dynamics, but also accessible because of the availability of comprehensive data sets for model identification and validation.
+In this study, we used the coagulation model of Luan et al. \cite{luan2007computationally}, which is a coupled system of non-linear ordinary differential equations where biochemical interactions were modeled using mass action kinetics.
+The Luan model contained 148 parameters and 92 species and has been validated using 21 published experimental datasets.
 
 %Coagulation is regulated by a set of serine proteases known as coagulation factors and a type of blood cell called a platelet.
 %In the circulation, coagulation factors are generally in an inactive state known as a zymogen.
@@ -280,17 +284,23 @@ coagulation is challenging because it contains both fast and slow dynamics, but 
 %Subsequently we used these optimal parameters to make model predictions that was compared against completely 'unseen' or untrained experimental data where
 %coagulation was  respectively .
 
-DOPS estimated the parameters of a human coagulation model for TF/VIIa initiated coagulation without anticoagulants (Fig.\ref{fig-train}).
+DOPS estimated the parameters of a human coagulation model for TF/VIIa initiated coagulation without anticoagulants (Fig. \ref{fig-train}).
 The objective function was an unweighted linear combination of two error functions,
 representing coagulation initiated with different concentrations of TF/FVIIa (5pM, 5nM) \cite{hockin2002model}.
-We restricted the number of function evaluations to $\mathcal{N}$ = 4000 for each algorithm we tested, and performed 25 trials of each experiment to collect average performance data (Table \ref{table:benchmark-problems}). DOPS converged faster and had a lower final error compared to the other algorithms (Fig. \ref{fig-convergence}).
+We restricted the number of function evaluations to $\mathcal{N}$ = 4000 for each algorithm we tested, and performed $\mathcal{T}$ = 25 trials of each experiment to collect average performance data (Table \ref{table:benchmark-problems}).
+DOPS converged faster and had a lower final error compared to the other algorithms (Fig. \ref{fig-convergence}).
 Within the first 25\% of function evaluations, DOPS produced a rapid drop in error followed by a slower but steady decline.
-Approximately between 500-1000 function evaluations DOPS switched to the dynamically dimensioned search phase, however this switch iteration varied from trial to trial since the switch was based on the error from the swarm phase. Overall, DOPS minimized the error to a greater extent than the other meta-heuristic approaches.
-However, it was unclear if the parameters obtained by DOPS had predictive power on unseen data. To address this question, we used the final parameters estimated by
-DOPS to simulate data that was not used in training (coagulation initiated with 500pM,50pM,10pM TF/VIIa).
-The optimal or near optimal parameters obtained by DOPS predicted unseen coagulation datasets (Fig.\ref{fig-validation}).
+Approximately between 500-1000 function evaluations DOPS switched to the dynamically dimensioned search phase, however this transition varied from trial to trial since the switch was based upon the local convergence rate.
+On average, DOPS minimized the coagulation model error to a greater extent than the other meta-heuristics.
+However, it was unclear if the parameters estimated by DOPS had predictive power on unseen data.
+To address this question, we used the final parameters estimated by
+DOPS to simulate data that was not used for training (coagulation initiated with 500pM, 50pM, and 10pM TF/VIIa).
+The optimal or near optimal parameters obtained by DOPS predicted unseen coagulation datasets (Fig. \ref{fig-validation}).
+The normalized standard error for the coagulation predictions was consistent with the training error, with the exception of the 50pM TF/VIIa case which was a factor 2.75 worse (Table \ref{table:Error-Analysis}).
+Coagulation initiation with 50pM TF/FVIIa was the farthest away from the training conditions.
+However, while the 50pM TF/FVIIa case was the worst of those tested, it still had an average error rate of only 11\% (which is near the margin of error for the experimental measurements).
 Taken together, DOPS estimated parameter sets with predictive power on unseen coagulation data using fewer function iterations than other meta-heuristics.
-Next, we explored how the number of sub-swarms and the switch to DDS during the initial phase of an optimization trial influenced the performance of the approach.
+Next, we explored how the number of sub-swarms and the switch to DDS influenced the performance of the approach.
 
 \subsection*{The number of sub-swarms and phase switching influenced DOPS performance.}
 A differentiating feature of DOPS compared to other meta-heuristics was the rapid error drop during the first 25\% of an optimization trial.
@@ -525,7 +535,7 @@ This study was supported by an award from the Army Research Office (ARO \#59155-
 \begin{center}
 \begin{tabular}{ r|ll}
 \hline\\
-TF/FVIIa concentration& Normalized S.E.& Data Set Category\\\\
+TF/FVIIa concentration& Normalized S.E.& Category\\\\
 \hline\\
 5~nM & 0.0376 & Training \\
 500~pM & 0.0564 & Prediction\\
