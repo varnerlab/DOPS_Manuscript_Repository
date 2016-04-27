@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 APR 2016 13:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 APR 2016 13:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,138 +884,138 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
  [1] [1] [2] [3]
 [4
 
-] [5] [6] [7] [8] [9] [10
+] [5] [6] [7] [8] [9
 
-] [11] [12] [13] [14
+] [10] [11] [12] [13
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 372.
- [15] [16] [17] [18] [19
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 386.
+ [14] [15] [16] [17] [18
 
 ]
 (./Paper_v5.bbl
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 69.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
-) [20
+) [19
 
-] [21] [22] [23]) [24]
+] [20] [21] [22]) [23]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 509.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 523.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[25
+[24
 
-] [26] <./figs/Figure_1_Algorithm.pdf, id=107, 676.5275pt x 584.1825pt>
+] [25] <./figs/Figure_1_Algorithm.pdf, id=104, 676.5275pt x 584.1825pt>
 File: ./figs/Figure_1_Algorithm.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_1_Algorithm.pdf>
-Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 556.
+Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 570.
 (pdftex.def)             Requested size: 469.75502pt x 405.64464pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27 <./figs/Figure_1_Algorithm.pdf>]
-<./figs/Figure_2_TestFunctions-crop.pdf, id=187, 326.21875pt x 566.115pt>
+[26 <./figs/Figure_1_Algorithm.pdf>]
+<./figs/Figure_2_TestFunctions-crop.pdf, id=184, 326.21875pt x 566.115pt>
 File: ./figs/Figure_2_TestFunctions-crop.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_2_TestFunctions-crop.pdf>
 Package pdftex.def Info: ./figs/Figure_2_TestFunctions-crop.pdf used on input l
-ine 566.
+ine 580.
 (pdftex.def)             Requested size: 328.82707pt x 570.69186pt.
 
 
-LaTeX Warning: Float too large for page by 68.26186pt on input line 571.
+LaTeX Warning: Float too large for page by 68.26186pt on input line 585.
 
-[28 <./figs/Figure_2_TestFunctions-crop.pdf>]
-<./figs/Figure_3_Coagulation_v4.pdf, id=229, 794.97pt x 614.295pt>
+[27 <./figs/Figure_2_TestFunctions-crop.pdf>]
+<./figs/Figure_3_Coagulation_v4.pdf, id=226, 794.97pt x 614.295pt>
 File: ./figs/Figure_3_Coagulation_v4.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_3_Coagulation_v4.pdf>
 Package pdftex.def Info: ./figs/Figure_3_Coagulation_v4.pdf used on input line 
-577.
+591.
 (pdftex.def)             Requested size: 469.75502pt x 363.00267pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29 <./figs/Figure_3_Coagulation_v4.pdf>]
-<./figs/Figure_4_Errors_convergence_v2.pdf, id=1159, 853.1875pt x 632.3625pt>
+[28 <./figs/Figure_3_Coagulation_v4.pdf>]
+<./figs/Figure_4_Errors_convergence_v2.pdf, id=1155, 853.1875pt x 632.3625pt>
 File: ./figs/Figure_4_Errors_convergence_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_4_Errors_convergence_v2.pdf>
 Package pdftex.def Info: ./figs/Figure_4_Errors_convergence_v2.pdf used on inpu
-t line 585.
+t line 599.
 (pdftex.def)             Requested size: 469.75502pt x 348.17676pt.
- [30
+ [29
 
 
 
 
  <./figs/Figure_4_Errors_convergence_v2.pdf>]
-<./figs/Figure_5_Sim_Train_E1_E5.pdf, id=1177, 867.24pt x 607.26875pt>
+<./figs/Figure_5_Sim_Train_E1_E5.pdf, id=1174, 867.24pt x 607.26875pt>
 File: ./figs/Figure_5_Sim_Train_E1_E5.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_5_Sim_Train_E1_E5.pdf>
 Package pdftex.def Info: ./figs/Figure_5_Sim_Train_E1_E5.pdf used on input line
- 594.
+ 608.
 (pdftex.def)             Requested size: 469.75502pt x 328.93951pt.
- [31
+ [30
 
  <./figs/Figure_5_Sim_Train_E1_E5.pdf>]
-<./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf, id=1195, 867.24pt x 607.26875pt>
+<./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf, id=1192, 867.24pt x 607.26875pt>
 File: ./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf>
 Package pdftex.def Info: ./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf used on inpu
-t line 603.
+t line 617.
 (pdftex.def)             Requested size: 469.75502pt x 328.93951pt.
- [32
+ [31
 
  <./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf>]
-<./figs/Figure_7_ErrorSwarms_v2.pdf, id=1213, 864.22874pt x 602.25pt>
+<./figs/Figure_7_ErrorSwarms_v2.pdf, id=1210, 864.22874pt x 602.25pt>
 File: ./figs/Figure_7_ErrorSwarms_v2.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_7_ErrorSwarms_v2.pdf>
 Package pdftex.def Info: ./figs/Figure_7_ErrorSwarms_v2.pdf used on input line 
-612.
+626.
 (pdftex.def)             Requested size: 469.75502pt x 327.35132pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33 <./figs/Figure_7_ErrorSwarms_v2.pdf>]
-<./figs/Figure_S1_B1_sims.pdf, id=1234, 596.2275pt x 659.46375pt>
+[32 <./figs/Figure_7_ErrorSwarms_v2.pdf>]
+<./figs/Figure_S1_B1_sims.pdf, id=1231, 596.2275pt x 659.46375pt>
 File: ./figs/Figure_S1_B1_sims.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_S1_B1_sims.pdf>
-Package pdftex.def Info: ./figs/Figure_S1_B1_sims.pdf used on input line 648.
+Package pdftex.def Info: ./figs/Figure_S1_B1_sims.pdf used on input line 662.
 (pdftex.def)             Requested size: 469.75502pt x 519.582pt.
 
-<./figs/Figure_S2_B4_sims.pdf, id=1235, 614.295pt x 794.97pt>
+<./figs/Figure_S2_B4_sims.pdf, id=1232, 614.295pt x 794.97pt>
 File: ./figs/Figure_S2_B4_sims.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_S2_B4_sims.pdf>
-Package pdftex.def Info: ./figs/Figure_S2_B4_sims.pdf used on input line 655.
+Package pdftex.def Info: ./figs/Figure_S2_B4_sims.pdf used on input line 669.
 (pdftex.def)             Requested size: 469.75502pt x 607.9196pt.
 
 
-LaTeX Warning: Float too large for page by 21.4896pt on input line 658.
+LaTeX Warning: Float too large for page by 21.4896pt on input line 672.
 
 
-<./figs/Figure_S3_B1_B4_params_measuredstates.pdf, id=1236, 1027.84pt x 770.88p
+<./figs/Figure_S3_B1_B4_params_measuredstates.pdf, id=1233, 1027.84pt x 770.88p
 t>
 File: ./figs/Figure_S3_B1_B4_params_measuredstates.pdf Graphic file (type pdf)
  <use ./figs/Figure_S3_B1_B4_params_measuredstates.pdf>
 Package pdftex.def Info: ./figs/Figure_S3_B1_B4_params_measuredstates.pdf used 
-on input line 662.
+on input line 676.
 (pdftex.def)             Requested size: 469.75502pt x 352.31538pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 664.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 678.
  [1 <./figs/Figure_S1_B1_sims.pdf>] [2 <./figs/Figure_S2_B4_sims.pdf>] [3 <./fi
 gs/Figure_S3_B1_B4_params_measuredstates.pdf>] (./Paper_v5.aux) )
 (\end occurred inside a group at level 1)
@@ -1047,10 +1047,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v5.pdf (38 pages, 2212464 bytes).
+Output written on Paper_v5.pdf (37 pages, 2212886 bytes).
 PDF statistics:
- 1370 PDF objects out of 1440 (max. 8388607)
- 917 compressed objects within 10 object streams
+ 1367 PDF objects out of 1440 (max. 8388607)
+ 915 compressed objects within 10 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
