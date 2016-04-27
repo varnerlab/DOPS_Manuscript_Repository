@@ -246,10 +246,10 @@ We evaluated the performance of DOPS on problems from the least and most expensi
 The least expensive problem (henceforth referred to as problem B4) was a metabolic model of Chinese Hamster Ovary (CHO) with 35 metabolites, 32 reactions and 117 parameters \cite{villaverde2014high}.
 The biochemical reactions were modeled using modular rate laws and generalized Michaelis-Menten kinetics.
 On the other hand, the expensive problem was a genome scale kinetic model of \textit{Saccharomyces~cerevisiae} with 261 reactions, 262 variables and 1759 parameters \cite{smallbone2013large} (henceforth referred to as problem B1).
-In both cases, synthetic time series data sets, generated using known parameter values, were used to estimate model parameters.
+In both cases, synthetic time series data generated with known parameter values, was used to estimate model parameters.
 For problem B1, the time series data consisted of 44 observables, and for problem B4 the data corresponded to 13 different metabolite measurement sets.
 We fixed the number of function evaluations at $\mathcal{N}$ = 4000, and trained both models against the synthetic experimental data.
-In both cases DOPS, produced good fits to the synthetic data (Fig. \ref{fig-sims-b1} and Fig. \ref{fig-sims-b4}), and recapitulated the nominal parameter values using only $\mathcal{N}\leq~4000$ function evaluations (Fig. \ref{fig-benchmark}).
+In both cases, DOPS produced good fits to the synthetic data (Fig. \ref{fig-sims-b1} and Fig. \ref{fig-sims-b4}), and recapitulated the nominal parameter values using only $\mathcal{N}\leq~4000$ function evaluations (Fig. \ref{fig-benchmark}).
 On the other hand, enhanced scatter search (eSS) with a local optimizer took on order $10^{5}$ function evaluations for the same problems.
 Thus, DOPS estimated the parameters in benchmark biochemical models, and recovered the original parameters from synthetic data, using fewer function evaluations.
 Next, we compared the performance of DOPS with the four other meta-heuristics for a model of the human coagulation cascade.
