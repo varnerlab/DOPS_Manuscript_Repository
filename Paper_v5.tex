@@ -302,22 +302,19 @@ However, while the 50pM TF/FVIIa case was the worst of those tested, it still ha
 Taken together, DOPS estimated parameter sets with predictive power on unseen coagulation data using fewer function iterations than other meta-heuristics.
 Next, we explored how the number of sub-swarms and the switch to DDS influenced the performance of the approach.
 
-\subsection*{The number of sub-swarms and phase switching influenced DOPS performance.}
-A differentiating feature of DOPS compared to other meta-heuristics was the rapid error drop during the first 25\% of an optimization trial.
-This drop occurred during the swarm phase and was punctuated by the switch to the dynamically dimensioned search phase of the approach.
+\subsection*{Phase switching was critical to DOPS performance.}
+A differentiating feature of DOPS compared to the other meta-heuristics is the switch to dynamically dimensioned search following stagnation of the initial particle swarm phase.
 We quantified the influence of the number of sub-swarms and switch to the DDS phase on error convergence by comparing DOPS with and without DDS for different numbers of sub-swarms (Fig. \ref{fig-sub-swarms}).
-We considered only the multi swarm search without the DDS phase for $\mathcal{N}$ = 4000 function evaluations on the coagulation model.
-While doing the multi swarm search without DDS, we used one, two, four, five and eight sub-swarms, with a total of 40 particles divided evenly amongst the swarms.
-Hence we did not consider swarm numbers of three and seven.
-All the other parameters remained the same for each of these searches.
-Generally, the higher sub-swarm numbers had faster convergence.
-However, the difference in convergences was not pronounced amongst four, five and eight, suggesting
-there was an optimal number of particles per swarm beyond which there was no significant advantage.
-We also observed that convergence rates are compared with DOPS, DOPS shows a very rapid drop when the swarm searches begin to saturate.
-The green region indicates when swarm search switches to a DDS based search.
-The error convergence rates tend to remain mostly flat for the purely swarm searches with different swarm numbers.
-However in DOPS as soon as convergence rate begins to saturate it automatically switches to a DDS phase which leads to a more pronounced drop.
-Thus, this automated switching strategy appears to be crucial in leading the algorithm out of local optima or saddle point regions.
+We considered multi swarm particle swarm optimization with and without the DDS phase for $\mathcal{N}$ = 4000 function evaluations and $\mathcal{T}$ = 25 trials on the coagulation model.
+We used one, two, four, five and eight sub-swarms, with a total of 40 particles divided evenly amongst the swarms.
+Hence, we did not consider swarm numbers of three and seven.
+All other algorithm parameters remained the same for each of these searches.
+Generally, the higher sub-swarm numbers converged in fewer function evaluations, where the optimum particle partitioning was in the neighborhood of five sub-swarms.
+However, the difference in convergence rate was qualitatively similar for four, five and eight sub-swarms, suggesting there was an optimal number of particles per swarm beyond
+which there was no significant advantage.
+The multi-swarm particle swarm optimization phase stagnated within the first 25\% of the available function evaluations irrespective of the number of sub-swarms.
+The DDS phase refined the globally best particle to produce significantly lower error on average when compared to multi-swarm particle swarm optimization alone.
+Thus, the automated switching strategy was critical to the overall performance of DOPS.
 
 \clearpage
 
@@ -530,27 +527,6 @@ This study was supported by an award from the Army Research Office (ARO \#59155-
 
 \begin{table}[h]
 \centering
-\caption[.]{Error Analysis. Normalized standard error showing the agreement between coagulation model dynamics and the coagulation experimental data. The model is trained on the 5~nM and the 5~pM cases to obtain the optimal parameters. Using these optimal parameters, dynamics of coagulation are predicted with varying initiator concentrations (500~pM, 50~pM and 10~pM). The normalized S.E. is defined as \( N.S.E.=(1/max(\mathbf{X}))*(\lVert (\mathbf{Y},\mathbf{X}) \rVert /sqrt$(N)$) \) where \textbf{X} is the experimental data, \textbf{Y} is the model simulation data interpolated on experimental time and $N$ is the total number of experimental time points.}
-\label{table:Error-Analysis}
-\begin{center}
-\begin{tabular}{ r|ll}
-\hline\\
-TF/FVIIa concentration& Normalized S.E.& Category\\\\
-\hline\\
-5~nM & 0.0376 & Training \\
-500~pM & 0.0564 & Prediction\\
-50~pM & 0.1125 & Prediction\\
-10~pM & 0.0823 & Prediction\\
-5~pM & 0.0338 & Training\\\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-
-
-\begin{table}[h]
-\centering
 \caption{Table with optimization settings and results for the coagulation problem, the benchmarks and test functions using DOPS. For each problem the bounds on the parameter vector, the total number of function evaluations, the best initial objective value and the best final objective value are specified. Here $pnom$ indicates the nominal or true parameter vector of the model. Nominal objective value represents the objective value using the true parameter vector or the nominal parameter vector. The CPU time is the time taken for the problem on a 2.4GHz Intel Xeon Architecture running Matlab 2014b.}
 \label{table:benchmark-problems}
 \resizebox{\columnwidth}{!}{
@@ -572,14 +548,32 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 }
 \end{table}
 
+\begin{table}[h]
+\centering
+\caption[.]{Error Analysis. Normalized standard error showing the agreement between coagulation model dynamics and the coagulation experimental data. The model is trained on the 5~nM and the 5~pM cases to obtain the optimal parameters. Using these optimal parameters, dynamics of coagulation are predicted with varying initiator concentrations (500~pM, 50~pM and 10~pM). The normalized S.E. is defined as \( N.S.E.=(1/max(\mathbf{X}))*(\lVert (\mathbf{Y},\mathbf{X}) \rVert /sqrt$(N)$) \) where \textbf{X} is the experimental data, \textbf{Y} is the model simulation data interpolated on experimental time and $N$ is the total number of experimental time points.}
+\label{table:Error-Analysis}
+\begin{center}
+\begin{tabular}{ r|ll}
+\hline\\
+TF/FVIIa concentration& Normalized S.E.& Category\\\\
+\hline\\
+5~nM & 0.0376 & Training \\
+500~pM & 0.0564 & Prediction\\
+50~pM & 0.1125 & Prediction\\
+10~pM & 0.0823 & Prediction\\
+5~pM & 0.0338 & Training\\\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
 \clearpage
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure_1_Algorithm.pdf}
-\caption{Dynamic Optimization with Particle Swarms. \textbf{A}: Each particle represents an N dimensional parameter vector. Particles are given randomly generated initial solutions and grouped into different sub-swarms. Within each swarm the magnitude and direction of the movement a particle is influenced by the position of the best particle and also by its own experience. After every $\mathbf{g}$ number of function evaluations the particles are mixed and randomly assigned to different swarms. When the error due to the global best particle (best particle amongst all the sub-swarms) does not drop over a certain number of function evaluations, the swarm search is stopped and the search switches to a Dynamically Dimensioned Search with global best particle as the initial solution vector or candidate vector.
-\textbf{B}: The candidate vector performs a greedy global search for the remaining number of function evaluations. The search neighborhood is dynamically adjusted by varying the number of dimensions that are perturbed (in black) in each evaluation step. The probability that a dimension is perturbed decreases as the number of function evaluations increase. Thus as the evaluations increase the optimality of the solution is preserved.
+\caption{Schematic of the dynamic optimization with particle swarms (DOPS) approach. \textbf{A}: Each particle represents an N dimensional parameter vector. Particles are given randomly generated initial solutions and grouped into different sub-swarms. Within each swarm the magnitude and direction of the movement a particle is influenced by the position of the best particle and also by its own experience. After every $\mathbf{g}$ number of function evaluations the particles are mixed and randomly assigned to different swarms. When the error due to the global best particle (best particle amongst all the sub-swarms) does not drop over a certain number of function evaluations, the swarm search is stopped and the search switches to a Dynamically Dimensioned Search with global best particle as the initial solution vector or candidate vector.
+\textbf{B}: The candidate vector performs a greedy global search for the remaining number of function evaluations. The search neighborhood is dynamically adjusted by varying the number of dimensions that are perturbed (in black) in each evaluation step. The probability that a dimension is perturbed decreases as the number of function evaluations increase.
 }\label{fig-algorithm}
 \end{figure}
 
@@ -587,7 +581,7 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.7\textwidth]{./figs/Figure_2_TestFunctions-crop.pdf}
+\includegraphics[width=0.60\textwidth]{./figs/Figure_2_TestFunctions-crop.pdf}
 \caption{Performance of DOPS and other meta-heuristics for the Ackley and Rastrigin functions.
 \textbf{A}: Mean scaled error versus the number of function evaluations for the 10-dimensional Ackley function. DOPS, DDS and DE find optimal or near optimal solutions within the specified number of function evaluations.
 \textbf{B}: Mean scaled error versus the number of function evaluations for the 10-dimensional Rastrigin function. DOPS and DDS find optimal or near optimal solutions within the specified number of function evaluations.
