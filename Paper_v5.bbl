@@ -297,6 +297,12 @@ Luan D, Zai M, Varner JD (2007) Computationally derived points of fragility of
 \newblock PLoS computational biology 3: e142.
 \bibAnnoteFile{luan2007computationally}
 
+\bibitem{song2010ensembles}
+Song SO, Chakrabarti A, Varner JD (2010) {Ensembles of signal transduction
+  models using pareto optimal ensemble techniques (POETs)}.
+\newblock Biotechnology journal 5: 768--780.
+\bibAnnoteFile{song2010ensembles}
+
 \bibitem{shi1999empirical}
 Shi Y, Eberhart RC (1999) Empirical study of particle swarm optimization.
 \newblock Evolutionary Computation, 1999 CEC 99 Proceedings of the 1999
