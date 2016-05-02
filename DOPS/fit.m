@@ -2,6 +2,10 @@
 %  Copyright (c) 2016 Varnerlab
 %  School of Chemical and Biomolecular Engineering
 %  Cornell University, Ithaca NY 14853 USA
+%
+%----------------*****  Code Author Information *****----------------------
+%   Code Author (Implementation Questions, Bug Reports, etc.): 
+%       Adithya Sagar: asg242@cornell.edu
 % 
 %  Permission is hereby granted, free of charge, to any person obtaining a copy
 %  of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +26,7 @@
 %  THE SOFTWARE.
 %  ----------------------------------------------------------------------------------- 
 
-%%
+%% Returns a numerical error value to DOPS 
 function fitness = fit(x)
-	    fitness=ackley(x');      %ackley function 
+	    fitness=ackley(x');      %An example here is ackley function. This function is user defined an basically determines the error between simulation and experiment. 
 end

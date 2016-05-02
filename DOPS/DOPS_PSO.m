@@ -2,6 +2,10 @@
 %  Copyright (c) 2016 Varnerlab
 %  School of Chemical and Biomolecular Engineering
 %  Cornell University, Ithaca NY 14853 USA
+%
+%----------------*****  Code Author Information *****----------------------
+%   Code Author (Implementation Questions, Bug Reports, etc.): 
+%       Adithya Sagar: asg242@cornell.edu
 % 
 %  Permission is hereby granted, free of charge, to any person obtaining a copy
 %  of this software and associated documentation files (the "Software"), to deal
@@ -20,8 +24,7 @@
 %  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %  THE SOFTWARE.
-%  ------------------------------------------------------------------------
-
+%  ----------------------------------------------------------------------------------- 
 
 %% SWARM SEARCH WITH ADAPTIVE SWITCHING STRATEGY
 
