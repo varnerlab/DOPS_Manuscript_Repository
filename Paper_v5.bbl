@@ -305,8 +305,8 @@ Song SO, Chakrabarti A, Varner JD (2010) {Ensembles of signal transduction
 
 \bibitem{shi1999empirical}
 Shi Y, Eberhart RC (1999) Empirical study of particle swarm optimization.
-\newblock Evolutionary Computation, 1999 CEC 99 Proceedings of the 1999
-  Congress on .
+\newblock In: Proceedings of the 1999 Congress on Evolutionary Computation,
+  1999. CEC 99. volume~3, p. 1950.
 \bibAnnoteFile{shi1999empirical}
 
 \end{thebibliography}

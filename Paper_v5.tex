@@ -121,19 +121,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Abstract}
-Mathematical modeling is a powerful tool to analyze, and ultimately design biochemical networks.
+Mathematical modeling is a powerful tool to analyze, and design biochemical networks.
 However, the estimation of biochemical model parameters is a significant challenge.
-Parameter estimation in biochemical models typically involves expensive function evaluations and noisy data, making it difficult to quickly obtain optimal solutions.
+Parameter estimation typically involves expensive function evaluations and noisy data, making it difficult to quickly obtain optimal solutions.
 Biochemical models often also have many local extrema which further complicates parameter estimation.
-Toward these challenges, we developed Dynamic Optimization with Particle Swarms (DOPS), a novel global meta-heuristic that combined features of multi-swarm particle swarm optimization with dynamically dimensioned search (DDS).
+Toward these challenges, we developed Dynamic Optimization with Particle Swarms (DOPS), a novel hybrid meta-heuristic that combined multi-swarm particle swarm optimization with dynamically dimensioned search (DDS).
 DOPS uses a multi-swarm particle swarm optimization technique to generate candidate solution vectors, the best of which is greedily updated using dynamically dimensioned search.
-We tested the performance of DOPS on a model of human coagulation cascade.
+We tested DOPS using a combination of classic optimization test functions, biochemical benchmark problems and real-world biochemical models.
 We performed $\mathcal{T}$ = 25 trials with $\mathcal{N}$ = 4000 function evaluations per trial, and compared the performance of DOPS with other commonly
 used meta-heuristics such as differential evolution (DE), simulated annealing (SA) and dynamically dimensioned search (DDS).
-We further tested the predictive power of the coagulation model parameters against data not used in training, and found good agreement between simulations and experimental measurements. Lastly, we tested the performance of DOPS on commonly used test functions for global optimization and on published biochemical parameter estimation benchmark problems. For the wide range of problems that we considered, DOPS outperformed other meta-heuristic approaches despite a limited number of function evaluations. Taken together, DOPS is a promising meta-heuristic approach for the estimation of biochemical model parameters in relatively few function evaluations.
+On average, DOPS outperformed other common meta-heuristics on the optimization test functions,
+benchmark problems and a model of the human coagulation cascade.
+Taken together, DOPS is a promising meta-heuristic approach for the estimation of biochemical model parameters in relatively few function evaluations.
+DOPS source code is available for download under a MIT license at http://www.varnerlab.org.
+
+
+%We further tested the predictive power of the coagulation model parameters against data not used in training, and found good agreement between simulations and experimental measurements. Lastly, we tested the performance of DOPS on commonly used test functions for global optimization and on published biochemical parameter estimation benchmark problems. For the wide range of problems that we considered, DOPS outperformed other meta-heuristic approaches despite a limited number of function evaluations.
 
 \vspace{0.1in}
-{\noindent \textbf{Keywords:}~Parameter identification, Meta-heuristic optimization, Biochemical modeling}
+{\noindent \textbf{Keywords:}~Biochemical engineering, systems biology, modeling, optimization}
 
 % Extra abstract
 % Mathematical modeling of biological systems with multiple feed back loops is one such area where parameter estimation is a difficult non-linear optimization problem. This difficulty is further compounded when dealing with parameter vectors of high dimensions.
@@ -200,7 +206,7 @@ In this study, we developed Dynamic Optimization with Particle Swarms (DOPS), a 
 The objective of DOPS is to obtain near optimal parameter estimates for large biochemical models within a relatively few function evaluations.
 DOPS uses multi-swarm particle swarm optimization to generate nearly optimal candidate solutions, which are then greedily updated using dynamically dimensioned search.
 We tested DOPS using a combination of classic optimization test functions, biochemical benchmark problems and real-world biochemical models.
-First, we tested the performance of DOPS on commonly used test functions for global optimization (Ackley and Rosenbrock) and published biochemical benchmark problems.
+First, we tested the performance of DOPS on the Ackley and Rosenbrock functions, and published biochemical benchmark problems.
 Next, we used DOPS to estimate the parameters of a model of the human coagulation cascade.
 On average, DOPS outperformed other common meta-heuristics like differential evolution, simulated annealing, single-swarm particle swarm optimization, and dynamically dimensioned search on the optimization test functions, benchmark problems and the coagulation model. For example, DOPS recovered the nominal parameters for the benchmark problems using an order of magnitude fewer function evaluations than eSS in all cases.
 It also produced parameter estimates for the coagulation model that predicted unseen coagulation data sets.
@@ -479,13 +485,17 @@ where $\left(\theta_{1},\theta_{2},\theta_{3}\right)$ were adjustable parameters
 $\mathcal{S}_{k}$ for function evaluation $1\rightarrow j-1$, and
 $\mathcal{G}_{k}$ denotes the best solution found over all particles within sub-swarm $\mathcal{S}_{k}$.
 The quantities $r_{1}$ and $r_{2}$ denote uniform random vectors with the same dimension as the number of unknown model parameters ($\mathcal{K}\times{1}$).
-Equation (3) is similar to the general particle swarm update rule, however, it does not contain velocity terms.
-In DOPS, the parameter $\theta_{1,j-1}$ is similar to the inertia weight parameter for the velocity term described by Shi and Eberhart \cite{shi1999empirical}. In this study Shi and Eberhart propose a linearly decreasing inertia weight to improve convergence properties of PSO. $\theta_{1,j-1}$ is inspired from this idea and also from the idea of decreasing perturbation probability proposed by Tolson and Shoemaker \cite{tolson2007dynamically}. It is an analogous equivalent to inertia weight on velocity. However $\theta_{1,j-1}$ places inertia on the position rather than velocity and uses the same rule described by Shi and Eberhart to adaptively change with the number of function evaluations. It is updated according to:
+Equation \eqref{qn:update-rule} is similar to the general particle swarm update rule, however, it does not contain velocity terms.
+In DOPS, the parameter $\theta_{1,j-1}$ is similar to the inertia weight parameter for the velocity term described by Shi and Eberhart \cite{shi1999empirical};
+Shi and Eberhart proposed a linearly decreasing inertia weight to improve convergence properties of particle swarm optimization.
+Our implementation of $\theta_{1,j-1}$ is inspired by this and the decreasing perturbation probability proposed by Tolson and Shoemaker \cite{tolson2007dynamically}.
+It is an analogous equivalent to inertia weight on velocity.
+However $\theta_{1,j-1}$ places inertia on the position rather than velocity and uses the same rule described by Shi and Eberhart to adaptively change with the number of function evaluations:
 \begin{eqnarray}
 	\mathbf \theta_{1,j}&=&\frac{(\mathcal{N}-{j})*({w}_{max}-{w}_{min}))}{(\mathcal{N}-{1})} + {w}_{min}
 \end{eqnarray}
 where $\mathcal{N}$ represents the total number of function evaluations, ${w}_{max}$ and ${w}_{min}$ are the maximum and minimum inertia weights, respectively.
-While updating the particles, we made sure all dimensions of the solution represented by the particle were within bounds using reflection boundary conditions (Algo. \ref{algo_reflection}).
+While updating the particles, parameter bounds were enforced using reflection boundary conditions (Algo. \ref{algo_reflection}).
 
 \begin{algorithm}
 \If{$z_{i,j}^{old} < z_{i}^{min}$}{
@@ -533,6 +543,7 @@ where $i$ is the current iteration. After $\mathcal{P}_{i}$ is determined, we dr
 If $\mathcal{P}_{j}<\mathcal{P}_{i}$ was included in \textbf{J}.
 Thus, the probability that a dimension $j$ was perturbed was inversely proportional to the number of function evaluations.
 DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
+DOPS source code is available for download under a MIT license at http://www.varnerlab.org.
 
 %The reflection boundary conditions in equation 5, the update function described in equations 6 and 7, the selection probability in equation 8 are the means by which DDS ideas are incorporated into DOPS. The fraction of evaluations $\mathcal{F}$  within the swarm phase is based on a switching strategy wherein the switch from swarm phase to DDS phase happens when the error due to the best solution does not drop more than 1\% of the original error, continuously for more than a prescribed number of function evaluations. This allows the solution to quickly jump out of local optima and avoid any convergence issues that are generally associated with swarm based searches.
 %Thus the number of dimensions of the candidate vector that are updated or perturbed decreases with the as the number of function evaluations increase. T
@@ -592,7 +603,9 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 
 \begin{table}[h]
 \centering
-\caption[.]{Error Analysis. Normalized standard error showing the agreement between coagulation model dynamics and the coagulation experimental data. The model is trained on the 5~nM and the 5~pM cases to obtain the optimal parameters. Using these optimal parameters, dynamics of coagulation are predicted with varying initiator concentrations (500~pM, 50~pM and 10~pM). The normalized S.E. is defined as \( N.S.E.=(1/max(\mathbf{X}))*(\lVert (\mathbf{Y},\mathbf{X}) \rVert /sqrt$(N)$) \) where \textbf{X} is the experimental data, \textbf{Y} is the model simulation data interpolated on experimental time and $N$ is the total number of experimental time points.}
+\caption[.]{Error analysis for the human coagulation model. The coagulation model was trained on coagulation initiated with TF/FVIIa at 5~nM and the 5~pM to obtain the optimal parameters.
+Using these optimal parameters, coagulation dynamics were predicted for varying initiator concentrations (500~pM, 50~pM and 10~pM).
+Model agreement with measurements was quantified using normalized squared error. The normalized squared error is defined as \( N.S.E.=(1/max(\mathbf{X}))*(\lVert (\mathbf{Y},\mathbf{X}) \rVert /sqrt$(N)$) \) where \textbf{X} is the experimental data, \textbf{Y} is the model simulation data interpolated onto the experimental time scale and $N$ is the total number of experimental time points.}
 \label{table:Error-Analysis}
 \begin{center}
 \begin{tabular}{ r|ll}
@@ -627,7 +640,7 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 \caption{Performance of DOPS and other meta-heuristics for the Ackley and Rastrigin functions.
 \textbf{A}: Mean scaled error versus the number of function evaluations for the 10-dimensional Ackley function. DOPS, DDS and DE find optimal or near optimal solutions within the specified number of function evaluations.
 \textbf{B}: Mean scaled error versus the number of function evaluations for the 10-dimensional Rastrigin function. DOPS and DDS find optimal or near optimal solutions within the specified number of function evaluations.
-\textbf{C}: Mean scaled error versus the number of function evaluations for the 300-dimensional Rastrigin function. DOPS is the only algorithm that finds an optimal or near optimal solution within the specified number of function evaluations. In all cases, the maximum number of function evaluations was 4000. Mean and standard deviation were calculated over 25 trials. }\label{fig-testfunctions}
+\textbf{C}: Mean scaled error versus the number of function evaluations for the 300-dimensional Rastrigin function. DOPS is the only algorithm that finds an optimal or near optimal solution within the specified number of function evaluations. In all cases, the maximum number of function evaluations was $\mathcal{N}$ = 4000. Mean and standard deviation were calculated over $\mathcal{T}$ = 25 trials. }\label{fig-testfunctions}
 \end{figure}
 
 \clearpage
@@ -635,7 +648,7 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.00\textwidth]{./figs/Figure_3_Coagulation_v4.pdf}
-\caption{Schematic of the extrinsic and intrinsic coagulation cascade\cite{luan2007computationally}. Inactive zymogens upstream (grey) are activated by exposure to tissue factor (TF)  following vessel injury. Tissue factor and activated factor VIIa (FVIIa) form a complex that activates factor X (fX) and IX (fIX). FXa activates downstream factors including factor VIII (fVIII) and fIX. Factor V (fV) is primarily activated by thrombin (FIIa). In addition, we included a secondary fV activation route involving FXa. FXa and FVa form a complex (prothrombinase) on activated platelets that converts prothrombin (fII) to FIIa. FIXa and FVIIIa can also form a complex (tenase) on activated platelets which catalyzes FXa formation.  Thrombin also activates upstream coagulation factors, forming a strong positive feedback ensuring rapid activation. Tissue factor pathway inhibitor (TFPI) downregulates FXa formation and activity by sequestering free FXa and TF-FVIIa in a FXa-dependent manner. Antithrombin III (ATIII)  inhibits all proteases. Thrombin inhibits itself binding the surface protein thrombomodulin (TM). The IIa-TM complex catalyzes the conversion of protein C (PC) to activated protein C (APC), which attenuates the coagulation response by the proteolytic cleavage of fV/FVa and fVIII/FVIIIa. }\label{fig-coagulation-network}
+\caption{Schematic of the extrinsic and intrinsic coagulation cascade. Inactive zymogens upstream (grey) are activated by exposure to tissue factor (TF)  following vessel injury. Tissue factor and activated factor VIIa (FVIIa) form a complex that activates factor X (fX) and IX (fIX). FXa activates downstream factors including factor VIII (fVIII) and fIX. Factor V (fV) is primarily activated by thrombin (FIIa). In addition, we included a secondary fV activation route involving FXa. FXa and FVa form a complex (prothrombinase) on activated platelets that converts prothrombin (fII) to FIIa. FIXa and FVIIIa can also form a complex (tenase) on activated platelets which catalyzes FXa formation.  Thrombin also activates upstream coagulation factors, forming a strong positive feedback ensuring rapid activation. Tissue factor pathway inhibitor (TFPI) downregulates FXa formation and activity by sequestering free FXa and TF-FVIIa in a FXa-dependent manner. Antithrombin III (ATIII)  inhibits all proteases. Thrombin inhibits itself binding the surface protein thrombomodulin (TM). The IIa-TM complex catalyzes the conversion of protein C (PC) to activated protein C (APC), which attenuates the coagulation response by the proteolytic cleavage of fV/FVa and fVIII/FVIIIa. }\label{fig-coagulation-network}
 \end{figure}
 
 \clearpage
@@ -643,7 +656,9 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure_4_Errors_convergence_v2.pdf}
-\caption{Error convergence rates of the five different algorithms on the coagulation model. The objective error is the mean over $N$= 25 trials. DOPS, DDS and SA have the steepest drop in error during first 300 function evaluations. Thereafter the error drop in DDS and SA remains nearly constant whereas DOPS continues to drops further. At the end of 4000 function evaluations DOPS attains the lowest error. The next best estimate using DDS is nearly 3 times greater than the lowest error using DDS.
+\caption{Error convergence rates of the five different algorithms on the coagulation model. The objective error is the mean over $\mathcal{T}$= 25 trials.
+DOPS, DDS and SA have the steepest drop in error during first 300 function evaluations. Thereafter the error drop in DDS and SA remains nearly constant whereas DOPS continues to drops further.
+At the end of 4000 function evaluations DOPS attains the lowest error. The next best estimate using DDS is nearly three times greater than the lowest error using DDS.
 }\label{fig-convergence}
 \end{figure}
 
@@ -661,7 +676,7 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf}
-\caption{Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $N$= 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - Orange respectively) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
+\caption{Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $\mathcal{T}$ = 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - orange, respectively) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
 }\label{fig-validation}
 \end{figure}
 
@@ -670,9 +685,13 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.0\textwidth]{./figs/Figure_7_ErrorSwarms_v2.pdf}
-\caption{DOPS (color:black) begins by using a particle swarm search (color:pale brown) and then dynamically switches (color:green), using an adaptive switching criteria, to the DDS search phase (color:white).
-The particle swarm search uses multiple sub-swarms wherein each solution represented by a particle is updated using equation \ref{eqn:update-rule}. The particle update is influenced by the best particle amongst all particles in the sub-swarm and the best solution found by the particle till the current iteration. This update rule however contains no velocity terms. The particle updates continue to happen within the sub-swarms for a certain number of iterations (or function evaluations) after which the sub-swarms are reorganized which is similar to the regrouping strategy described by Zhao et al. \cite{zhao2008dynamic}. DOPS switches out of this PSO phase based on an adaptive switching criteria (color:green) that is a function of error convergence rate. If the error represented by the best particle does not drop for a threshold number of function evaluations, DOPS switches automatically to the DDS search phase. Since the algorithm is stochastic, the switch out can happen at a different function evaluation in each trial. The DDS search then uses the best particle from the PSO search phase as its initial solution or candidate vector. This particle is greedily updated by perturbing a subset of dimensions for the remaining number of function evaluations. The number of dimensions perturbed is a monotonically decreasing function that generally depends on the number of function evaluations within the DDS phase.
-We compared the performance of DOPS with multi-swarm searches without DDS to quantify the effect of number of sub-swarms. We used one, two, four, five and eight sub-swarms, with a total of 40 particles divided evenly amongst the swarms. The convergence rates with higher swarm numbers is typically higher but there is no pronounced difference amongst four, five and eight. When the multi-swarm only searches tend to saturate DOPS shows a rapid drop due to a switch to  the DDS phase.
+\caption{Influence of the switching strategy and sub-swarms on DOPS performance for the coagulation model.
+DOPS begins by using a particle swarm search and then dynamically switches (switch region), using an adaptive switching criteria, to the DDS search phase.
+We compared the performance of DOPS with and without DDS for different sub-swarm searches to quantify the effect of number of sub-swarms and DDS.
+We used one, two, four, five and eight sub-swarms, with a total of 40 particles divided evenly amongst the swarms.
+The results presented are the average of $\mathcal{T}$ = 25 trials with $\mathcal{N}$ = 4000 function evaluations each.
+The convergence rates with higher swarm numbers is typically higher but there is no pronounced difference amongst four, five and eight.
+The multi-swarm with DDS saturates while DOPS shows a rapid drop due to a switch to the DDS phase.
 }\label{fig-sub-swarms}
 \end{figure}
 
