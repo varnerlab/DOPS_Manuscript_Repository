@@ -426,7 +426,10 @@ Optimal model parameters are then given by:
 
 \subsection*{Dynamic optimization with particle swarms (DOPS).}
 DOPS is a novel meta-heuristic which combines multi-swarm particle swarm optimization
-with the dynamically dimensioned search (Fig. \ref{fig-algorithm}) and (Algo. \ref{algo_ddspso}). 
+with the dynamically dimensioned search (Fig. \ref{fig-algorithm}) and (Algo. \ref{algo_ddspso}).  Particle swarm optimization is an evolutionary algorithm that uses a population of particles (solutions) to find an optimal solution.
+Each particle is updated based on its on experience (particle best) and the experience of all other particles within the swarm (global best) \cite{clerc2010particle}\cite{blondin2009particle}\cite{abraham2006swarm}.   
+Multi-swarm particle swarm optimization is a variant of particle swarm optimization that uses multiple swarms instead of a single swarm.
+DOPS uses a novel update rule of particles within each swarm that is described in detail in the methods.
 The goal of DOPS is to estimate optimal or near optimal parameter vectors for high-dimensional biological models within a specified number of function evaluations.
 Toward this objective, DOPS begins by using a particle swarm search and then dynamically switches, using an adaptive switching criteria, to a DDS search phase.
 
