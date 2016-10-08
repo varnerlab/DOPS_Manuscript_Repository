@@ -452,11 +452,11 @@ For the sake of brevity we are not providing the entire pseudo code of DDS here.
 \Input{A randomized swarm of particles of size $NP\times K$ and fixed number of function evaluations N}
 \Output{Optimized parameter vector of size $1\times K$ }
 \BlankLine
-\emph{Initialize the particles randomly and assign particles randomly to various sub-swarms}\;
+\emph{Initialize the particles randomly and assign particles randomly to $k$ sub-swarms}\;
 \While{$j\leq N$}{
 
 \If{mod(j,G)=0} {
- \emph{Reassign particles to different sub-swarms}\;
+ \emph{Reassign particles to $k$ sub-swarms}\;
 }
 
 \For{$i\leftarrow 1$ \KwTo $NS$}{\label{forins}
@@ -533,6 +533,27 @@ However, if the simulation error stagnated e.g., did not change by more than 1\%
 exploring parameter space using the DDS approach.
 
 \subsubsection*{Phase 2: DDS phase.}
+
+\IncMargin{1em}
+\begin{algorithm}
+\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+\Input{Candidate vector $\mathcal{G}$ from swarm search and $\left(1-\mathcal{F}\right)*\mathcal{N}$ evaluations}
+\Output{Optimized parameter vector of size $1\times K$ }
+\BlankLine
+\While{$j\leq \left(1-\mathcal{F}\right)*\mathcal{N}$}{
+
+\emph{Assign probability of perturbation to each dimension $\mathcal{P}_{i}$ according to equation 7}\;
+\emph{Select a subset of dimensions based on a threshold value for perturbation}\;
+\emph{Update candidate solution $\mathcal{G}({J})$  according to equation 5}\;
+\emph{Ensure updated solution $\mathcal{G}_{new}({J})$ is within bounds using Algorithm 2}\;
+
+}
+\caption{Pseudo code for the Dynamically Dimensioned Search (DDS) method.}\label{algo_dds}
+\end{algorithm}\DecMargin{1em}
+
+
 At the conclusion of the swarm phase, the overall best particle, $\mathcal{G}_{k}$, over the k sub-swarms was used to initialize the DDS phase.
 DOPS takes at least $\left(1-\mathcal{F}\right)*\mathcal{N}$ function evaluations during the DDS phase and then terminates the search.
 For the DDS phase, the best parameter estimate was updated using the rule:
