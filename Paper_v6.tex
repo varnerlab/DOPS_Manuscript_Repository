@@ -429,11 +429,19 @@ DOPS is a novel meta-heuristic which combines multi-swarm particle swarm optimiz
 with the dynamically dimensioned search (Fig. \ref{fig-algorithm}) and (Algo. \ref{algo_ddspso}).  Particle swarm optimization is an evolutionary algorithm that uses a population of particles (solutions) to find an optimal solution.
 Each particle is updated based on its on experience (particle best) and the experience of all other particles within the swarm (global best) \cite{clerc2010particle}\cite{blondin2009particle}\cite{abraham2006swarm}.   
 Multi-swarm particle swarm optimization is a variant of particle swarm optimization that uses multiple swarms instead of a single swarm.
-DOPS uses a novel update rule of particles within each swarm that is described in detail in the methods.
+DOPS uses a novel update rule of particles within each swarm. This rule uses only particle positions but not particle velocities in the update rule. This differs from existing PSO methods that rely both on particle position and velocity for update. 
+The update rule further described in detail in the methods.
 The goal of DOPS is to estimate optimal or near optimal parameter vectors for high-dimensional biological models within a specified number of function evaluations.
 Toward this objective, DOPS begins by using a particle swarm search and then dynamically switches, using an adaptive switching criteria, to a DDS search phase.
+Dynamically Dimensioned Search (DDS) is a single solution based search algorithm. It was developed by Tolson and Shoemaker to obtain good solutions to high-dimensional search problems within a fixed number of function evaluations. 
+DDS starts as a global search algorithm by perturbing all the dimensions. Later the number of dimensions that are perturbed is decreased with a certain probability. 
+The probability that a certain dimension is perturbed reduces (a minimum of one dimension is always perturbed) as the iterations increase. 
+This causes the algorithm to behave as a local search algorithm as the number of iterations increase.
+The perturbation magnitude of each dimension is from normal distribution with zero mean. The standard deviation that was used in the original DDS paper and the current study is 0.2.
+DDS performs a greedy search where the solution is updated only if it is better than the previous solution.
+The combination of perturbing a subset of dimensions along with greedy search indirectly relies on model sensitivity to a specific parameter combination. 
+For the sake of brevity we are not providing the entire pseudo code of DDS here. The reader is requested to refer to Figure 1 of the original paper by Tolson and Shoemaker \cite{tolson2007dynamically}.
 
-\subsection*{Dynamically dimensioned search (DDS).}
 
 
 \IncMargin{1em}
