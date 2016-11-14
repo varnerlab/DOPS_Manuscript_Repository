@@ -243,6 +243,7 @@ DOPS found optimal or near optimal solutions for both the 10-dimensional Ackley 
 In each of the 10-dimensional cases, other meta-heurtistics such as DDS and DE also performed well. However, DOPS consistently outperformed all other approaches tested.
 This performance difference was more pronounced as the dimension of the search problem increased; for a 300-dimensional Rastrigin function, DOPS was the only approach to find an optimal or near optimal solution
 within the function evaluation budget (Fig. \ref{fig-testfunctions}B).
+DOPS also had a lower variability in the best value obtained (Fig. \ref{fig-boxplot}), faster convergence (Fig. \ref{fig-CMA-ES convergences}, Fig. \ref{fig-convergence eSS}) and less stochasticity (Fig. \ref{fig-dispersion}) across multiple runs when compared to other metaheuristics. We also checked for statistical significance by doing a pairwise 2-sample t-test at 0.5\% significance level. In each case we found that the p-value was close to zero disproving the null hypothesis and confirming the statistical significance of our results.
 Taken together, DOPS performed at least as well as other meta-heuristic approaches on small dimensional test problems, but seemed especially suited to large dimensional search spaces.
 Next, we tested DOPS on benchmark biochemical models of varying complexity.
 
@@ -812,6 +813,7 @@ The multi-swarm with DDS saturates while DOPS shows a rapid drop due to a switch
 \caption{ Fig. S7: (Variability analysis for best objective value): Boxplots for different metaheuristics on \textbf {(A)} Ackley 300 dimensional \textbf {(B)} Rastrigin 300 dimensional \textbf {(C)} CHO Model - B4 \textbf {(D)} and Coagulation
 }\label{fig-boxplot}
 \end{figure}
+
 
 
 \end{document}
