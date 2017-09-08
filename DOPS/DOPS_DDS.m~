@@ -36,7 +36,7 @@ x_best(:,1)=IC;          % Initialize the solution
 x=IC;
 J=1:N;                   % Specify initial dimensions being perturbed
 F_best=fit(x,optFunction);           % Calculate initial best fitness
-F=fit(x,optFunction);                % Calculate current fitness 
+F=fit(x,optFunct);                % Calculate current fitness 
 
 %%
 for i=1:NI

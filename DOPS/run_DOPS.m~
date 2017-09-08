@@ -55,7 +55,7 @@ for i=1:NUMBER_TRIALS
     fprintf('On trial %d', i);
     tstart=tic();          % 
   %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
-  [g_best_solution{i},bestparticle{i},particle{i},fitness{i}]=DOPS_PSO(@rast,MAXJ,MINJ,NP,NI,NS,G,r);
+  
     timeDOPS(i)=toc(tstart);
 
    %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 

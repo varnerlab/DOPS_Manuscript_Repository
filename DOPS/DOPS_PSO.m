@@ -28,7 +28,7 @@
 
 %% SWARM SEARCH WITH ADAPTIVE SWITCHING STRATEGY
 
-function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r)
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=DOPS_PSO(optFunction,MAXJ,MINJ,NP,NI,NS,G,r)
 
 % Parameters for swarm search
 Max_Inertia_weight=0.9;
@@ -47,7 +47,7 @@ for i=1:NP
     Z(:,i)=MINJ+(MAXJ-MINJ).*rand(N,1);                                         
     [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
     particle(:,1,i)=Z(:,i);                          
-    fitness(i,1)=fit7(particle(:,1,i));                                     %Calculating fitness of each particle
+    fitness(i,1)=fit(particle(:,1,i),optFunction);   %was fit7, now just fit                                  %Calculating fitness of each particle
 end
 
 
@@ -56,7 +56,7 @@ end
 
 %Finding particle best and global best after initialization within each sub
 %swarm
-for j=1:NS
+for j=1:NS %was NS, now NS-1
     index_particle=S(:,j);
 
     [ls_pbest_solution(j,:),ls_ITER(j,:)]=particlebest(fitness(index_particle,:));
@@ -78,7 +78,7 @@ for j=2:NI
 w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_weight;         
 
 %Consider if particles need to reassigned to other swarms
-    if(~mod(j,G))
+    if(0==mod(j,G))
         [S]=newswarms(NP,NS,SUB_SWARM_SIZE);
         for k=1:NS
             index_particle=S(:,k);
@@ -115,7 +115,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
             temp=bind(temp,MINJ,MAXJ);                                                                     % Ensure perturbed solution remains within the bounds   
             
             particle(:,j,index_particle(i))=temp;   
-            fitness(index_particle(i),j)=fit(temp);
+            fitness(index_particle(i),j)=fit(temp,optFunction);
 
             [ls_pbest_solution(k,:),ls_ITER(k,:)]=particlebest(fitness(index_particle,:));                 % Find the local particle best 
             [ls_gbest_solution(k),temp_particlenumber]=globalbest(ls_pbest_solution(k,:));                 % Find the local global best 
@@ -137,7 +137,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     [g_best_solution(j),swarmnumber(j)]=globalbest(ls_gbest_solution);
     bestparticle(:,j)=particle(:,ls_ITER(swarmnumber(j),S(:,swarmnumber(j))==particlenumber(swarmnumber(j))),particlenumber(swarmnumber(j)));
     bestparticle_index(j)=find(S(:,swarmnumber(j))==particlenumber(swarmnumber(j)));
-    fprintf('Global best is %f and iteration is %d \n',g_best_solution(j),j);
+    %fprintf('Global best is %f and iteration is %d \n',g_best_solution(j),j);
 
     %Check here if global best is not changing
 
@@ -149,7 +149,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     
     %Switch to DDS search if the solution has stagnated
     if(((NI-j)>0)&&(failure_counter>failure_counter_threshold))
-        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS(bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j));
+        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j));
         break;
     end
     
@@ -160,13 +160,19 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
           
 
 end
-
+%size(g_best_solution)
+%size(bestparticle)
+%size(particle)
+%size(fitness)
+%size(bestval_dds_swarm)
+%size(best_particle_dds_swarm)
+size(best_particles_ls)
 end
 
 
 
 %% DETERMINE PARTICLE BEST AND GLOBAL BEST 
-%Particle best: Best fitness found by the particle in all iterations 
+%Particle best: Best fitness found by the particle in OR "trauma-induced coagulopat all iterations 
 %Global best  : Best fitness found by all particles in all iterations
 
 function[pbest_solution,ITER]=particlebest(fitn)
@@ -181,7 +187,8 @@ end
 function [S]=newswarms(NP,NS,SUB_SWARM_SIZE)
 K=randperm(NP);
 S(:,1)=K(1:SUB_SWARM_SIZE);
-    for i=2:NS
+size(S)
+    for i=2:NS %was ns, changed to NS-1
         diff=setdiff(K,S(:,i-1));
         idx=randperm(length(diff));
         diffperm=diff(idx);
