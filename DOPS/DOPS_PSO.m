@@ -71,7 +71,6 @@ bestparticle_index(1)=find(S(:,swarmnumber(1))==particlenumber(swarmnumber(1)));
 fprintf('Global best is %f and iteration is %d \n',g_best_solution(1),1);
 
 
-
 %Particle update
 for j=2:NI
 

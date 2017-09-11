@@ -37,8 +37,8 @@ warning('off','all');
 %MAXJ=bounds(:,2);
 %MINJ=bounds(:,1);
 %for ackley, bounds -5 to 5
-MAXJ=[5;5];
-MINJ=[-5;-5];
+MAXJ=[5.12;5.12];
+MINJ=[-5.12;-5.12];
 
 %% PARAMETERS FOR SWARM SEARCH AND DYNAMICALLY DIMENSIONED SEARCH
 
@@ -55,7 +55,7 @@ for i=1:NUMBER_TRIALS
     fprintf('On trial %d', i);
     tstart=tic();          % 
   %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
-  [g_best_solution{i},bestparticle{i},particle{i},fitness{i}]=DOPS_PSO(@rast,MAXJ,MINJ,NP,NI,NS,G,r);
+  [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i}]=DOPS_PSO(@rast,MAXJ,MINJ,NP,NI,NS,G,r);
     timeDOPS(i)=toc(tstart);
 
    %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 
@@ -75,11 +75,11 @@ for i=1:NUMBER_TRIALS
 		cmd5 = ['save -ascii ../DOPS_Results/DOPS_time_iter',num2str(i),'.txt timeDOPS'];
     	eval(cmd5)
         
-        %cmd6 = ['save  ../DDSPSO_strategy1_5_swarms_results/DDSPSO_strategy1_errordds_iter',num2str(i),'.mat bestval_dds_swarm'];            % Best fitness value from DDS search 
-    	%eval(cmd6)
+        cmd6 = ['save  ../DDSPSO_strategy1_5_swarms_results/DDSPSO_strategy1_errordds_iter',num2str(i),'.mat bestval_dds_swarm'];            % Best fitness value from DDS search 
+    	eval(cmd6)
 
-		%cmd7 = ['save  ../DDSPSO_strategy1_5_swarms_results/DDSPSO_strategy1_particledds_iter',num2str(i),'.mat best_particle_dds_swarm'];   % Best solution vector from DDS search
-    	%eval(cmd7)
+		cmd7 = ['save  ../DDSPSO_strategy1_5_swarms_results/DDSPSO_strategy1_particledds_iter',num2str(i),'.mat best_particle_dds_swarm'];   % Best solution vector from DDS search
+    	eval(cmd7)
 
    end
 end
