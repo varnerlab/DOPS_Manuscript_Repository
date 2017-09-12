@@ -98,6 +98,8 @@ k = DF.RATE_CONSTANT_VECTOR;
 % VIIIa_P8s_IXa_P9s_inactive=x(91);
 % VIIIa_P8s_IXa_P9s_specific_inactive=x(92);
 
+k = k'; %this transpose appears to be neccessary
+
 % Formulate the kinetics.
 r(1,1)=k(1,1)*x(34)*x(35);
 r(2,1)=k(2,1)*x(36);

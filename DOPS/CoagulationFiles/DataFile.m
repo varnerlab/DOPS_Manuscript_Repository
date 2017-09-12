@@ -295,15 +295,15 @@ NPARAMETERS=length(k);
 NSTATES=length(IC);
 
 % Ok, override the choice of parameters above, load from disk -
-if (~isempty(INDEX))
-	cmd=['load ./psets/PSET_',num2str(INDEX),'.mat'];
-	eval(cmd);
-	kV = kP;
-	
-	% get k and IC -
-	k=kV(1:NPARAMETERS);
-% 	IC=kV((NPARAMETERS+1):end);
-end;
+% if (~isempty(INDEX))
+% 	cmd=['load ./psets/PSET_',num2str(INDEX),'.mat'];
+% 	eval(cmd);
+% 	kV = kP;
+% 	
+% 	% get k and IC -
+% 	k=kV(1:NPARAMETERS);
+% % 	IC=kV((NPARAMETERS+1):end);
+% end;
 kV = [k ; IC];
 DF.DATA_FIG2A1=load('./sampledata/Fig2A1.txt');
 DF.DATA_FIG2A4=load('./sampledata/Fig2A4.txt');
