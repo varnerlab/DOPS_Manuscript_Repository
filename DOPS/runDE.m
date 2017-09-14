@@ -38,7 +38,7 @@ function[fvals,inital_vals]=runDE(seed)
     % refresh       intermediate output will be produced after "refresh"
     %               iterations. No intermediate output will be produced
     %               if refresh is < 1
-            refresh = 10; 
+            refresh = .8; 
     poss_iter_nums =[40,2000,4000];
     functions_to_test = {'ackley', 'rast', 'rast'};
     bounds = {[30;-15], [5.12;-5.12], [5.12;-5.12]};
