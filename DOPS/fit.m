@@ -29,5 +29,10 @@
 %% Returns a numerical error value to DOPS 
 function fitness = fit(x, optFunction)
         %optFunction = function to be minimized, x parameters
-	    fitness=optFunction(x');      %An example here is ackley function. This function is user defined an basically determines the error between simulation and experiment. 
+        optFuncStr = func2str(optFunction);
+        if(contains(optFuncStr, 'b4'))
+            fitness=optFunction(x);      %An example here is ackley function. This function is user defined an basically determines the error between simulation and experiment. 
+        else
+            fitness=optFunction(x');
+        end
 end

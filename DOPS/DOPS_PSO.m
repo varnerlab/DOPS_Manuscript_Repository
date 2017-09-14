@@ -136,7 +136,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     [g_best_solution(j),swarmnumber(j)]=globalbest(ls_gbest_solution);
     bestparticle(:,j)=particle(:,ls_ITER(swarmnumber(j),S(:,swarmnumber(j))==particlenumber(swarmnumber(j))),particlenumber(swarmnumber(j)));
     bestparticle_index(j)=find(S(:,swarmnumber(j))==particlenumber(swarmnumber(j)));
-    %fprintf('Global best is %f and iteration is %d \n',g_best_solution(j),j);
+    fprintf('Global best is %f and iteration is %d \n',g_best_solution(j),j);
 
     %Check here if global best is not changing
 

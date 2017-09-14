@@ -98,7 +98,7 @@ k = DF.RATE_CONSTANT_VECTOR;
 % VIIIa_P8s_IXa_P9s_inactive=x(91);
 % VIIIa_P8s_IXa_P9s_specific_inactive=x(92);
 
-k = k'; %this transpose appears to be neccessary
+%k = k'; %this transpose appears to be neccessary for running with DOPS, but not for figure generation
 
 % Formulate the kinetics.
 r(1,1)=k(1,1)*x(34)*x(35);
@@ -130,7 +130,7 @@ r(26,1)=k(26,1)*x(45)*x(48);
 r(27,1)=k(27,1)*x(8);
 r(28,1)=k(28,1)*x(8);
 r(29,1)=k(29,1)*x(39)*x(42);
-r(30,1)=k(30,1)*x(9);
+r(30,1)=k(30,1)*x(9);s
 r(31,1)=k(31,1)*x(9);
 r(32,1)=k(32,1)*x(42)*x(43);
 r(33,1)=k(33,1)*x(10);

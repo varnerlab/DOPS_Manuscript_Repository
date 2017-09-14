@@ -26,61 +26,63 @@
 %  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %  THE SOFTWARE.
 %  ----------------------------------------------------------------------------------- 
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS(optFunction, MAXJ,MINJ)
+
+    %clear all;
+    more off;
+    warning('off','all');
 
 
-clear all;
-more off;
-warning('off','all');
+    %bounds=load('bounds.txt');
+    %MAXJ=bounds(:,2);
+    %MINJ=bounds(:,1);
+    %for ackley, bounds -5 to 5
+    %MAXJ=[5.12;5.12];
+    %MINJ=[-5.12;-5.12];
 
+    %% PARAMETERS FOR SWARM SEARCH AND DYNAMICALLY DIMENSIONED SEARCH
 
-%bounds=load('bounds.txt');
-%MAXJ=bounds(:,2);
-%MINJ=bounds(:,1);
-%for ackley, bounds -5 to 5
-MAXJ=[5.12;5.12];
-MINJ=[-5.12;-5.12];
+    NP=40;                     %Number of particles in the swarm
+    NI=4000;                    %Number of iterations
+    NS=5;                      %Number of sub swarms
+    G=10;                      %Number of iterations after which swarms are redistributed
+    r=0.2;                     %Perturbation parameter for DDS
 
-%% PARAMETERS FOR SWARM SEARCH AND DYNAMICALLY DIMENSIONED SEARCH
+    NUMBER_TRIALS=25;          %The total number of trials 
+    %%
 
-NP=40;                     %Number of particles in the swarm
-NI=30;                    %Number of iterations
-NS=5;                      %Number of sub swarms
-G=10;                      %Number of iterations after which swarms are redistributed
-r=0.2;                     %Perturbation parameter for DDS
+    for i=1:NUMBER_TRIALS
+        fprintf('On trial %d', i);
+        tstart=tic();          % 
+      %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
+      [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i}]=DOPS_PSO(optFunction,MAXJ,MINJ,NP,NI,NS,G,r);
+        timeDOPS(i)=toc(tstart);
+        fprintf("Time for trial %d is %f\n", i, timeDOPS(i));
 
-NUMBER_TRIALS=25;          %The total number of trials 
-%%
+       %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 
+       if(~mod(i,1))
+            cmd1 = ['save  ../DOPS_Results/',func2str(optFunction),'/DOPS_solution_iter',num2str(i),'.mat bestparticle'];                                                  % The best solution vector from swarm search
+            eval(cmd1)
 
-for i=1:NUMBER_TRIALS
-    fprintf('On trial %d', i);
-    tstart=tic();          % 
-  %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
-  [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i}]=DOPS_PSO(@rast,MAXJ,MINJ,NP,NI,NS,G,r);
-    timeDOPS(i)=toc(tstart);
+            cmd2 = ['save  ../DOPS_Results/',func2str(optFunction),'/DOPS_particle',num2str(i),'.mat particle'];                                                           % The particle matrix - contains particle states for every iteration within the trial
+            eval(cmd2)
 
-   %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 
-   if(~mod(i,1))
-        cmd1 = ['save  ../DOPS_Results/DOPS_solution_iter',num2str(i),'.mat bestparticle'];                                                  % The best solution vector from swarm search
-    	eval(cmd1)
+            cmd3 = ['save  ../DOPS_Results/',func2str(optFunction),'/DOPS_fitness',num2str(i),'.mat fitness'];                                                             % The fitness matrix - contains fitness states for the corresponding particle matrix 
+            eval(cmd3)
 
-        cmd2 = ['save  ../DOPS_Results/DOPS_particle',num2str(i),'.mat particle'];                                                           % The particle matrix - contains particle states for every iteration within the trial
-    	eval(cmd2)
+            cmd4 = ['save -ascii ../DOPS_Results/',func2str(optFunction),'/DOPS_error_iter',num2str(i),'.txt g_best_solution'];                                            % Fitness value corresponding to best solution vector from swarm search   
+            eval(cmd4)
 
-        cmd3 = ['save  ../DOPS_Results/DOPS_fitness',num2str(i),'.mat fitness'];                                                             % The fitness matrix - contains fitness states for the corresponding particle matrix 
-    	eval(cmd3)
+            cmd5 = ['save -ascii ../DOPS_Results/',func2str(optFunction),'/DOPS_time_iter',num2str(i),'.txt timeDOPS'];
+            eval(cmd5)
 
-		cmd4 = ['save -ascii ../DOPS_Results/DOPS_error_iter',num2str(i),'.txt g_best_solution'];                                            % Fitness value corresponding to best solution vector from swarm search   
-    	eval(cmd4)
+            cmd6 = ['save  ../DOPS_Results/',func2str(optFunction),'/DDSPSO_strategy1_5_swarms_results_DDSPSO_strategy1_errordds_iter',num2str(i),'.mat bestval_dds_swarm'];            % Best fitness value from DDS search 
+            eval(cmd6)
 
-		cmd5 = ['save -ascii ../DOPS_Results/DOPS_time_iter',num2str(i),'.txt timeDOPS'];
-    	eval(cmd5)
-        
-        cmd6 = ['save  ../DDSPSO_strategy1_5_swarms_results/DDSPSO_strategy1_errordds_iter',num2str(i),'.mat bestval_dds_swarm'];            % Best fitness value from DDS search 
-    	eval(cmd6)
+            cmd7 = ['save  ../DOPS_Results/',func2str(optFunction),'/DDSPSO_strategy1_5_swarms_results_DDSPSO_strategy1_particledds_iter',num2str(i),'.mat best_particle_dds_swarm'];   % Best solution vector from DDS search
+            eval(cmd7)
 
-		cmd7 = ['save  ../DDSPSO_strategy1_5_swarms_results/DDSPSO_strategy1_particledds_iter',num2str(i),'.mat best_particle_dds_swarm'];   % Best solution vector from DDS search
-    	eval(cmd7)
-
-   end
+       end
+    end
 end
 
