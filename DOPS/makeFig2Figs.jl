@@ -16,6 +16,8 @@ function makeFig2Figs()
 			df[:barcolor][k]=colors[2] #cmap(1)
 		elseif(df[:opt_method][k]=="DE")
 			df[:barcolor][k]=colors[3] #cmap(1)
+		elseif(df[:opt_method][k]=="DOPS")
+			df[:barcolor][k]=colors[4]
 		end
 	end
 	@show df

@@ -52,6 +52,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     %%
 
     for i=1:NUMBER_TRIALS
+        rng(i); %for repeatability
         fprintf('On trial %d', i);
         tstart=tic();          % 
       %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
@@ -60,7 +61,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
         fprintf("Time for trial %d is %f\n", i, timeDOPS(i));
 
        %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 
-       if(~mod(i,1))
+       if(~mod(i,30))
             cmd1 = ['save  ../DOPS_Results/',func2str(optFunction),'/DOPS_solution_iter',num2str(i),'.mat bestparticle'];                                                  % The best solution vector from swarm search
             eval(cmd1)
 
@@ -70,7 +71,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
             cmd3 = ['save  ../DOPS_Results/',func2str(optFunction),'/DOPS_fitness',num2str(i),'.mat fitness'];                                                             % The fitness matrix - contains fitness states for the corresponding particle matrix 
             eval(cmd3)
 
-            cmd4 = ['save -ascii ../DOPS_Results/',func2str(optFunction),'/DOPS_error_iter',num2str(i),'.txt g_best_solution'];                                            % Fitness value corresponding to best solution vector from swarm search   
+            cmd4 = ['save ../DOPS_Results/',func2str(optFunction),'/DOPS_error_iter',num2str(i),'.mat g_best_solution'];                                            % Fitness value corresponding to best solution vector from swarm search   
             eval(cmd4)
 
             cmd5 = ['save -ascii ../DOPS_Results/',func2str(optFunction),'/DOPS_time_iter',num2str(i),'.txt timeDOPS'];

@@ -8,8 +8,8 @@ function y = rast(x,y)
 %for using with DE from http://www1.icsi.berkeley.edu/~storn/code.html#matl
 if(nargin<2)
     y = [];
-else
-n = length(x); 
+end
+    n = length(x); 
     s = 0;
     for j = 1:n
         s = s+(x(j)^2-10*cos(2*pi*x(j))); 
