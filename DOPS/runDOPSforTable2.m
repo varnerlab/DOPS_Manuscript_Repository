@@ -10,7 +10,7 @@ function[mean_data, std_data]=runDOPSforTable2()
          MINJ = lb;
         [g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS(functions_to_test{j},MAXJ,MINJ);
         for k=1:NUM_TRIALS
-            fvals(j,k) = g_best_solution{k}(end);
+            fvals(j,k) = min(fitness{k}(:,end));%g_best_solution{k}(end);
             initial_vals(j,k)=min(fitness{k}(:,1));
         end
         mean_data(j) = mean(fvals(j,:)./initial_vals(j,:));

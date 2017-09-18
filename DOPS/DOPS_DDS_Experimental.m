@@ -28,7 +28,7 @@
 %  ----------- 
 
 %% Dynamically Dimensioned Search
-function[best,x_best,dds_swarm_flag]=DOPS_DDS(optFunction,IC,MAXJ,MINJ,r,NI)
+function[best,x_best,dds_swarm_flag]=DOPS_DDS(optFunction,IC,MAXJ,MINJ,r,NI,NS,G)
 
 % DDS search parameters
 N=length(MINJ);
@@ -37,7 +37,8 @@ x=IC;
 J=1:N;                   % Specify initial dimensions being perturbed
 F_best=fit(x,optFunction);           % Calculate initial best fitness
 F=fit(x,optFunction);                % Calculate current fitness 
-
+failure_counter = 0;
+failure_counter_threshold = 3;
 %%
 for i=1:NI
 
@@ -80,7 +81,17 @@ for i=1:NI
 	end
 
 
-best(i)=F_best;
+    best(i)=F_best;
+    if(i>i && (best(i)==best(i-1)|| best(i)>.99*best(i-1))) %i>1 neccessary to prevent negative indexing problems
+        failure_counter=failure_counter+1;
+    else
+        failure_counter = 0;
+    end
+    
+    %switch back to PSO if we've stagnated
+    if((NI-i)>0 && failure_counter>failure_counter_threshold)
+        DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,NI-i,NS,G,r, x_best(:,i-1));
+    end
 
 %fprintf('Best value is %20.10f and iteration is %d \n',best(i),i);          
 

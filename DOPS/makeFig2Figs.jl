@@ -4,7 +4,7 @@ using PyPlot
 function makeFig2Figs()
 	close("all")
 	df = readtable("../DOPS_Results/performanceComparsion.csv")
-	colors = ["#000000","#708090" , "#696969", "#A9A9A9"]
+	colors = ["#000000","#708090" , "#696969", "#A9A9A9", "#DCDCDC"]
 	cmap=ColorMap("gray")
 	df=hcat(df, ["" for r in 1:size(df,1)]) #adding column for color
 	rename!(df, [:x1], [:barcolor])
@@ -18,6 +18,8 @@ function makeFig2Figs()
 			df[:barcolor][k]=colors[3] #cmap(1)
 		elseif(df[:opt_method][k]=="DOPS")
 			df[:barcolor][k]=colors[4]
+		elseif(df[:opt_method][k]=="DDS")
+			df[:barcolor][k]=colors[5]
 		end
 	end
 	@show df

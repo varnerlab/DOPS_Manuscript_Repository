@@ -28,7 +28,7 @@
 
 %% SWARM SEARCH WITH ADAPTIVE SWITCHING STRATEGY
 
-function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=DOPS_PSO(optFunction,MAXJ,MINJ,NP,NI,NS,G,r)
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=DOPS_PSO_parallel(optFunction,MAXJ,MINJ,NP,NI,NS,G,r)
 
 % Parameters for swarm search
 Max_Inertia_weight=0.9;
@@ -43,7 +43,7 @@ dds_swarm_flag=0;
 %%
 %Initializing the position of the particles within the swarms
 
-for i=1:NP
+parfor i=1:NP
     Z(:,i)=MINJ+(MAXJ-MINJ).*rand(N,1);                                         
     [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
     particle(:,1,i)=Z(:,i);                          
@@ -56,7 +56,7 @@ end
 
 %Finding particle best and global best after initialization within each sub
 %swarm
-for j=1:NS %was NS, now NS-1
+parfor j=1:NS %was NS, now NS-1
     index_particle=S(:,j);
 
     [ls_pbest_solution(j,:),ls_ITER(j,:)]=particlebest(fitness(index_particle,:));
@@ -74,7 +74,6 @@ fprintf('Global best is %f and iteration is %d \n',g_best_solution(1),1);
 %Particle update
 for j=2:NI
 w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_weight;         
-fprintf("On interation %d of %d", j, NI);
 
 %Consider if particles need to reassigned to other swarms
     if(0==mod(j,G))
@@ -124,7 +123,7 @@ fprintf("On interation %d of %d", j, NI);
     end
     
     %Find the best particles within each swarm
-    for k=1:NS
+    parfor k=1:NS
         best_particles_ls(:,k)=particle(:,ls_ITER(k,(S(:,k)==particlenumber(k))),particlenumber(k));
     end
     

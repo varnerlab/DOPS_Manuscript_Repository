@@ -37,7 +37,7 @@ x=IC;
 J=1:N;                   % Specify initial dimensions being perturbed
 F_best=fit(x,optFunction);           % Calculate initial best fitness
 F=fit(x,optFunction);                % Calculate current fitness 
-
+failure_counter = 0;
 %%
 for i=1:NI
 
@@ -80,7 +80,17 @@ for i=1:NI
 	end
 
 
-best(i)=F_best;
+    best(i)=F_best;
+    if(best(i==best(i-1)|| best(i)>.99*best(i-1))
+        failure_counter=failure_counter+1;
+    else
+        failure_counter = 0;
+    end
+    
+    %switch back to PSO if we've stagnated
+    if((NI-i)>0 &&)
+        
+    end
 
 %fprintf('Best value is %20.10f and iteration is %d \n',best(i),i);          
 

@@ -26,7 +26,7 @@
 %  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %  THE SOFTWARE.
 %  ----------------------------------------------------------------------------------- 
-function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS(optFunction, MAXJ,MINJ)
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS_Experimental(optFunction, MAXJ,MINJ)
 
     %clear all;
     more off;
@@ -37,13 +37,14 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     %MAXJ=bounds(:,2);
     %MINJ=bounds(:,1);
     %for ackley, bounds -5 to 5
+    %optFunction = @ackley
     %MAXJ=[5.12;5.12];
     %MINJ=[-5.12;-5.12];
 
     %% PARAMETERS FOR SWARM SEARCH AND DYNAMICALLY DIMENSIONED SEARCH
 
     NP=40;    %default 40                 %Number of particles in the swarm
-    NI=4000;                    %Number of iterations
+    NI=40;                    %Number of iterations
     NS=5;              %default 5        %Number of sub swarms
     G=10;                      %Number of iterations after which swarms are redistributed
     r=0.2;                     %Perturbation parameter for DDS
@@ -56,13 +57,13 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
         fprintf('On trial %d', i);
         tstart=tic();          % 
       %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
-      [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i}]=DOPS_PSO(optFunction,MAXJ,MINJ,NP,NI,NS,G,r);
+      [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i}]=DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,NI,NS,G,r);
         timeDOPS(i)=toc(tstart);
         fprintf("Time for trial %d is %f\n", i, timeDOPS(i));
 
        %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 
        if(~mod(i,30))
-            cmd1 = ['save  ../DOPS_Results/',func2str(optFunction),'/DOPS_solution_iter',num2str(i),'.mat bestparticle'];                                                  % The best solution vector from swarm search
+            cmd1 = ['save  ../DOPS_Results/E',func2str(optFunction),'/DOPS_solution_iter',num2str(i),'.mat bestparticle'];                                                  % The best solution vector from swarm search
             eval(cmd1)
 
             cmd2 = ['save  ../DOPS_Results/',func2str(optFunction),'/DOPS_particle',num2str(i),'.mat particle'];                                                           % The particle matrix - contains particle states for every iteration within the trial

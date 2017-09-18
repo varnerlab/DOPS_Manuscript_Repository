@@ -28,7 +28,11 @@
 
 %% SWARM SEARCH WITH ADAPTIVE SWITCHING STRATEGY
 
-function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=DOPS_PSO(optFunction,MAXJ,MINJ,NP,NI,NS,G,r)
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,NI,NS,G,r, initial_guess)
+if(nargin ==8)
+   initial_guess = []; 
+end
+
 
 % Parameters for swarm search
 Max_Inertia_weight=0.9;
@@ -74,7 +78,6 @@ fprintf('Global best is %f and iteration is %d \n',g_best_solution(1),1);
 %Particle update
 for j=2:NI
 w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_weight;         
-fprintf("On interation %d of %d", j, NI);
 
 %Consider if particles need to reassigned to other swarms
     if(0==mod(j,G))
@@ -148,7 +151,7 @@ fprintf("On interation %d of %d", j, NI);
     
     %Switch to DDS search if the solution has stagnated
     if(((NI-j)>0)&&(failure_counter>failure_counter_threshold))
-        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j));
+        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS_Experimental(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j),NS,G);
         break;
     end
     

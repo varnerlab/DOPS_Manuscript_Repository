@@ -1,6 +1,6 @@
 function[fvals,inital_vals]=runDE(seed)
     % VTR		"Value To Reach" (stop when ofunc < VTR)
-            VTR = 1.e-6; 
+            VTR = -Inf; 
 
     % D		number of parameters of the objective function 
             D = 2; 
@@ -16,7 +16,7 @@ function[fvals,inital_vals]=runDE(seed)
             y=[]; 
 
     % NP            number of population members
-            NP = 15; 
+            NP = 40; %to match with DOPS 
 
     % itermax       maximum number of iterations (generations)
             itermax = 200; 
@@ -25,7 +25,7 @@ function[fvals,inital_vals]=runDE(seed)
             F = 0.8; 
 
     % CR            crossover probabililty constant ex [0, 1]
-            CR = 0.8; 
+            CR = 0.9; 
 
     % strategy       1 --> DE/best/1/exp           6 --> DE/best/1/bin
     %                2 --> DE/rand/1/exp           7 --> DE/rand/1/bin
@@ -33,12 +33,12 @@ function[fvals,inital_vals]=runDE(seed)
     %                4 --> DE/best/2/exp           9 --> DE/best/2/bin
     %                5 --> DE/rand/2/exp           else  DE/rand/2/bin
 
-            strategy = 7;
+            strategy = 1;
 
     % refresh       intermediate output will be produced after "refresh"
     %               iterations. No intermediate output will be produced
     %               if refresh is < 1
-            refresh = .8; 
+            refresh = 0; 
     poss_iter_nums =[40,2000,4000];
     functions_to_test = {'ackley', 'rast', 'rast'};
     bounds = {[30;-15], [5.12;-5.12], [5.12;-5.12]};
