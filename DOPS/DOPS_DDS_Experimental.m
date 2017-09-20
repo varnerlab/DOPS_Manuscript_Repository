@@ -28,8 +28,14 @@
 %  ----------- 
 
 %% Dynamically Dimensioned Search
-function[best,x_best,dds_swarm_flag]=DOPS_DDS(optFunction,IC,MAXJ,MINJ,r,NI,NS,G)
-
+function[best,x_best,dds_swarm_flag]=DOPS_DDS(optFunction,IC,MAXJ,MINJ,r,NI,NS,G,NP)
+fprintf("In DDS. NI= %d\n", NI);
+global num_method_switches;
+global best_PSO_val;        %keep track of best functional value found by PSO
+global best_DDS_val;        %keep track of best functional value found by DDS
+global best_PSO_x;          % keep track of best parameters found by PSO
+global best_DDS_x;          %keep track of best parameters found by DDS
+global solve_tol;
 % DDS search parameters
 N=length(MINJ);
 x_best(:,1)=IC;          % Initialize the solution
@@ -38,7 +44,7 @@ J=1:N;                   % Specify initial dimensions being perturbed
 F_best=fit(x,optFunction);           % Calculate initial best fitness
 F=fit(x,optFunction);                % Calculate current fitness 
 failure_counter = 0;
-failure_counter_threshold = 3;
+failure_counter_threshold = 100*N;    %peturb all dimensions 5 times before quitting
 %%
 for i=1:NI
 
@@ -82,7 +88,15 @@ for i=1:NI
 
 
     best(i)=F_best;
-    if(i>i && (best(i)==best(i-1)|| best(i)>.99*best(i-1))) %i>1 neccessary to prevent negative indexing problems
+    if(best(i)<best_DDS_val)
+        best_DDS_val = best(i);
+        best_DDS_x = x_best(:,i);
+    end
+    if((mod(i,10)==0))
+        fprintf("DDS best %f\n", best_DDS_val);
+        fprintf("In DDS. On iteration %d of %d failture counter = %d\n", i, NI, failure_counter);
+    end
+    if(i>1 && (best(i)==best(i-1)|| best(i)>.95*best(i-1))) %i>1 neccessary to prevent negative indexing problems
         failure_counter=failure_counter+1;
     else
         failure_counter = 0;
@@ -90,7 +104,13 @@ for i=1:NI
     
     %switch back to PSO if we've stagnated
     if((NI-i)>0 && failure_counter>failure_counter_threshold)
-        DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,NI-i,NS,G,r, x_best(:,i-1));
+        num_method_switches = num_method_switches +1;
+        if(best_DDS_val<solve_tol) %if we're good enough, get out of here
+           break; 
+        else
+            break;
+           %return DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,floor((NI-i)/NP),NS,G,r, x_best(:,i-1));
+        end
     end
 
 %fprintf('Best value is %20.10f and iteration is %d \n',best(i),i);          

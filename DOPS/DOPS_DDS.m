@@ -82,7 +82,7 @@ for i=1:NI
 
 best(i)=F_best;
 
-%fprintf('Best value is %20.10f and iteration is %d \n',best(i),i);          
+fprintf('Best value is %20.10f and iteration is %d \n',best(i),i);          
 
 end
 

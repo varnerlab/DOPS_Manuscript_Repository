@@ -44,17 +44,30 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     %% PARAMETERS FOR SWARM SEARCH AND DYNAMICALLY DIMENSIONED SEARCH
 
     NP=40;    %default 40                 %Number of particles in the swarm
-    NI=4000;                    %Number of iterations
+    NI=100;                    %Number of iterations
     NS=5;              %default 5        %Number of sub swarms
     G=10;                      %Number of iterations after which swarms are redistributed
     r=0.2;                     %Perturbation parameter for DDS
-
+    global best_PSO_val;        %keep track of best functional value found by PSO
+    global best_DDS_val;        %keep track of best functional value found by DDS
+    global best_PSO_x;          % keep track of best parameters found by PSO
+    global best_DDS_x;          %keep track of best parameters found by DDS
+    global num_method_switches; %keep track of how many times we've switched methods
+    global solve_tol;
+    num_method_switches = 0;
+    solve_tol = 1E-4;
+    
     NUMBER_TRIALS=25;          %The total number of trials 
     %%
 
     for i=1:NUMBER_TRIALS
         rng(i); %for repeatability
         fprintf('On trial %d', i);
+        num_method_switches = 0;
+        best_PSO_val = 10^10;
+        best_DDS_val = 10^10;
+        best_PSO_x = zeros(size(MAXJ));
+        best_DDS_x = zeros(size(MAXJ));
         tstart=tic();          % 
       %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
       [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i}]=DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,NI,NS,G,r);

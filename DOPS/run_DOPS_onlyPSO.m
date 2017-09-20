@@ -26,14 +26,12 @@
 %  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %  THE SOFTWARE.
 %  ----------------------------------------------------------------------------------- 
-function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS(optFunction, MAXJ,MINJ,NUMBER_TRIALS)
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS_onlyPSO(optFunction, MAXJ,MINJ)
 
     %clear all;
     more off;
     warning('off','all');
-    if(nargin<4)
-       NUMBER_TRIALS = 25; 
-    end
+
 
     %bounds=load('bounds.txt');
     %MAXJ=bounds(:,2);
@@ -45,12 +43,12 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     %% PARAMETERS FOR SWARM SEARCH AND DYNAMICALLY DIMENSIONED SEARCH
 
     NP=40;    %default 40                 %Number of particles in the swarm
-    NI=4000;                    %Number of iterations
+    NI=40;                    %Number of iterations
     NS=5;              %default 5        %Number of sub swarms
     G=10;                      %Number of iterations after which swarms are redistributed
     r=0.2;                     %Perturbation parameter for DDS
 
-    %NUMBER_TRIALS=25;          %The total number of trials 
+    NUMBER_TRIALS=25;          %The total number of trials 
     %%
 
     for i=1:NUMBER_TRIALS
@@ -58,7 +56,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
         fprintf('On trial %d', i);
         tstart=tic();          % 
       %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
-      [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i}]=DOPS_PSO(optFunction,MAXJ,MINJ,NP,NI,NS,G,r);
+      [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i}]=DOPS_PSO_only(optFunction,MAXJ,MINJ,NP,NI,NS,G,r);
         timeDOPS(i)=toc(tstart);
         fprintf("Time for trial %d is %f\n", i, timeDOPS(i));
 

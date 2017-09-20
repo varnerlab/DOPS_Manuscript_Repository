@@ -27,7 +27,10 @@
 %  -----------------------------------------------------------------------------------
 
 %This returns the fitness value for the coagulation model.
-function fitness = fitCoag(x)
+function fitness = fitCoag(x,y) %for DE, need 2 inputs
+    if(nargin<2)
+       y = []; 
+    end
 	DF=DataFile(0,0,0,[]); %Loads the coagulation data structure
 	DFIN=DF;
 	DFIN.RATE_CONSTANT_VECTOR=x; %Assigns the rate constant vector as the current solution

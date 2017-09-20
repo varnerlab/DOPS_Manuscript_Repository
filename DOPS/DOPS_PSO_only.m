@@ -28,17 +28,8 @@
 
 %% SWARM SEARCH WITH ADAPTIVE SWITCHING STRATEGY
 
-function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,NI,NS,G,r, initial_guess)
-if(nargin ==8)
-   initial_guess = []; 
-end
-fprintf("In PSO. NI = %d\n", NI);
-global num_method_switches;
-global best_PSO_val;        %keep track of best functional value found by PSO
-global best_DDS_val;        %keep track of best functional value found by DDS
-global best_PSO_x;          % keep track of best parameters found by PSO
-global best_DDS_x;          %keep track of best parameters found by DDS
-global solve_tol;
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=DOPS_PSO_only(optFunction,MAXJ,MINJ,NP,NI,NS,G,r)
+
 % Parameters for swarm search
 Max_Inertia_weight=0.9;
 Min_Inertia_weight=0.4;
@@ -52,30 +43,11 @@ dds_swarm_flag=0;
 %%
 %Initializing the position of the particles within the swarms
 
-if(size(initial_guess,1)==0) %if we're on the initial iteration and don't have a guess
-    for i=1:NP
-        Z(:,i)=MINJ+(MAXJ-MINJ).*rand(N,1);                                         
-        [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
-        particle(:,1,i)=Z(:,i);                          
-        fitness(i,1)=fit(particle(:,1,i),optFunction);   %was fit7, now just fit                                  %Calculating fitness of each particle
-    end
-else
-    if(best_DDS_val<best_PSO_val)       %if we've improved using DDS
-        for i = 1:NP
-           Z(:,i)  =best_DDS_x;%.*(MAXJ-MINJ).*rand(N,1).*1/(10*num_method_switches);%.*1/(num_method_switches); 
-           [Z(:,i)] = bind(Z(:,i), MINJ, MAXJ);
-           particle(:,1,i)=Z(:,i);  
-            fitness(i,1)=fit(particle(:,1,i),optFunction);
-                                     %peturbation gets smaller as we've switched back more times
-        end
-    else
-        for i =1:NP
-            Z(:,i)  =best_PSO_x;%.*(MAXJ-MINJ).*rand(N,1).*1/(10*num_method_switches);%.*1/(num_method_switches); 
-           [Z(:,i)] = bind(Z(:,i), MINJ, MAXJ);
-           particle(:,1,i)=Z(:,i);  
-           fitness(i,1)=fit(particle(:,1,i),optFunction);
-        end
-    end
+for i=1:NP
+    Z(:,i)=MINJ+(MAXJ-MINJ).*rand(N,1);                                         
+    [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
+    particle(:,1,i)=Z(:,i);                          
+    fitness(i,1)=fit(particle(:,1,i),optFunction);   %was fit7, now just fit                                  %Calculating fitness of each particle
 end
 
 
@@ -95,10 +67,6 @@ end
 %Finding the best solution among all the swarms
 [g_best_solution(1),swarmnumber]=globalbest(ls_gbest_solution);
 bestparticle(:,1)=particle(:,ls_ITER(swarmnumber(1),S(:,swarmnumber(1))==particlenumber(swarmnumber(1))),particlenumber(swarmnumber(1)));
-if(g_best_solution(1)<best_PSO_val) %are we better than our global min?
-    best_PSO_val = g_best_solution(1);
-    best_PSO_x = bestparticle(:,1);
-end
 bestparticle_index(1)=find(S(:,swarmnumber(1))==particlenumber(swarmnumber(1)));
 fprintf('Global best is %f and iteration is %d \n',g_best_solution(1),1);
 
@@ -106,6 +74,7 @@ fprintf('Global best is %f and iteration is %d \n',g_best_solution(1),1);
 %Particle update
 for j=2:NI
 w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_weight;         
+%fprintf("On interation %d of %d", j, NI);
 
 %Consider if particles need to reassigned to other swarms
     if(0==mod(j,G))
@@ -167,11 +136,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     [g_best_solution(j),swarmnumber(j)]=globalbest(ls_gbest_solution);
     bestparticle(:,j)=particle(:,ls_ITER(swarmnumber(j),S(:,swarmnumber(j))==particlenumber(swarmnumber(j))),particlenumber(swarmnumber(j)));
     bestparticle_index(j)=find(S(:,swarmnumber(j))==particlenumber(swarmnumber(j)));
-    if(g_best_solution(j)< best_PSO_val)
-        best_PSO_val =g_best_solution(j);
-        best_PSO_x = bestparticle(:,j);
-    end
-    fprintf('Global best is %f and iteration is of PSO %d \n',g_best_solution(j),j);
+    fprintf('Global best is %f and iteration is %d \n',g_best_solution(j),j);
 
     %Check here if global best is not changing
 
@@ -180,29 +145,12 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     else
       failure_counter=0;
     end
-   %fprintf("In PSO. On iteration %d of %d failture counter = %d\n", i, NI, failure_counter);
+    
     %Switch to DDS search if the solution has stagnated
-    if(((NI-j)>0)&&(failure_counter>failure_counter_threshold))
-        num_method_switches = num_method_switches +1;
-        if(best_PSO_val<solve_tol || best_DDS_val<solve_tol)
-            break;
-        else
-        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS_Experimental(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j),NS,G,NP);
-         if(best_PSO_val<solve_tol || best_DDS_val<solve_tol)
-            break;
-         end
-        [g_best_solution_r,bestparticle_r,particle_r,fitness_r,bestval_dds_swarm_r,best_particle_dds_swarm_r,best_particles_ls_r]= DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,(NI-j),NS,G,r, best_DDS_x); %recursion ?
-        %to pass things up from recursion, concat
-        g_best_solution = cat(2,g_best_solution,g_best_solution_r);
-        bestparticle =cat(2,bestparticle,bestparticle_r);
-        particle = cat(2,particle, particle_r);
-        fitness = cat(2,fitness,fitness_r);
-        bestval_dds_swarm=cat(2,bestval_dds_swarm, bestval_dds_swarm_r);
-        best_particle_dds_swarm =cat(2,best_particle_dds_swarm, best_particle_dds_swarm_r);
-        best_particles_ls = cat(2,best_particles_ls, best_particles_ls_r);
-        break;
-        end
-    end
+%     if(((NI-j)>0)&&(failure_counter>failure_counter_threshold))
+%         [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j));
+%         break;
+%     end
     
      if(dds_swarm_flag==0)
             bestval_dds_swarm=g_best_solution;
@@ -217,7 +165,7 @@ end
 %size(fitness)
 %size(bestval_dds_swarm)
 %size(best_particle_dds_swarm)
-size(best_particles_ls)
+%size(best_particles_ls)
 end
 
 
