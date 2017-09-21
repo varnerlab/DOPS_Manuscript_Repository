@@ -43,7 +43,7 @@ dds_swarm_flag=0;
 %%
 %Initializing the position of the particles within the swarms
 
-for i=1:NP
+parfor i=1:NP
     Z(:,i)=MINJ+(MAXJ-MINJ).*rand(N,1);                                         
     [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
     particle(:,1,i)=Z(:,i);                          
@@ -56,7 +56,7 @@ end
 
 %Finding particle best and global best after initialization within each sub
 %swarm
-for j=1:NS %was NS, now NS-1
+parfor j=1:NS %was NS, now NS-1
     index_particle=S(:,j);
 
     [ls_pbest_solution(j,:),ls_ITER(j,:)]=particlebest(fitness(index_particle,:));

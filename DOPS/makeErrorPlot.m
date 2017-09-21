@@ -1,7 +1,7 @@
 function[alldata]= makeErrorPlot()
     MAXJ = repmat(10,10,1);
     MINJ = repmat(-10,10,1);
-    [g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS_Experimental(@rosenbrock,MAXJ,MINJ);
+    [g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS(@rosenbrock,MAXJ,MINJ);
 
     NUMBER_TRIALS=25;
     %fig = figure();
@@ -27,9 +27,10 @@ function[alldata]= makeErrorPlot()
     size(alldata)
     close('all');
     iters = 1:maxlen;
-    semilogy(iters,mean(alldata,2),'kx');
+    fig=loglog(iters,mean(alldata,2),'kx');
     xlabel('Iteration')
     ylabel('Error')
-    axis([0,40,1E-16,.8])
+    axis([0,4000,10^-3,10^3])
     set(gca,'yscale','log')
+    saveas(fig, 'testFigures/DOPSOnRosenbrock.pdf')
 end

@@ -49,7 +49,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     NS=5;              %default 5        %Number of sub swarms
     G=10;                      %Number of iterations after which swarms are redistributed
     r=0.2;                     %Perturbation parameter for DDS
-
+    timeDOPS = zeros(1,NUMBER_TRIALS);
     %NUMBER_TRIALS=25;          %The total number of trials 
     %%
 
@@ -63,7 +63,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
         fprintf("Time for trial %d is %f\n", i, timeDOPS(i));
 
        %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 
-       if(~mod(i,1))
+       if(mod(i,1)==0)
             cmd1 = ['save  ../DOPS_Results/',func2str(optFunction),'/DOPS_solution_iter',num2str(i),'.mat bestparticle'];                                                  % The best solution vector from swarm search
             eval(cmd1)
 

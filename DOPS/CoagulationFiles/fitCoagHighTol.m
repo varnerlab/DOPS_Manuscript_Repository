@@ -34,5 +34,5 @@ function fitness = fitCoagHighTol(x,y) %for DE, need 2 inputs
 	DF=DataFile(0,0,0,[]); %Loads the coagulation data structure
 	DFIN=DF;
 	DFIN.RATE_CONSTANT_VECTOR=x; %Assigns the rate constant vector as the current solution
-  fitness=(1/2)*ObjFunctionFig2E1HighTol(DFIN)+(1/2)*ObjFunctionFig2E5(DFIN); %Calculates the fitness values by passing the rate constant vector to the objectives E1 and E5
+  fitness=(1/2)*ObjFunctionFig2E1HighTol(DFIN)+(1/2)*ObjFunctionFig2E5HighTol(DFIN); %Calculates the fitness values by passing the rate constant vector to the objectives E1 and E5
 end

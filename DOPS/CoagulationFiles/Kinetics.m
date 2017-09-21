@@ -100,6 +100,10 @@ k = DF.RATE_CONSTANT_VECTOR;
 
 %no transpose for DE
 %k = k'; %this transpose appears to be neccessary for running with DOPS, but not for figure generation
+if(size(k,2)>size(k,1))
+    k = k';
+end
+
 
 % Formulate the kinetics.
 r(1,1)=k(1,1)*x(34)*x(35);

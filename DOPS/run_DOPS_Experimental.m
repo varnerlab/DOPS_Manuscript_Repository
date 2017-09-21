@@ -44,7 +44,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     %% PARAMETERS FOR SWARM SEARCH AND DYNAMICALLY DIMENSIONED SEARCH
 
     NP=40;    %default 40                 %Number of particles in the swarm
-    NI=100;                    %Number of iterations
+    NI=4000;                    %Number of iterations
     NS=5;              %default 5        %Number of sub swarms
     G=10;                      %Number of iterations after which swarms are redistributed
     r=0.2;                     %Perturbation parameter for DDS
@@ -75,7 +75,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
         fprintf("Time for trial %d is %f\n", i, timeDOPS(i));
 
        %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 
-       if(~mod(i,30))
+       if(~mod(i,1))
             cmd1 = ['save  ../DOPS_Results/Experimental/',func2str(optFunction),'/DOPS_solution_iter',num2str(i),'.mat bestparticle'];                                                  % The best solution vector from swarm search
             eval(cmd1)
 

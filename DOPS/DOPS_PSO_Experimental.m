@@ -48,7 +48,11 @@ SUB_SWARM_SIZE=round(NP/NS);
 failure_counter=0;
 failure_counter_threshold=4;
 dds_swarm_flag=0;
-
+%placeholders
+bestval_dds_swarm=[];
+best_particle_dds_swarm=[];
+best_particles_ls=[];
+g_best_solution=[];bestparticle=[];particle=[];fitness = [];
 %%
 %Initializing the position of the particles within the swarms
 
@@ -185,10 +189,18 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     if(((NI-j)>0)&&(failure_counter>failure_counter_threshold))
         num_method_switches = num_method_switches +1;
         if(best_PSO_val<solve_tol || best_DDS_val<solve_tol)
+             if(dds_swarm_flag==0)
+                bestval_dds_swarm=g_best_solution;
+                best_particle_dds_swarm=bestparticle;
+            end
             break;
         else
         [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS_Experimental(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j),NS,G,NP);
          if(best_PSO_val<solve_tol || best_DDS_val<solve_tol)
+            if(dds_swarm_flag==0)
+                bestval_dds_swarm=g_best_solution;
+                best_particle_dds_swarm=bestparticle;
+            end
             break;
          end
         [g_best_solution_r,bestparticle_r,particle_r,fitness_r,bestval_dds_swarm_r,best_particle_dds_swarm_r,best_particles_ls_r]= DOPS_PSO_Experimental(optFunction,MAXJ,MINJ,NP,(NI-j),NS,G,r, best_DDS_x); %recursion ?
@@ -217,7 +229,7 @@ end
 %size(fitness)
 %size(bestval_dds_swarm)
 %size(best_particle_dds_swarm)
-size(best_particles_ls)
+%size(best_particles_ls)
 end
 
 
