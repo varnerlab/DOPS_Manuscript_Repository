@@ -92,9 +92,9 @@ for i=1:NI
         best_DDS_val = best(i);
         best_DDS_x = x_best(:,i);
     end
-    if((mod(i,10)==0))
-%        fprintf("DDS best %f\n", best_DDS_val);
-%        fprintf("In DDS. On iteration %d of %d failture counter = %d\n", i, NI, failure_counter);
+    if((mod(i,1)==0))
+        fprintf("DDS best %f\n", best_DDS_val);
+        fprintf("In DDS. On iteration %d of %d failture counter = %d\n", i, NI, failure_counter);
     end
     if(i>1 && (best(i)==best(i-1)|| best(i)>.95*best(i-1))) %i>1 neccessary to prevent negative indexing problems
         failure_counter=failure_counter+1;

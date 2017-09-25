@@ -148,7 +148,8 @@ fprintf("On interation %d of %d", j, NI);
     
     %Switch to DDS search if the solution has stagnated
     if(((NI-j)>0)&&(failure_counter>failure_counter_threshold))
-        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j));
+        %[bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j));
+        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,(NI-j));
         break;
     end
     

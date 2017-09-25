@@ -184,7 +184,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     else
       failure_counter=0;
     end
-   %fprintf("In PSO. On iteration %d of %d failture counter = %d\n", i, NI, failure_counter);
+   fprintf("In PSO. On iteration %d of %d failture counter = %d\n", i, NI, failure_counter);
     %Switch to DDS search if the solution has stagnated
     if(((NI-j)>0)&&(failure_counter>failure_counter_threshold))
         num_method_switches = num_method_switches +1;
@@ -195,7 +195,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
             end
             break;
         else
-        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS_Experimental(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,NP*(NI-j),NS,G,NP);
+        [bestval_dds_swarm,best_particle_dds_swarm,dds_swarm_flag]=DOPS_DDS_Experimental(optFunction,bestparticle(:,j-1),MAXJ,MINJ,r,(NI-j),NS,G,NP);
          if(best_PSO_val<solve_tol || best_DDS_val<solve_tol)
             if(dds_swarm_flag==0)
                 bestval_dds_swarm=g_best_solution;

@@ -12,10 +12,10 @@ end;
 IC = DF.INITIAL_CONDITIONS;
 TSIM = TSTART:Ts:TSTOP;
 % create options for solving
-options = odeset('RelTol', 1E-3, 'AbsTol', 1E-4, 'Stats', 'off');
+%options = odeset('RelTol', 1E-3, 'AbsTol', 1E-4, 'Stats', 'off');
 
 % Call the ODE solver - the default is ODE15s
-tic();
-[T,X]=ode15s(@MassBalances,TSIM,IC,options,DF);
-toc()
+%tic();
+[T,X]=ode15s(@MassBalances,TSIM,IC,[],DF);
+%toc()
 return;

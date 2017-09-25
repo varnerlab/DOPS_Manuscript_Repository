@@ -4,7 +4,7 @@ function[mean_data, std_data]=runDOPSforTable2()
     NUM_TRIALS=5;
     fvals = zeros(size(functions_to_test,2),NUM_TRIALS);
     initial_vals = zeros(size(functions_to_test,2),NUM_TRIALS);
-    for j=1:size(functions_to_test,2)
+    for j=1:size(functions_to_test,2)-1
         load(bounds_files{j});
          MAXJ = ub;
          MINJ = lb;
