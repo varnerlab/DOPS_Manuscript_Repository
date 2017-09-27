@@ -28,7 +28,7 @@
 %  ----------- 
 
 %% Dynamically Dimensioned Search
-function[best,x_best,dds_swarm_flag,num_iters_remaining]=DOPS_DDS(optFunction,IC,MAXJ,MINJ,r,NI,NS,G,NP)
+function[best,x_best,num_iters_remaining]=DOPS_DDS_ExperimentalV2(optFunction,IC,MAXJ,MINJ,r,NI)
 fprintf("In DDS. NI= %d\n", NI);
 global num_method_switches;
 global best_PSO_val;        %keep track of best functional value found by PSO
@@ -44,7 +44,9 @@ J=1:N;                   % Specify initial dimensions being perturbed
 F_best=fit(x,optFunction);           % Calculate initial best fitness
 F=fit(x,optFunction);                % Calculate current fitness 
 failure_counter = 0;
+success_counter = 0;
 failure_counter_threshold = 100*N;    %peturb all dimensions 5 times before quitting
+success_counter_threshold = 3; %or switch back after 3 successes
 %%
 for i=1:NI
     num_iters_remaining = NI-i;
@@ -94,24 +96,29 @@ for i=1:NI
     end
     if((mod(i,1)==0))
         fprintf("DDS best %f\n", best_DDS_val);
-        fprintf("In DDS. On iteration %d of %d failture counter = %d\n", i, NI, failure_counter);
+        fprintf("In DDS. On iteration %d of %d failure counter = %d and success counter = %d \n", i, NI, failure_counter, success_counter);
     end
-    if(i>1 && (best(i)==best(i-1)|| best(i)>.95*best(i-1))) %i>1 neccessary to prevent negative indexing problems
+    if(i>1 && (best(i)==best(i-1)|| best(i)>.99*best(i-1))) %i>1 neccessary to prevent negative indexing problems
         failure_counter=failure_counter+1;
     else
-        failure_counter = 0;
+        if(i>1)
+           % failure_counter = 0;
+            success_counter = success_counter+1;
+        end
     end
     
     %switch back to PSO if we've stagnated
     if((NI-i)>0 && failure_counter>failure_counter_threshold)
         num_method_switches = num_method_switches +1;
         return;
+    elseif((NI-i) > 0 && success_counter >= success_counter_threshold)
+            num_method_switches = num_method_switches+1;
+            return;
     end
         
 
 end
-
-dds_swarm_flag=1;                                                 
+                                                
 end
 
 %% BOUND FUNCTION - ENSURE SOLUTION IS WITHIN BOUNDS
