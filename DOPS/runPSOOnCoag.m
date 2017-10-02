@@ -7,6 +7,7 @@ function [allhistory]= runPSOOnCoag()
         stop = false;
         if isequal(flag,'iter')
               history = [history; optimvalues.meanfval];
+              besthistory =[besthistory;optimvalues.bestfval];
 		optimvalues.iteration %so I can see what's going on'
         end
         optchanged = false;
@@ -18,16 +19,20 @@ function [allhistory]= runPSOOnCoag()
 	for j=1:NUM_REPEATS
 		fprintf("On trial %d\n", j)
 		history = [];
+        besthistory=[];
 		%create initial guess
+        rng(j,'twister');
 		x0 = lb-ub.*rand(size(lb,1),1)+lb;
 		tstart = tic();
 		[x,fval,exitflag,output] = particleswarm(@fitCoag,size(lb,1),lb,ub,options);
 		timeSA(j) = toc(tstart)
 		size(history) %history is one longer than number of iterations 
-		cmd1= ['save -ascii ../PSO_Results/fitCoag/FuntionalValuesTrial', num2str(j), '.txt history'];
+		cmd1= ['save -ascii ../PSO_Results/fitCoag/MeanFuntionalValuesTrial', num2str(j), '.txt history'];
 		eval(cmd1)
 		cmd2= ['save -ascii ../PSO_Results/fitCoag/TimesTrial', num2str(j), '.txt timeSA'];
 		eval(cmd2)
-		allhistory(j,:) = history;
+        cmd3= ['save -ascii ../PSO_Results/fitCoag/BestFuntionalValuesTrial', num2str(j), '.txt besthistory'];
+		eval(cmd3)
+		%allhistory(j,:) = history;
 	end
 end

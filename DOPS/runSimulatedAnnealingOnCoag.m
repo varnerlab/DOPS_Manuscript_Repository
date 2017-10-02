@@ -15,7 +15,8 @@ function [allhistory]= runSimulatedAnnealingOnCoag()
 	options = optimoptions(@simulannealbnd,'MaxIterations',NUM_ITERATIONS, 'OutputFcn', @myoutput);
 	NUM_REPEATS = 25;
 	allhistory = zeros(NUM_REPEATS, NUM_ITERATIONS+1);
-	for j=2:NUM_REPEATS
+	for j=10:NUM_REPEATS
+        rng(j);
 		fprintf("On trial %d\n", j)
 		history = [];
 		%create initial guess

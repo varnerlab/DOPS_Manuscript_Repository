@@ -42,8 +42,8 @@ dds_swarm_flag=0;
 
 %%
 %Initializing the position of the particles within the swarms
-
-for i=1:NP
+tic()
+parfor i=1:NP
     Z(:,i)=MINJ+(MAXJ-MINJ).*rand(N,1);                                         
     [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
     particle(:,1,i)=Z(:,i);                          
@@ -56,7 +56,7 @@ end
 
 %Finding particle best and global best after initialization within each sub
 %swarm
-for j=1:NS %was NS, now NS-1
+parfor j=1:NS %was NS, now NS-1
     index_particle=S(:,j);
 
     [ls_pbest_solution(j,:),ls_ITER(j,:)]=particlebest(fitness(index_particle,:));
@@ -70,9 +70,10 @@ bestparticle(:,1)=particle(:,ls_ITER(swarmnumber(1),S(:,swarmnumber(1))==particl
 bestparticle_index(1)=find(S(:,swarmnumber(1))==particlenumber(swarmnumber(1)));
 fprintf('Global best is %f and iteration is %d \n',g_best_solution(1),1);
 
-
+toc()
 %Particle update
 for j=2:NI
+    tic()
 w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_weight;         
 %fprintf("On interation %d of %d", j, NI);
 
@@ -137,7 +138,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     bestparticle(:,j)=particle(:,ls_ITER(swarmnumber(j),S(:,swarmnumber(j))==particlenumber(swarmnumber(j))),particlenumber(swarmnumber(j)));
     bestparticle_index(j)=find(S(:,swarmnumber(j))==particlenumber(swarmnumber(j)));
     fprintf('Global best is %f and iteration is %d \n',g_best_solution(j),j);
-
+    toc()
     %Check here if global best is not changing
 
     if((g_best_solution(j)==g_best_solution(j-1))||(g_best_solution(j)>(0.99*g_best_solution(j-1))))

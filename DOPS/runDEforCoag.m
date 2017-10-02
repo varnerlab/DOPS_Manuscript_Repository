@@ -1,4 +1,4 @@
-function[fvals,inital_vals]=runDEforCoag()
+function[]=runDEforCoag()
 clear all;
 more off;
 warning('off','all');
@@ -24,7 +24,7 @@ ctl.refresh  = 0;
 ctl.VTR   = -Inf;
 ctl.tol   = 0;
 ctl.maxnfe  = 1e6;
-ctl.maxiter = 4000;
+ctl.maxiter = 4;
 
 
 %pop=load('pop_b5.mat');
@@ -32,9 +32,10 @@ pop= load('CoagPop.mat');
 pop=permute(pop.pop, [1,3,2]);
 
 
-for i=1:25
+for i=1:1
     Z=pop(:,:,1); 
     %IC=Z(:,i);
+    rng(i);
     tstart=tic();
     [bestparticle(:,:,i),g_best_solution(i,:),nfeval(i,:)]=de(@fitCoag,Z,MINJ', MAXJ', ctl.maxiter);
     timeDE(i)=toc(tstart);
