@@ -53,8 +53,8 @@ function[fvals,inital_vals]=runDE(seed)
             MINJ = repmat(currlimits(2), dimensions(j),1);
             rng(seed);
             [x_init,f_init,nf_init] = devec3(functions_to_test{j},VTR,dimensions(j),MINJ',MAXJ',y,NP,1,F,CR,strategy,refresh);
-            rng(seed);
-            [x,f,nf] = devec3(functions_to_test{j},VTR,dimensions(j),MINJ',MAXJ',y,NP,poss_iter_nums(k),F,CR,strategy,refresh);
+            rng(seed+2);
+            [x,f,nf] = devec3(functions_to_test{j},VTR,dimensions(j),MINJ',MAXJ',y,NP,poss_iter_nums(k)/NP,F,CR,strategy,refresh);
             fvals(j,k) = f;
             inital_vals(j,k)=f_init;
         end

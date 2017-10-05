@@ -128,7 +128,7 @@ function [bmem,gbest, nfeval] = de(fcn,pop, MINJ, MAXJ,maxiter)
 %bounds=load('b5_bounds.mat'); %Bounds on the rate constants
 %MAXJ=bounds.ub';
 %MINJ=bounds.lb';
-
+bmem=[];gbest=[]; nfeval=0;
 MINJ=MINJ';
 MAXJ=MAXJ';
 

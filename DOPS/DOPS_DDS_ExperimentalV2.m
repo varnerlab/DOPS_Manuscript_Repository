@@ -45,9 +45,10 @@ F_best=fit(x,optFunction);           % Calculate initial best fitness
 F=fit(x,optFunction);                % Calculate current fitness 
 failure_counter = 0;
 success_counter = 0;
-failure_counter_threshold = 100*N;    %peturb all dimensions 5 times before quitting
+failure_counter_threshold = 10*N;    %peturb all dimensions 10 times before quitting
 success_counter_threshold = 3; %or switch back after 3 successes
 %%
+best=[];num_iters_remaining=[];
 for i=1:NI
     num_iters_remaining = NI-i;
 	P_i=1-(log(i)/log(NI));                          % Calculate threshold perturbation probability
@@ -90,7 +91,7 @@ for i=1:NI
 
 
     best(i)=F_best;
-    if(best(i)<best_DDS_val)
+    if(best(i)<best_DDS_val && i>1)
         best_DDS_val = best(i);
         best_DDS_x = x_best(:,i);
     end

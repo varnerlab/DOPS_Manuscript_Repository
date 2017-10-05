@@ -7,6 +7,7 @@ function[best_params, fvals, outputs, inital_vals]=runPSO(seed)
     fvals = zeros(size(dimensions,2),size(functions_to_test,2));
     inital_vals = zeros(size(dimensions,2), size(functions_to_test,2));
     outputs = {};
+    NUM_PARTCLES = 40;
     for k =1:size(poss_iter_nums,2)
         NUM_ITERATIONS=poss_iter_nums(k);
         for j=1:size(functions_to_test,2)
@@ -19,7 +20,7 @@ function[best_params, fvals, outputs, inital_vals]=runPSO(seed)
             x0 = MAXJ-MINJ.*rand(size(MAXJ,1),1)+MINJ; %create an initial guess within bounds
             [x,fval,exitflag,output]=particleswarm(functions_to_test{j},size(MINJ,1),MINJ,MAXJ,options);
             inital_vals(j,k) = fval; %call our inital val the result after 1 iteration of PSO
-             options = optimoptions('particleswarm','MaxIterations',NUM_ITERATIONS, 'SwarmSize',40)% 'MinNeighborsFraction', 0);
+             options = optimoptions('particleswarm','MaxIterations',NUM_ITERATIONS/NUM_PARTCLES, 'SwarmSize',40);% 'MinNeighborsFraction', 0);
              %now run PSO for actual number of interations
              rng(seed);
             [x,fval,exitflag,output]=particleswarm(functions_to_test{j},size(MINJ,1),MINJ,MAXJ,options);

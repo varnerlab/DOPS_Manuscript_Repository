@@ -24,7 +24,7 @@ ctl.refresh  = 0;
 ctl.VTR   = -Inf;
 ctl.tol   = 0;
 ctl.maxnfe  = 1e6;
-ctl.maxiter = 4;
+ctl.maxiter = 100;
 
 
 %pop=load('pop_b5.mat');
@@ -32,7 +32,7 @@ pop= load('CoagPop.mat');
 pop=permute(pop.pop, [1,3,2]);
 
 
-for i=1:1
+for i=2:25
     Z=pop(:,:,1); 
     %IC=Z(:,i);
     rng(i);

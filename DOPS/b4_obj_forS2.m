@@ -1,5 +1,5 @@
 
-function [objective,constraints,residuals,x] = b4_obj(par)
+function [objective,constraints,residuals,x_useful,t,timeseries_artificalData_noised,scaled_data] = b4_obj_forS2(par)
 
 global p
 p = par;
@@ -108,7 +108,7 @@ scaled_error(:,11) = unscaled_error(:,11)/css(30);
 scaled_error(:,12) = unscaled_error(:,12)/css(32);
 scaled_error(:,13) = unscaled_error(:,13)/css(11);
 
-
+idxOfInterest = [5,4,3,2,1,29,27,21,15,13,30,32,11];
 
 
 %% INTEGRATION
@@ -268,9 +268,11 @@ p, ...           % par
 1,    ...        % n_u
 1    ...         % privstruct.iflag
 );
+x_useful = x(:,idxOfInterest);
 x = x([1 11 22 32 40 52 62 73 92 102 113 124 131],:);
 %---
-
+%t  = vtout([1 11 22 32 40 52 62 73 92 102 113 124 131]);
+t = vtout;
 if size(x,1)~=13
     x = 1e6*ones(13,35);
 end

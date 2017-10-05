@@ -53,7 +53,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     %NUMBER_TRIALS=25;          %The total number of trials 
     %%
 
-    for i=13:NUMBER_TRIALS
+    for i=1:NUMBER_TRIALS
         if(i ==4)
            rng(805); 
         else

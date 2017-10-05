@@ -176,7 +176,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
         best_PSO_val =g_best_solution(j);
         best_PSO_x = bestparticle(:,j);
     end
-    num_iters_remaining = NI-j;
+    num_iters_remaining = NI-j*NP;
     fprintf('Global best is %f and iteration is of PSO %d \n',g_best_solution(j),j);
 
     %Check here if global best is not changing

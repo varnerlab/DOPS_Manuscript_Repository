@@ -1,5 +1,5 @@
 
-function [objective,constraints,residuals] = b2_obj(par)
+function [objective,constraints,residuals,x] = b2_obj(par)
 
 global p
 p = par;
