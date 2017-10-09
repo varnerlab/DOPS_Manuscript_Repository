@@ -32,7 +32,7 @@ function[g_best_solution,bestparticle,particle,fitness,num_iters_remaining]=DOPS
 if(nargin ==8)
    initial_guess = []; 
 end
-fprintf("In PSO. NI = %d\n", NI);
+fprintf('In PSO. NI = %d\n', NI);
 global num_method_switches;
 global best_PSO_val;        %keep track of best functional value found by PSO
 global best_DDS_val;        %keep track of best functional value found by DDS
@@ -186,7 +186,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     else
       failure_counter=0;
     end
-   fprintf("In PSO. On iteration %d of %d failture counter = %d\n", i, NI, failure_counter);
+   fprintf('In PSO. On iteration %d of %d failture counter = %d\n', i, NI, failure_counter);
     %Switch to DDS search if the solution has stagnated
     if(failure_counter > failure_counter_threshold)
        return;  

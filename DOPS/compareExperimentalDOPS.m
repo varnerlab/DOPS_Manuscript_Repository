@@ -28,15 +28,15 @@ function [allDOPS,adjustedAllDOPS,allExperimental]=compareExperimentalDOPS()
         exp_err= g_best_solution{k};
         allExperimental(k,:) = exp_err;
     end
-%     figure()
-%     hold('on')
-%     semilogy(1:NUM_EVALS,mean(allDOPS,1))
-%     semilogy(1:NUM_EVALS,mean(allExperimental,1))
-%     axis([0,4000,1E5,1E8])
-%     set(gca, 'YScale', 'log')
-%     xlabel('Iteration Number')
-%     ylabel('Functional Value')
-%     legend('DOPS', 'Experimental DOPS')
+    figure()
+    hold('on')
+    semilogy(1:NUM_EVALS,mean(allDOPS,1))
+    semilogy(1:NUM_EVALS,mean(allExperimental,1))
+    %axis([0,4000,1E5,1E8])
+    set(gca, 'YScale', 'log')
+    xlabel('Iteration Number')
+    ylabel('Functional Value')
+    legend('DOPS', 'Experimental DOPS')
     
 end
 
