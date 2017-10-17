@@ -1,4 +1,4 @@
-function [allDOPS,adjustedAllDOPS,allExperimental]=compareExperimentalDOPS()
+function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareExperimentalDOPS()
     addpath('/home/rachel/Documents/DOPS/DOPS_Results/fitCoag');
     NUM_ITERS = 25;
     NUM_EVALS = 4000;
@@ -6,6 +6,7 @@ function [allDOPS,adjustedAllDOPS,allExperimental]=compareExperimentalDOPS()
     allDOPS = zeros(NUM_ITERS,NUM_EVALS);
     adjustedAllDOPS = zeros(NUM_ITERS,NUM_EVALS);
     allExperimental = zeros(NUM_ITERS,NUM_EVALS);
+    allDOPSTimes = zeros(NUM_ITERS,1);
     for j=1:NUM_ITERS
         load(strcat('DOPS_error_iter',num2str(j),'.mat'));
         PSO_error = g_best_solution{j};
@@ -17,14 +18,18 @@ function [allDOPS,adjustedAllDOPS,allExperimental]=compareExperimentalDOPS()
         correctedAllData = correctedAllData(1:NUM_EVALS);
         allDOPS(j,:) =alldata;
         adjustedAllDOPS(j,:) = correctedAllData;
+        
+        currTime = load(strcat('DOPS_time_iter', num2str(j), '.txt'));
+        currTime = currTime(j);
+        allDOPSTimes(j) = currTime;
     end
    
-    for k=1:NUM_ITERS
-        if(k ==9)
+    for k=1:7
+        if(k ==8 || k == 19 || k==22)
            %iter 9 didn't finish, so skip it for now
            continue; 
         end
-        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2/fitCoag/DOPS_error_iter', num2str(k),'.mat'));
+        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2/fitCoagOld/DOPS_error_iter', num2str(k),'.mat'));
         exp_err= g_best_solution{k};
         allExperimental(k,:) = exp_err;
     end

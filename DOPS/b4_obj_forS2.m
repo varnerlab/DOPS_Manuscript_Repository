@@ -1,5 +1,5 @@
 
-function [objective,constraints,residuals,x_useful,t,timeseries_artificalData_noised,scaled_data] = b4_obj_forS2(par)
+function [objective,constraints,residuals,x_all,x_useful,t,timeseries_artificalData_noised,scaled_data] = b4_obj_forS2(par)
 
 global p
 p = par;
@@ -269,6 +269,7 @@ p, ...           % par
 1    ...         % privstruct.iflag
 );
 x_useful = x(:,idxOfInterest);
+x_all = x;
 x = x([1 11 22 32 40 52 62 73 92 102 113 124 131],:);
 %---
 %t  = vtout([1 11 22 32 40 52 62 73 92 102 113 124 131]);

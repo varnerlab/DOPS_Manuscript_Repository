@@ -23,8 +23,8 @@ ctl.strategy = 1;
 ctl.refresh  = 0;
 ctl.VTR   = -Inf;
 ctl.tol   = 0;
-ctl.maxnfe  = 1e6;
-ctl.maxiter = 100;
+ctl.maxnfe  = 4000;
+%ctl.maxiter = 100;
 
 
 %pop=load('pop_b5.mat');
@@ -37,7 +37,7 @@ for i=2:25
     %IC=Z(:,i);
     rng(i);
     tstart=tic();
-    [bestparticle(:,:,i),g_best_solution(i,:),nfeval(i,:)]=de(@fitCoag,Z,MINJ', MAXJ', ctl.maxiter);
+    [bestparticle(:,:,i),g_best_solution(i,:),nfeval(i,:)]=de(@fitCoag,Z,MINJ', MAXJ', ctl.maxnfe);
     timeDE(i)=toc(tstart);
 
    if(mod(i,1)==0)

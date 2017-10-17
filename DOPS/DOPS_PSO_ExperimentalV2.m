@@ -64,24 +64,18 @@ if(size(initial_guess,1)==0) %if we're on the initial iteration and don't have a
         fitness(i,1)=fit(particle(:,1,i),optFunction);   %was fit7, now just fit                                  %Calculating fitness of each particle
     end
 else
-    if(best_DDS_val<best_PSO_val)       %if we've improved using DDS
-        for i = 1:NP
-           Z(:,i)  =best_DDS_x;%.*(MAXJ-MINJ).*rand(N,1).*1/(10*num_method_switches);%.*1/(num_method_switches); 
-           [Z(:,i)] = bind(Z(:,i), MINJ, MAXJ);
-           particle(:,1,i)=Z(:,i);  
-            fitness(i,1)=fit(particle(:,1,i),optFunction);
-                                     %peturbation gets smaller as we've switched back more times
+    for i=1:NP
+        if(i ==1)
+            Z(:,i) = initial_guess; %we give the initial guess to one particle, the rest are based off of it
+        else
+            Z(:,i) = initial_guess +(MAXJ-MINJ).*rand(N,1); 
         end
-    else
-        for i =1:NP
-            Z(:,i)  =best_PSO_x;%.*(MAXJ-MINJ).*rand(N,1).*1/(10*num_method_switches);%.*1/(num_method_switches); 
-           [Z(:,i)] = bind(Z(:,i), MINJ, MAXJ);
-           particle(:,1,i)=Z(:,i);  
-           fitness(i,1)=fit(particle(:,1,i),optFunction);
-        end
+        [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
+        particle(:,1,i)=Z(:,i);                          
+        fitness(i,1)=fit(particle(:,1,i),optFunction);   %was fit7, now just fit  
+
     end
 end
-
 
 %Columns of S matrix have the indices of the particles in each swarm - NS*SUB_SWARM_SIZE matrix
 [S]=newswarms(NP,NS,SUB_SWARM_SIZE);

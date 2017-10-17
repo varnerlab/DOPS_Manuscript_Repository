@@ -1,16 +1,19 @@
-function [x,bestparams] = recreateFigureS2()
+function [x,bestparams,functionalvals,initialvals] = recreateFigureS2()
+    close('all')
     NUM_REPEATS = 25;
     functionalvals = [];
     initialvals = [];
     for j =1:NUM_REPEATS
         load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/b4_obj/DDSPSO_strategy1_5_swarms_results_DDSPSO_strategy1_errordds_iter',num2str(j),'.mat'))
         functionalvals(j) = bestval_dds_swarm{j}(end);
+        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/b4_obj/DOPS_error_iter',num2str(j),'.mat'))
+        initialvals(j) = g_best_solution{j}(1);
         load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/b4_obj/DDSPSO_strategy1_5_swarms_results_DDSPSO_strategy1_particledds_iter',num2str(j),'.mat'))
         params(j,:) =best_particle_dds_swarm{j}(:,end);
     end
     [smallestf, minIdx] = min(functionalvals);
     bestparams = params(minIdx,:);
-   [objective,constraints,residuals,x,t,timeseries_data,scaled_data] = b4_obj_forS2(bestparams);
+   [objective,constraints,residuals,x_all,x,t,timeseries_data,scaled_data] = b4_obj_forS2(bestparams);
     num_species = 13;
     f=figure();
     for j = 1:num_species
@@ -24,4 +27,24 @@ function [x,bestparams] = recreateFigureS2()
     f.PaperUnits = 'inches';
     f.PaperPosition = [0 0 5 10];
     print('../DOPS_Results/figures/RecreatedFigureS2.pdf', '-dpdf','-r0');
+    [ydot,x_int,p] = b4([0]);
+    f=figure();
+    hold('on')
+    plot(log(p), log(bestparams), 'b.', 'MarkerSize', 20);
+    plot([-6,8], [-6,8], 'k-');
+    xlabel('Nominal Parameters (log)')
+    ylabel('Optimal Parameters (log)')
+    print('../DOPS_Results/figures/RecreatedFigureS3c.pdf', '-dpdf','-r0');
+    
+    %get results of running model with original params
+    [objective_o,constraints_o,residuals_o,x_all_o,x_o,t_o,timeseries_data_o,scaled_data_o] = b4_obj_forS2(p);
+    f = figure();
+    hold('on')
+    for j=1:size(x_all_o,2)
+        plot(log(norm(x_all_o(:,j))), log(norm(x_all(:,j))), 'b.', 'MarkerSize',20);
+    end
+    plot([0,14], [0,14], 'k-');
+    xlabel('Norm of Measured States With Nominal Paramters (log)')
+    ylabel('Norm of Measured States With Optimal Paramters (log)')
+    print('../DOPS_Results/figures/RecreatedFigureS3d.pdf', '-dpdf','-r0');
 end

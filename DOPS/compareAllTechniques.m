@@ -1,8 +1,8 @@
 function[]= compareAllTechniques()
-    [allDOPS,adjustedAllDOPS,allExperimental]=compareExperimentalDOPS();
-    allSAResults = processSAResults();
-    allDDSResults = processDDSResults();
-    allDEResults = processDEResults();
+    [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareExperimentalDOPS();
+    [allSAResults,allSATimes] = processSAResults();
+    [allDDSResults,allDDSTimes] = processDDSResults();
+    [allDEResults,allDETimes] = processDEResults();
     close('all');
     f=figure();
     hold('on')
@@ -12,39 +12,58 @@ function[]= compareAllTechniques()
     plot(1:40:4000,mean(allDEResults,1), 'LineWidth', 2.0,'Color','r');
     set(gca, 'YScale', 'log');
     axis([0,4000,7E4,2E7])
-    legend('DOPS-N=25', 'Simulated Annealing-N=25', 'DDS-N=23', 'DE-N=1');
+    legend('DOPS-N=25', 'Simulated Annealing-N=25', 'DDS-N=25', 'DE-N=25');
     xlabel('Number of Function Evaluations')
     ylabel('Average Functional Value');
     saveas(f,'../DOPS_Results/figures/RecreateFigure4.pdf', 'pdf')
+%     f=figure();
+%     boxplot([allSATimes, allDDSTimes, allDETimes,allDOPSTimes]/(60^2)) %convert to hours
+%     xticklabels({'Simulated Annealing', 'DDS', 'DE', 'DOPS'});
+%     xlabel('Metaheuristics')
+%     ylabel('Runtime per trial (number of hours)')
+%     saveas(f,'../DOPS_Results/figures/RecreateRebutalReviewer2.pdf', 'pdf')
+    
     
 end
 
-function [allSAResults] =processSAResults()
+function [allSAResults,allTimes] =processSAResults()
     numTrials = 25;
     numIters = 4000;
     allSAResults = zeros(numTrials,numIters);
+    allTimes = zeros(numTrials,1);
     for j = 1:numTrials
        currdata =load(strcat('/home/rachel/Documents/DOPS/SA_Results/fitCoag/FuntionalValuesTrial',num2str(j),'.txt'));  
        allSAResults(j,:) =currdata(1:4000);
+       currtime = load(strcat('/home/rachel/Documents/DOPS/SA_Results/fitCoag/TimesTrial',num2str(j),'.txt'));
+       currtime = currtime(j);
+       allTimes(j) = currtime;
     end
 end
 
-function [allDDSResults] =processDDSResults()
-    numTrials = 23;
+function [allDDSResults,allTimes] =processDDSResults()
+    numTrials = 25;
     numIters = 4000;
     allDDSResults = zeros(numTrials,numIters);
+    allTimes = zeros(numTrials,1);
     for j = 1:numTrials
        currdata =load(strcat('/home/rachel/Documents/DOPS/DDS_Results/fitCoag/FuntionalValuesTrial',num2str(j),'.txt'));  
        allDDSResults(j,:) =currdata(1:4000);
+       currtime = load(strcat('/home/rachel/Documents/DOPS/DDS_Results/fitCoag/TimesTrial',num2str(j),'.txt'));
+       currtime = currtime(j);
+       allTimes(j) = currtime;
     end
 end
 
-function [allDEResults] =processDEResults()
-    numTrials = 1;
+function [allDEResults,allTimes] =processDEResults()
+    numTrials = 25;
     numIters = 100;
     allDEResults = zeros(numTrials,numIters);
+    allTimes = zeros(numTrials,1);
     for j = 1:numTrials
        currdata =load(strcat('/home/rachel/Documents/DOPS/DOPS/DE_Results_vY/DE_error_iter',num2str(j),'.txt'));  
        allDEResults(j,:) =currdata(1:100);
+       currtime = load(strcat('/home/rachel/Documents/DOPS/DOPS/DE_Results_vY/DE_time_iter',num2str(j),'.txt'));
+       currtime = currtime(j);
+       allTimes(j) = currtime;
     end
 end

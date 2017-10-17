@@ -26,14 +26,11 @@
 %  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %  THE SOFTWARE.
 %  ----------------------------------------------------------------------------------- 
-function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS(optFunction, MAXJ,MINJ,NUMBER_TRIALS)
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls]=run_DOPS(optFunction, MAXJ,MINJ,lowerIter,upperIter)
 
     %clear all;
     more off;
     warning('off','all');
-    if(nargin<4)
-       NUMBER_TRIALS = 25; 
-    end
 
     %bounds=load('bounds.txt');
     %MAXJ=bounds(:,2);
@@ -49,11 +46,11 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     NS=5;              %default 5        %Number of sub swarms
     G=10;                      %Number of iterations after which swarms are redistributed
     r=0.2;                     %Perturbation parameter for DDS
-    timeDOPS = zeros(1,NUMBER_TRIALS);
+    timeDOPS = zeros(1,upperIter-lowerIter);
     %NUMBER_TRIALS=25;          %The total number of trials 
     %%
 
-    for i=1:NUMBER_TRIALS
+    for i=lowerIter:upperIter
         if(i ==4)
            rng(805); 
         else

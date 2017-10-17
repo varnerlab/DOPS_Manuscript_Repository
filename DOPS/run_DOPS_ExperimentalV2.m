@@ -26,7 +26,7 @@
 %  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %  THE SOFTWARE.
 %  ----------------------------------------------------------------------------------- 
-function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls,DDS_iters]=run_DOPS_ExperimentalV2(optFunction, MAXJ,MINJ)
+function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_particle_dds_swarm,best_particles_ls,DDS_iters]=run_DOPS_ExperimentalV2(optFunction, MAXJ,MINJ,lowerIter,upperIter)
 
     %clear all;
     more off;
@@ -60,7 +60,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     NUMBER_TRIALS=25;          %The total number of trials 
     %%
 
-    for i=1:NUMBER_TRIALS
+    for i=lowerIter:upperIter
         rng(i); %for repeatability
         fprintf('On trial %d', i);
         num_method_switches = 0;
@@ -72,7 +72,7 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
       %  [g_best_solution(i,:),bestparticle(:,:,i),particle(:,:,:,i),fitness(:,:,i)]=DOPS_PSO(MAXJ,MINJ,NP,NI,NS,G,r);
       [g_best_solution{i},bestparticle{i},particle{i},fitness{i}, bestval_dds_swarm{i}, best_particle_dds_swarm{i},best_particles_ls{i},DDS_iters{i}]=DOPS_Main_Experimental(optFunction,MAXJ,MINJ,NP,NI,NS,G,r);
         timeDOPS(i)=toc(tstart);
-        fprintf("Time for trial %d is %f\n", i, timeDOPS(i));
+        fprintf('Time for trial %d is %f\n', i, timeDOPS(i));
 
        %-------This portion save results and additional results for every trial. It is optional and the user can choose the results and number of trials --------% 
        if(~mod(i,1))

@@ -42,10 +42,20 @@ x_best(:,1)=IC;          % Initialize the solution
 x=IC;
 J=1:N;                   % Specify initial dimensions being perturbed
 F_best=fit(x,optFunction);           % Calculate initial best fitness
-F=fit(x,optFunction);                % Calculate current fitness 
+F=fit(x,optFunction);                % Calculate current fitness
+%since sometimes these are different due to low precision in ODE
+if(F_best<F)
+   F=F_best; 
+elseif(F<F_best)
+    F_best = F;
+end
+
 failure_counter = 0;
 success_counter = 0;
 failure_counter_threshold = 10*N;    %peturb all dimensions 10 times before quitting
+if(failure_counter_threshold < 1000)
+   failure_counter_threshold = 1000;
+end
 success_counter_threshold = 3; %or switch back after 3 successes
 %%
 best=[];num_iters_remaining=[];

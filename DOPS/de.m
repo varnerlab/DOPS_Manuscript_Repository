@@ -119,7 +119,7 @@
 %%
 %% Keywords: global-optimisation optimisation minimisation
 
-function [bmem,gbest, nfeval] = de(fcn,pop, MINJ, MAXJ,maxiter)
+function [bmem,gbest, nfeval] = de(fcn,pop, MINJ, MAXJ,maxnfe)
 
 %se=load('randnseed.txt');
 %randn('seed',se);
@@ -143,8 +143,8 @@ strategy = 1;
 refresh  = 0;
 VTR   = -Inf;
 tol   = 0;
-maxnfe  = 1e6;
-%maxiter = 100;
+%maxnfe  = 1e6;
+maxiter = maxnfe/NP;
 
 %% set dimension D and population size NP
 D  = length (XVmin);
@@ -174,19 +174,19 @@ end
 refresh = floor(abs(refresh));
 
 %% ----- Initialize population and some arrays --------------------------
-pop=pop';
-%pop = zeros(NP,D);  % initialize pop
+%pop=pop';
+pop = zeros(NP,D);  % initialize pop
 
 %% pop is a matrix of size NPxD. It will be initialized with
 %% random values between the min and max values of the parameters
-%for i = 1:NP
-%   pop(i,:) = XVmin + rand (1,D) .* (XVmax - XVmin);
-%end
+for i = 1:NP
+   pop(i,:) = XVmin' + rand (D,1) .* (XVmax' - XVmin');
+end
 
-%for i = 1:NP
- %  pop(i,:) = exp(log(IC) + rand (1,D)*0.5);
-  % pop(i,:)= bind(pop(i,:),XVmin,XVmax);	
-%end
+for i = 1:NP
+%   pop(i,:) = exp(log(IC) + rand (D,1)*0.5);
+   pop(i,:)= bind(pop(i,:),XVmin,XVmax);	
+end
 
 %% initialise the weighting factors between 0.0 and 1.0
 w  = rand (NP,1);

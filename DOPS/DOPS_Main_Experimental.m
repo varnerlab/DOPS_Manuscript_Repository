@@ -31,6 +31,10 @@ while((num_iters_remaining > 0) && size(g_best_solution,2)<NI)
     %concat results
     filled_in_g_best_solution=fillInPSO(NP,g_best_solution_r);
     g_best_solution = cat(2,g_best_solution,filled_in_g_best_solution);
+   % if(issorted(g_best_solution) == 0)
+   %    fprintf('Something went wrong. These values should all be decreasing'); 
+    %end
+    
     bestparticle =cat(2,bestparticle,bestparticle_r);
     particle = cat(2,particle, particle_r);
     fitness = cat(2,fitness,fitness_r);
@@ -48,9 +52,13 @@ while((num_iters_remaining > 0) && size(g_best_solution,2)<NI)
     fprintf('Switching to DDS %d iters remaining.\n', num_iters_remaining);
     DDS_iters = cat(2,DDS_iters,num_iters_remaining);
     [bestval_dds_swarm_r,best_particle_dds_swarm_r,num_iters_remaining]=DOPS_DDS_ExperimentalV2(optFunction,IC,MAXJ,MINJ,r,num_iters_remaining);
+  
     DDS_iters = cat(2,DDS_iters,num_iters_remaining);
     %concat results
     g_best_solution = cat(2,g_best_solution, bestval_dds_swarm_r);
+   % if(issorted(g_best_solution) == 0)
+    %   fprintf('Something went wrong. These values should all be decreasing'); 
+    %end
     bestparticle = cat(2,bestparticle,best_particle_dds_swarm_r);
     bestval_dds_swarm=cat(2,bestval_dds_swarm, bestval_dds_swarm_r);
     best_particle_dds_swarm =cat(2,best_particle_dds_swarm, best_particle_dds_swarm_r);

@@ -30,9 +30,9 @@
 function fitness = fit(x, optFunction)
         %optFunction = function to be minimized, x parameters
         optFuncStr = func2str(optFunction);
-        if(contains(optFuncStr, 'b4'))
-            fitness=optFunction(x);      %An example here is ackley function. This function is user defined an basically determines the error between simulation and experiment. 
-        else
+       % if(contains(optFuncStr, 'b4'))
+        %    fitness=optFunction(x);      %An example here is ackley function. This function is user defined an basically determines the error between simulation and experiment. 
+        %else
             fitness=optFunction(x');
-        end
+        %end
 end
