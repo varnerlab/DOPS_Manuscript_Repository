@@ -53,6 +53,9 @@ function[g_best_solution,bestparticle,particle,fitness,bestval_dds_swarm,best_pa
     for i=lowerIter:upperIter
         if(i ==4)
            rng(805); 
+           
+        elseif(i ==5)
+            rng(765); %let's try a different seed
         else
             rng(i); %for repeatability
         end

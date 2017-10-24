@@ -2,18 +2,18 @@ function [res,f_interp] = runEss(functionName, lb, ub, numEval,seed,saveOn, tria
 
     %numEval = 4000;
     %set up problem
+    if(seed ==13)
+       seed = 765; %we appear to be getting stuck on iter 13  
+    end
     rng(seed, 'twister');
     problem.f = functionName;
 %     lb = repmat(-15,300,1);
 %     ub=repmat(30,300,1);
     problem.x_L =lb;
     problem.x_U = ub;
-    if(lb(1)<0)
-        problem.x_0 = (ub+lb)*rand();
-    else
-        problem.x_0 = ub-lb*rand();
+    N = max(size(lb));
+    problem.x_0 = lb+(ub-lb).*rand(N,1); 
         
-    end
     
     initial_f = feval(functionName, problem.x_0);
     %set opts

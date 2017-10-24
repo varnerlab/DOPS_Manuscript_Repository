@@ -11,7 +11,7 @@ function [allhistory]= runSimulatedAnnealingOnCoag()
         end
         optchanged = false;
     end
-	NUM_ITERATIONS = 4000;
+	NUM_ITERATIONS = 500;
 	options = optimoptions(@simulannealbnd,'MaxIterations',NUM_ITERATIONS, 'OutputFcn', @myoutput);
 	NUM_REPEATS = 25;
 	allhistory = zeros(NUM_REPEATS, NUM_ITERATIONS+1);

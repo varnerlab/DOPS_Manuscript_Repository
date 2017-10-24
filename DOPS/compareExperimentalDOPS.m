@@ -1,13 +1,19 @@
 function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareExperimentalDOPS()
     addpath('/home/rachel/Documents/DOPS/DOPS_Results/fitCoag');
+    close('all');
     NUM_ITERS = 25;
     NUM_EVALS = 4000;
     NUM_PARTCILES = 40;
     allDOPS = zeros(NUM_ITERS,NUM_EVALS);
     adjustedAllDOPS = zeros(NUM_ITERS,NUM_EVALS);
     allExperimental = zeros(NUM_ITERS,NUM_EVALS);
+    allExperimentalbeta = zeros(NUM_ITERS,NUM_EVALS);
     allDOPSTimes = zeros(NUM_ITERS,1);
     for j=1:NUM_ITERS
+       % if(j ==5) %need to skip 5 since rerunning at the moment
+       %    adjustedAllDOPS(j,:) = NaN;
+       %    continue;
+       % end
         load(strcat('DOPS_error_iter',num2str(j),'.mat'));
         PSO_error = g_best_solution{j};
         corrected_PSO_error = fillInPSO(NUM_PARTCILES,PSO_error);
@@ -16,7 +22,7 @@ function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareExperimen
         alldata= cat(2,PSO_error,DDS_error);
         correctedAllData = cat(2,corrected_PSO_error,DDS_error);
         correctedAllData = correctedAllData(1:NUM_EVALS);
-        allDOPS(j,:) =alldata;
+        %allDOPS(j,:) =alldata;
         adjustedAllDOPS(j,:) = correctedAllData;
         
         currTime = load(strcat('DOPS_time_iter', num2str(j), '.txt'));
@@ -24,24 +30,38 @@ function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareExperimen
         allDOPSTimes(j) = currTime;
     end
    
-    for k=1:7
-        if(k ==8 || k == 19 || k==22)
-           %iter 9 didn't finish, so skip it for now
-           continue; 
+    for k=1:NUM_ITERS
+       if(k ==1||k==2|| k ==20)
+           allExperimental(k,:) = NaN;
+           continue;
         end
-        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2/fitCoagOld/DOPS_error_iter', num2str(k),'.mat'));
+        
+        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2/fitCoag/DOPS_error_iter', num2str(k),'.mat'));
         exp_err= g_best_solution{k};
         allExperimental(k,:) = exp_err;
     end
-    figure()
+    
+    for k=1:NUM_ITERS
+       if(k==3|| k ==4 || k ==16 || k ==19)
+           allExperimental(k,:) = NaN;
+           continue;
+        end
+        
+        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2beta/fitCoag/DOPS_error_iter', num2str(k),'.mat'));
+        exp_err= g_best_solution{k};
+        allExperimentalbeta(k,:) = exp_err;
+    end
+    f=figure();
     hold('on')
-    semilogy(1:NUM_EVALS,mean(allDOPS,1))
-    semilogy(1:NUM_EVALS,mean(allExperimental,1))
+    semilogy(1:NUM_EVALS,nanmean(adjustedAllDOPS,1))
+    semilogy(1:NUM_EVALS,nanmean(allExperimental,1))
+    semilogy(1:NUM_EVALS,nanmean(allExperimentalbeta,1))
     %axis([0,4000,1E5,1E8])
     set(gca, 'YScale', 'log')
     xlabel('Iteration Number')
     ylabel('Functional Value')
-    legend('DOPS', 'Experimental DOPS')
+    legend('DOPS-25 iters', 'Experimental DOPS-22 iters', 'Experimental DOPS beta-21 iters')
+    saveas(f, '../DOPS_Results/figures/DOPS_VS_BothExpDOPS.pdf', 'pdf');
     
 end
 

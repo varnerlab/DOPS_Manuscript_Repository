@@ -1,11 +1,10 @@
-function[allCMAES,allSA,allDE,allDDS,allDOPS,allESS]= replicateFigureS4()
+function[allCMAES,allSA,allDE,allDDS,allDOPS,allEss]= replicateFigureS4(Infunction, numRepeats)
     numDims = 300;
-    functions = {'ackley', 'rast'};
+    functions = {Infunction};
     ack_bounds = [-15,30];
     rast_bounds = [-5.12,5.12];
     numFEvals = 4000;
     seed = 14850;
-    numRepeats = 25;
     
     for j=1:size(functions,2)
         close('all');
@@ -16,7 +15,6 @@ function[allCMAES,allSA,allDE,allDDS,allDOPS,allESS]= replicateFigureS4()
                lb = repmat(rast_bounds(1),numDims,1);
                ub = repmat(rast_bounds(2), numDims,1);
        end
-       cmasesavestr = strcat('../../DOPS/CMAES_Results/', functions{j}, '/');
        fig = figure();
        hold('on');
        allCMAES = [];
@@ -27,6 +25,7 @@ function[allCMAES,allSA,allDE,allDDS,allDOPS,allESS]= replicateFigureS4()
        allEss = [];
        for k=1:numRepeats
            seed = k;
+           cmasesavestr = strcat('../../DOPS/CMAES_Results/', functions{j}, '/Iter', num2str(k));
            [evalCounter,functionalVal]= runCmaes(cmasesavestr,lb,ub,functions{j});
            [best_params, fvalsSA, outputs, inital_vals]=runBasicSimulatedAnnealing(numFEvals,functions{j},lb,ub,seed);
            [best_params, fvalsDE, outputs, inital_vals]=runBasicAdisDE(numFEvals,functions{j},lb,ub,seed);
@@ -58,9 +57,9 @@ function[allCMAES,allSA,allDE,allDDS,allDOPS,allESS]= replicateFigureS4()
        xlabel('Number of Function Evaluations')
        ylabel('Objective Functional Value');
        xlim([0,4000])
-       if(j ==1)
+       if(strcmp('ackley',Infunction))
             saveas(fig,'../DOPS_Results/figures/RecreateRebutalReviewer1_FigS4a.pdf', 'pdf') 
-       elseif(j ==2)
+       elseif(strcmp('rast',Infunction))
            saveas(fig,'../DOPS_Results/figures/RecreateRebutalReviewer1_FigS4b.pdf', 'pdf') 
        end
        

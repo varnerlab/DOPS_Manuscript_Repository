@@ -44,13 +44,20 @@ J=1:N;                   % Specify initial dimensions being perturbed
 F_best=fit(x,optFunction);           % Calculate initial best fitness
 F=fit(x,optFunction);                % Calculate current fitness 
 
-%since sometimes these are different due to low precision in ODE
-if(F_best<F)
-   F=F_best; 
-elseif(F<F_best)
-    F_best = F;
+% %since sometimes these are different due to low precision in ODE
+% if(F_best<F)
+%    F=F_best; 
+% elseif(F<F_best)
+%     F_best = F;
+% end
+if(best_PSO_val<best_DDS_val)
+   F=best_PSO_val;
+   F_best = best_PSO_val;
+else
+    F = best_DDS_val;
+    F_best = best_DDS_val;
+    
 end
-
 failure_counter = 0;
 success_counter = 0;
 failure_counter_threshold = 10*N;    %peturb all dimensions 10 times before quitting

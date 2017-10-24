@@ -32,8 +32,10 @@ pop= load('CoagPop.mat');
 pop=permute(pop.pop, [1,3,2]);
 
 
-for i=2:25
+for i=1:1
     Z=pop(:,:,1); 
+    N = max(size(MINJ));
+    Z=MINJ+(MAXJ-MINJ).*rand(ctl.NP,N);   
     %IC=Z(:,i);
     rng(i);
     tstart=tic();
@@ -45,11 +47,11 @@ for i=2:25
         eval(cmd1)
 
 
-                cmd2 = ['save -ascii ./DE_Results_vY/DE_error_iter',num2str(i),'.txt g_best_solution'];
+        cmd2 = ['save -ascii ./DE_Results_vY/DE_error_iter',num2str(i),'.txt g_best_solution'];
         eval(cmd2)
 
 
-                cmd3 = ['save -ascii ./DE_Results_vY/DE_time_iter',num2str(i),'.txt timeDE'];
+        cmd3 = ['save -ascii ./DE_Results_vY/DE_time_iter',num2str(i),'.txt timeDE'];
         eval(cmd3)
 
 

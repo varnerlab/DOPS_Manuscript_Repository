@@ -28,7 +28,7 @@
 %  ----------- 
 
 %% Dynamically Dimensioned Search
-function[best,x_best,num_iters_remaining]=DOPS_DDS_ExperimentalV2(optFunction,IC,MAXJ,MINJ,r,NI)
+function[best,x_best,num_iters_remaining]=DOPS_DDS_ExperimentalV2gamma(optFunction,IC,MAXJ,MINJ,r,NI)
 fprintf('In DDS. NI= %d\n', NI);
 global num_method_switches;
 global best_PSO_val;        %keep track of best functional value found by PSO
@@ -41,15 +41,15 @@ N=length(MINJ);
 x_best(:,1)=IC;          % Initialize the solution
 x=IC;
 J=1:N;                   % Specify initial dimensions being perturbed
-%F_best=fit(x,optFunction);           % Calculate initial best fitness
-%F=fit(x,optFunction);                % Calculate current fitness
-%since sometimes these are different due to low precision in ODE
-%if(F_best<F)
-%   F=F_best; 
-%elseif(F<F_best)
-%    F_best = F;
-%end
+F_best=fit(x,optFunction);           % Calculate initial best fitness
+F=fit(x,optFunction);                % Calculate current fitness 
 
+% %since sometimes these are different due to low precision in ODE
+% if(F_best<F)
+%    F=F_best; 
+% elseif(F<F_best)
+%     F_best = F;
+% end
 if(best_PSO_val<best_DDS_val)
    F=best_PSO_val;
    F_best = best_PSO_val;
@@ -58,14 +58,10 @@ else
     F_best = best_DDS_val;
     
 end
-
+percentImprovement = .1;
+value_to_reach = (1-percentImprovement)*F_best;
 failure_counter = 0;
 success_counter = 0;
-failure_counter_threshold = 10*N;    %peturb all dimensions 10 times before quitting
-if(failure_counter_threshold < 1000)
-   failure_counter_threshold = 1000;
-end
-success_counter_threshold = 3; %or switch back after 3 successes
 %%
 best=[];num_iters_remaining=[];
 for i=1:NI
@@ -127,11 +123,8 @@ for i=1:NI
         end
     end
     
-    %switch back to PSO if we've stagnated
-    if((NI-i)>0 && failure_counter>failure_counter_threshold)
-        num_method_switches = num_method_switches +1;
-        return;
-    elseif((NI-i) > 0 && success_counter >= success_counter_threshold)
+    %switch back to PSO if we've succeeded
+    if((NI-i) > 0 && F_best<=value_to_reach)
             num_method_switches = num_method_switches+1;
             return;
     end

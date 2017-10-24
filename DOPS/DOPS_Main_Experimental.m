@@ -31,9 +31,6 @@ while((num_iters_remaining > 0) && size(g_best_solution,2)<NI)
     %concat results
     filled_in_g_best_solution=fillInPSO(NP,g_best_solution_r);
     g_best_solution = cat(2,g_best_solution,filled_in_g_best_solution);
-   % if(issorted(g_best_solution) == 0)
-   %    fprintf('Something went wrong. These values should all be decreasing'); 
-    %end
     
     bestparticle =cat(2,bestparticle,bestparticle_r);
     particle = cat(2,particle, particle_r);

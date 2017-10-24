@@ -1,8 +1,8 @@
-function[]=runForTable1()
+function[]=runForTable1(lowerIter, upperIter)
     addpath(genpath('CoagulationFiles')) %add coagulation functions to path
-    functions_to_test = {@rast, @ackley,@b4_obj, @b1_obj};
+    functions_to_test = {@rast, @ackley,@b4_obj, @b1_obj, @fitCoag};
     bounds_files = {'rast_bounds.mat', 'ackley_bounds.mat', 'b4_bounds.mat','b1_bounds.mat', 'coagBounds.mat', 'coagBounds.mat'};
-    for j=3:size(functions_to_test,2)-1
+    for j=4:size(functions_to_test,2)-1
         load(bounds_files{j});
         %deal with transposed files
         if(j>2 && j<=4)
@@ -13,6 +13,6 @@ function[]=runForTable1()
             MINJ = lb;
         end
         rng(14850);
-        run_DOPS(functions_to_test{j},MAXJ,MINJ,1,25);
+        run_DOPS(functions_to_test{j},MAXJ,MINJ,lowerIter,upperIter);
     end
 end

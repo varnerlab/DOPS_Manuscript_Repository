@@ -66,13 +66,20 @@ if(size(initial_guess,1)==0) %if we're on the initial iteration and don't have a
 else
     for i=1:NP
         if(i ==1)
-            Z(:,i) = initial_guess; %we give the initial guess to one particle, the rest are based off of it
+            Z(:,i) = initial_guess; %we give the initial guess to one particle
+            if(best_DDS_val<best_PSO_val)
+                fitness(i,1) = best_DDS_val;
+            else
+                fitness(i,1) = best_PSO_val;
+            end
         else
-            Z(:,i) = initial_guess +(MAXJ-MINJ).*rand(N,1); 
+            Z(:,i) = MINJ +(MAXJ-MINJ).*rand(N,1); 
         end
         [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
-        particle(:,1,i)=Z(:,i);                          
-        fitness(i,1)=fit(particle(:,1,i),optFunction);   %was fit7, now just fit  
+        particle(:,1,i)=Z(:,i);
+        if(i > 1)
+            fitness(i,1)=fit(particle(:,1,i),optFunction);   %was fit7, now just fit  
+        end
 
     end
 end
