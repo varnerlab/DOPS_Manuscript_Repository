@@ -257,7 +257,7 @@ In both cases, synthetic time series data generated with known parameter values,
 For problem B1, the time series data consisted of 44 observables, and for problem B4 the data corresponded to 13 different metabolite measurement sets.
 We fixed the number of function evaluations at $\mathcal{N}$ = 4000, and trained both models against the synthetic experimental data.
 DOPS produced good fits to the synthetic data (Fig. \ref{fig-sims-b1} and Fig. \ref{fig-sims-b4}), and recapitulated the nominal parameter values using only $\mathcal{N}\leq~4000$ function evaluations (Fig. \ref{fig-benchmark}).
-On the other hand, enhanced scatter search (eSS) with a local optimizer took on order $10^{5}$ function evaluations for the same problems.
+On the other hand, enhanced scatter search (eSS) with a local optimizer took on order $10^{5}$ function evaluations for the same problems. DOPS also had lower variability in the best value obtained (Fig \ref{fig-DOPS-Variability}) and faster convergence (Fig \ref{fig-more-methods}, Fig \ref{fig-compare-DOPS-ESS}) across multiple runs when compared to other metaheuristics while requiring a comparable amount of time (Fig \ref{fig-time-comparsion}). 
 Thus, DOPS estimated the parameters in benchmark biochemical models, and recovered the original parameters from synthetic data, using fewer function evaluations.
 Next, we compared the performance of DOPS with the four other meta-heuristics for a model of the human coagulation cascade.
 
@@ -474,6 +474,7 @@ Toward this objective, DOPS begins by using a particle swarm search and then dyn
 \end{algorithm}\DecMargin{1em}
 
 \subsubsection*{Phase 1: Particle swarm phase.}
+Particle warm optimization is an evolutionary algorithm that uses a population of particles (solutions) to find an optimal solution. Each particle is updated based on its experience (particle best) and the experience of all other particles within the swarm (global best). 
 The particle swarm phase of DOPS begins by randomly initializing a swarm of $\mathcal{K}$-dimensional particles (represented as $z_{i}$),
 wherein each particle corresponded to a $\mathcal{K}$-dimensional parameter vector.
 After initialization, particles were randomly partitioned into $k$ equally sized sub-swarms $\mathcal{S}_{1},\hdots,\mathcal{S}_{k}$.
@@ -791,7 +792,7 @@ The multi-swarm with DDS saturates while DOPS shows a rapid drop due to a switch
     \qquad
     \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/FigureS7d} }}%
     \caption{Variability  analysis in best objective value for $\mathcal{T}$ = 25 trials. (a) Ackley  300 dimensional (b) Rastrigin 300 dimensional (c) CHO model (problem b4) (d) coagulation. }%
-    \label{fig-DOPS-Dispersion-Curves}%
+    \label{fig-DOPS-Variability}%
 \end{figure}
 
 
