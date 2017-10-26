@@ -548,7 +548,11 @@ where $i$ is the current iteration. After $\mathcal{P}_{i}$ is determined, we dr
 If $\mathcal{P}_{j}<\mathcal{P}_{i}$ was included in \textbf{J}.
 Thus, the probability that a dimension $j$ was perturbed was inversely proportional to the number of function evaluations.
 DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
-DOPS source code is available for download under a MIT license at http://www.varnerlab.org.
+
+\subsection*{Experimental DOPS}
+We sought to investigate if switching methods more than once would result in better performance. Experimental DOPS begins with the PSO phase and uses the same criteria as DOPS to switch to the DDS phase. The technique switches back to PSO phase when the DDS phase has reduced the functional value to 90\% of its initial value. Should the DDS phase fail to improve the functional value sufficiently, this version is identical to DOPS, but we found that for the CHO problem as well as for coagulation, the DDS phase did produce sufficient improvement in functional value, resulting in a switch back to the PSO phase from the DDS phase. When the switch from DDS to PSO occurs, we use the best solution from DDS to seed the particle swarm.  
+
+DOPS and Experimental DOPS source code is available for download under a MIT license at http://www.varnerlab.org.
 
 %The reflection boundary conditions in equation 5, the update function described in equations 6 and 7, the selection probability in equation 8 are the means by which DDS ideas are incorporated into DOPS. The fraction of evaluations $\mathcal{F}$  within the swarm phase is based on a switching strategy wherein the switch from swarm phase to DDS phase happens when the error due to the best solution does not drop more than 1\% of the original error, continuously for more than a prescribed number of function evaluations. This allows the solution to quickly jump out of local optima and avoid any convergence issues that are generally associated with swarm based searches.
 %Thus the number of dimensions of the candidate vector that are updated or perturbed decreases with the as the number of function evaluations increase. T
@@ -593,8 +597,8 @@ This study was supported by an award from the Army Research Office (ARO \#59155-
                         & Coagulation 					& B1           	& B4          & Ackley 			& Rastrigin \\\\
 \hline\\
 Evaluations   					& 4000                  & 4000         	& 4000        & 4000        & 4000        \\
-Lower Bound             & 0.001.pnom            & 5.pnom       	& 5.pnom      & 30          & 5.12        \\
-Upper Bound             & 1000.pnom             & 0.2.pnom     	& 0.2.pnom    & -15         & -5.12       \\
+Lower Bound             & 0.001.pnom            & 0.2.pnom       	& 0.2.pnom      & -15          & -5.12        \\
+Upper Bound             & 1000.pnom             & 5.pnom     	& 5.pnom    & 30         & 5.12       \\
 CPU Time                & 10.1 hrs         			& 38.3 hrs 			& 6.2 min 		& 2.8 s 			& 2.6 s    		\\\\
 
 Scaled initial error 		& 1.0           				& 1.0   				& 1.0  				& 1.0       	& 1.0         \\
@@ -617,11 +621,11 @@ Model agreement with measurements was quantified using normalized squared error.
 \hline\\
 TF/FVIIa concentration& Normalized S.E.& Category\\\\
 \hline\\
-5~nM & 0.0376 & Training \\
-500~pM & 0.0564 & Prediction\\
-50~pM & 0.1125 & Prediction\\
-10~pM & 0.0823 & Prediction\\
-5~pM & 0.0338 & Training\\\\
+5~nM & 0.1336 & Training \\
+500~pM & 0.2242 & Prediction\\
+50~pM & 0.3109 & Prediction\\
+10~pM & 0.2023 & Prediction\\
+5~pM & 0.1170 & Training\\\\
 \hline
 \end{tabular}
 \end{center}
@@ -660,10 +664,11 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure_4_Errors_Convergence_v2.pdf}
+%\includegraphics[width=1.0\textwidth]{./figs/Figure_4_Errors_Convergence_v2.pdf}
+\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=1.0\textwidth]{./rachelfigs/RecreateFigure4.pdf}
 \caption{Error convergence rates of the five different algorithms on the coagulation model. The objective error is the mean over $\mathcal{T}$= 25 trials.
-DOPS, DDS and SA have the steepest drop in error during first 300 function evaluations. Thereafter the error drop in DDS and SA remains nearly constant whereas DOPS continues to drops further.
-At the end of 4000 function evaluations DOPS attains the lowest error. The next best estimate using DDS is nearly three times greater than the lowest error using DDS.
+DOPS and SA have the steepest drop in error during first 300 function evaluations. Thereafter the error drop in DDS and SA remains nearly constant whereas DOPS continues to drops further.
+At the end of 4000 function evaluations DOPS attains the lowest error. The next best estimate using DDS is nearly three times greater than the lowest error using DE.
 }\label{fig-convergence}
 \end{figure}
 
@@ -671,8 +676,9 @@ At the end of 4000 function evaluations DOPS attains the lowest error. The next 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure_5_Sim_Train_E1_E5.pdf}
-\caption{Model fits on experimental data using DOPS. The model parameters were estimated using DOPS. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor TF/VIIa (5nM and 5pM) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
+%\includegraphics[width=1.0\textwidth]{./figs/Figure_5_Sim_Train_E1_E5.pdf}
+\includegraphics[trim = {0cm 6cm 7cm 6cm }, clip,width=1.0\textwidth]{./rachelfigs/ReplicateFigure5DivBySqrtN.pdf}
+\caption{Model fits on experimental data using DOPS. The model parameters were estimated using DOPS. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor TF/VIIa (5nM (blue) and 5pM (red)) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
 }\label{fig-train}
 \end{figure}
 
@@ -680,8 +686,9 @@ At the end of 4000 function evaluations DOPS attains the lowest error. The next 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf}
-\caption{Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $\mathcal{T}$ = 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - orange, respectively) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
+%\includegraphics[width=1.0\textwidth]{./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf}
+\includegraphics[trim = {3cm 6cm 3cm 6cm }, clip,width=1.0\textwidth]{./rachelfigs/ReplicateFigure6DivBySqrtN.pdf}
+\caption{Model predictions on unseen experimental data using parameters obtained from DOPS. The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $\mathcal{T}$ = 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - purple, respectively) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
 }\label{fig-validation}
 \end{figure}
 
@@ -736,7 +743,7 @@ The multi-swarm with DDS saturates while DOPS shows a rapid drop due to a switch
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./figs/Figure_S2_B4_sims.pdf}
+\includegraphics[width=1.00\textwidth]{./rachelfigs/RecreatedFigureS2}
 \caption{\textbf {(Data fits for Problem B4)} Pseudo-experimental data (red x) vs. optimal solution obtained using DOPS (solid blue lines) for the 13 observed states. X axis: time [s]; Y axis: metabolite concentrations [mM].
 }\label{fig-sims-b4}
 \end{figure}
