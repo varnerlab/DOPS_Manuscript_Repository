@@ -474,7 +474,7 @@ Toward this objective, DOPS begins by using a particle swarm search and then dyn
 \end{algorithm}\DecMargin{1em}
 
 \subsubsection*{Phase 1: Particle swarm phase.}
-Particle warm optimization is an evolutionary algorithm that uses a population of particles (solutions) to find an optimal solution. Each particle is updated based on its experience (particle best) and the experience of all other particles within the swarm (global best). 
+Particle warm optimization is an evolutionary algorithm that uses a population of particles (solutions) to find an optimal solution \cite{clerc2010particle,abraham2006swarm}. Each particle is updated based on its experience (particle best) and the experience of all other particles within the swarm (global best). 
 The particle swarm phase of DOPS begins by randomly initializing a swarm of $\mathcal{K}$-dimensional particles (represented as $z_{i}$),
 wherein each particle corresponded to a $\mathcal{K}$-dimensional parameter vector.
 After initialization, particles were randomly partitioned into $k$ equally sized sub-swarms $\mathcal{S}_{1},\hdots,\mathcal{S}_{k}$.
@@ -521,6 +521,25 @@ However, if the simulation error stagnated e.g., did not change by more than 1\%
 exploring parameter space using the DDS approach.
 
 \subsubsection*{Phase 2: DDS phase.}
+\IncMargin{1em}
+\begin{algorithm}
+\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+\Input{Candidate vector $\mathcal{G}$ from swarm search and $\left(1-\mathcal{F}\right)*\mathcal{N}$ evaluations}
+\Output{Optimized parameter vector of size $1\times K$ }
+\BlankLine
+\While{$j\leq \left(1-\mathcal{F}\right)*\mathcal{N}$}{
+
+\emph{Assign probability of perturbation to each dimension $\mathcal{P}_{i}$ according to equation 7}\;
+\emph{Select a subset of dimensions based on a threshold value for perturbation}\;
+\emph{Update candidate solution $\mathcal{G}({J})$  according to equation 5}\;
+\emph{Ensure updated solution $\mathcal{G}_{new}({J})$ is within bounds using Algorithm 2}\;
+
+}
+\caption{Pseudo code for the Dynamically Dimensioned Search (DDS) method.}\label{algo_dds}
+\end{algorithm}\DecMargin{1em}
+
 Dynamically Dimensioned Search (DDS) is a single solution based search algorithm. DDS is used to obtain good solutions to high-dimensional search problems within a fixed number of function evaluations. DDS starts as a global search algorithm by perturbing all the dimensions. Later the number of dimensions that are perturbed is decreased with a certain probability. The probability that a certain dimension is perturbed reduces (a minimum of one dimension is always perturbed) as the iterations increase. This causes the algorithm to behave as a local search algorithm as the number of iterations increase. The perturbation magnitude of each dimension is from normal distribution with zero mean. The standard deviation that was used in the original DDS paper and the current study is 0.2.
 DDS performs a greedy search where the solution is updated only if it is better than the previous solution. The combination of perturbing a subset of dimensions along with greedy search indirectly relies on model sensitivity to a specific parameter combination. The reader is requested to refer to the original paper by Tolson and Shoemaker for further detail \cite{tolson2007dynamically}.
 
@@ -645,9 +664,15 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.60\textwidth]{./figs/Figure_2_TestFunctions-crop.pdf}
+%\includegraphics[width=0.60\textwidth]{./figs/Figure_2_TestFunctions-crop.pdf}
+    \subfloat[]{{\includegraphics[width=.6\textwidth]{./rachelfigs/ackley_10d} }}%
+    \newline
+    \subfloat[]{{\includegraphics[width=.6\textwidth]{./rachelfigs/rast_10d} }}%
+    \newline
+    \subfloat[]{{\includegraphics[width=.6\textwidth]{./rachelfigs/rast_300d} }}%
+
 \caption{Performance of DOPS and other meta-heuristics for the Ackley and Rastrigin functions.
-\textbf{A}: Mean scaled error versus the number of function evaluations for the 10-dimensional Ackley function. DOPS, DDS and DE find optimal or near optimal solutions within the specified number of function evaluations.
+\textbf{A}: Mean scaled error versus the number of function evaluations for the 10-dimensional Ackley function. DOPS, DDS and PSO find optimal or near optimal solutions within the specified number of function evaluations.
 \textbf{B}: Mean scaled error versus the number of function evaluations for the 10-dimensional Rastrigin function. DOPS and DDS find optimal or near optimal solutions within the specified number of function evaluations.
 \textbf{C}: Mean scaled error versus the number of function evaluations for the 300-dimensional Rastrigin function. DOPS is the only algorithm that finds an optimal or near optimal solution within the specified number of function evaluations. In all cases, the maximum number of function evaluations was $\mathcal{N}$ = 4000. Mean and standard deviation were calculated over $\mathcal{T}$ = 25 trials. }\label{fig-testfunctions}
 \end{figure}

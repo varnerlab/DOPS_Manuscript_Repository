@@ -303,6 +303,17 @@ Song SO, Chakrabarti A, Varner JD (2010) {Ensembles of signal transduction
 \newblock Biotechnology journal 5: 768--780.
 \bibAnnoteFile{song2010ensembles}
 
+\bibitem{clerc2010particle}
+Clerc M (2010) Particle swarm optimization, volume~93.
+\newblock John Wiley \& Sons.
+\bibAnnoteFile{clerc2010particle}
+
+\bibitem{abraham2006swarm}
+Abraham A, Guo H, Liu H (2006) Swarm intelligence: foundations, perspectives
+  and applications.
+\newblock Swarm Intelligent Systems : 3--25.
+\bibAnnoteFile{abraham2006swarm}
+
 \bibitem{shi1999empirical}
 Shi Y, Eberhart RC (1999) Empirical study of particle swarm optimization.
 \newblock In: Proceedings of the 1999 Congress on Evolutionary Computation,
