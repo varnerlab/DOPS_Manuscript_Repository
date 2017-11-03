@@ -297,6 +297,13 @@ Luan D, Zai M, Varner JD (2007) Computationally derived points of fragility of
 \newblock PLoS computational biology 3: e142.
 \bibAnnoteFile{luan2007computationally}
 
+\bibitem{jamil2013literature}
+Jamil M, Yang XS (2013) A literature survey of benchmark functions for global
+  optimisation problems.
+\newblock International Journal of Mathematical Modelling and Numerical
+  Optimisation 4: 150--194.
+\bibAnnoteFile{jamil2013literature}
+
 \bibitem{song2010ensembles}
 Song SO, Chakrabarti A, Varner JD (2010) {Ensembles of signal transduction
   models using pareto optimal ensemble techniques (POETs)}.
