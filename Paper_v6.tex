@@ -325,7 +325,7 @@ The DDS phase refined the globally best particle to produce significantly lower 
 Thus, the automated switching strategy was critical to the overall performance of DOPS.
 
 \subsection*{Contiued Switching May Be Beneficial}
-We explored the performance of DOPS if it was permitted to switch between PSO and DDS modes. This mode ('Experimental DOPS') performed comparably to DOPS on 10-d Ackley and Rastrigin as well as on 300-dimensional Rastrigin. It performed better than DOPS on the CHO metabolism problem (b4) (Fig. \ref{fig-exp-DOPS-b4}a), with the average functional value for Experimental DOPS being nearly half of that of DOPS. To further distinguish DOPS from Experimental DOPS, we compared the performance of each algorithm on the Eggholder function, which is considered to be a difficult function to optimize, owing to its multiple minima. On this function, Experimental DOPS outperformed DOPS however, neither version of DOPS reached the true minimum at -959.6407 on any trial with a budget of 4,000 function evaluations. 
+We explored the performance of DOPS if it was permitted to switch between PSO and DDS modes. This mode ('Experimental DOPS') performed comparably to DOPS on 10-d Ackley and Rastrigin as well as on 300-dimensional Rastrigin. It performed better than DOPS on the CHO metabolism problem (b4) (Fig. \ref{fig-exp-DOPS-b4}a), with the average functional value for Experimental DOPS being nearly half of that of DOPS. To further distinguish DOPS from Experimental DOPS, we compared the performance of each algorithm on the Eggholder function, which is considered to be a difficult function to optimize, owing to its multiple minima. On this function, Experimental DOPS outperformed DOPS however, neither version of DOPS reached the true minimum at -959.6407 on any trial with a budget of 4,000 function evaluations (Fig. \ref{fig-exp-DOPS-b4}b). We also explored the performance of both versions of DOPS on the 100 dimensional Styblinksi-Tang function (Fig. \ref{fig-exp-DOPS-b4}c). In this comparison, experimental DOPS far outperforms DOPS, succeeding in finding the true minimum before exhausting its budget of functional evaluations, whereas DOPS does not reach the minimum. Since the performance of Experimental DOPS was promising on these problems, we decided to measure its performance on the coagulation problem. 
 
 \clearpage
 
@@ -742,8 +742,10 @@ The multi-swarm with DDS saturates while DOPS shows a rapid drop due to a switch
     \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/2versionsofDOPSOnb4_obj.pdf} }}%
     \qquad
     \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/2versionsofDOPSOnEggholder}} }%
-\caption{Performance of DOPS and Experimental DOPS on the CHO metabolism problem (a) and the Eggholder function (b). Both methods have the same initial decrease in error, but as the number of function evaluations increases, experimental DOPS produces a larger decrease in error.
-The results presented are the average of $\mathcal{T}$ = 250 trials with for the CHO metabolism problem and $\mathcal{T}$ = 500 trials on the Eggholder function with $\mathcal{N}$ = 4000 function evaluations each.
+    \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/2versionsofDOPSOnstybtang}} }%    
+    
+\caption{Performance of DOPS and Experimental DOPS on the CHO metabolism problem (a), the Eggholder function (b), and the 100 dimensional Styblinksi-Tang function (c). Both methods have the same initial decrease in error, but as the number of function evaluations increases, experimental DOPS produces a larger decrease in error.
+The results presented are the average of $\mathcal{T}$ = 250 trials with for the CHO metabolism problem and $\mathcal{T}$ = 500 trials on the Eggholder and Styblinksi-Tang functions with $\mathcal{N}$ = 4000 function evaluations each.
 }\label{fig-exp-DOPS-b4}
 \end{figure}
 
