@@ -27,7 +27,7 @@ function [allDOPS,adjustedAllDOPS,allExperimental]=compareExperimentalDOPSOnProb
            %iter 9 didn't finish, so skip it for now
        %    continue; 
         %end
-        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2/b4_obj/DOPS_error_iter', num2str(k),'.mat'));
+        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2gamma/b4_obj/DOPS_error_iter', num2str(k),'.mat'));
         exp_err= g_best_solution{k};
         allExperimental(k,:) = exp_err;
     end
@@ -46,9 +46,9 @@ function [allDOPS,adjustedAllDOPS,allExperimental]=compareExperimentalDOPSOnProb
      hold('on')
      x = 1:NUM_EVALS;
      semilogy(1:NUM_EVALS,mean(adjustedAllDOPS,1), 'r', 'LineWidth', 2)
-     %semilogy(1:NUM_EVALS,mean(allExperimental,1), 'c')
+     semilogy(1:NUM_EVALS,mean(allExperimental,1), 'c')
      %semilogy(1:NUM_EVALS,mean(allExperimentalBeta,1), 'b')
-     semilogy(0:NUM_EVALS, mean(allESS,1), 'k', 'LineWidth', 2);
+     %semilogy(0:NUM_EVALS, mean(allESS,1), 'k', 'LineWidth', 2);
      
      %shade 1 stdev
 %      top1 = mean(adjustedAllDOPS,1)+1*std(adjustedAllDOPS,1);
@@ -60,23 +60,23 @@ function [allDOPS,adjustedAllDOPS,allExperimental]=compareExperimentalDOPSOnProb
      set(gca, 'YScale', 'log')
      xlabel('Number of Functional Evaluations')
      ylabel('Functional Value')
-     legend('DOPS', 'ESS')
-     saveas(f, '../DOPS_Results/figures/CompareExperimentalDOPSToESSOnProblemB4.pdf');
+     legend('DOPS', 'Exp DOPS ESS gamma')
+     saveas(f, '../DOPS_Results/figures/CompareExperimentalDOPSProblemB4.pdf');
      
-     f = figure();
-     hold('on')
-     for k = 1:NUM_ITERS
-         semilogy(1:NUM_EVALS,adjustedAllDOPS(k,:), 'g')
-         semilogy(1:NUM_EVALS,allExperimental(k,:), 'c')
-         semilogy(1:NUM_EVALS,allExperimentalBeta(k,:), 'b')
-         alpha(.5);
-         
-     end
-     set(gca, 'YScale', 'log')
-    xlabel('Number of Functional Evaluations')
-     ylabel('Functional Value')
-     legend('DOPS', 'Experimental DOPS', 'Experimental DOPS beta')
-     saveas(f, '../DOPS_Results/figures/CompareExperimentalDOPSOnProblemB4DispersionCurves.pdf');
+%      f = figure();
+%      hold('on')
+%      for k = 1:NUM_ITERS
+%          semilogy(1:NUM_EVALS,adjustedAllDOPS(k,:), 'g')
+%          semilogy(1:NUM_EVALS,allExperimental(k,:), 'c')
+%          semilogy(1:NUM_EVALS,allExperimentalBeta(k,:), 'b')
+%          alpha(.5);
+%          
+%      end
+%      set(gca, 'YScale', 'log')
+%     xlabel('Number of Functional Evaluations')
+%      ylabel('Functional Value')
+%      legend('DOPS', 'Experimental DOPS', 'Experimental DOPS beta')
+%      saveas(f, '../DOPS_Results/figures/CompareExperimentalDOPSOnProblemB4DispersionCurves.pdf');
 end
 
 function[filledInData]=fillInPSO(numParticles,PSO_error)

@@ -7,11 +7,12 @@ function [allhistory]= runSimulatedAnnealingOnCoag()
         stop = false;
         if isequal(flag,'iter')
               history = [history; optimvalues.fval];
-		optimvalues.iteration %so I can see what's going on'
+            fprintf('Iter %d and functional value %f\n', optimvalues.iteration, optimvalues.fval);  
+            optimvalues.iteration; %so I can see what's going on'
         end
         optchanged = false;
     end
-	NUM_ITERATIONS = 500;
+	NUM_ITERATIONS = 2000;
 	options = optimoptions(@simulannealbnd,'MaxIterations',NUM_ITERATIONS, 'OutputFcn', @myoutput);
 	NUM_REPEATS = 25;
 	allhistory = zeros(NUM_REPEATS, NUM_ITERATIONS+1);

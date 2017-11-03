@@ -12,18 +12,22 @@ function[]= compareAllTechniques()
     plot(1:40:4000,mean(allDEResults,1), 'LineWidth', 2.0,'Color','r');
     set(gca, 'YScale', 'log');
     axis([0,4000,7E4,2E7])
-    legend('DOPS-N=25', 'Simulated Annealing-N=25', 'DDS-N=25', 'DE-N=25');
-    xlabel('Number of Function Evaluations')
-    ylabel('Average Functional Value');
+    legend('DOPS', 'Simulated Annealing', 'DDS', 'DE');
+    xlabel('Objective Function Evaluations')
+    ylabel({'Mean Objective FUnction Error', '(Number of Trials = 25)'});
     saveas(f,'../DOPS_Results/figures/RecreateFigure4.pdf', 'pdf')
-%     f=figure();
-%     boxplot([allSATimes, allDDSTimes, allDETimes,allDOPSTimes]/(60^2)) %convert to hours
-%     xticklabels({'Simulated Annealing', 'DDS', 'DE', 'DOPS'});
-%     xlabel('Metaheuristics')
-%     ylabel('Runtime per trial (number of hours)')
-%     saveas(f,'../DOPS_Results/figures/RecreateRebutalReviewer2.pdf', 'pdf')
-    
-    
+
+    %to create DOPS dispersion curve
+    f=figure();
+    hold('on')
+    for j=1:25
+       semilogy(adjustedAllDOPS(j,:), 'k') 
+       alpha(.5); %make lines somewhat transparent
+    end
+    xlabel('Number of Function Evaluations')
+    ylabel('Functional Value');
+    set(gca, 'YScale', 'log');
+     saveas(f,'../DOPS_Results/figures/DOPSDispersionCurvesOnCoag.pdf', 'pdf')
 end
 
 function [allSAResults,allTimes] =processSAResults()

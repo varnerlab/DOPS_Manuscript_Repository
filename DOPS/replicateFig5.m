@@ -40,7 +40,8 @@ end
 
 function makePlot(allcurve1, allcurve2,DFIN)
     close('all');
-   f=plot(mean(allcurve1,1), 'k')
+    f = figure();
+   plot(mean(allcurve1,1), 'k')
     hold('on')
     plot(mean(allcurve2,1), 'k')
     std(allcurve1,1)
@@ -61,7 +62,27 @@ function makePlot(allcurve1, allcurve2,DFIN)
     DATA2 = DFIN.EXPT_DATA_FIG2E5;
     plot(DATA1(:,1), DATA1(:,2), 'b.', 'MarkerSize', 12);
     plot(DATA2(:,1), DATA2(:,2), 'r.', 'MarkerSize',12);
-    legend(' 5pm Trigger', '5nm Trigger')
-    saveas(f,'../DOPS_Results/figures/ReplicateFigure5DivBySqrtN.pdf', 'pdf');
+   % legend('', '', '5pm Trigger', '5nm Trigger')
+    xlabel('Time (Seconds)');
+    ylabel('Thrombin Concentration (nM)');
+    %saveas(f,'../DOPS_Results/figures/ReplicateFigure5DivBySqrtN.pdf', 'pdf');
+    f.PaperPositionMode = 'auto';
+    f.PaperUnits = 'inches';
+    f.PaperPosition = [0 0 8 7];
+    print('../DOPS_Results/figures/ReplicateFigure5DivBySqrtN.pdf', '-dpdf','-r0');
+    NSE5pm = calculateNSE(DATA1,mean(allcurve1,1), x);
+    NSE5nm = calculateNSE(DATA2,mean(allcurve2,1),x);
+    fprintf('NSE for 5 pm trigger is %f\n', NSE5pm);
+    fprintf('NSE for 5 nm trigger is %f\n', NSE5nm);
+end
+
+function [NSE]= calculateNSE(exp_data, sim_data,sim_time)
+    time_pts = exp_data(:,1);
+    sim_data_interp = interp1(sim_time,sim_data, time_pts);
+    NSE = 0;
+    for j = 1:max(size(exp_data))
+       NSE = NSE +sqrt((exp_data(j,2)-sim_data_interp(j))^2); 
+    end
+    NSE = 1/max(exp_data(:,2))*1/sqrt(max(size(exp_data)))*NSE;
 end
 

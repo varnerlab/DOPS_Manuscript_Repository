@@ -8,6 +8,7 @@ function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareExperimen
     adjustedAllDOPS = zeros(NUM_ITERS,NUM_EVALS);
     allExperimental = zeros(NUM_ITERS,NUM_EVALS);
     allExperimentalbeta = zeros(NUM_ITERS,NUM_EVALS);
+    allExperimentalgamma = zeros(NUM_ITERS,NUM_EVALS);
     allDOPSTimes = zeros(NUM_ITERS,1);
     for j=1:NUM_ITERS
        % if(j ==5) %need to skip 5 since rerunning at the moment
@@ -51,18 +52,42 @@ function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareExperimen
         exp_err= g_best_solution{k};
         allExperimentalbeta(k,:) = exp_err;
     end
+    
+     for k=1:NUM_ITERS
+       if(k==7 || k==14 || k ==24)
+           allExperimental(k,:) = NaN;
+           continue;
+        end
+        
+        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2gamma/fitCoagShrinkFactor1E6/DOPS_error_iter', num2str(k),'.mat'));
+        exp_err= g_best_solution{k};
+        allExperimentalgamma(k,:) = exp_err;
+    end
     f=figure();
     hold('on')
     semilogy(1:NUM_EVALS,nanmean(adjustedAllDOPS,1))
-    semilogy(1:NUM_EVALS,nanmean(allExperimental,1))
-    semilogy(1:NUM_EVALS,nanmean(allExperimentalbeta,1))
+    %semilogy(1:NUM_EVALS,nanmean(allExperimental,1))
+    %semilogy(1:NUM_EVALS,nanmean(allExperimentalbeta,1))
+    semilogy(1:NUM_EVALS,nanmean(allExperimentalgamma,1))
     %axis([0,4000,1E5,1E8])
     set(gca, 'YScale', 'log')
-    xlabel('Iteration Number')
+    xlabel('Number of Functional Evaluations')
     ylabel('Functional Value')
-    legend('DOPS-25 iters', 'Experimental DOPS-22 iters', 'Experimental DOPS beta-21 iters')
-    saveas(f, '../DOPS_Results/figures/DOPS_VS_BothExpDOPS.pdf', 'pdf');
+    %legend('DOPS-25 iters', 'Experimental DOPS-22 iters', 'Experimental DOPS beta-21 iters', 'Experimental DOPS gamma')
+    legend('DOPS-25 iters', 'Experimental DOPS gamma-25 iters');
+    saveas(f, '../DOPS_Results/figures/DOPS_VS_ExpDOPSgamma.pdf', 'pdf');
     
+    figure()
+    hold('on')
+    for j = 1:25
+        semilogy(1:NUM_EVALS, allExperimentalgamma(j,:), 'r')
+        semilogy(1:NUM_EVALS, adjustedAllDOPS(j,:), 'k');
+    end
+    set(gca, 'YScale', 'log')
+    xlabel('Number of Function Evaluations')
+    ylabel('Functional Value')
+    legend('Experimental DOPS gamma', 'DOPS')
+    saveas(f, '../DOPS_Results/figures/DOPS_VS_ExpDOPSgammaDispCurvesShrinkFactor1E4.pdf', 'pdf');
 end
 
 function[filledInData]=fillInPSO(numParticles,PSO_error)

@@ -35,6 +35,17 @@ function [all_curve1,all_curve2,all_curve3,DFIN] = replicateFig6() %for DE, need
         all_curve3(j,:) = thrombin3;
     end
    makeFig6Plot(all_curve1,all_curve2,all_curve3,DFIN);
+    DATA1 = DFIN.EXPT_DATA_FIG2E2;
+    DATA2 = DFIN.EXPT_DATA_FIG2E3;
+    DATA3 = DFIN.EXPT_DATA_FIG2E4;
+    x = [1:1:250];
+    NSE10pm = calculateNSE(DATA1,mean(all_curve1,1), x);
+    NSE50pm = calculateNSE(DATA2,mean(all_curve2,1),x);
+    NSE500pm = calculateNSE(DATA3,mean(all_curve3,1),x);
+    
+    fprintf('NSE for 10 pm trigger is %f\n', NSE10pm);
+    fprintf('NSE for 50 pm trigger is %f\n', NSE50pm);
+    fprintf('NSE for 500 pm trigger is %f\n', NSE500pm);
 end
 function[all_params]= readInParams(num_iters)
     %num_iters = 25;
@@ -73,3 +84,12 @@ function [dynamics] = checkForDynamics(curve)
     end
 end
 
+function [NSE]= calculateNSE(exp_data, sim_data,sim_time)
+    time_pts = exp_data(:,1);
+    sim_data_interp = interp1(sim_time,sim_data, time_pts);
+    NSE = 0;
+    for j = 1:max(size(exp_data))
+       NSE = NSE +sqrt((exp_data(j,2)-sim_data_interp(j))^2); 
+    end
+    NSE = 1/max(exp_data(:,2))*1/sqrt(max(size(exp_data)))*NSE;
+end

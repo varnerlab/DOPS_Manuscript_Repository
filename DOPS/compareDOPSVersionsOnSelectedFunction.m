@@ -1,13 +1,14 @@
-function [] = compareESSToDOPSOnCoag()
+function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareDOPSVersionsOnSelectedFunction(functionName)
+    addpath(strcat('/home/rachel/Documents/DOPS/DOPS_Results/',functionName));
     close('all');
-    NUM_ITERS = 25;
+    NUM_ITERS = 250;
     NUM_EVALS = 4000;
     NUM_PARTCILES = 40;
     allDOPS = zeros(NUM_ITERS,NUM_EVALS);
     adjustedAllDOPS = zeros(NUM_ITERS,NUM_EVALS);
-    allESS = zeros(NUM_ITERS,NUM_EVALS+1);
-    addpath('/home/rachel/Documents/DOPS/DOPS_Results/fitCoag');
-    for j=1:25
+    allExperimental = zeros(NUM_ITERS,NUM_EVALS);
+    allDOPSTimes = zeros(NUM_ITERS,1);
+    for j=1:NUM_ITERS
         load(strcat('DOPS_error_iter',num2str(j),'.mat'));
         PSO_error = g_best_solution{j};
         corrected_PSO_error = fillInPSO(NUM_PARTCILES,PSO_error);
@@ -16,36 +17,31 @@ function [] = compareESSToDOPSOnCoag()
         alldata= cat(2,PSO_error,DDS_error);
         correctedAllData = cat(2,corrected_PSO_error,DDS_error);
         correctedAllData = correctedAllData(1:NUM_EVALS);
-       % allDOPS(j,:) =alldata;
+        %allDOPS(j,:) =alldata;
         adjustedAllDOPS(j,:) = correctedAllData;
+        
+        currTime = load(strcat('DOPS_time_iter', num2str(j), '.txt'));
+        currTime = currTime(j);
+        allDOPSTimes(j) = currTime;
     end
    
     for k=1:NUM_ITERS
-%         if(k ==18 || k ==19 || k ==20)
-%            allESS(k,:) = NaN;
-%            continue;
-%         end
-        load(strcat('/home/rachel/Documents/DOPS/ESS_Results/fitCoag/functionalInterpIter', num2str(k),'.mat'));
-        exp_err= f_interp(1:NUM_EVALS+1);
-        allESS(k,:) = exp_err;
+        load(strcat('/home/rachel/Documents/DOPS/DOPS_Results/ExperimentalV2gamma/',functionName, '/DOPS_error_iter', num2str(k),'.mat'));
+        exp_err= g_best_solution{k};
+        allExperimental(k,:) = exp_err;
     end
+    
     f=figure();
     hold('on')
-    plot(1:NUM_EVALS,nanmean(adjustedAllDOPS,1), 'LineWidth', 2, 'Color', 'r')
-    plot(0:NUM_EVALS,nanmean(allESS,1), 'LineWidth', 2, 'Color','k')
+    semilogy(1:NUM_EVALS,nanmean(adjustedAllDOPS,1), 'LineWidth', 2, 'Color','k')
+    semilogy(1:NUM_EVALS,nanmean(allExperimental,1), 'LineWidth',2, 'Color','r')
     %axis([0,4000,1E5,1E8])
     set(gca, 'YScale', 'log')
-    xlabel('Iteration Number')
+    xlabel('Number of Function Evaluations')
     ylabel('Functional Value')
-    legend('DOPS', 'ESS')
-    saveas(f, '../DOPS_Results/figures/CompareDOPSToESSOnCoag.pdf');
+    legend('DOPS', 'Experimental DOPS')
+    saveas(f, strcat('../DOPS_Results/figures/2versionsofDOPSOn',functionName, '.pdf'), 'pdf');
     
-    figure()
-    hold('on')
-    for j = 1:25
-        plot(0:NUM_EVALS,allESS(j,:), 'LineWidth', 1, 'Color','k')
-    end
-    set(gca, 'YScale', 'log')
 end
 
 function[filledInData]=fillInPSO(numParticles,PSO_error)

@@ -1,4 +1,5 @@
-function [x,bestparams,initialvals,functionalvals] = recreateFigureS1()
+tsfunction [x,bestparams,initialvals,functionalvals] = recreateFigureS1()
+    %also makes figures S3a and S3b
     close('all')
     NUM_REPEATS = 10;
     functionalvals = [];
@@ -15,6 +16,15 @@ function [x,bestparams,initialvals,functionalvals] = recreateFigureS1()
     [smallestf, minIdx] = nanmin(functionalvals); %ignore NAN
     bestparams = params(minIdx,:);
    [objective,constraints,residuals,x_sel,x,t,scaled_data] = b1_obj_forS1(bestparams);
+   containsNANS = max(isnan(x(:)));
+   repCounter = 1;
+   while(containsNANS ==1 && repCounter <100) %keep trying until we actually solve
+         fprintf('Attempting to solve problem b1. On attempt %d\n', repCounter);
+         [objective,constraints,residuals,x_sel,x,t,scaled_data] = b1_obj_forS1(bestparams);
+         containsNANS = max(isnan(x(:)));
+         repCounter = repCounter +1;
+   end
+   
     num_species = 44;
     scaled_data = scaled_data{1};
     f=figure();
@@ -32,7 +42,7 @@ function [x,bestparams,initialvals,functionalvals] = recreateFigureS1()
         [ydot,x_int,p] = b1([0]);
     f=figure();
     hold('on')
-    plot(log(p(1:size(bestparams,2))), log(bestparams), 'b.', 'MarkerSize', 20);
+    plot(log(p(1:size(bestparams,2))), log(bestparams), 'bo', 'MarkerSize', 5);
     plot([-15,10], [-15,10], 'k-');
     xlabel('Nominal Parameters (log)')
     ylabel('Optimal Parameters (log)')
@@ -43,11 +53,13 @@ function [x,bestparams,initialvals,functionalvals] = recreateFigureS1()
     scaled_data_o = scaled_data_o{1};
     f = figure();
     hold('on')
-    for j=1:num_states
-        plot(log(norm(x_o(:,j))), log(norm(x(:,j))), 'b.', 'MarkerSize',20);
+    %for j=1:num_states
+    for j = 1:size(x_sel_o,2)
+        %plot(log(norm(x_o(:,j))), log(norm(x(:,j))), 'b.', 'MarkerSize',20);
+        plot(log((x_sel_o(:,j))), log((x_sel(:,j))), 'bo', 'MarkerSize',5);
     end
-    plot([-6,10], [-6,10], 'k-');
-    xlabel('Norm of Measured States With Nominal Paramters (log)')
-    ylabel('Norm of Measured States With Optimal Paramters (log)')
+    plot([-20,5], [-20,5], 'k-');
+    xlabel('Measured States With Nominal Paramters (log)')
+    ylabel('Measured States With Optimal Paramters (log)')
     print('../DOPS_Results/figures/RecreatedFigureS3b.pdf', '-dpdf','-r0');
 end

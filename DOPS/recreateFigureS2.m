@@ -1,4 +1,5 @@
 function [x,bestparams,functionalvals,initialvals] = recreateFigureS2()
+    %also makes s3b and s3d
     close('all')
     NUM_REPEATS = 25;
     functionalvals = [];
@@ -25,12 +26,12 @@ function [x,bestparams,functionalvals,initialvals] = recreateFigureS2()
     end
     f.PaperPositionMode = 'auto';
     f.PaperUnits = 'inches';
-    f.PaperPosition = [0 0 5 10];
+    f.PaperPosition = [0 0 6 11];
     print('../DOPS_Results/figures/RecreatedFigureS2.pdf', '-dpdf','-r0');
     [ydot,x_int,p] = b4([0]);
     f=figure();
     hold('on')
-    plot(log(p), log(bestparams), 'b.', 'MarkerSize', 20);
+    plot(log(p), log(bestparams), 'bo', 'MarkerSize', 5);
     plot([-6,8], [-6,8], 'k-');
     xlabel('Nominal Parameters (log)')
     ylabel('Optimal Parameters (log)')
@@ -40,11 +41,12 @@ function [x,bestparams,functionalvals,initialvals] = recreateFigureS2()
     [objective_o,constraints_o,residuals_o,x_all_o,x_o,t_o,timeseries_data_o,scaled_data_o] = b4_obj_forS2(p);
     f = figure();
     hold('on')
-    for j=1:size(x_all_o,2)
-        plot(log(norm(x_all_o(:,j))), log(norm(x_all(:,j))), 'b.', 'MarkerSize',20);
+    for j=1:size(x_o,2)
+        plot(log((x_o(:,j))), log((x(:,j))), 'bo', 'MarkerSize',5);
+        %plot(log((x_all_o(:,j))), log((x_all(:,j))), 'bo', 'MarkerSize',5);
     end
-    plot([0,14], [0,14], 'k-');
-    xlabel('Norm of Measured States With Nominal Paramters (log)')
-    ylabel('Norm of Measured States With Optimal Paramters (log)')
+    plot([-2,14], [-2,14], 'k-');
+    xlabel('Measured States With Nominal Paramters (log)')
+    ylabel('Measured States With Optimal Paramters (log)')
     print('../DOPS_Results/figures/RecreatedFigureS3d.pdf', '-dpdf','-r0');
 end

@@ -56,6 +56,22 @@ for i=1:NI
 	x_new=bind(x_new,MINJ,MAXJ);                     % Ensure the perturbed solution is within bounds
 
 	F_new=fit(x_new,optFunction);
+    
+    %make sure we haven't ended up with a NAN, if so repeat process until
+    %we get a a real number
+    
+    NANcount = 0;
+    while(isnan(F_new))
+        SIGMA=r.*(MAXJ-MINJ);
+        x_new=x;
+        x_new(J)=(x(J))+SIGMA(J).*randn(length(J),1);    % Perturb the current solution - this is user defined   
+        x_new=bind(x_new,MINJ,MAXJ);                     % Ensure the perturbed solution is within bounds
+
+        F_new=fit(x_new,optFunction);
+        NI = NI -1; %deduct the cost of finding a NA soltuion
+        NANcount = NANcount +1;
+        fprintf('In starting DDS found %d NAN parameter sets\n', NANcount);
+    end
 
 	%Greedy step - accept solution only if better than the previous
 	%solution

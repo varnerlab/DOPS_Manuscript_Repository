@@ -1,6 +1,7 @@
 function makeFig6Plot(allcurve1, allcurve2,allcurve3,DFIN)
     close('all');
-   f=plot(mean(allcurve1,1), 'k');
+    f = figure();
+    plot(mean(allcurve1,1), 'k');
     hold('on')
     plot(mean(allcurve2,1), 'k');
     plot(mean(allcurve3,1), 'k');
@@ -33,5 +34,8 @@ function makeFig6Plot(allcurve1, allcurve2,allcurve3,DFIN)
     axis([0,200,0,1600])
     xlabel('Time (seconds)')
     ylabel('Thombin Concentration (nM)')
-    saveas(f,'../DOPS_Results/figures/ReplicateFigure6DivBySqrtN.pdf', 'pdf');
+    f.PaperPositionMode = 'auto';
+    f.PaperUnits = 'inches';
+    f.PaperPosition = [0 0 8 7];
+    print('../DOPS_Results/figures/ReplicateFigure5DivBySqrtN.pdf', '-dpdf','-r0');
 end

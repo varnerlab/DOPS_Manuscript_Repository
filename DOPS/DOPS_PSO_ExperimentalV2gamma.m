@@ -53,7 +53,7 @@ bestval_dds_swarm=[];
 best_particle_dds_swarm=[];
 best_particles_ls=[];
 g_best_solution=[];bestparticle=[];particle=[];fitness = [];
-shrinkFactor = 10;
+shrinkFactor = 1E6;
 %%
 %Initializing the position of the particles within the swarms
 
@@ -65,6 +65,8 @@ if(size(initial_guess,1)==0) %if we're on the initial iteration and don't have a
         fitness(i,1)=fit(particle(:,1,i),optFunction);   %was fit7, now just fit                                  %Calculating fitness of each particle
     end
 else
+   % orders = getOrder(abs(initial_guess));
+   % shrinkFactor = repmat(10,N,1).^(orders-4);
     for i=1:NP
         if(i ==1)
             Z(:,i) = initial_guess; %we give the initial guess to one particle
@@ -74,7 +76,7 @@ else
                 fitness(i,1) = best_PSO_val;
             end
         else
-            Z(:,i) = initial_guess +(MAXJ-MINJ).*rand(N,1)/shrinkFactor; 
+            Z(:,i) = initial_guess +(MAXJ-MINJ).*rand(N,1).*shrinkFactor; 
         end
         [Z(:,i)]=bind(Z(:,i),MINJ,MAXJ);                                        %Restricting the perturbation to be amongst the bounds specified    
         particle(:,1,i)=Z(:,i);
@@ -188,7 +190,7 @@ w(j)=((NI - j)*(Max_Inertia_weight - Min_Inertia_weight))/(NI-1) + Min_Inertia_w
     else
       failure_counter=0;
     end
-   fprintf('In PSO. On iteration %d of %d failture counter = %d\n', i, NI, failure_counter);
+   %fprintf('In PSO. On iteration %d of %d failture counter = %d\n', i, NI, failure_counter);
     %Switch to DDS search if the solution has stagnated
     if(failure_counter > failure_counter_threshold)
        return;  
@@ -246,5 +248,10 @@ function [x]=bind(x,MINJ,MAXJ)
 
 	CHKMIN=find(x<MINJ);
 	x(CHKMIN)=MAXJ(CHKMIN);
+end
+
+function n=getOrder(val)
+    base = 10; %let's just assume we're in base ten
+    n = floor(log(abs(val))./log(base));
 end
 
