@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  3 NOV 2017 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  9 NOV 2017 09:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1115,53 +1115,49 @@ put line 718.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [32 <./rachelfigs/ReplicateFigure6DivBySqrtN.pdf>]
-<./figs/Figure_7_ErrorSwarms_v2.pdf, id=3468, 864.22874pt x 602.25pt>
-File: ./figs/Figure_7_ErrorSwarms_v2.pdf Graphic file (type pdf)
+<./rachelfigs/RecreateFigure7.pdf, id=3468, 614.295pt x 794.97pt>
+File: ./rachelfigs/RecreateFigure7.pdf Graphic file (type pdf)
 
-<use ./figs/Figure_7_ErrorSwarms_v2.pdf>
-Package pdftex.def Info: ./figs/Figure_7_ErrorSwarms_v2.pdf used on input line 
-727.
-(pdftex.def)             Requested size: 469.75502pt x 327.35132pt.
- [33
-
+<use ./rachelfigs/RecreateFigure7.pdf>
+Package pdftex.def Info: ./rachelfigs/RecreateFigure7.pdf used on input line 72
+8.
+(pdftex.def)             Requested size: 469.75502pt x 480.31093pt.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-
-
- <./figs/Figure_7_ErrorSwarms_v2.pdf>] <./rachelfigs/2versionsofDOPSOnb4_obj.pd
-f, id=3489, 614.295pt x 794.97pt>
+[33 <./rachelfigs/RecreateFigure7.pdf>]
+<./rachelfigs/2versionsofDOPSOnb4_obj.pdf, id=3476, 614.295pt x 794.97pt>
 File: ./rachelfigs/2versionsofDOPSOnb4_obj.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/2versionsofDOPSOnb4_obj.pdf>
 Package pdftex.def Info: ./rachelfigs/2versionsofDOPSOnb4_obj.pdf used on input
- line 742.
+ line 743.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/2versionsofDOPSOnEggholder.pdf, id=3491, 614.295pt x 794.97pt>
+<./rachelfigs/2versionsofDOPSOnEggholder.pdf, id=3478, 614.295pt x 794.97pt>
 File: ./rachelfigs/2versionsofDOPSOnEggholder.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/2versionsofDOPSOnEggholder.pdf>
 Package pdftex.def Info: ./rachelfigs/2versionsofDOPSOnEggholder.pdf used on in
-put line 743.
+put line 744.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/2versionsofDOPSOnstybtang.pdf, id=3493, 614.295pt x 794.97pt>
+<./rachelfigs/2versionsofDOPSOnstybtang.pdf, id=3480, 614.295pt x 794.97pt>
 File: ./rachelfigs/2versionsofDOPSOnstybtang.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/2versionsofDOPSOnstybtang.pdf>
 Package pdftex.def Info: ./rachelfigs/2versionsofDOPSOnstybtang.pdf used on inp
-ut line 745.
+ut line 746.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/2versionsofDOPSOnfitCoagShrinkFactor1E6.pdf, id=3495, 614.295pt x
+<./rachelfigs/2versionsofDOPSOnfitCoagShrinkFactor1E6.pdf, id=3482, 614.295pt x
  794.97pt>
 File: ./rachelfigs/2versionsofDOPSOnfitCoagShrinkFactor1E6.pdf Graphic file (ty
 pe pdf)
  <use ./rachelfigs/2versionsofDOPSOnfitCoagShrinkFactor1E6.pdf>
 Package pdftex.def Info: ./rachelfigs/2versionsofDOPSOnfitCoagShrinkFactor1E6.p
-df used on input line 746.
+df used on input line 747.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
 
@@ -1170,119 +1166,119 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [34 <./rachelfigs/2versionsofDOPSOnb4_obj.pdf> <./rachelfigs/2versionsofDOPSOnE
 ggholder.pdf> <./rachelfigs/2versionsofDOPSOnstybtang.pdf> <./rachelfigs/2versi
 onsofDOPSOnfitCoagShrinkFactor1E6.pdf>]
-<./figs/Figure_S1_B1_sims.pdf, id=3512, 596.2275pt x 659.46375pt>
+<./figs/Figure_S1_B1_sims.pdf, id=3499, 596.2275pt x 659.46375pt>
 File: ./figs/Figure_S1_B1_sims.pdf Graphic file (type pdf)
 
 <use ./figs/Figure_S1_B1_sims.pdf>
-Package pdftex.def Info: ./figs/Figure_S1_B1_sims.pdf used on input line 782.
+Package pdftex.def Info: ./figs/Figure_S1_B1_sims.pdf used on input line 783.
 (pdftex.def)             Requested size: 469.75502pt x 519.582pt.
 
-<./rachelfigs/RecreatedFigureS2.pdf, id=3513, 614.295pt x 794.97pt>
+<./rachelfigs/RecreatedFigureS2.pdf, id=3500, 614.295pt x 794.97pt>
 File: ./rachelfigs/RecreatedFigureS2.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/RecreatedFigureS2.pdf>
 Package pdftex.def Info: ./rachelfigs/RecreatedFigureS2.pdf used on input line 
-789.
+790.
 (pdftex.def)             Requested size: 469.75502pt x 607.9196pt.
 
 
-LaTeX Warning: Float too large for page by 21.4896pt on input line 792.
+LaTeX Warning: Float too large for page by 21.4896pt on input line 793.
 
 
-<./figs/Figure_S3_B1_B4_params_measuredstates.pdf, id=3514, 1027.84pt x 770.88p
+<./figs/Figure_S3_B1_B4_params_measuredstates.pdf, id=3501, 1027.84pt x 770.88p
 t>
 File: ./figs/Figure_S3_B1_B4_params_measuredstates.pdf Graphic file (type pdf)
  <use ./figs/Figure_S3_B1_B4_params_measuredstates.pdf>
 Package pdftex.def Info: ./figs/Figure_S3_B1_B4_params_measuredstates.pdf used 
-on input line 796.
+on input line 797.
 (pdftex.def)             Requested size: 469.75502pt x 352.31538pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 798.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 799.
 
-<./rachelfigs/TimeComparsion.pdf, id=3515, 614.295pt x 794.97pt>
+<./rachelfigs/TimeComparsion.pdf, id=3502, 614.295pt x 794.97pt>
 File: ./rachelfigs/TimeComparsion.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/TimeComparsion.pdf>
-Package pdftex.def Info: ./rachelfigs/TimeComparsion.pdf used on input line 803
+Package pdftex.def Info: ./rachelfigs/TimeComparsion.pdf used on input line 804
 .
 (pdftex.def)             Requested size: 469.75502pt x 390.33922pt.
 
-<./rachelfigs/RecreateRebutalReviewer1_FigS4a.pdf, id=3517, 614.295pt x 794.97p
+<./rachelfigs/RecreateRebutalReviewer1_FigS4a.pdf, id=3504, 614.295pt x 794.97p
 t>
 File: ./rachelfigs/RecreateRebutalReviewer1_FigS4a.pdf Graphic file (type pdf)
  <use ./rachelfigs/RecreateRebutalReviewer1_FigS4a.pdf>
 Package pdftex.def Info: ./rachelfigs/RecreateRebutalReviewer1_FigS4a.pdf used 
-on input line 810.
+on input line 811.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/RecreateRebutalReviewer1_FigS4b.pdf, id=3519, 614.295pt x 794.97p
+<./rachelfigs/RecreateRebutalReviewer1_FigS4b.pdf, id=3506, 614.295pt x 794.97p
 t>
 File: ./rachelfigs/RecreateRebutalReviewer1_FigS4b.pdf Graphic file (type pdf)
  <use ./rachelfigs/RecreateRebutalReviewer1_FigS4b.pdf>
 Package pdftex.def Info: ./rachelfigs/RecreateRebutalReviewer1_FigS4b.pdf used 
-on input line 812.
+on input line 813.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/CompareExperimentalDOPSToESSOnProblemB4.pdf, id=3521, 614.295pt x
+<./rachelfigs/CompareExperimentalDOPSToESSOnProblemB4.pdf, id=3508, 614.295pt x
  794.97pt>
 File: ./rachelfigs/CompareExperimentalDOPSToESSOnProblemB4.pdf Graphic file (ty
 pe pdf)
  <use ./rachelfigs/CompareExperimentalDOPSToESSOnProblemB4.pdf>
 Package pdftex.def Info: ./rachelfigs/CompareExperimentalDOPSToESSOnProblemB4.p
-df used on input line 819.
+df used on input line 820.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/CompareExperimentalDOPSToESSOnCoag.pdf, id=3523, 614.295pt x 794.
+<./rachelfigs/CompareExperimentalDOPSToESSOnCoag.pdf, id=3510, 614.295pt x 794.
 97pt>
 File: ./rachelfigs/CompareExperimentalDOPSToESSOnCoag.pdf Graphic file (type pd
 f)
  <use ./rachelfigs/CompareExperimentalDOPSToESSOnCoag.pdf>
 Package pdftex.def Info: ./rachelfigs/CompareExperimentalDOPSToESSOnCoag.pdf us
-ed on input line 821.
+ed on input line 822.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/DOPSDispersionCurvesOnb4.pdf, id=3525, 614.295pt x 794.97pt>
+<./rachelfigs/DOPSDispersionCurvesOnb4.pdf, id=3512, 614.295pt x 794.97pt>
 File: ./rachelfigs/DOPSDispersionCurvesOnb4.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/DOPSDispersionCurvesOnb4.pdf>
 Package pdftex.def Info: ./rachelfigs/DOPSDispersionCurvesOnb4.pdf used on inpu
-t line 828.
+t line 829.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/DOPSDispersionCurvesOnCoag.pdf, id=3527, 614.295pt x 794.97pt>
+<./rachelfigs/DOPSDispersionCurvesOnCoag.pdf, id=3514, 614.295pt x 794.97pt>
 File: ./rachelfigs/DOPSDispersionCurvesOnCoag.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/DOPSDispersionCurvesOnCoag.pdf>
 Package pdftex.def Info: ./rachelfigs/DOPSDispersionCurvesOnCoag.pdf used on in
-put line 830.
+put line 831.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/FigureS7a.pdf, id=3529, 614.295pt x 794.97pt>
+<./rachelfigs/FigureS7a.pdf, id=3516, 614.295pt x 794.97pt>
 File: ./rachelfigs/FigureS7a.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/FigureS7a.pdf>
-Package pdftex.def Info: ./rachelfigs/FigureS7a.pdf used on input line 837.
+Package pdftex.def Info: ./rachelfigs/FigureS7a.pdf used on input line 838.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/FigureS7b.pdf, id=3531, 614.295pt x 794.97pt>
+<./rachelfigs/FigureS7b.pdf, id=3518, 614.295pt x 794.97pt>
 File: ./rachelfigs/FigureS7b.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/FigureS7b.pdf>
-Package pdftex.def Info: ./rachelfigs/FigureS7b.pdf used on input line 839.
+Package pdftex.def Info: ./rachelfigs/FigureS7b.pdf used on input line 840.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/FigureS7c.pdf, id=3533, 614.295pt x 794.97pt>
+<./rachelfigs/FigureS7c.pdf, id=3520, 614.295pt x 794.97pt>
 File: ./rachelfigs/FigureS7c.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/FigureS7c.pdf>
-Package pdftex.def Info: ./rachelfigs/FigureS7c.pdf used on input line 841.
+Package pdftex.def Info: ./rachelfigs/FigureS7c.pdf used on input line 842.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
 
-<./rachelfigs/FigureS7d.pdf, id=3535, 614.295pt x 794.97pt>
+<./rachelfigs/FigureS7d.pdf, id=3522, 614.295pt x 794.97pt>
 File: ./rachelfigs/FigureS7d.pdf Graphic file (type pdf)
 
 <use ./rachelfigs/FigureS7d.pdf>
-Package pdftex.def Info: ./rachelfigs/FigureS7d.pdf used on input line 843.
+Package pdftex.def Info: ./rachelfigs/FigureS7d.pdf used on input line 844.
 (pdftex.def)             Requested size: 211.38832pt x 189.01921pt.
  [1 <./figs/Figure_S1_B1_sims.pdf>] [2 <./rachelfigs/RecreatedFigureS2.pdf>] [3
  <./figs/Figure_S3_B1_B4_params_measuredstates.pdf>] [4 <./rachelfigs/TimeCompa
@@ -1298,7 +1294,7 @@ figs/FigureS7c.pdf> <./rachelfigs/FigureS7d.pdf>] (./Paper_v6.aux) )
 ### bottom level 
 Here is how much of TeX's memory you used:
  7597 strings out of 493029
- 115103 string characters out of 6136234
+ 115087 string characters out of 6136234
  189282 words of memory out of 5000000
  10875 multiletter control sequences out of 15000+600000
  33280 words of font info for 76 fonts, out of 8000000 for 9000
@@ -1320,10 +1316,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v6.pdf (43 pages, 4076758 bytes).
+Output written on Paper_v6.pdf (43 pages, 4168943 bytes).
 PDF statistics:
- 3716 PDF objects out of 4296 (max. 8388607)
- 3122 compressed objects within 32 object streams
+ 3703 PDF objects out of 4296 (max. 8388607)
+ 3112 compressed objects within 32 object streams
  0 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

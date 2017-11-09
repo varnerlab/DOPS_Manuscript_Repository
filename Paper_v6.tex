@@ -250,11 +250,11 @@ Next, we tested DOPS on benchmark biochemical models of varying complexity.
 Villaverde and co-workers published a set of benchmark biochemical problems to evaluate parameter estimation methods \cite{villaverde2015biopredyn}.
 They ranked the example problems by computational cost from most to least expensive.
 We evaluated the performance of DOPS on problems from the least and most expensive categories.
-The least expensive problem (henceforth referred to as problem B4) was a metabolic model of Chinese Hamster Ovary (CHO) with 35 metabolites, 32 reactions and 117 parameters \cite{villaverde2014high}.
+The least expensive problem was a metabolic model of Chinese Hamster Ovary (CHO) with 35 metabolites, 32 reactions and 117 parameters \cite{villaverde2014high}.
 The biochemical reactions were modeled using modular rate laws and generalized Michaelis-Menten kinetics.
-On the other hand, the expensive problem was a genome scale kinetic model of \textit{Saccharomyces~cerevisiae} with 261 reactions, 262 variables and 1759 parameters \cite{smallbone2013large} (henceforth referred to as problem B1).
+On the other hand, the expensive problem was a genome scale kinetic model of \textit{Saccharomyces~cerevisiae} with 261 reactions, 262 variables and 1759 parameters \cite{smallbone2013large}.
 In both cases, synthetic time series data generated with known parameter values, was used to estimate model parameters.
-For problem B1, the time series data consisted of 44 observables, and for problem B4 the data corresponded to 13 different metabolite measurement sets.
+For the \textit{Saccharomyces~cerevisiae} model, the time series data consisted of 44 observables, and for the CHO metabolism problem the data corresponded to 13 different metabolite measurement sets.
 We fixed the number of function evaluations at $\mathcal{N}$ = 4000, and trained both models against the synthetic experimental data.
 DOPS produced good fits to the synthetic data (Fig. \ref{fig-sims-b1} and Fig. \ref{fig-sims-b4}), and recapitulated the nominal parameter values using only $\mathcal{N}\leq~4000$ function evaluations (Fig. \ref{fig-benchmark}).
 On the other hand, enhanced scatter search (eSS) with a local optimizer took on order $10^{5}$ function evaluations for the same problems. DOPS also had lower variability in the best value obtained (Fig \ref{fig-DOPS-Variability}) and faster convergence (Fig \ref{fig-more-methods}, Fig \ref{fig-compare-DOPS-ESS}) across multiple runs when compared to other metaheuristics while requiring a comparable amount of time (Fig \ref{fig-time-comparsion}). 
@@ -303,9 +303,9 @@ However, it was unclear if the parameters estimated by DOPS had predictive power
 To address this question, we used the final parameters estimated by
 DOPS to simulate data that was not used for training (coagulation initiated with 500pM, 50pM, and 10pM TF/VIIa).
 The optimal or near optimal parameters obtained by DOPS predicted unseen coagulation datasets (Fig. \ref{fig-validation}).
-The normalized standard error for the coagulation predictions was consistent with the training error, with the exception of the 50pM TF/VIIa case which was a factor 2.75 worse (Table \ref{table:Error-Analysis}).
+The normalized standard error for the coagulation predictions was consistent with the training error, with the exception of the 50pM TF/VIIa case which was a factor 2.65 worse (Table \ref{table:Error-Analysis}).
 Coagulation initiation with 50pM TF/FVIIa was the farthest away from the training conditions.
-However, while the 50pM TF/FVIIa case was the worst of those tested, it still had an average error rate of only 11\% (which is near the margin of error for the experimental measurements).
+%However, while the 50pM TF/FVIIa case was the worst of those tested, it still had an average error rate of only 11\% (which is near the margin of error for the experimental measurements).
 Taken together, DOPS estimated parameter sets with predictive power on unseen coagulation data using fewer function iterations than other meta-heuristics.
 Next, we explored how the number of sub-swarms and the switch to DDS influenced the performance of the approach.
 
@@ -325,7 +325,7 @@ The DDS phase refined the globally best particle to produce significantly lower 
 Thus, the automated switching strategy was critical to the overall performance of DOPS.
 
 \subsection*{Continued Switching May Be Beneficial}
-We explored the performance of DOPS if it was permitted to switch between PSO and DDS modes. This mode ('Experimental DOPS') performed comparably to DOPS on 10-d Ackley and Rastrigin as well as on 300-dimensional Rastrigin. It performed better than DOPS on the CHO metabolism problem (b4) (Fig. \ref{fig-exp-DOPS-b4}a), with the average functional value for Experimental DOPS being nearly half of that of DOPS. To further distinguish DOPS from Experimental DOPS, we compared the performance of each algorithm on the Eggholder function, which is considered to be a difficult function to optimize, owing to its multiple minima. On this function, Experimental DOPS outperformed DOPS however, neither version of DOPS reached the true minimum at -959.6407 on any trial with a budget of 4,000 function evaluations (Fig. \ref{fig-exp-DOPS-b4}b). We also explored the performance of both versions of DOPS on the 100 dimensional Styblinksi-Tang function \cite{jamil2013literature} (Fig. \ref{fig-exp-DOPS-b4}c). In this comparison, experimental DOPS far outperforms DOPS, succeeding in finding the true minimum before exhausting its budget of functional evaluations, whereas DOPS does not reach the minimum. Since the performance of Experimental DOPS was promising on these problems, we decided to measure its performance on the coagulation problem. At 4,000 function evaluations, DOPS performed better than Experimental DOPS, however, the difference between the two method's final average functional values was small (Fig. \ref{fig-exp-DOPS-b4}d), with the final average objective value for DOPS reaching .9413\% of the initial functional value, compared to .9428\% for Experimental DOPS. 
+We explored the performance of DOPS if it was permitted to switch between PSO and DDS modes. This mode ('Experimental DOPS') performed comparably to DOPS on 10-d Ackley and Rastrigin as well as on 300-dimensional Rastrigin. It performed better than DOPS on the CHO metabolism problem (Fig. \ref{fig-exp-DOPS-b4}a), with the average functional value for Experimental DOPS being nearly half of that of DOPS. To further distinguish DOPS from Experimental DOPS, we compared the performance of each algorithm on the Eggholder function, which is considered to be a difficult function to optimize, owing to its multiple minima. On this function, Experimental DOPS outperformed DOPS however, neither version of DOPS reached the true minimum at -959.6407 on any trial with a budget of 4,000 function evaluations (Fig. \ref{fig-exp-DOPS-b4}b). We also explored the performance of both versions of DOPS on the 100 dimensional Styblinksi-Tang function \cite{jamil2013literature} (Fig. \ref{fig-exp-DOPS-b4}c). In this comparison, experimental DOPS far outperforms DOPS, succeeding in finding the true minimum before exhausting its budget of functional evaluations, whereas DOPS does not reach the minimum. Since the performance of Experimental DOPS was promising on these problems, we decided to measure its performance on the coagulation problem. At 4,000 function evaluations, DOPS performed better than Experimental DOPS, however, the difference between the two method's final average functional values was small (Fig. \ref{fig-exp-DOPS-b4}d), with the final average objective value for DOPS reaching .9413\% of the initial functional value, compared to .9428\% for Experimental DOPS. 
 
 \clearpage
 
@@ -385,8 +385,8 @@ meta-heuristics on both test and real-world problems to determine if a performan
 Next, DOPS has a hybrid architecture, thus the particle swarm phase could be combined with other search strategies such as local derivative based approaches to improve convergence rates.
 We could also consider multiple phases beyond particle swarm and dynamically dimensioned search, for example switching to a gradient based search following the dynamically
 dimensioned search phase.
-Next, the current implementation of the algorithm switches only once from the swarm phase to the dynamically dimensioned phase.
-An obvious modification would be to allow multiple transitions between the swarm and dynamically dimensioned phases.
+%Next, the current implementation of the algorithm switches only once from the swarm phase to the dynamically dimensioned phase.
+%An obvious modification would be to allow multiple transitions between the swarm and dynamically dimensioned phases.
 Lastly, we should update DOPS to treat multi-objective problems.
 The identification of large biochemical models sometimes requires training using qualitative, conflicting or even contradictory data sets.
 One strategy to address this challenge is to estimate experimentally constrained model ensembles using multiobjective optimization.
@@ -724,14 +724,15 @@ At the end of 4000 function evaluations DOPS attains the lowest error. The next 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=1.0\textwidth]{./figs/Figure_7_ErrorSwarms_v2.pdf}
+%\includegraphics[width=1.0\textwidth]{./figs/Figure_7_ErrorSwarms_v2.pdf}
+\includegraphics[trim = {3cm 6cm 3cm 6cm }, clip,width = 1.0\textwidth]{./rachelfigs/RecreateFigure7}
 \caption{Influence of the switching strategy and sub-swarms on DOPS performance for the coagulation model.
 DOPS begins by using a particle swarm search and then dynamically switches (switch region), using an adaptive switching criteria, to the DDS search phase.
 We compared the performance of DOPS with and without DDS for different sub-swarm searches to quantify the effect of number of sub-swarms and DDS.
 We used one, two, four, five and eight sub-swarms, with a total of 40 particles divided evenly amongst the swarms.
 The results presented are the average of $\mathcal{T}$ = 25 trials with $\mathcal{N}$ = 4000 function evaluations each.
 The convergence rates with higher swarm numbers is typically higher but there is no pronounced difference amongst four, five and eight.
-The multi-swarm with DDS saturates while DOPS shows a rapid drop due to a switch to the DDS phase.
+The multi-swarm with without DDS saturates while DOPS shows a rapid drop due to a switch to the DDS phase.
 }\label{fig-sub-swarms}
 \end{figure}
 
