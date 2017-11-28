@@ -780,8 +780,9 @@ The results presented are the average of $\mathcal{T}$ = 250 trials with for the
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./figs/Figure_S1_B1_sims.pdf}
-\caption{\textbf {(Data fits for Problem B1)} Pseudo-experimental data (red circles) vs. optimal solution obtained using DOPS (solid blue lines) for the 44 observed states. X axis: time [s]; Y axis: metabolite concentrations [mM].
+%\includegraphics[width=1.00\textwidth]{./figs/Figure_S1_B1_sims.pdf}
+\includegraphics[width=1.00\textwidth]{./rachelfigs/RecreatedFigureS1usingMS2_save.pdf}
+\caption{\textbf {(Data fits for Problem B1)} Pseudo-experimental data (red x) vs. optimal solution obtained using DOPS (solid blue lines) for the 44 observed states. X axis: time [s]; Y axis: metabolite concentrations [mM].
 }\label{fig-sims-b1}
 \end{figure}
 
@@ -794,7 +795,14 @@ The results presented are the average of $\mathcal{T}$ = 250 trials with for the
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./figs/Figure_S3_B1_B4_params_measuredstates.pdf}
+%\includegraphics[width=1.00\textwidth]{./figs/Figure_S3_B1_B4_params_measuredstates.pdf}
+    \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/RecreatedFigureS3a} }}%
+    \qquad
+    \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/RecreatedFigureS3b} }}%
+    \qquad
+        \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/RecreatedFigureS3c} }}%
+    \qquad
+    \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/RecreatedFigureS3d} }}%
 \caption{ \textbf {(A)} Difference between nominal and optimal parameters for problem B1: Genome wide kinetic model of \textit{S.cerevisiae} with 1759 unknown parameters. \textbf {(B)} Difference between experimental (measured) data and data simulated with optimal parameters for problem B1: Genome wide kinetic model of \textit{S.cerevisiae} with 1759 unknown parameters. \textbf {(C)} Difference between nominal and optimal parameters for problem B4: Metabolic model of Chinese  Hamster Ovary Cells (CHO) cells with 117 parameters. \textbf {(D)} Difference between experimental (measured) data and data simulated with optimal parameters for problem B4: Metabolic model of Chinese  Hamster Ovary Cells (CHO) cells with 117 parameters.
 }\label{fig-benchmark}
 \end{figure}
@@ -820,7 +828,7 @@ The results presented are the average of $\mathcal{T}$ = 250 trials with for the
     \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/CompareExperimentalDOPSToESSOnProblemB4} }}%
     \qquad
     \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/CompareExperimentalDOPSToESSOnCoag} }}%
-    \caption{Mean convergence curves for DOPS and ESS for (a) CHO model (problem B4) (b) coagulation with $\mathcal{T}$ = 25 trials per method.}%
+    \caption{Mean convergence curves for DOPS and ESS for (a) CHO model  (b) coagulation with $\mathcal{T}$ = 25 trials per method.}%
     \label{fig-compare-DOPS-ESS}%
 \end{figure}
 
@@ -829,7 +837,7 @@ The results presented are the average of $\mathcal{T}$ = 250 trials with for the
     \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/DOPSDispersionCurvesOnb4} }}%
     \qquad
     \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/DOPSDispersionCurvesOnCoag} }}%
-    \caption{Dispersion curves for DOPS on (a) CHO model (problem B4) (b) coagulation with $\mathcal{T}$ = 25 trials per problem .}%
+    \caption{Dispersion curves for DOPS on (a) CHO model (b) coagulation with $\mathcal{T}$ = 25 trials per problem .}%
     \label{fig-DOPS-Dispersion-Curves}%
 \end{figure}
 
@@ -842,7 +850,7 @@ The results presented are the average of $\mathcal{T}$ = 250 trials with for the
         \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/FigureS7c} }}%
     \qquad
     \subfloat[]{{\includegraphics[trim = {3cm 7cm 3cm 7cm }, clip,width=.45\textwidth]{./rachelfigs/FigureS7d} }}%
-    \caption{Variability  analysis in best objective value for $\mathcal{T}$ = 25 trials. (a) Ackley  300 dimensional (b) Rastrigin 300 dimensional (c) CHO model (problem b4) (d) coagulation. }%
+    \caption{Variability  analysis in best objective value for $\mathcal{T}$ = 25 trials. (a) Ackley  300 dimensional (b) Rastrigin 300 dimensional (c) CHO model (d) coagulation. }%
     \label{fig-DOPS-Variability}%
 \end{figure}
 
