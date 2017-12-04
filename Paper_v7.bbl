@@ -1,0 +1,1619 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{53}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{assmus2006dynamics}
+\begin{botherref}
+\oauthor{\bsnm{Assmus}, \binits{H.E.}},
+\oauthor{\bsnm{Herwig}, \binits{R.}},
+\oauthor{\bsnm{Cho}, \binits{K.-H.}},
+\oauthor{\bsnm{Wolkenhauer}, \binits{O.}}:
+Dynamics of biological systems: role of systems biology in medical research.
+Expert Review of Molecular Diagnostics
+(2006)
+\end{botherref}
+\endbibitem
+
+%%% 2
+\bibitem{Riel:2006aa}
+\begin{barticle}
+\bauthor{\bparticle{van} \bsnm{Riel}, \binits{N.A.W.}}:
+\batitle{Dynamic modelling and analysis of biochemical networks:
+  mechanism-based models and model-based experiments}.
+\bjtitle{Brief Bioinform}
+\bvolume{7}(\bissue{4}),
+\bfpage{364}--\blpage{74}
+(\byear{2006}).
+doi:\doiurl{10.1093/bib/bbl040}
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem{Jaqaman:2006aa}
+\begin{barticle}
+\bauthor{\bsnm{Jaqaman}, \binits{K.}},
+\bauthor{\bsnm{Danuser}, \binits{G.}}:
+\batitle{Linking data to models: data regression}.
+\bjtitle{Nat Rev Mol Cell Biol}
+\bvolume{7}(\bissue{11}),
+\bfpage{813}--\blpage{9}
+(\byear{2006}).
+doi:\doiurl{10.1038/nrm2030}
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{kitano2002systems}
+\begin{barticle}
+\bauthor{\bsnm{Kitano}, \binits{H.}}:
+\batitle{Systems biology: a brief overview}.
+\bjtitle{Science}
+\bvolume{295}(\bissue{5560}),
+\bfpage{1662}--\blpage{1664}
+(\byear{2002})
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{hood2004systems}
+\begin{barticle}
+\bauthor{\bsnm{Hood}, \binits{L.}},
+\bauthor{\bsnm{Heath}, \binits{J.R.}},
+\bauthor{\bsnm{Phelps}, \binits{M.E.}},
+\bauthor{\bsnm{Lin}, \binits{B.}}:
+\batitle{Systems biology and new technologies enable predictive and
+  preventative medicine}.
+\bjtitle{Science}
+\bvolume{306}(\bissue{5696}),
+\bfpage{640}--\blpage{643}
+(\byear{2004})
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem{Aldridge:2006aa}
+\begin{barticle}
+\bauthor{\bsnm{Aldridge}, \binits{B.B.}},
+\bauthor{\bsnm{Burke}, \binits{J.M.}},
+\bauthor{\bsnm{Lauffenburger}, \binits{D.A.}},
+\bauthor{\bsnm{Sorger}, \binits{P.K.}}:
+\batitle{Physicochemical modelling of cell signalling pathways}.
+\bjtitle{Nat Cell Biol}
+\bvolume{8}(\bissue{11}),
+\bfpage{1195}--\blpage{203}
+(\byear{2006}).
+doi:\doiurl{10.1038/ncb1497}
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{banga2008optimization}
+\begin{barticle}
+\bauthor{\bsnm{Banga}, \binits{J.R.}}:
+\batitle{Optimization in computational systems biology}.
+\bjtitle{BMC systems biology}
+\bvolume{2}(\bissue{1}),
+\bfpage{47}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem{ashyraliyev2009systems}
+\begin{barticle}
+\bauthor{\bsnm{Ashyraliyev}, \binits{M.}},
+\bauthor{\bsnm{Fomekong-Nanfack}, \binits{Y.}},
+\bauthor{\bsnm{Kaandorp}, \binits{J.A.}},
+\bauthor{\bsnm{Blom}, \binits{J.G.}}:
+\batitle{Systems biology: parameter estimation for biochemical models}.
+\bjtitle{Febs Journal}
+\bvolume{276}(\bissue{4}),
+\bfpage{886}--\blpage{902}
+(\byear{2009})
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{moles2003parameter}
+\begin{barticle}
+\bauthor{\bsnm{Moles}, \binits{C.G.}},
+\bauthor{\bsnm{Mendes}, \binits{P.}},
+\bauthor{\bsnm{Banga}, \binits{J.R.}}:
+\batitle{Parameter estimation in biochemical pathways: a comparison of global
+  optimization methods}.
+\bjtitle{Genome research}
+\bvolume{13}(\bissue{11}),
+\bfpage{2467}--\blpage{2474}
+(\byear{2003})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{nieman1971review}
+\begin{barticle}
+\bauthor{\bsnm{Nieman}, \binits{R.}},
+\bauthor{\bsnm{Fisher}, \binits{D.}},
+\bauthor{\bsnm{Seborg}, \binits{D.}}:
+\batitle{A review of process identification and parameter estimation
+  techniques†}.
+\bjtitle{International Journal of Control}
+\bvolume{13}(\bissue{2}),
+\bfpage{209}--\blpage{264}
+(\byear{1971})
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem{beck1977parameter}
+\begin{bbook}
+\bauthor{\bsnm{Beck}, \binits{J.V.}},
+\bauthor{\bsnm{Arnold}, \binits{K.J.}}:
+\bbtitle{Parameter Estimation in Engineering and Science}.
+\bpublisher{James Beck}, \blocation{???}
+(\byear{1977})
+\end{bbook}
+\endbibitem
+
+%%% 12
+\bibitem{young1981parameter}
+\begin{barticle}
+\bauthor{\bsnm{Young}, \binits{P.}}:
+\batitle{Parameter estimation for continuous-time models---a survey}.
+\bjtitle{Automatica}
+\bvolume{17}(\bissue{1}),
+\bfpage{23}--\blpage{39}
+(\byear{1981})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{beck1998inverse}
+\begin{barticle}
+\bauthor{\bsnm{Beck}, \binits{J.V.}},
+\bauthor{\bsnm{Woodbury}, \binits{K.A.}}:
+\batitle{Inverse problems and parameter estimation: integration of measurements
+  and analysis}.
+\bjtitle{Measurement Science and Technology}
+\bvolume{9}(\bissue{6}),
+\bfpage{839}
+(\byear{1998})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{hooke1961direct}
+\begin{barticle}
+\bauthor{\bsnm{Hooke}, \binits{R.}},
+\bauthor{\bsnm{Jeeves}, \binits{T.A.}}:
+\batitle{``direct search''solution of numerical and statistical problems}.
+\bjtitle{Journal of the ACM (JACM)}
+\bvolume{8}(\bissue{2}),
+\bfpage{212}--\blpage{229}
+(\byear{1961})
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{nelder1965simplex}
+\begin{barticle}
+\bauthor{\bsnm{Nelder}, \binits{J.A.}},
+\bauthor{\bsnm{Mead}, \binits{R.}}:
+\batitle{A simplex method for function minimization}.
+\bjtitle{The computer journal}
+\bvolume{7}(\bissue{4}),
+\bfpage{308}--\blpage{313}
+(\byear{1965})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem{more1978levenberg}
+\begin{bchapter}
+\bauthor{\bsnm{Mor{\'e}}, \binits{J.J.}}:
+\bctitle{The levenberg-marquardt algorithm: implementation and theory}.
+In: \bbtitle{Numerical Analysis},
+pp. \bfpage{105}--\blpage{116}.
+\bpublisher{Springer}, \blocation{???}
+(\byear{1978})
+\end{bchapter}
+\endbibitem
+
+%%% 17
+\bibitem{esposito2000deterministic}
+\begin{barticle}
+\bauthor{\bsnm{Esposito}, \binits{W.R.}},
+\bauthor{\bsnm{Floudas}, \binits{C.A.}}:
+\batitle{Deterministic global optimization in nonlinear optimal control
+  problems}.
+\bjtitle{Journal of Global Optimization}
+\bvolume{17}(\bissue{1-4}),
+\bfpage{97}--\blpage{126}
+(\byear{2000})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{horst2013global}
+\begin{bbook}
+\bauthor{\bsnm{Horst}, \binits{R.}},
+\bauthor{\bsnm{Tuy}, \binits{H.}}:
+\bbtitle{Global Optimization: Deterministic Approaches}.
+\bpublisher{Springer}, \blocation{???}
+(\byear{2013})
+\end{bbook}
+\endbibitem
+
+%%% 19
+\bibitem{goldberg2006genetic}
+\begin{botherref}
+\oauthor{\bsnm{Goldberg}, \binits{D.E.}}:
+Genetic algorithms.
+Pearson Education India
+(2006)
+\end{botherref}
+\endbibitem
+
+%%% 20
+\bibitem{kirkpatrick1983optimization}
+\begin{barticle}
+\bauthor{\bsnm{Kirkpatrick}, \binits{S.}},
+\bauthor{\bsnm{Gelatt}, \binits{C.D.}},
+\bauthor{\bsnm{Vecchi}, \binits{M.P.}}, \betal:
+\batitle{Optimization by simulated annealing}.
+\bjtitle{science}
+\bvolume{220}(\bissue{4598}),
+\bfpage{671}--\blpage{680}
+(\byear{1983})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{fogel2009artificial}
+\begin{botherref}
+\oauthor{\bsnm{Fogel}, \binits{D.}}:
+Artificial intelligence through simulated evolution.
+Wiley-IEEE Press
+(2009)
+\end{botherref}
+\endbibitem
+
+%%% 22
+\bibitem{storn1997differential}
+\begin{barticle}
+\bauthor{\bsnm{Storn}, \binits{R.}},
+\bauthor{\bsnm{Price}, \binits{K.}}:
+\batitle{Differential evolution--a simple and efficient heuristic for global
+  optimization over continuous spaces}.
+\bjtitle{Journal of global optimization}
+\bvolume{11}(\bissue{4}),
+\bfpage{341}--\blpage{359}
+(\byear{1997})
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem{tsai2005evolutionary}
+\begin{barticle}
+\bauthor{\bsnm{Tsai}, \binits{K.-Y.}},
+\bauthor{\bsnm{Wang}, \binits{F.-S.}}:
+\batitle{Evolutionary optimization with data collocation for reverse
+  engineering of biological networks}.
+\bjtitle{Bioinformatics}
+\bvolume{21}(\bissue{7}),
+\bfpage{1180}--\blpage{1188}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{wang2001hybrid}
+\begin{barticle}
+\bauthor{\bsnm{Wang}, \binits{F.-S.}},
+\bauthor{\bsnm{Su}, \binits{T.-L.}},
+\bauthor{\bsnm{Jang}, \binits{H.-J.}}:
+\batitle{Hybrid differential evolution for problems of kinetic parameter
+  estimation and dynamic optimization of an ethanol fermentation process}.
+\bjtitle{Industrial \& engineering chemistry research}
+\bvolume{40}(\bissue{13}),
+\bfpage{2876}--\blpage{2885}
+(\byear{2001})
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{noman2007inferring}
+\begin{barticle}
+\bauthor{\bsnm{Noman}, \binits{N.}},
+\bauthor{\bsnm{Iba}, \binits{H.}}:
+\batitle{Inferring gene regulatory networks using differential evolution with
+  local search heuristics}.
+\bjtitle{IEEE/ACM Transactions on Computational Biology and Bioinformatics
+  (TCBB)}
+\bvolume{4}(\bissue{4}),
+\bfpage{634}--\blpage{647}
+(\byear{2007})
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{sun2012parameter}
+\begin{barticle}
+\bauthor{\bsnm{Sun}, \binits{J.}},
+\bauthor{\bsnm{Garibaldi}, \binits{J.M.}},
+\bauthor{\bsnm{Hodgman}, \binits{C.}}:
+\batitle{Parameter estimation using metaheuristics in systems biology: a
+  comprehensive review}.
+\bjtitle{Computational Biology and Bioinformatics, IEEE/ACM Transactions on}
+\bvolume{9}(\bissue{1}),
+\bfpage{185}--\blpage{202}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{mendes1998non}
+\begin{barticle}
+\bauthor{\bsnm{Mendes}, \binits{P.}},
+\bauthor{\bsnm{Kell}, \binits{D.}}:
+\batitle{Non-linear optimization of biochemical pathways: applications to
+  metabolic engineering and parameter estimation.}
+\bjtitle{Bioinformatics}
+\bvolume{14}(\bissue{10}),
+\bfpage{869}--\blpage{883}
+(\byear{1998})
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{modchang2008mathematical}
+\begin{barticle}
+\bauthor{\bsnm{Modchang}, \binits{C.}},
+\bauthor{\bsnm{Triampo}, \binits{W.}},
+\bauthor{\bsnm{Lenbury}, \binits{Y.}}:
+\batitle{Mathematical modeling and application of genetic algorithm to
+  parameter estimation in signal transduction: Trafficking and promiscuous
+  coupling of g-protein coupled receptors}.
+\bjtitle{Computers in Biology and Medicine}
+\bvolume{38}(\bissue{5}),
+\bfpage{574}--\blpage{582}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem{tashkova2011parameter}
+\begin{barticle}
+\bauthor{\bsnm{Tashkova}, \binits{K.}},
+\bauthor{\bsnm{Koro{\v{s}}ec}, \binits{P.}},
+\bauthor{\bsnm{{\v{S}}ilc}, \binits{J.}},
+\bauthor{\bsnm{Todorovski}, \binits{L.}},
+\bauthor{\bsnm{D{\v{z}}eroski}, \binits{S.}}:
+\batitle{Parameter estimation with bio-inspired meta-heuristic optimization:
+  modeling the dynamics of endocytosis}.
+\bjtitle{BMC systems biology}
+\bvolume{5}(\bissue{1}),
+\bfpage{159}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem{villaverde2012cooperative}
+\begin{barticle}
+\bauthor{\bsnm{Villaverde}, \binits{A.F.}},
+\bauthor{\bsnm{Egea}, \binits{J.A.}},
+\bauthor{\bsnm{Banga}, \binits{J.R.}}:
+\batitle{A cooperative strategy for parameter estimation in large scale systems
+  biology models}.
+\bjtitle{BMC systems biology}
+\bvolume{6}(\bissue{1}),
+\bfpage{75}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 31
+\bibitem{rodriguez2006novel}
+\begin{barticle}
+\bauthor{\bsnm{Rodriguez-Fernandez}, \binits{M.}},
+\bauthor{\bsnm{Egea}, \binits{J.A.}},
+\bauthor{\bsnm{Banga}, \binits{J.R.}}:
+\batitle{Novel metaheuristic for parameter estimation in nonlinear dynamic
+  biological systems}.
+\bjtitle{BMC bioinformatics}
+\bvolume{7}(\bissue{1}),
+\bfpage{483}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 32
+\bibitem{egea2007scatter}
+\begin{barticle}
+\bauthor{\bsnm{Egea}, \binits{J.A.}},
+\bauthor{\bsnm{Rodr{\'\i}guez-Fern{\'a}ndez}, \binits{M.}},
+\bauthor{\bsnm{Banga}, \binits{J.R.}},
+\bauthor{\bsnm{Mart{\'\i}}, \binits{R.}}:
+\batitle{Scatter search for chemical and bio-process optimization}.
+\bjtitle{Journal of Global Optimization}
+\bvolume{37}(\bissue{3}),
+\bfpage{481}--\blpage{503}
+(\byear{2007})
+\end{barticle}
+\endbibitem
+
+%%% 33
+\bibitem{villaverde2015biopredyn}
+\begin{barticle}
+\bauthor{\bsnm{Villaverde}, \binits{A.F.}},
+\bauthor{\bsnm{Henriques}, \binits{D.}},
+\bauthor{\bsnm{Smallbone}, \binits{K.}},
+\bauthor{\bsnm{Bongard}, \binits{S.}},
+\bauthor{\bsnm{Schmid}, \binits{J.}},
+\bauthor{\bsnm{Cicin-Sain}, \binits{D.}},
+\bauthor{\bsnm{Crombach}, \binits{A.}},
+\bauthor{\bsnm{Saez-Rodriguez}, \binits{J.}},
+\bauthor{\bsnm{Mauch}, \binits{K.}},
+\bauthor{\bsnm{Balsa-Canto}, \binits{E.}}, \betal:
+\batitle{Biopredyn-bench: a suite of benchmark problems for dynamic modelling
+  in systems biology}.
+\bjtitle{BMC systems biology}
+\bvolume{9}(\bissue{1}),
+\bfpage{8}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 34
+\bibitem{tolson2007dynamically}
+\begin{botherref}
+\oauthor{\bsnm{Tolson}, \binits{B.A.}},
+\oauthor{\bsnm{Shoemaker}, \binits{C.A.}}:
+Dynamically dimensioned search algorithm for computationally efficient
+  watershed model calibration.
+Water Resources Research
+\textbf{43}(1)
+(2007)
+\end{botherref}
+\endbibitem
+
+%%% 35
+\bibitem{zhao2008dynamic}
+\begin{botherref}
+\oauthor{\bsnm{Zhao}, \binits{S.-Z.}},
+\oauthor{\bsnm{Liang}, \binits{J.J.}},
+\oauthor{\bsnm{Suganthan}, \binits{P.N.}},
+\oauthor{\bsnm{Tasgetiren}, \binits{M.F.}}:
+Dynamic multi-swarm particle swarm optimizer with local search for large scale
+  global optimization.
+Evolutionary Computation, 2008. CEC 2008,
+3845--3852
+(2008).
+IEEE
+\end{botherref}
+\endbibitem
+
+%%% 36
+\bibitem{villaverde2014high}
+\begin{botherref}
+\oauthor{\bsnm{Villaverde}, \binits{A.F.}},
+\oauthor{\bsnm{Bongard}, \binits{S.}},
+\oauthor{\bsnm{Mauch}, \binits{K.}},
+\oauthor{\bsnm{M{\"u}ller}, \binits{D.}},
+\oauthor{\bsnm{Balsa-Canto}, \binits{E.}},
+\oauthor{\bsnm{Schmid}, \binits{J.}},
+\oauthor{\bsnm{Banga}, \binits{J.R.}}:
+High-confidence predictions in systems biology dynamic models.
+8th International Conference on Practical Applications of Computational Biology
+  \& Bioinformatics (PACBB 2014),
+161--171
+(2014)
+\end{botherref}
+\endbibitem
+
+%%% 37
+\bibitem{smallbone2013large}
+\begin{barticle}
+\bauthor{\bsnm{Smallbone}, \binits{K.}},
+\bauthor{\bsnm{Mendes}, \binits{P.}}:
+\batitle{Large-scale metabolic models: From reconstruction to differential
+  equations}.
+\bjtitle{Industrial Biotechnology}
+\bvolume{9}(\bissue{4}),
+\bfpage{179}--\blpage{184}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 38
+\bibitem{mann2003dynamics}
+\begin{barticle}
+\bauthor{\bsnm{Mann}, \binits{K.G.}},
+\bauthor{\bsnm{Butenas}, \binits{S.}},
+\bauthor{\bsnm{Brummel}, \binits{K.}}:
+\batitle{The dynamics of thrombin formation}.
+\bjtitle{Arteriosclerosis, thrombosis, and vascular biology}
+\bvolume{23}(\bissue{1}),
+\bfpage{17}--\blpage{25}
+(\byear{2003})
+\end{barticle}
+\endbibitem
+
+%%% 39
+\bibitem{mann2003all}
+\begin{barticle}
+\bauthor{\bsnm{Mann}, \binits{K.}},
+\bauthor{\bsnm{Brummel}, \binits{K.}},
+\bauthor{\bsnm{Butenas}, \binits{S.}}:
+\batitle{What is all that thrombin for?}
+\bjtitle{Journal of Thrombosis and Haemostasis}
+\bvolume{1}(\bissue{7}),
+\bfpage{1504}--\blpage{1514}
+(\byear{2003})
+\end{barticle}
+\endbibitem
+
+%%% 40
+\bibitem{mann2003thrombin}
+\begin{barticle}
+\bauthor{\bsnm{Mann}, \binits{K.G.}}:
+\batitle{Thrombin formation}.
+\bjtitle{CHEST Journal}
+\bvolume{124}(\bissue{3\_suppl}),
+\bfpage{4}--\blpage{10}
+(\byear{2003})
+\end{barticle}
+\endbibitem
+
+%%% 41
+\bibitem{vogler2009contact}
+\begin{barticle}
+\bauthor{\bsnm{Vogler}, \binits{E.A.}},
+\bauthor{\bsnm{Siedlecki}, \binits{C.A.}}:
+\batitle{Contact activation of blood-plasma coagulation}.
+\bjtitle{Biomaterials}
+\bvolume{30}(\bissue{10}),
+\bfpage{1857}--\blpage{1869}
+(\byear{2009})
+\end{barticle}
+\endbibitem
+
+%%% 42
+\bibitem{diamond2013systems}
+\begin{barticle}
+\bauthor{\bsnm{Diamond}, \binits{S.L.}}:
+\batitle{Systems biology of coagulation}.
+\bjtitle{Journal of Thrombosis and Haemostasis}
+\bvolume{11}(\bissue{s1}),
+\bfpage{224}--\blpage{232}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 43
+\bibitem{fogelson2005coagulation}
+\begin{barticle}
+\bauthor{\bsnm{Fogelson}, \binits{A.L.}},
+\bauthor{\bsnm{Tania}, \binits{N.}}:
+\batitle{Coagulation under flow: the influence of flow-mediated transport on
+  the initiation and inhibition of coagulation}.
+\bjtitle{Pathophysiology of haemostasis and thrombosis}
+\bvolume{34}(\bissue{2-3}),
+\bfpage{91}--\blpage{108}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+%%% 44
+\bibitem{anand2003model}
+\begin{barticle}
+\bauthor{\bsnm{Anand}, \binits{M.}},
+\bauthor{\bsnm{Rajagopal}, \binits{K.}},
+\bauthor{\bsnm{Rajagopal}, \binits{K.}}:
+\batitle{A model incorporating some of the mechanical and biochemical factors
+  underlying clot formation and dissolution in flowing blood: review article}.
+\bjtitle{Journal of Theoretical Medicine}
+\bvolume{5}(\bissue{3-4}),
+\bfpage{183}--\blpage{218}
+(\byear{2003})
+\end{barticle}
+\endbibitem
+
+%%% 45
+\bibitem{hockin2002model}
+\begin{barticle}
+\bauthor{\bsnm{Hockin}, \binits{M.F.}},
+\bauthor{\bsnm{Jones}, \binits{K.C.}},
+\bauthor{\bsnm{Everse}, \binits{S.J.}},
+\bauthor{\bsnm{Mann}, \binits{K.G.}}:
+\batitle{A model for the stoichiometric regulation of blood coagulation}.
+\bjtitle{Journal of Biological Chemistry}
+\bvolume{277}(\bissue{21}),
+\bfpage{18322}--\blpage{18333}
+(\byear{2002})
+\end{barticle}
+\endbibitem
+
+%%% 46
+\bibitem{chatterjee2010systems}
+\begin{botherref}
+\oauthor{\bsnm{Chatterjee}, \binits{M.S.}},
+\oauthor{\bsnm{Denney}, \binits{W.S.}},
+\oauthor{\bsnm{Jing}, \binits{H.}},
+\oauthor{\bsnm{Diamond}, \binits{S.L.}}:
+Systems biology of coagulation initiation: kinetics of thrombin generation in
+  resting and activated human blood.
+PLoS computational biology
+(2010)
+\end{botherref}
+\endbibitem
+
+%%% 47
+\bibitem{mann2006models}
+\begin{barticle}
+\bauthor{\bsnm{Mann}, \binits{K.G.}},
+\bauthor{\bsnm{Brummel-Ziedins}, \binits{K.}},
+\bauthor{\bsnm{Orfeo}, \binits{T.}},
+\bauthor{\bsnm{Butenas}, \binits{S.}}:
+\batitle{Models of blood coagulation}.
+\bjtitle{Blood Cells, Molecules, and Diseases}
+\bvolume{36}(\bissue{2}),
+\bfpage{108}--\blpage{117}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 48
+\bibitem{luan2007computationally}
+\begin{barticle}
+\bauthor{\bsnm{Luan}, \binits{D.}},
+\bauthor{\bsnm{Zai}, \binits{M.}},
+\bauthor{\bsnm{Varner}, \binits{J.D.}}:
+\batitle{Computationally derived points of fragility of a human cascade are
+  consistent with current therapeutic strategies}.
+\bjtitle{PLoS computational biology}
+\bvolume{3}(\bissue{7}),
+\bfpage{142}
+(\byear{2007})
+\end{barticle}
+\endbibitem
+
+%%% 49
+\bibitem{jamil2013literature}
+\begin{barticle}
+\bauthor{\bsnm{Jamil}, \binits{M.}},
+\bauthor{\bsnm{Yang}, \binits{X.-S.}}:
+\batitle{A literature survey of benchmark functions for global optimisation
+  problems}.
+\bjtitle{International Journal of Mathematical Modelling and Numerical
+  Optimisation}
+\bvolume{4}(\bissue{2}),
+\bfpage{150}--\blpage{194}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 50
+\bibitem{song2010ensembles}
+\begin{barticle}
+\bauthor{\bsnm{Song}, \binits{S.O.}},
+\bauthor{\bsnm{Chakrabarti}, \binits{A.}},
+\bauthor{\bsnm{Varner}, \binits{J.D.}}:
+\batitle{{Ensembles of signal transduction models using pareto optimal ensemble
+  techniques (POETs)}}.
+\bjtitle{Biotechnology journal}
+\bvolume{5}(\bissue{7}),
+\bfpage{768}--\blpage{780}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 51
+\bibitem{clerc2010particle}
+\begin{bbook}
+\bauthor{\bsnm{Clerc}, \binits{M.}}:
+\bbtitle{Particle Swarm Optimization}
+vol. \bseriesno{93}.
+\bpublisher{John Wiley \& Sons}, \blocation{???}
+(\byear{2010})
+\end{bbook}
+\endbibitem
+
+%%% 52
+\bibitem{abraham2006swarm}
+\begin{botherref}
+\oauthor{\bsnm{Abraham}, \binits{A.}},
+\oauthor{\bsnm{Guo}, \binits{H.}},
+\oauthor{\bsnm{Liu}, \binits{H.}}:
+Swarm intelligence: foundations, perspectives and applications.
+Swarm Intelligent Systems,
+3--25
+(2006)
+\end{botherref}
+\endbibitem
+
+%%% 53
+\bibitem{shi1999empirical}
+\begin{bchapter}
+\bauthor{\bsnm{Shi}, \binits{Y.}},
+\bauthor{\bsnm{Eberhart}, \binits{R.C.}}:
+\bctitle{Empirical study of particle swarm optimization}.
+In: \bbtitle{Proceedings of the 1999 Congress on Evolutionary Computation,
+  1999. CEC 99.},
+vol. \bseriesno{3},
+p. \bfpage{1950}
+(\byear{1999})
+\end{bchapter}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Dynamics of biological systems: role of systems biology in medical
+  research</p></title>
+  <aug>
+    <au><snm>Assmus</snm><fnm>HE</fnm></au>
+    <au><snm>Herwig</snm><fnm>R</fnm></au>
+    <au><snm>Cho</snm><fnm>KH</fnm></au>
+    <au><snm>Wolkenhauer</snm><fnm>O</fnm></au>
+  </aug>
+  <source>Expert Review of Molecular Diagnostics</source>
+  <publisher>Informa Healthcare London</publisher>
+  <pubdate>2006</pubdate>
+</bibl>
+
+<bibl id="B2">
+  <title><p>Dynamic modelling and analysis of biochemical networks:
+  mechanism-based models and model-based experiments</p></title>
+  <aug>
+    <au><snm>Riel</snm><fnm>NAW</fnm></au>
+  </aug>
+  <source>Brief Bioinform</source>
+  <pubdate>2006</pubdate>
+  <volume>7</volume>
+  <issue>4</issue>
+  <fpage>364</fpage>
+  <lpage>74</lpage>
+</bibl>
+
+<bibl id="B3">
+  <title><p>Linking data to models: data regression</p></title>
+  <aug>
+    <au><snm>Jaqaman</snm><fnm>K</fnm></au>
+    <au><snm>Danuser</snm><fnm>G</fnm></au>
+  </aug>
+  <source>Nat Rev Mol Cell Biol</source>
+  <pubdate>2006</pubdate>
+  <volume>7</volume>
+  <issue>11</issue>
+  <fpage>813</fpage>
+  <lpage>9</lpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>Systems biology: a brief overview</p></title>
+  <aug>
+    <au><snm>Kitano</snm><fnm>H</fnm></au>
+  </aug>
+  <source>Science</source>
+  <publisher>American Association for the Advancement of Science</publisher>
+  <pubdate>2002</pubdate>
+  <volume>295</volume>
+  <issue>5560</issue>
+  <fpage>1662</fpage>
+  <lpage>-1664</lpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>Systems biology and new technologies enable predictive and
+  preventative medicine</p></title>
+  <aug>
+    <au><snm>Hood</snm><fnm>L</fnm></au>
+    <au><snm>Heath</snm><fnm>JR</fnm></au>
+    <au><snm>Phelps</snm><fnm>ME</fnm></au>
+    <au><snm>Lin</snm><fnm>B</fnm></au>
+  </aug>
+  <source>Science</source>
+  <publisher>American Association for the Advancement of Science</publisher>
+  <pubdate>2004</pubdate>
+  <volume>306</volume>
+  <issue>5696</issue>
+  <fpage>640</fpage>
+  <lpage>-643</lpage>
+</bibl>
+
+<bibl id="B6">
+  <title><p>Physicochemical modelling of cell signalling pathways</p></title>
+  <aug>
+    <au><snm>Aldridge</snm><fnm>BB</fnm></au>
+    <au><snm>Burke</snm><fnm>JM</fnm></au>
+    <au><snm>Lauffenburger</snm><fnm>DA</fnm></au>
+    <au><snm>Sorger</snm><fnm>PK</fnm></au>
+  </aug>
+  <source>Nat Cell Biol</source>
+  <pubdate>2006</pubdate>
+  <volume>8</volume>
+  <issue>11</issue>
+  <fpage>1195</fpage>
+  <lpage>203</lpage>
+</bibl>
+
+<bibl id="B7">
+  <title><p>Optimization in computational systems biology</p></title>
+  <aug>
+    <au><snm>Banga</snm><fnm>JR</fnm></au>
+  </aug>
+  <source>BMC systems biology</source>
+  <publisher>BioMed Central Ltd</publisher>
+  <pubdate>2008</pubdate>
+  <volume>2</volume>
+  <issue>1</issue>
+  <fpage>47</fpage>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Systems biology: parameter estimation for biochemical
+  models</p></title>
+  <aug>
+    <au><snm>Ashyraliyev</snm><fnm>M</fnm></au>
+    <au><snm>Fomekong Nanfack</snm><fnm>Y</fnm></au>
+    <au><snm>Kaandorp</snm><fnm>JA</fnm></au>
+    <au><snm>Blom</snm><fnm>JG</fnm></au>
+  </aug>
+  <source>Febs Journal</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2009</pubdate>
+  <volume>276</volume>
+  <issue>4</issue>
+  <fpage>886</fpage>
+  <lpage>-902</lpage>
+</bibl>
+
+<bibl id="B9">
+  <title><p>Parameter estimation in biochemical pathways: a comparison of
+  global optimization methods</p></title>
+  <aug>
+    <au><snm>Moles</snm><fnm>CG</fnm></au>
+    <au><snm>Mendes</snm><fnm>P</fnm></au>
+    <au><snm>Banga</snm><fnm>JR</fnm></au>
+  </aug>
+  <source>Genome research</source>
+  <publisher>Cold Spring Harbor Lab</publisher>
+  <pubdate>2003</pubdate>
+  <volume>13</volume>
+  <issue>11</issue>
+  <fpage>2467</fpage>
+  <lpage>-2474</lpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>A review of process identification and parameter estimation
+  techniques†</p></title>
+  <aug>
+    <au><snm>Nieman</snm><fnm>RE</fnm></au>
+    <au><snm>Fisher</snm><fnm>DG</fnm></au>
+    <au><snm>Seborg</snm><fnm>DE</fnm></au>
+  </aug>
+  <source>International Journal of Control</source>
+  <publisher>Taylor \& Francis</publisher>
+  <pubdate>1971</pubdate>
+  <volume>13</volume>
+  <issue>2</issue>
+  <fpage>209</fpage>
+  <lpage>-264</lpage>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Parameter estimation in engineering and science</p></title>
+  <aug>
+    <au><snm>Beck</snm><fnm>JV</fnm></au>
+    <au><snm>Arnold</snm><fnm>KJ</fnm></au>
+  </aug>
+  <publisher>James Beck</publisher>
+  <pubdate>1977</pubdate>
+</bibl>
+
+<bibl id="B12">
+  <title><p>Parameter estimation for continuous-time models---a
+  survey</p></title>
+  <aug>
+    <au><snm>Young</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Automatica</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>1981</pubdate>
+  <volume>17</volume>
+  <issue>1</issue>
+  <fpage>23</fpage>
+  <lpage>-39</lpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>Inverse problems and parameter estimation: integration of
+  measurements and analysis</p></title>
+  <aug>
+    <au><snm>Beck</snm><fnm>JV</fnm></au>
+    <au><snm>Woodbury</snm><fnm>KA</fnm></au>
+  </aug>
+  <source>Measurement Science and Technology</source>
+  <publisher>IOP Publishing</publisher>
+  <pubdate>1998</pubdate>
+  <volume>9</volume>
+  <issue>6</issue>
+  <fpage>839</fpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>``Direct Search''Solution of Numerical and Statistical
+  Problems</p></title>
+  <aug>
+    <au><snm>Hooke</snm><fnm>R</fnm></au>
+    <au><snm>Jeeves</snm><fnm>TA</fnm></au>
+  </aug>
+  <source>Journal of the ACM (JACM)</source>
+  <publisher>ACM</publisher>
+  <pubdate>1961</pubdate>
+  <volume>8</volume>
+  <issue>2</issue>
+  <fpage>212</fpage>
+  <lpage>-229</lpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>A simplex method for function minimization</p></title>
+  <aug>
+    <au><snm>Nelder</snm><fnm>JA</fnm></au>
+    <au><snm>Mead</snm><fnm>R</fnm></au>
+  </aug>
+  <source>The computer journal</source>
+  <publisher>Br Computer Soc</publisher>
+  <pubdate>1965</pubdate>
+  <volume>7</volume>
+  <issue>4</issue>
+  <fpage>308</fpage>
+  <lpage>-313</lpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>The Levenberg-Marquardt algorithm: implementation and
+  theory</p></title>
+  <aug>
+    <au><snm>Mor{\'e}</snm><fnm>JJ</fnm></au>
+  </aug>
+  <source>Numerical analysis</source>
+  <publisher>Springer</publisher>
+  <pubdate>1978</pubdate>
+  <fpage>105</fpage>
+  <lpage>-116</lpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Deterministic global optimization in nonlinear optimal control
+  problems</p></title>
+  <aug>
+    <au><snm>Esposito</snm><fnm>WR</fnm></au>
+    <au><snm>Floudas</snm><fnm>CA</fnm></au>
+  </aug>
+  <source>Journal of Global Optimization</source>
+  <publisher>Springer</publisher>
+  <pubdate>2000</pubdate>
+  <volume>17</volume>
+  <issue>1-4</issue>
+  <fpage>97</fpage>
+  <lpage>-126</lpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Global optimization: Deterministic approaches</p></title>
+  <aug>
+    <au><snm>Horst</snm><fnm>R</fnm></au>
+    <au><snm>Tuy</snm><fnm>H</fnm></au>
+  </aug>
+  <publisher>Springer Science \& Business Media</publisher>
+  <pubdate>2013</pubdate>
+</bibl>
+
+<bibl id="B19">
+  <title><p>Genetic algorithms</p></title>
+  <aug>
+    <au><snm>Goldberg</snm><fnm>DE</fnm></au>
+  </aug>
+  <source>Pearson Education India</source>
+  <pubdate>2006</pubdate>
+</bibl>
+
+<bibl id="B20">
+  <title><p>Optimization by simulated annealing</p></title>
+  <aug>
+    <au><snm>Kirkpatrick</snm><fnm>S</fnm></au>
+    <au><snm>Gelatt</snm><fnm>CD</fnm></au>
+    <au><snm>Vecchi</snm><fnm>MP</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>science</source>
+  <publisher>World Scientific</publisher>
+  <pubdate>1983</pubdate>
+  <volume>220</volume>
+  <issue>4598</issue>
+  <fpage>671</fpage>
+  <lpage>-680</lpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>Artificial intelligence through simulated evolution</p></title>
+  <aug>
+    <au><snm>Fogel</snm><fnm>D</fnm></au>
+  </aug>
+  <source>Wiley-IEEE Press</source>
+  <pubdate>2009</pubdate>
+</bibl>
+
+<bibl id="B22">
+  <title><p>Differential evolution--a simple and efficient heuristic for global
+  optimization over continuous spaces</p></title>
+  <aug>
+    <au><snm>Storn</snm><fnm>R</fnm></au>
+    <au><snm>Price</snm><fnm>K</fnm></au>
+  </aug>
+  <source>Journal of global optimization</source>
+  <publisher>Springer</publisher>
+  <pubdate>1997</pubdate>
+  <volume>11</volume>
+  <issue>4</issue>
+  <fpage>341</fpage>
+  <lpage>-359</lpage>
+</bibl>
+
+<bibl id="B23">
+  <title><p>Evolutionary optimization with data collocation for reverse
+  engineering of biological networks</p></title>
+  <aug>
+    <au><snm>Tsai</snm><fnm>KY</fnm></au>
+    <au><snm>Wang</snm><fnm>FS</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2005</pubdate>
+  <volume>21</volume>
+  <issue>7</issue>
+  <fpage>1180</fpage>
+  <lpage>-1188</lpage>
+</bibl>
+
+<bibl id="B24">
+  <title><p>Hybrid differential evolution for problems of kinetic parameter
+  estimation and dynamic optimization of an ethanol fermentation
+  process</p></title>
+  <aug>
+    <au><snm>Wang</snm><fnm>FS</fnm></au>
+    <au><snm>Su</snm><fnm>TL</fnm></au>
+    <au><snm>Jang</snm><fnm>HJ</fnm></au>
+  </aug>
+  <source>Industrial \& engineering chemistry research</source>
+  <publisher>ACS Publications</publisher>
+  <pubdate>2001</pubdate>
+  <volume>40</volume>
+  <issue>13</issue>
+  <fpage>2876</fpage>
+  <lpage>-2885</lpage>
+</bibl>
+
+<bibl id="B25">
+  <title><p>Inferring gene regulatory networks using differential evolution
+  with local search heuristics</p></title>
+  <aug>
+    <au><snm>Noman</snm><fnm>N</fnm></au>
+    <au><snm>Iba</snm><fnm>H</fnm></au>
+  </aug>
+  <source>IEEE/ACM Transactions on Computational Biology and Bioinformatics
+  (TCBB)</source>
+  <publisher>IEEE Computer Society Press</publisher>
+  <pubdate>2007</pubdate>
+  <volume>4</volume>
+  <issue>4</issue>
+  <fpage>634</fpage>
+  <lpage>-647</lpage>
+</bibl>
+
+<bibl id="B26">
+  <title><p>Parameter estimation using metaheuristics in systems biology: a
+  comprehensive review</p></title>
+  <aug>
+    <au><snm>Sun</snm><fnm>J</fnm></au>
+    <au><snm>Garibaldi</snm><fnm>JM</fnm></au>
+    <au><snm>Hodgman</snm><fnm>C</fnm></au>
+  </aug>
+  <source>Computational Biology and Bioinformatics, IEEE/ACM Transactions
+  on</source>
+  <publisher>IEEE</publisher>
+  <pubdate>2012</pubdate>
+  <volume>9</volume>
+  <issue>1</issue>
+  <fpage>185</fpage>
+  <lpage>-202</lpage>
+</bibl>
+
+<bibl id="B27">
+  <title><p>Non-linear optimization of biochemical pathways: applications to
+  metabolic engineering and parameter estimation.</p></title>
+  <aug>
+    <au><snm>Mendes</snm><fnm>P</fnm></au>
+    <au><snm>Kell</snm><fnm>D</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>1998</pubdate>
+  <volume>14</volume>
+  <issue>10</issue>
+  <fpage>869</fpage>
+  <lpage>-883</lpage>
+</bibl>
+
+<bibl id="B28">
+  <title><p>Mathematical modeling and application of genetic algorithm to
+  parameter estimation in signal transduction: Trafficking and promiscuous
+  coupling of G-protein coupled receptors</p></title>
+  <aug>
+    <au><snm>Modchang</snm><fnm>C</fnm></au>
+    <au><snm>Triampo</snm><fnm>W</fnm></au>
+    <au><snm>Lenbury</snm><fnm>Y</fnm></au>
+  </aug>
+  <source>Computers in Biology and Medicine</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2008</pubdate>
+  <volume>38</volume>
+  <issue>5</issue>
+  <fpage>574</fpage>
+  <lpage>-582</lpage>
+</bibl>
+
+<bibl id="B29">
+  <title><p>Parameter estimation with bio-inspired meta-heuristic optimization:
+  modeling the dynamics of endocytosis</p></title>
+  <aug>
+    <au><snm>Tashkova</snm><fnm>K</fnm></au>
+    <au><snm>Koro{\v{s}}ec</snm><fnm>P</fnm></au>
+    <au><snm>{\v{S}}ilc</snm><fnm>J</fnm></au>
+    <au><snm>Todorovski</snm><fnm>L</fnm></au>
+    <au><snm>D{\v{z}}eroski</snm><fnm>S</fnm></au>
+  </aug>
+  <source>BMC systems biology</source>
+  <publisher>BioMed Central Ltd</publisher>
+  <pubdate>2011</pubdate>
+  <volume>5</volume>
+  <issue>1</issue>
+  <fpage>159</fpage>
+</bibl>
+
+<bibl id="B30">
+  <title><p>A cooperative strategy for parameter estimation in large scale
+  systems biology models</p></title>
+  <aug>
+    <au><snm>Villaverde</snm><fnm>AF</fnm></au>
+    <au><snm>Egea</snm><fnm>JA</fnm></au>
+    <au><snm>Banga</snm><fnm>JR</fnm></au>
+  </aug>
+  <source>BMC systems biology</source>
+  <publisher>BioMed Central Ltd</publisher>
+  <pubdate>2012</pubdate>
+  <volume>6</volume>
+  <issue>1</issue>
+  <fpage>75</fpage>
+</bibl>
+
+<bibl id="B31">
+  <title><p>Novel metaheuristic for parameter estimation in nonlinear dynamic
+  biological systems</p></title>
+  <aug>
+    <au><snm>Rodriguez Fernandez</snm><fnm>M</fnm></au>
+    <au><snm>Egea</snm><fnm>JA</fnm></au>
+    <au><snm>Banga</snm><fnm>JR</fnm></au>
+  </aug>
+  <source>BMC bioinformatics</source>
+  <publisher>BioMed Central Ltd</publisher>
+  <pubdate>2006</pubdate>
+  <volume>7</volume>
+  <issue>1</issue>
+  <fpage>483</fpage>
+</bibl>
+
+<bibl id="B32">
+  <title><p>Scatter search for chemical and bio-process
+  optimization</p></title>
+  <aug>
+    <au><snm>Egea</snm><fnm>JA</fnm></au>
+    <au><snm>Rodr{\'\i}guez Fern{\'a}ndez</snm><fnm>M</fnm></au>
+    <au><snm>Banga</snm><fnm>JR</fnm></au>
+    <au><snm>Mart{\'\i}</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Journal of Global Optimization</source>
+  <publisher>Springer</publisher>
+  <pubdate>2007</pubdate>
+  <volume>37</volume>
+  <issue>3</issue>
+  <fpage>481</fpage>
+  <lpage>-503</lpage>
+</bibl>
+
+<bibl id="B33">
+  <title><p>BioPreDyn-bench: a suite of benchmark problems for dynamic
+  modelling in systems biology</p></title>
+  <aug>
+    <au><snm>Villaverde</snm><fnm>AF</fnm></au>
+    <au><snm>Henriques</snm><fnm>D</fnm></au>
+    <au><snm>Smallbone</snm><fnm>K</fnm></au>
+    <au><snm>Bongard</snm><fnm>S</fnm></au>
+    <au><snm>Schmid</snm><fnm>J</fnm></au>
+    <au><snm>Cicin Sain</snm><fnm>D</fnm></au>
+    <au><snm>Crombach</snm><fnm>A</fnm></au>
+    <au><snm>Saez Rodriguez</snm><fnm>J</fnm></au>
+    <au><snm>Mauch</snm><fnm>K</fnm></au>
+    <au><snm>Balsa Canto</snm><fnm>E</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>BMC systems biology</source>
+  <publisher>BioMed Central Ltd</publisher>
+  <pubdate>2015</pubdate>
+  <volume>9</volume>
+  <issue>1</issue>
+  <fpage>8</fpage>
+</bibl>
+
+<bibl id="B34">
+  <title><p>Dynamically dimensioned search algorithm for computationally
+  efficient watershed model calibration</p></title>
+  <aug>
+    <au><snm>Tolson</snm><fnm>BA</fnm></au>
+    <au><snm>Shoemaker</snm><fnm>CA</fnm></au>
+  </aug>
+  <source>Water Resources Research</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2007</pubdate>
+  <volume>43</volume>
+  <issue>1</issue>
+</bibl>
+
+<bibl id="B35">
+  <title><p>Dynamic multi-swarm particle swarm optimizer with local search for
+  large scale global optimization</p></title>
+  <aug>
+    <au><snm>Zhao</snm><fnm>SZ</fnm></au>
+    <au><snm>Liang</snm><fnm>JJ</fnm></au>
+    <au><snm>Suganthan</snm><fnm>PN</fnm></au>
+    <au><snm>Tasgetiren</snm><fnm>MF</fnm></au>
+  </aug>
+  <source>Evolutionary Computation, 2008. CEC 2008.(IEEE World Congress on
+  Computational Intelligence). IEEE Congress on</source>
+  <pubdate>2008</pubdate>
+  <fpage>3845</fpage>
+  <lpage>-3852</lpage>
+</bibl>
+
+<bibl id="B36">
+  <title><p>High-confidence predictions in systems biology dynamic
+  models</p></title>
+  <aug>
+    <au><snm>Villaverde</snm><fnm>AF</fnm></au>
+    <au><snm>Bongard</snm><fnm>S</fnm></au>
+    <au><snm>Mauch</snm><fnm>K</fnm></au>
+    <au><snm>M{\"u}ller</snm><fnm>D</fnm></au>
+    <au><snm>Balsa Canto</snm><fnm>E</fnm></au>
+    <au><snm>Schmid</snm><fnm>J</fnm></au>
+    <au><snm>Banga</snm><fnm>JR</fnm></au>
+  </aug>
+  <source>8th International Conference on Practical Applications of
+  Computational Biology \& Bioinformatics (PACBB 2014)</source>
+  <pubdate>2014</pubdate>
+  <fpage>161</fpage>
+  <lpage>-171</lpage>
+</bibl>
+
+<bibl id="B37">
+  <title><p>Large-scale metabolic models: From reconstruction to differential
+  equations</p></title>
+  <aug>
+    <au><snm>Smallbone</snm><fnm>K</fnm></au>
+    <au><snm>Mendes</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Industrial Biotechnology</source>
+  <pubdate>2013</pubdate>
+  <volume>9</volume>
+  <issue>4</issue>
+  <fpage>179</fpage>
+  <lpage>-184</lpage>
+</bibl>
+
+<bibl id="B38">
+  <title><p>The dynamics of thrombin formation</p></title>
+  <aug>
+    <au><snm>Mann</snm><fnm>KG</fnm></au>
+    <au><snm>Butenas</snm><fnm>S</fnm></au>
+    <au><snm>Brummel</snm><fnm>K</fnm></au>
+  </aug>
+  <source>Arteriosclerosis, thrombosis, and vascular biology</source>
+  <publisher>Am Heart Assoc</publisher>
+  <pubdate>2003</pubdate>
+  <volume>23</volume>
+  <issue>1</issue>
+  <fpage>17</fpage>
+  <lpage>-25</lpage>
+</bibl>
+
+<bibl id="B39">
+  <title><p>What is all that thrombin for?</p></title>
+  <aug>
+    <au><snm>Mann</snm><fnm>KG</fnm></au>
+    <au><snm>Brummel</snm><fnm>K</fnm></au>
+    <au><snm>Butenas</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Journal of Thrombosis and Haemostasis</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2003</pubdate>
+  <volume>1</volume>
+  <issue>7</issue>
+  <fpage>1504</fpage>
+  <lpage>-1514</lpage>
+</bibl>
+
+<bibl id="B40">
+  <title><p>Thrombin formation</p></title>
+  <aug>
+    <au><snm>Mann</snm><fnm>KG</fnm></au>
+  </aug>
+  <source>CHEST Journal</source>
+  <publisher>American College of Chest Physicians</publisher>
+  <pubdate>2003</pubdate>
+  <volume>124</volume>
+  <issue>3\_suppl</issue>
+  <fpage>4S</fpage>
+  <lpage>-10S</lpage>
+</bibl>
+
+<bibl id="B41">
+  <title><p>Contact activation of blood-plasma coagulation</p></title>
+  <aug>
+    <au><snm>Vogler</snm><fnm>EA</fnm></au>
+    <au><snm>Siedlecki</snm><fnm>CA</fnm></au>
+  </aug>
+  <source>Biomaterials</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2009</pubdate>
+  <volume>30</volume>
+  <issue>10</issue>
+  <fpage>1857</fpage>
+  <lpage>-1869</lpage>
+</bibl>
+
+<bibl id="B42">
+  <title><p>Systems biology of coagulation</p></title>
+  <aug>
+    <au><snm>Diamond</snm><fnm>SL</fnm></au>
+  </aug>
+  <source>Journal of Thrombosis and Haemostasis</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2013</pubdate>
+  <volume>11</volume>
+  <issue>s1</issue>
+  <fpage>224</fpage>
+  <lpage>-232</lpage>
+</bibl>
+
+<bibl id="B43">
+  <title><p>Coagulation under flow: the influence of flow-mediated transport on
+  the initiation and inhibition of coagulation</p></title>
+  <aug>
+    <au><snm>Fogelson</snm><fnm>AL</fnm></au>
+    <au><snm>Tania</snm><fnm>N</fnm></au>
+  </aug>
+  <source>Pathophysiology of haemostasis and thrombosis</source>
+  <publisher>Karger Publishers</publisher>
+  <pubdate>2005</pubdate>
+  <volume>34</volume>
+  <issue>2-3</issue>
+  <fpage>91</fpage>
+  <lpage>-108</lpage>
+</bibl>
+
+<bibl id="B44">
+  <title><p>A model incorporating some of the mechanical and biochemical
+  factors underlying clot formation and dissolution in flowing blood: review
+  article</p></title>
+  <aug>
+    <au><snm>Anand</snm><fnm>M</fnm></au>
+    <au><snm>Rajagopal</snm><fnm>K</fnm></au>
+    <au><snm>Rajagopal</snm><fnm>KR</fnm></au>
+  </aug>
+  <source>Journal of Theoretical Medicine</source>
+  <publisher>Taylor \& Francis</publisher>
+  <pubdate>2003</pubdate>
+  <volume>5</volume>
+  <issue>3-4</issue>
+  <fpage>183</fpage>
+  <lpage>-218</lpage>
+</bibl>
+
+<bibl id="B45">
+  <title><p>A model for the stoichiometric regulation of blood
+  coagulation</p></title>
+  <aug>
+    <au><snm>Hockin</snm><fnm>MF</fnm></au>
+    <au><snm>Jones</snm><fnm>KC</fnm></au>
+    <au><snm>Everse</snm><fnm>SJ</fnm></au>
+    <au><snm>Mann</snm><fnm>KG</fnm></au>
+  </aug>
+  <source>Journal of Biological Chemistry</source>
+  <publisher>ASBMB</publisher>
+  <pubdate>2002</pubdate>
+  <volume>277</volume>
+  <issue>21</issue>
+  <fpage>18322</fpage>
+  <lpage>-18333</lpage>
+</bibl>
+
+<bibl id="B46">
+  <title><p>Systems biology of coagulation initiation: kinetics of thrombin
+  generation in resting and activated human blood</p></title>
+  <aug>
+    <au><snm>Chatterjee</snm><fnm>MS</fnm></au>
+    <au><snm>Denney</snm><fnm>WS</fnm></au>
+    <au><snm>Jing</snm><fnm>H</fnm></au>
+    <au><snm>Diamond</snm><fnm>SL</fnm></au>
+  </aug>
+  <source>PLoS computational biology</source>
+  <pubdate>2010</pubdate>
+</bibl>
+
+<bibl id="B47">
+  <title><p>Models of blood coagulation</p></title>
+  <aug>
+    <au><snm>Mann</snm><fnm>KG</fnm></au>
+    <au><snm>Brummel Ziedins</snm><fnm>K</fnm></au>
+    <au><snm>Orfeo</snm><fnm>T</fnm></au>
+    <au><snm>Butenas</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Blood Cells, Molecules, and Diseases</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2006</pubdate>
+  <volume>36</volume>
+  <issue>2</issue>
+  <fpage>108</fpage>
+  <lpage>-117</lpage>
+</bibl>
+
+<bibl id="B48">
+  <title><p>Computationally derived points of fragility of a human cascade are
+  consistent with current therapeutic strategies</p></title>
+  <aug>
+    <au><snm>Luan</snm><fnm>D</fnm></au>
+    <au><snm>Zai</snm><fnm>M</fnm></au>
+    <au><snm>Varner</snm><fnm>JD</fnm></au>
+  </aug>
+  <source>PLoS computational biology</source>
+  <publisher>Public Library of Science</publisher>
+  <pubdate>2007</pubdate>
+  <volume>3</volume>
+  <issue>7</issue>
+  <fpage>e142</fpage>
+</bibl>
+
+<bibl id="B49">
+  <title><p>A literature survey of benchmark functions for global optimisation
+  problems</p></title>
+  <aug>
+    <au><snm>Jamil</snm><fnm>M</fnm></au>
+    <au><snm>Yang</snm><fnm>XS</fnm></au>
+  </aug>
+  <source>International Journal of Mathematical Modelling and Numerical
+  Optimisation</source>
+  <publisher>Inderscience Publishers Ltd</publisher>
+  <pubdate>2013</pubdate>
+  <volume>4</volume>
+  <issue>2</issue>
+  <fpage>150</fpage>
+  <lpage>-194</lpage>
+</bibl>
+
+<bibl id="B50">
+  <title><p>{Ensembles of signal transduction models using pareto optimal
+  ensemble techniques (POETs)}</p></title>
+  <aug>
+    <au><snm>Song</snm><fnm>SO</fnm></au>
+    <au><snm>Chakrabarti</snm><fnm>A</fnm></au>
+    <au><snm>Varner</snm><fnm>JD</fnm></au>
+  </aug>
+  <source>Biotechnology journal</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2010</pubdate>
+  <volume>5</volume>
+  <issue>7</issue>
+  <fpage>768</fpage>
+  <lpage>-780</lpage>
+</bibl>
+
+<bibl id="B51">
+  <title><p>Particle swarm optimization</p></title>
+  <aug>
+    <au><snm>Clerc</snm><fnm>M</fnm></au>
+  </aug>
+  <publisher>John Wiley \& Sons</publisher>
+  <pubdate>2010</pubdate>
+  <volume>93</volume>
+</bibl>
+
+<bibl id="B52">
+  <title><p>Swarm intelligence: foundations, perspectives and
+  applications</p></title>
+  <aug>
+    <au><snm>Abraham</snm><fnm>A</fnm></au>
+    <au><snm>Guo</snm><fnm>H</fnm></au>
+    <au><snm>Liu</snm><fnm>H</fnm></au>
+  </aug>
+  <source>Swarm Intelligent Systems</source>
+  <publisher>Springer</publisher>
+  <pubdate>2006</pubdate>
+  <fpage>3</fpage>
+  <lpage>-25</lpage>
+</bibl>
+
+<bibl id="B53">
+  <title><p>Empirical study of particle swarm optimization</p></title>
+  <aug>
+    <au><snm>Shi</snm><fnm>Y</fnm></au>
+    <au><snm>Eberhart</snm><fnm>RC</fnm></au>
+  </aug>
+  <source>Proceedings of the 1999 Congress on Evolutionary Computation, 1999.
+  CEC 99.</source>
+  <pubdate>1999</pubdate>
+  <volume>3</volume>
+  <fpage>1950</fpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment
