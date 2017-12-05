@@ -833,6 +833,14 @@ The multi-swarm with without DDS saturates while DOPS shows a rapid drop due to 
 }\label{fig-sub-swarms}
 \end{figure}
 
+\begin{figure}[h!]
+\includegraphics[width = 1.0\textwidth]{./rachelfigs/expDOPSvsDOPS-crop.pdf} 
+\caption{\csentence{Comparsion of DOPS and Experimental DOPS} Performance of DOPS and Experimental DOPS on the CHO metabolism problem (a), the Eggholder function (b), the 100 dimensional Styblinksi-Tang function (c) and the coagulation problem (d). Both methods have the same initial decrease in error, but as the number of function evaluations increases, experimental DOPS produces a larger decrease in error.
+The results presented are the average of $\mathcal{T}$ = 250 trials with for the CHO metabolism problem and $\mathcal{T}$ = 250 trials on the Eggholder and Styblinksi-Tang functions with $\mathcal{N}$ = 250 function evaluations each, and $\mathcal{T}$ = 25 trials for the coagulation problem.
+}\label{fig-exp-DOPS-b4}
+\end{figure}
+
+
   \begin{figure}[h!]
   \caption{\csentence{Sample figure title.}
       A short description of the figure content
@@ -897,7 +905,10 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\section*{Additional Files}
+\section*{Additional Files}
+\setcounter{equation}{0}
+\setcounter{table}{0}
+\setcounter{figure}{0}
 %  \subsection*{Additional file 1 --- Sample additional file title}
 %    Additional file descriptions text (including details of how to
 %    view the file, if it is in a non-standard format or the file extension).  This might
@@ -905,7 +916,52 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 %
 %  \subsection*{Additional file 2 --- Sample additional file title}
 %    Additional file descriptions text.
+\subsection*{Additional file S\ref{fig-sims-b1}-(Data fits for CHO metabolism problem)}
+\begin{figure}[ht]
+\centering
+%\includegraphics[width=1.00\textwidth]{./figs/Figure_S1_B1_sims.pdf}
+\includegraphics[width=1.00\textwidth]{./rachelfigs/RecreatedFigureS1usingMS2_save.pdf}
+\caption{\textbf {(Data fits for CHO metabolism problem)} Pseudo-experimental data (red x) vs. optimal solution obtained using DOPS (solid blue lines) for the 44 observed states. X axis: time [s]; Y axis: metabolite concentrations [mM].
+}\label{fig-sims-b1}
+\end{figure}
 
+\subsection*{Additional file S\ref{fig-sims-b4}-(Data fits for S.cerevisiae metabolism problem)}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.00\textwidth]{./rachelfigs/RecreatedFigureS2}
+\caption{\textbf {(Data fits for S.cerevisiae metabolism problem)} Pseudo-experimental data (red x) vs. optimal solution obtained using DOPS (solid blue lines) for the 13 observed states. X axis: time [s]; Y axis: metabolite concentrations [mM].
+}\label{fig-sims-b4}
+\end{figure}
+
+\subsection*{Additional file S3-(Comparison of states and parameters)}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.00\textwidth]{./rachelfigs/fig_s3-crop.pdf}
+\caption{ \textbf {(A)} Difference between nominal and optimal parameters for genome wide kinetic model of \textit{S.cerevisiae} with 1759 unknown parameters. \textbf {(B)} Difference between experimental (measured) data and data simulated with optimal parameters for genome wide kinetic model of \textit{S.cerevisiae} with 1759 unknown parameters. \textbf {(C)} Difference between nominal and optimal parameters for metabolic model of Chinese  Hamster Ovary Cells (CHO) cells with 117 parameters. \textbf {(D)} Difference between experimental (measured) data and data simulated with optimal parameters for metabolic model of Chinese  Hamster Ovary Cells (CHO) cells with 117 parameters.
+}\label{fig-benchmark}
+\end{figure}
+
+\subsection*{Additional file S4-(Time Comparison)}
+\begin{figure}[ht]
+\centering
+\includegraphics[trim = {0 5cm 0 5cm }, clip, width=1.00\textwidth]{./rachelfigs/TimeComparsion.pdf}
+\caption{ Comparison of the runtime of the different optimization methods used for comparison with  $\mathcal{T}$ = 25 trials per method. All methods used take about the same amount of time to perform 4,000 function evaluations on the coagulation problem, as this problem is very stiff, so the majority of the time is spent solving the system of differential equations.
+}\label{fig-time-comparsion}
+\end{figure}
+
+\subsection*{Additional file S5-(Convergence Curves)}
+\begin{figure}
+\includegraphics[width=1.00\textwidth]{./rachelfigs/fig_s4-crop}
+    \caption{Mean convergence curves for different metaheuristics for (a) Ackley 300 dimensional and (b) Rastrigin 300 dimensional with $\mathcal{T}$ = 25 trials per method. DOPS not only finds a better solution than any other technique, it finds it with fewer function evaluations}%
+    \label{fig-more-methods}%
+\end{figure}
+
+\subsection*{Additional file S6-(Comparison of DOPS to ESS)}
+\begin{figure}
+\includegraphics[width=1.00\textwidth]{./rachelfigs/fig_s5-crop} %fix me
+  \caption{Mean convergence curves for DOPS and ESS for (a) CHO model  (b) coagulation with $\mathcal{T}$ = 25 trials per method.}%
+    \label{fig-compare-DOPS-ESS}%
+\end{figure}
 
 \end{backmatter}
 \end{document}
