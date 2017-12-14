@@ -51,20 +51,28 @@ function []=compareVariationInFunctionalVals(functionName)
         end
     end
     
-    figure();
+    f=figure();
     boxplot([CMAES_f', SA_f', DE_f', DDS_f', ESS_f', DOPS_f']);
     xticklabels({'CMAES', 'SA', 'DE', 'DDS', 'ESS', 'DOPS'})
-    xlabel('Algorithm')
-    ylabel('Best Objective Functional Value');
-    f = gca();
+    xlabel('Algorithm', 'FontSize', 32)
+    ylabel('Best Objective Functional Value', 'FontSize', 32);
+    f.PaperPositionMode = 'auto';
+    f.PaperUnits = 'inches';
+    f.PaperPosition = [0 0 12 12];
+    f.PaperSize=[13 13];
+    set(gca, 'FontSize', 20);
     if (strcmp('ackley',functionName))
-         saveas(f, '../DOPS_Results/figures/FigureS7a.pdf', 'pdf');
+        % saveas(f, '../DOPS_Results/figures/FigureS7a.pdf', 'pdf');
+         print('../DOPS_Results/figures/FigureS7a.png', '-dpng','-r0');
     elseif(strcmp('rast',functionName))
-        saveas(f, '../DOPS_Results/figures/FigureS7b.pdf', 'pdf');
+       % saveas(f, '../DOPS_Results/figures/FigureS7b.pdf', 'pdf');
+        print('../DOPS_Results/figures/FigureS7b.png', '-dpng','-r0');
     elseif(strcmp('b4_obj', functionName))
         xlim([4.5,6.5]); %only show data for DOPS and ESS
-        saveas(f, '../DOPS_Results/figures/FigureS7c.pdf', 'pdf');
+       % saveas(f, '../DOPS_Results/figures/FigureS7c.pdf', 'pdf');
+        print('../DOPS_Results/figures/FigureS7c.png', '-dpng','-r0');
     elseif(strcmp('fitCoag', functionName))
-        saveas(f, '../DOPS_Results/figures/FigureS7d.pdf', 'pdf');
+        %saveas(f, '../DOPS_Results/figures/FigureS7d.pdf', 'pdf');
+        print('../DOPS_Results/figures/FigureS7d.png', '-dpng','-r0');
     end
 end

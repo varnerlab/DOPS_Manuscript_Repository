@@ -1,4 +1,4 @@
-function [] = compareESSToDOPSOnCoag()
+function [] = compareESSToDOPS()
     close('all');
     NUM_ITERS = 25;
     NUM_EVALS = 4000;
@@ -35,10 +35,15 @@ function [] = compareESSToDOPSOnCoag()
     plot(0:NUM_EVALS,nanmean(allESS,1), 'LineWidth', 2, 'Color','k')
     %axis([0,4000,1E5,1E8])
     set(gca, 'YScale', 'log')
-    xlabel('Iteration Number')
-    ylabel('Functional Value')
+    set(gca, 'fontsize', 20);
+    xlabel('Number of Function Evaluations', 'FontSize', 32)
+    ylabel('Functional Value', 'FontSize',32)
     legend('DOPS', 'ESS')
-    saveas(f, '../DOPS_Results/figures/CompareDOPSToESSOnCoag.pdf');
+     f.PaperPositionMode = 'auto';
+    f.PaperUnits = 'inches';
+    f.PaperPosition = [0 0 12 12];
+    f.PaperSize=[13 13];
+    print('../DOPS_Results/figures/CompareDOPSToESSOnCoag.png', '-dpng','-r0');
     
     figure()
     hold('on')

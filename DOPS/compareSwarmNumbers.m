@@ -11,6 +11,7 @@ function []=compareSwarmNumbers()
     semilogy(numFEvals, mean(adjustedAllDOPS,1), 'LineWidth', 2.0,'Color', 'k');
     numRepeats = 25;
     NUM_PARTCILES = 40;
+    colors = {repmat(75/255,1,3), repmat(125/255,1,3), repmat(175/255,1,3),[0,0,0], repmat(225/255,1,3)};
     
     for k = 1:size(swarmNum,2)
        adjustedAllDOPS = [];
@@ -31,13 +32,22 @@ function []=compareSwarmNumbers()
            correctedAllData = correctedAllData(1:numEvals);
            adjustedAllDOPS(j,:) = correctedAllData;
        end
-        semilogy(numFEvals, mean(adjustedAllDOPS,1), 'LineWidth', 2);
+       if (currSwarmNum ==5)
+           mDOPS=mean(adjustedAllDOPS,1);
+         semilogy(numFEvals(1:40:end), mDOPS(1:40:end), 'LineWidth', 1, 'Color', colors{k}, 'Marker', 'o','MarkerFaceColor', 'w');  
+       else
+        semilogy(numFEvals, mean(adjustedAllDOPS,1), 'LineWidth', 2, 'Color', colors{k});
+       end
     end
     legend('DOPS', '1 Swarm', '2 Swarms', '4 Swarms', '5 Swarms', '8 Swarms')
     ylabel('Average Functional Value for N=25 Trials')
     xlabel('Number of Function Evalutions')
     axis([0,4000,7E4,2E7])
-    saveas(f,'../DOPS_Results/figures/RecreateFigure7.pdf', 'pdf')
+    f.PaperPositionMode = 'auto';
+    f.PaperUnits = 'inches';
+    f.PaperPosition = [0 0 12 12];
+    f.PaperSize=[13 13];
+    print('../DOPS_Results/figures/RecreateFigure7.pdf', '-dpdf','-r0');
 end
 
 function[filledInData]=fillInPSO(numParticles,PSO_error)

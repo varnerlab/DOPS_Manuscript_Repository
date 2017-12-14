@@ -1,4 +1,7 @@
 function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareDOPSVersionsOnB4()
+    %this function was developed with testing different versions of
+    %experimental DOPS. It plots the performance of different versions on
+    %the b4 problem
     addpath('/home/rachel/Documents/DOPS/DOPS_Results/b4_obj');
     close('all');
     NUM_ITERS = 25;
@@ -14,10 +17,6 @@ function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareDOPSVersi
     allExperimentalgamma_shrinkfactor1E6 = zeros(NUM_ITERS,NUM_EVALS);
     allDOPSTimes = zeros(NUM_ITERS,1);
     for j=1:NUM_ITERS
-       % if(j ==5) %need to skip 5 since rerunning at the moment
-       %    adjustedAllDOPS(j,:) = NaN;
-       %    continue;
-       % end
         load(strcat('DOPS_error_iter',num2str(j),'.mat'));
         PSO_error = g_best_solution{j};
         corrected_PSO_error = fillInPSO(NUM_PARTCILES,PSO_error);
@@ -26,7 +25,6 @@ function [allDOPS,adjustedAllDOPS,allExperimental,allDOPSTimes]=compareDOPSVersi
         alldata= cat(2,PSO_error,DDS_error);
         correctedAllData = cat(2,corrected_PSO_error,DDS_error);
         correctedAllData = correctedAllData(1:NUM_EVALS);
-        %allDOPS(j,:) =alldata;
         adjustedAllDOPS(j,:) = correctedAllData;
         
         currTime = load(strcat('DOPS_time_iter', num2str(j), '.txt'));

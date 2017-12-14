@@ -15,7 +15,7 @@ function[allCMAES,allSA,allDE,allDDS,allDOPS,allEss]= replicateFigureS4(Infuncti
                lb = repmat(rast_bounds(1),numDims,1);
                ub = repmat(rast_bounds(2), numDims,1);
        end
-       fig = figure();
+       f = figure();
        hold('on');
        allCMAES = [];
        allSA = [];
@@ -43,6 +43,7 @@ function[allCMAES,allSA,allDE,allDDS,allDOPS,allEss]= replicateFigureS4(Infuncti
         allEss(:,k) = f_iterp;
        end
            %make plot
+           set(gca, 'fontsize', 20);
            plot(1:1:numFEvals,mean(allCMAES,2), 'LineWidth', 2, 'Color', 'b');
            plot(0:1:numFEvals,mean(allSA,2), 'LineWidth', 2, 'Color', 'c');
            plot(1:40:numFEvals,mean(allDE,2), 'LineWidth', 2, 'Color', 'g');
@@ -54,13 +55,17 @@ function[allCMAES,allSA,allDE,allDDS,allDOPS,allEss]= replicateFigureS4(Infuncti
        
        legend('CMAES', 'Simulated Annealing', 'DE', 'DDS', 'DOPS', 'ESS');
        %set(gca, 'YScale', 'log');
-       xlabel('Number of Function Evaluations')
-       ylabel('Objective Functional Value');
+       xlabel('Number of Function Evaluations', 'FontSize', 32)
+       ylabel('Objective Functional Value','FontSize',32);
        xlim([0,4000])
+    f.PaperPositionMode = 'auto';
+    f.PaperUnits = 'inches';
+    f.PaperPosition = [0 0 12 12];
+    f.PaperSize=[13 13];
        if(strcmp('ackley',Infunction))
-            saveas(fig,'../DOPS_Results/figures/RecreateRebutalReviewer1_FigS4a.pdf', 'pdf') 
+            print('../DOPS_Results/figures/RecreateRebutalReviewer1_FigS4a.png', '-dpng','-r0'); 
        elseif(strcmp('rast',Infunction))
-           saveas(fig,'../DOPS_Results/figures/RecreateRebutalReviewer1_FigS4b.pdf', 'pdf') 
+           print('../DOPS_Results/figures/RecreateRebutalReviewer1_FigS4b.png', '-dpng','-r0'); 
        end
        
     end
