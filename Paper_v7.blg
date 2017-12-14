@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v7.aux
 The style file: bmc-mathphys.bst
@@ -20,7 +20,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: References_v2.bib
-Warning--I didn't find a database entry for "jamil2013literature"
 Warning--I didn't find a database entry for "clerc2010particle"
 Warning--I didn't find a database entry for "abraham2006swarm"
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
@@ -28,45 +27,45 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 50 entries,
+You've used 51 entries,
             7128 wiz_defined-function locations,
-            1438 strings with 18567 characters,
-and the built_in function-call counts, 373319 in all, are:
-= -- 54963
-> -- 1699
-< -- 1064
-+ -- 23337
-- -- 385
-* -- 20954
-:= -- 71063
-add.period$ -- 55
-call.type$ -- 50
-change.case$ -- 464
-chr.to.int$ -- 2326
-cite$ -- 50
-duplicate$ -- 4745
-empty$ -- 14619
-format.name$ -- 1482
-if$ -- 88575
+            1443 strings with 18739 characters,
+and the built_in function-call counts, 378229 in all, are:
+= -- 55541
+> -- 1735
+< -- 1090
++ -- 23461
+- -- 391
+* -- 21332
+:= -- 72053
+add.period$ -- 56
+call.type$ -- 51
+change.case$ -- 472
+chr.to.int$ -- 2387
+cite$ -- 51
+duplicate$ -- 4839
+empty$ -- 14902
+format.name$ -- 1506
+if$ -- 89691
 int.to.chr$ -- 2
-int.to.str$ -- 141
-missing$ -- 1677
-newline$ -- 1468
-num.names$ -- 250
-pop$ -- 1876
+int.to.str$ -- 144
+missing$ -- 1709
+newline$ -- 1496
+num.names$ -- 255
+pop$ -- 1908
 preamble$ -- 1
-purify$ -- 240
-quote$ -- 100
-skip$ -- 30146
+purify$ -- 245
+quote$ -- 102
+skip$ -- 30414
 stack$ -- 0
-substring$ -- 43316
-swap$ -- 1719
-text.length$ -- 786
+substring$ -- 43954
+swap$ -- 1759
+text.length$ -- 802
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 2117
+type$ -- 2162
 warning$ -- 0
-while$ -- 1715
+while$ -- 1749
 width$ -- 0
-write$ -- 1934
-(There were 3 warnings)
+write$ -- 1969
+(There were 2 warnings)

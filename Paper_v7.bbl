@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{50}
+\begin{thebibliography}{51}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -720,6 +720,20 @@ PLoS computational biology
 \endbibitem
 
 %%% 49
+\bibitem{styblinski1990experiments}
+\begin{barticle}
+\bauthor{\bsnm{Styblinski}, \binits{M.}},
+\bauthor{\bsnm{Tang}, \binits{T.-S.}}:
+\batitle{Experiments in nonconvex optimization: stochastic approximation with
+  function smoothing and simulated annealing}.
+\bjtitle{Neural Networks}
+\bvolume{3}(\bissue{4}),
+\bfpage{467}--\blpage{483}
+(\byear{1990})
+\end{barticle}
+\endbibitem
+
+%%% 50
 \bibitem{song2010ensembles}
 \begin{barticle}
 \bauthor{\bsnm{Song}, \binits{S.O.}},
@@ -734,7 +748,7 @@ PLoS computational biology
 \end{barticle}
 \endbibitem
 
-%%% 50
+%%% 51
 \bibitem{shi1999empirical}
 \begin{bchapter}
 \bauthor{\bsnm{Shi}, \binits{Y.}},
@@ -1505,6 +1519,22 @@ p. \bfpage{1950}
 </bibl>
 
 <bibl id="B49">
+  <title><p>Experiments in nonconvex optimization: stochastic approximation
+  with function smoothing and simulated annealing</p></title>
+  <aug>
+    <au><snm>Styblinski</snm><fnm>MA</fnm></au>
+    <au><snm>Tang</snm><fnm>T S</fnm></au>
+  </aug>
+  <source>Neural Networks</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>1990</pubdate>
+  <volume>3</volume>
+  <issue>4</issue>
+  <fpage>467</fpage>
+  <lpage>-483</lpage>
+</bibl>
+
+<bibl id="B50">
   <title><p>{Ensembles of signal transduction models using pareto optimal
   ensemble techniques (POETs)}</p></title>
   <aug>
@@ -1521,7 +1551,7 @@ p. \bfpage{1950}
   <lpage>-780</lpage>
 </bibl>
 
-<bibl id="B50">
+<bibl id="B51">
   <title><p>Empirical study of particle swarm optimization</p></title>
   <aug>
     <au><snm>Shi</snm><fnm>Y</fnm></au>
