@@ -47,52 +47,21 @@
 \documentclass{bmcart}
 
 %%% Load packages
-%\usepackage{amsthm,amsmath}
-%\RequirePackage{natbib}
-%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
-%\RequirePackage{hyperref}
-\usepackage[utf8]{inputenc} %unicode support
-%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
-%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
-% Load packages
-\usepackage{url}  % Formatting web addresses
-\usepackage{ifthen}  % Conditional
-\usepackage{multicol}   %Columns
-\usepackage[utf8]{inputenc} %unicode support
-\usepackage{amsmath}
+\usepackage{amsthm,amsmath}
 \usepackage{amssymb}
-\usepackage{epsfig}
-\usepackage{epstopdf}
 \usepackage{graphicx}
 \usepackage[margin=0.1pt,font=footnotesize,labelfont=bf]{caption}
-\usepackage{setspace}
-%\usepackage{longtable}
-\usepackage{colortbl}
-%\usepackage{palatino,lettrine}
-%\usepackage{times}
+
+% Imports required for p-code of JuPOETs
+\usepackage[linesnumbered]{algorithm2e}
+\usepackage{courier}
+%\usepackage{algorithm}
+\RequirePackage{natbib}
+%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
+\RequirePackage{hyperref}
+\usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
-\usepackage[wide]{sidecap}
-%\usepackage[authoryear,round,comma,sort&compress]{natbib}
-\usepackage[square,sort,comma,numbers,sort&compress]{natbib}
-%\usepackage[authoryear,round]{natbib}
-\usepackage{supertabular}
-\usepackage{simplemargins}
-\usepackage{fullpage}
-\usepackage{comment}
-\usepackage{lineno}
-%\usepackage{chicago}
-\usepackage{textcomp}
-\usepackage{multirow}
-\usepackage{amsmath}
-\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
-\DeclareMathOperator*{\argmin}{\arg\!\min}
-
-\usepackage{algorithm2e}
-\usepackage{algpseudocode}
-\usepackage{subfig}
-%\usepackage[space]{cite}
-\urlstyle{rm}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,8 +80,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%\def\includegraphic{}
-%\def\includegraphics{}
+\def\includegraphic{}
+\def\includegraphics{}
 
 
 
@@ -136,7 +105,7 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Parameter estimation in biochemical models}
+\title{Dynamic Optimization with Particle Swarms (DOPS): A meta-heuristic for parameter estimation in biochemical models}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -163,14 +132,14 @@
    noteref={n1}
 ]{\fnm{Rachel} \snm{LeCover}}
 \author[
+   addressref={aff2},
+   email={jdv27@cornell.edu}
+]{\fnm{Christine} \snm{Shoemaker}}
+\author[
    addressref={aff1},
    corref={aff1},
    email={jdv27@cornell.edu}
 ]{\inits{D}\fnm{Jeffrey} \snm{Varner}}
-\author[
-   addressref={aff2},
-   email={jdv27@cornell.edu}
-]{\fnm{Christine} \snm{Shoemaker}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -300,7 +269,8 @@ DOPS source code is available for download under a MIT license at http://www.var
 %%
 \section*{Background}
 Cells process nutrients and respond to changes in their environment using complex enzyme catalyzed biochemical networks.
-Mathematical modeling has evolved as a powerful paradigm to analyze, and ultimately design these complex networks \cite{assmus2006dynamics, Riel:2006aa,Jaqaman:2006aa,kitano2002systems,hood2004systems}. Mathematical modeling of biochemical networks is often an iterative process.
+Mathematical modeling has evolved as a powerful paradigm to analyze, and ultimately design these complex networks \cite{assmus2006dynamics, Riel:2006aa,Jaqaman:2006aa,kitano2002systems,hood2004systems}.
+Mathematical modeling of biochemical networks is often an iterative process.
 First, models are formulated from existing biochemical knowledge, and then model parameters are estimated using experimental data \cite{Aldridge:2006aa,banga2008optimization,ashyraliyev2009systems}.
 Parameter estimation is typically framed as a non-linear optimization problem wherein the residual (or objective function) between experimental measurements and model simulations is minimized using an optimization strategy \cite{moles2003parameter}.
 Optimal parameter estimates are then used to predict unseen experimental data.
@@ -396,7 +366,7 @@ In both cases, synthetic time series data generated with known parameter values,
 For the \textit{Saccharomyces~cerevisiae} model, the time series data consisted of 44 observables, and for the CHO metabolism problem the data corresponded to 13 different metabolite measurement sets.
 We fixed the number of function evaluations at $\mathcal{N}$ = 4000, and trained both models against the synthetic experimental data.
 DOPS produced good fits to the synthetic data (Fig. \ref{fig-sims-b1} and Fig. \ref{fig-sims-b4}), and recapitulated the nominal parameter values using only $\mathcal{N}\leq~4000$ function evaluations (Fig. \ref{fig-benchmark}).
-On the other hand, enhanced scatter search (eSS) with a local optimizer took on order $10^{5}$ function evaluations for the same problems. DOPS also had lower variability in the best value obtained (Fig \ref{fig-DOPS-Variability}) and faster convergence (Fig \ref{fig-more-methods}, Fig \ref{fig-compare-DOPS-ESS}) across multiple runs when compared to other metaheuristics while requiring a comparable amount of time (Fig \ref{fig-time-comparsion}). 
+On the other hand, enhanced scatter search (eSS) with a local optimizer took on order $10^{5}$ function evaluations for the same problems. DOPS also had lower variability in the best value obtained (Fig \ref{fig-DOPS-Variability}) and faster convergence (Fig \ref{fig-more-methods}, Fig \ref{fig-compare-DOPS-ESS}) across multiple runs when compared to other metaheuristics while requiring a comparable amount of time (Fig \ref{fig-time-comparsion}).
 Thus, DOPS estimated the parameters in benchmark biochemical models, and recovered the original parameters from synthetic data, using fewer function evaluations.
 Next, we compared the performance of DOPS with the four other meta-heuristics for a model of the human coagulation cascade.
 
@@ -461,10 +431,20 @@ which there was no significant advantage.
 The multi-swarm particle swarm optimization stagnated after 25\% of the available function evaluations irrespective of the number of sub-swarms.
 However, DOPS (with five sub-swarms) switched to DDS after detecting the stagnation.
 The DDS phase refined the globally best particle to produce significantly lower error on average when compared to multi-swarm particle swarm optimization alone.
-Thus, the automated switching strategy was critical to the overall performance of DOPS.
+Thus, the automated switching strategy was critical to the overall performance of DOPS. However, it was unclear if multiple strategy switches could further improve perfomance.
 
-\subsection*{Continued Switching May Be Beneficial}
-We explored the performance of DOPS if it was permitted to switch between PSO and DDS modes. This mode ('Experimental DOPS') performed comparably to DOPS on 10-d Ackley and Rastrigin as well as on 300-dimensional Rastrigin. It performed better than DOPS on the CHO metabolism problem (Fig. \ref{fig-exp-DOPS-b4}a), with the average functional value for Experimental DOPS being nearly half of that of DOPS. To further distinguish DOPS from Experimental DOPS, we compared the performance of each algorithm on the Eggholder function, which is considered to be a difficult function to optimize, owing to its multiple minima. On this function, Experimental DOPS outperformed DOPS however, neither version of DOPS reached the true minimum at -959.6407 on any trial with a budget of 4,000 function evaluations (Fig. \ref{fig-exp-DOPS-b4}b). We also explored the performance of both versions of DOPS on the 100 dimensional Styblinksi-Tang function \cite{jamil2013literature} (Fig. \ref{fig-exp-DOPS-b4}c). In this comparison, experimental DOPS far outperforms DOPS, succeeding in finding the true minimum before exhausting its budget of functional evaluations, whereas DOPS does not reach the minimum. Since the performance of Experimental DOPS was promising on these problems, we decided to measure its performance on the coagulation problem. At 4,000 function evaluations, DOPS performed better than Experimental DOPS, however, the difference between the two method's final average functional values was small (Fig. \ref{fig-exp-DOPS-b4}d), with the final average objective value for DOPS reaching .9413\% of the initial functional value, compared to .9428\% for Experimental DOPS. 
+We explored the performance of DOPS if it was permitted to switch between PSO and DDS modes multiple times.
+This mode (\texttt{Experimental~DOPS}) performed comparably to DOPS on 10-d Ackley and Rastrigin as well as on 300-dimensional Rastrigin function.
+\texttt{Experimental~DOPS} performed better than DOPS on the CHO metabolism problem (Fig. \ref{fig-exp-DOPS-b4}a),
+with the average functional value being nearly half of that of DOPS.
+To further distinguish DOPS from \texttt{Experimental~DOPS}, we compared the performance of each algorithm on the Eggholder function,
+a difficult function to optimize given its its multiple minima.
+On the Eggholder function, \texttt{Experimental~DOPS} outperformed DOPS however, neither version of DOPS reached the true minimum at -959.6407 on any trial with a budget of 4,000 function evaluations (Fig. \ref{fig-exp-DOPS-b4}b).
+We also explored the performance of both versions of DOPS on the 100 dimensional Styblinksi-Tang function \cite{jamil2013literature} (Fig. \ref{fig-exp-DOPS-b4}c).
+In this comparison, \texttt{Experimental~DOPS} significantly outperformed DOPS, finding the true minimum before exhausting its functional evaluation budget, while DOPS does not reach the minimum.
+Since the performance of \texttt{Experimental~DOPS} was promising on these problems, we measured its performance on the coagulation problem.
+Surprisingly, DOPS performed slightly better than \texttt{Experimental~DOPS} on the coagulation problem (Fig. \ref{fig-exp-DOPS-b4}d);
+the final average objective value for DOPS reached 0.9413\% of the initial functional value, compared to 0.9428\% for \texttt{Experimental~DOPS}.
 
 \section*{Discussion}
 In this study, we developed dynamic optimization with particle swarms (DOPS), a novel meta-heuristic for parameter estimation in models of biological systems.
@@ -606,7 +586,7 @@ Toward this objective, DOPS begins by using a particle swarm search and then dyn
 \end{algorithm}\DecMargin{1em}
 
 \subsubsection*{Phase 1: Particle swarm phase.}
-Particle warm optimization is an evolutionary algorithm that uses a population of particles (solutions) to find an optimal solution \cite{clerc2010particle,abraham2006swarm}. Each particle is updated based on its experience (particle best) and the experience of all other particles within the swarm (global best). 
+Particle warm optimization is an evolutionary algorithm that uses a population of particles (solutions) to find an optimal solution \cite{clerc2010particle,abraham2006swarm}. Each particle is updated based on its experience (particle best) and the experience of all other particles within the swarm (global best).
 The particle swarm phase of DOPS begins by randomly initializing a swarm of $\mathcal{K}$-dimensional particles (represented as $z_{i}$),
 wherein each particle corresponded to a $\mathcal{K}$-dimensional parameter vector.
 After initialization, particles were randomly partitioned into $k$ equally sized sub-swarms $\mathcal{S}_{1},\hdots,\mathcal{S}_{k}$.
@@ -701,8 +681,9 @@ Thus, the probability that a dimension $j$ was perturbed was inversely proportio
 DDS updates are greedy; $\mathcal{G}_{new}$ becomes the new solution vector only if it is better than $\mathcal{G}$.
 
 \subsection*{Experimental DOPS}
-We sought to investigate if switching methods more than once would result in better performance. Experimental DOPS begins with the PSO phase and uses the same criteria as DOPS to switch to the DDS phase. The technique switches back to PSO phase when the DDS phase has reduced the functional value to 90\% of its initial value. Should the DDS phase fail to improve the functional value sufficiently, this version is identical to DOPS, but we found that for the CHO problem as well as for coagulation, the DDS phase did produce sufficient improvement in functional value, resulting in a switch back to the PSO phase from the DDS phase. When the switch from DDS to PSO occurs, we use the best solution from DDS to seed the particle swarm.  
-
+We investigated where switching methods more than once would result in better performance; this DOPS variant is referred to as \texttt{Experimental~DOPS}.
+\texttt{Experimental~DOPS} begins with the PSO phase and uses the same criteria as DOPS to switch to the DDS phase. The technique switches back to PSO phase when the DDS phase has reduced the functional value to 90\% of its initial value.
+Should the DDS phase fail to improve the functional value sufficiently, this version is identical to DOPS, but we found that for the CHO problem as well as for coagulation, the DDS phase did produce sufficient improvement in functional value, resulting in a switch back to the PSO phase from the DDS phase. When the switch from DDS to PSO occurs, we use the best solution from DDS to seed the particle swarm.
 DOPS and Experimental DOPS source code is available for download under a MIT license at http://www.varnerlab.org.
 
 %The reflection boundary conditions in equation 5, the update function described in equations 6 and 7, the selection probability in equation 8 are the means by which DDS ideas are incorporated into DOPS. The fraction of evaluations $\mathcal{F}$  within the swarm phase is based on a switching strategy wherein the switch from swarm phase to DDS phase happens when the error due to the best solution does not drop more than 1\% of the original error, continuously for more than a prescribed number of function evaluations. This allows the solution to quickly jump out of local optima and avoid any convergence issues that are generally associated with swarm based searches.
@@ -718,14 +699,29 @@ DOPS and Experimental DOPS source code is available for download under a MIT lic
 
 \begin{backmatter}
 
+\section*{Ethics approval and consent to participate}
+Not applicable
+
+\section*{Consent to publish}
+Not applicable
+
 \section*{Competing interests}
   The authors declare that they have no competing interests.
 
 \section*{Author's contributions}
-    A.S. originally developed algorithm. R.L developed experimental DOPS and generated all of the figures. JDV assisted in manuscript preparation.
+    A.S. developed original DOPS algorithm. R.L developed experimental DOPS and generated all of the figures.
+    CS developed the dynamic dimensional search approach, and assisted in editing the manuscript.
+    JDV directed the study, prepared and edited the manuscript.
 
-\section*{Acknowledgements}
- This study was supported by an award from the Army Research Office (ARO \#59155-LS).
+\section*{Availability of data and materials}
+DOPS is open source, available under an MIT software license.
+The DOPS source code is freely available from the DOPS GitHub repository at https://github.com/varnerlab/POETs.jl.
+All samples used in this study are included in the \texttt{sample/biochemical} and \texttt{sample/test\_functions} subdirectories of the JuPOETs GitHub repository.
+
+
+\section*{Funding}
+This study was supported by an award from the US Army and Systems Biology of Trauma Induced Coagulopathy (W911NF-10-1-0376).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
 %%                                                         %%
@@ -769,13 +765,17 @@ DOPS and Experimental DOPS source code is available for download under a MIT lic
 %%
 %% Do not use \listoffigures as most will included as separate files
 
+\clearpage
+
 \section*{Figures}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=.85\textwidth]{./figs/Figure_1_Algorithm.pdf}
-\caption{\csentence{Schematic of the dynamic optimization with particle swarms (DOPS) approach.} \textbf{A}: Each particle represents an N dimensional parameter vector. Particles are given randomly generated initial solutions and grouped into different sub-swarms. Within each swarm the magnitude and direction of the movement a particle is influenced by the position of the best particle and also by its own experience. After every $\mathbf{g}$ number of function evaluations the particles are mixed and randomly assigned to different swarms. When the error due to the global best particle (best particle amongst all the sub-swarms) does not drop over a certain number of function evaluations, the swarm search is stopped and the search switches to a Dynamically Dimensioned Search with global best particle as the initial solution vector or candidate vector.
-\textbf{B}: The candidate vector performs a greedy global search for the remaining number of function evaluations. The search neighborhood is dynamically adjusted by varying the number of dimensions that are perturbed (in black) in each evaluation step. The probability that a dimension is perturbed decreases as the number of function evaluations increase.
+\includegraphics[width=0.85\textwidth]{./figs/Figure_1_Algorithm.pdf}
+\caption{\csentence{Schematic of the dynamic optimization with particle swarms (DOPS) approach.} \textbf{A}: Each particle represents an N dimensional parameter vector.
+Particles are given randomly generated initial solutions and grouped into different sub-swarms. Within each swarm the magnitude and direction of the movement a particle is influenced by the position of the best particle and also by its own experience. After every $\mathbf{g}$ number of function evaluations the particles are mixed and randomly assigned to different swarms. When the error due to the global best particle (best particle amongst all the sub-swarms) does not drop over a certain number of function evaluations, the swarm search is stopped and the search switches to a Dynamically Dimensioned Search with global best particle as the initial solution vector or candidate vector.
+\textbf{B}: The candidate vector performs a greedy global search for the remaining number of function evaluations. The search neighborhood is dynamically adjusted by varying the number of dimensions that are perturbed (in black) in each evaluation step.
+The probability that a dimension is perturbed decreases as the number of function evaluations increase.
 }\label{fig-algorithm}
 \end{figure}
 
@@ -835,7 +835,7 @@ The multi-swarm with without DDS saturates while DOPS shows a rapid drop due to 
 \end{figure}
 
 \begin{figure}[h!]
-\includegraphics[width = 1.0\textwidth]{./rachelfigs/expDOPSvsDOPS-crop.pdf} 
+\includegraphics[width = 1.0\textwidth]{./rachelfigs/expDOPSvsDOPS-crop.pdf}
 \caption{\csentence{Comparsion of DOPS and Experimental DOPS} Performance of DOPS and Experimental DOPS on the CHO metabolism problem (a), the Eggholder function (b), the 100 dimensional Styblinksi-Tang function (c) and the coagulation problem (d). Both methods have the same initial decrease in error, but as the number of function evaluations increases, experimental DOPS produces a larger decrease in error.
 The results presented are the average of $\mathcal{T}$ = 250 trials with for the CHO metabolism problem and $\mathcal{T}$ = 250 trials on the Eggholder and Styblinksi-Tang functions with $\mathcal{N}$ = 250 function evaluations each, and $\mathcal{T}$ = 25 trials for the coagulation problem.
 }\label{fig-exp-DOPS-b4}
@@ -971,10 +971,12 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
     \label{fig-DOPS-Dispersion-Curves}%
 \end{figure}
 
+\clearpage
+
 \subsection*{Additional file S8-(Comparison of functional values)}
 \begin{figure}
 \includegraphics[width=1.0\textwidth]{./rachelfigs/compare_functional_vals-crop}
-    \caption{Variability  analysis in best objective value for $\mathcal{T}$ = 25 trials. (a) Ackley  300 dimensional (b) Rastrigin 300 dimensional (c) CHO model (d) coagulation. }%
+    \caption{Variability analysis in best objective value for $\mathcal{T}$ = 25 trials. (a) Ackley  300 dimensional (b) Rastrigin 300 dimensional (c) CHO model (d) coagulation. }%
     \label{fig-DOPS-Variability}%
 \end{figure}
 

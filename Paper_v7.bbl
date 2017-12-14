@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{53}
+\begin{thebibliography}{50}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -720,21 +720,6 @@ PLoS computational biology
 \endbibitem
 
 %%% 49
-\bibitem{jamil2013literature}
-\begin{barticle}
-\bauthor{\bsnm{Jamil}, \binits{M.}},
-\bauthor{\bsnm{Yang}, \binits{X.-S.}}:
-\batitle{A literature survey of benchmark functions for global optimisation
-  problems}.
-\bjtitle{International Journal of Mathematical Modelling and Numerical
-  Optimisation}
-\bvolume{4}(\bissue{2}),
-\bfpage{150}--\blpage{194}
-(\byear{2013})
-\end{barticle}
-\endbibitem
-
-%%% 50
 \bibitem{song2010ensembles}
 \begin{barticle}
 \bauthor{\bsnm{Song}, \binits{S.O.}},
@@ -749,31 +734,7 @@ PLoS computational biology
 \end{barticle}
 \endbibitem
 
-%%% 51
-\bibitem{clerc2010particle}
-\begin{bbook}
-\bauthor{\bsnm{Clerc}, \binits{M.}}:
-\bbtitle{Particle Swarm Optimization}
-vol. \bseriesno{93}.
-\bpublisher{John Wiley \& Sons}, \blocation{???}
-(\byear{2010})
-\end{bbook}
-\endbibitem
-
-%%% 52
-\bibitem{abraham2006swarm}
-\begin{botherref}
-\oauthor{\bsnm{Abraham}, \binits{A.}},
-\oauthor{\bsnm{Guo}, \binits{H.}},
-\oauthor{\bsnm{Liu}, \binits{H.}}:
-Swarm intelligence: foundations, perspectives and applications.
-Swarm Intelligent Systems,
-3--25
-(2006)
-\end{botherref}
-\endbibitem
-
-%%% 53
+%%% 50
 \bibitem{shi1999empirical}
 \begin{bchapter}
 \bauthor{\bsnm{Shi}, \binits{Y.}},
@@ -1544,23 +1505,6 @@ p. \bfpage{1950}
 </bibl>
 
 <bibl id="B49">
-  <title><p>A literature survey of benchmark functions for global optimisation
-  problems</p></title>
-  <aug>
-    <au><snm>Jamil</snm><fnm>M</fnm></au>
-    <au><snm>Yang</snm><fnm>XS</fnm></au>
-  </aug>
-  <source>International Journal of Mathematical Modelling and Numerical
-  Optimisation</source>
-  <publisher>Inderscience Publishers Ltd</publisher>
-  <pubdate>2013</pubdate>
-  <volume>4</volume>
-  <issue>2</issue>
-  <fpage>150</fpage>
-  <lpage>-194</lpage>
-</bibl>
-
-<bibl id="B50">
   <title><p>{Ensembles of signal transduction models using pareto optimal
   ensemble techniques (POETs)}</p></title>
   <aug>
@@ -1577,32 +1521,7 @@ p. \bfpage{1950}
   <lpage>-780</lpage>
 </bibl>
 
-<bibl id="B51">
-  <title><p>Particle swarm optimization</p></title>
-  <aug>
-    <au><snm>Clerc</snm><fnm>M</fnm></au>
-  </aug>
-  <publisher>John Wiley \& Sons</publisher>
-  <pubdate>2010</pubdate>
-  <volume>93</volume>
-</bibl>
-
-<bibl id="B52">
-  <title><p>Swarm intelligence: foundations, perspectives and
-  applications</p></title>
-  <aug>
-    <au><snm>Abraham</snm><fnm>A</fnm></au>
-    <au><snm>Guo</snm><fnm>H</fnm></au>
-    <au><snm>Liu</snm><fnm>H</fnm></au>
-  </aug>
-  <source>Swarm Intelligent Systems</source>
-  <publisher>Springer</publisher>
-  <pubdate>2006</pubdate>
-  <fpage>3</fpage>
-  <lpage>-25</lpage>
-</bibl>
-
-<bibl id="B53">
+<bibl id="B50">
   <title><p>Empirical study of particle swarm optimization</p></title>
   <aug>
     <au><snm>Shi</snm><fnm>Y</fnm></au>
