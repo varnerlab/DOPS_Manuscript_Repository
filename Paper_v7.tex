@@ -80,8 +80,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\def\includegraphic{}
-\def\includegraphics{}
+% \def\includegraphic{}
+% \def\includegraphics{}
 
 
 
@@ -779,6 +779,8 @@ The probability that a dimension is perturbed decreases as the number of functio
 }\label{fig-algorithm}
 \end{figure}
 
+\clearpage
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.60\textwidth]{./rachelfigs/fig2cropped.pdf}
@@ -788,11 +790,15 @@ The probability that a dimension is perturbed decreases as the number of functio
 \textbf{C}: Mean scaled error versus the number of function evaluations for the 300-dimensional Rastrigin function. DOPS is the only algorithm that finds an optimal or near optimal solution within the specified number of function evaluations. In all cases, the maximum number of function evaluations was $\mathcal{N}$ = 4000. Mean and standard deviation were calculated over $\mathcal{T}$ = 25 trials. }\label{fig-testfunctions}
 \end{figure}
 
+\clearpage
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.00\textwidth]{./figs/Figure_3_Coagulation_v4.pdf}
 \caption{\csentence{Schematic of the extrinsic and intrinsic coagulation cascade.} Inactive zymogens upstream (grey) are activated by exposure to tissue factor (TF)  following vessel injury. Tissue factor and activated factor VIIa (FVIIa) form a complex that activates factor X (fX) and IX (fIX). FXa activates downstream factors including factor VIII (fVIII) and fIX. Factor V (fV) is primarily activated by thrombin (FIIa). In addition, we included a secondary fV activation route involving FXa. FXa and FVa form a complex (prothrombinase) on activated platelets that converts prothrombin (fII) to FIIa. FIXa and FVIIIa can also form a complex (tenase) on activated platelets which catalyzes FXa formation.  Thrombin also activates upstream coagulation factors, forming a strong positive feedback ensuring rapid activation. Tissue factor pathway inhibitor (TFPI) downregulates FXa formation and activity by sequestering free FXa and TF-FVIIa in a FXa-dependent manner. Antithrombin III (ATIII)  inhibits all proteases. Thrombin inhibits itself binding the surface protein thrombomodulin (TM). The IIa-TM complex catalyzes the conversion of protein C (PC) to activated protein C (APC), which attenuates the coagulation response by the proteolytic cleavage of fV/FVa and fVIII/FVIIIa. }\label{fig-coagulation-network}
 \end{figure}
+
+\clearpage
 
 \begin{figure}[h!]
 \centering
@@ -804,6 +810,8 @@ At the end of 4000 function evaluations DOPS attains the lowest error. The next 
 }\label{fig-convergence}
 \end{figure}
 
+\clearpage
+
 \begin{figure}[h!]
 \centering
 %\includegraphics[width=1.0\textwidth]{./figs/Figure_5_Sim_Train_E1_E5.pdf}
@@ -812,6 +820,8 @@ At the end of 4000 function evaluations DOPS attains the lowest error. The next 
 }\label{fig-train}
 \end{figure}
 
+\clearpage
+
 \begin{figure}[h!]
 \centering
 %\includegraphics[width=1.0\textwidth]{./figs/Figure_6_Sim_Validate_E2_E4_E6.pdf}
@@ -819,6 +829,8 @@ At the end of 4000 function evaluations DOPS attains the lowest error. The next 
 \caption{\csentence{Model predictions on unseen experimental data using parameters obtained from DOPS.} The parameter estimates that were obtained using DOPS were tested against data that was not used in the model training. Solid black lines indicate the simulated mean thrombin concentration using parameter vectors from $\mathcal{T}$ = 25 trials. The grey shaded region represents the 99\% confidence estimate of the mean simulated thrombin concentration. The experimental data is reproduced from the synthetic plasma assays of Mann and co-workers. Thrombin generation is initiated by adding Factor VIIa-TF (500pM - Blue, 50pM - Pink and 10pM - purple, respectively) to synthetic plasma containing 200 $\mu$mol/L of phospholipid vesicles (PCPS) and a mixture of coagulation factors (II,V,VII,VIII,IX,X and XI) at their mean plasma concentrations.
 }\label{fig-validation}
 \end{figure}
+
+\clearpage
 
 \begin{figure}[h!]
 \centering
@@ -834,6 +846,8 @@ The multi-swarm with without DDS saturates while DOPS shows a rapid drop due to 
 }\label{fig-sub-swarms}
 \end{figure}
 
+\clearpage
+
 \begin{figure}[h!]
 \includegraphics[width = 1.0\textwidth]{./rachelfigs/expDOPSvsDOPS-crop.pdf}
 \caption{\csentence{Comparsion of DOPS and Experimental DOPS} Performance of DOPS and Experimental DOPS on the CHO metabolism problem (a), the Eggholder function (b), the 100 dimensional Styblinksi-Tang function (c) and the coagulation problem (d). Both methods have the same initial decrease in error, but as the number of function evaluations increases, experimental DOPS produces a larger decrease in error.
@@ -841,12 +855,7 @@ The results presented are the average of $\mathcal{T}$ = 250 trials with for the
 }\label{fig-exp-DOPS-b4}
 \end{figure}
 
-
-  \begin{figure}[h!]
-  \caption{\csentence{Sample figure title.}
-      A short description of the figure content
-      should go here.}
-      \end{figure}
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -880,6 +889,8 @@ Scaled nominal error 		& 0.42            			& 0.1   				& $<$ 0.01    & 0       
 }
 \end{table}
 
+\clearpage
+
 \begin{table}[h!]
 \centering
 \caption[.]{Error analysis for the human coagulation model. The coagulation model was trained on coagulation initiated with TF/FVIIa at 5~nM and the 5~pM to obtain the optimal parameters.
@@ -905,6 +916,8 @@ TF/FVIIa concentration& Normalized S.E.& Category\\\\
 %% Additional Files              %%
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
 
 \section*{Additional Files}
 \setcounter{equation}{0}

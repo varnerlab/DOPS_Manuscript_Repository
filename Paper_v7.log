@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 DEC 2017 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 DEC 2017 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -725,36 +725,7 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-[2]
-
-LaTeX Warning: Reference `fig-algorithm' on page 3 undefined on input line 336.
-
-
-[3]
-
-LaTeX Warning: Reference `fig-sims-b1' on page 4 undefined on input line 368.
-
-
-LaTeX Warning: Reference `fig-benchmark' on page 4 undefined on input line 368.
-
-
-
-LaTeX Warning: Reference `fig-DOPS-Variability' on page 4 undefined on input li
-ne 369.
-
-
-LaTeX Warning: Reference `fig-more-methods' on page 4 undefined on input line 3
-69.
-
-
-LaTeX Warning: Reference `fig-compare-DOPS-ESS' on page 4 undefined on input li
-ne 369.
-
-
-LaTeX Warning: Reference `fig-coagulation-network' on page 4 undefined on input
- line 377.
-
-[4] [5]
+[2] [3] [4] [5]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 437.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -769,10 +740,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
 
-LaTeX Warning: Reference `fig-algorithm' on page 9 undefined on input line 542.
-
-
-
 Package natbib Warning: Citation `clerc2010particle' on page 9 undefined on inp
 ut line 589.
 
@@ -786,326 +753,105 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 302.
 
 
-[13]) [14]
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.774 \includegraphics[width=0.85\textwidth]
-                                            {./figs/Figure_1_Algorithm.pdf}
-? r
-OK, entering \nonstopmode...
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.774 \includegraphics[width=0.85\textwidth]
-                                            {./figs/Figure_1_Algorithm.pdf}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+[13]) [14] <./figs/Figure_1_Algorithm.pdf, id=334, 874.26625pt x 753.81625pt>
+File: ./figs/Figure_1_Algorithm.pdf Graphic file (type pdf)
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.774 ...hics[width=0.85\textwidth]{./figs/Figure_
-                                                  1_Algorithm.pdf}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Double subscript.
-l.774 ...cs[width=0.85\textwidth]{./figs/Figure_1_
-                                                  Algorithm.pdf}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-! Extra }, or forgotten $.
-l.774 ...textwidth]{./figs/Figure_1_Algorithm.pdf}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+<use ./figs/Figure_1_Algorithm.pdf>
+Package pdftex.def Info: ./figs/Figure_1_Algorithm.pdf used on input line 774.
+(pdftex.def)             Requested size: 306.8522pt x 264.57579pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 779.
 See the caption package documentation for explanation.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.779 }
-       \label{fig-algorithm}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
 
 Overfull \hbox (12.4pt too wide) in paragraph at lines 779--779
 [] [] 
  []
 
+[15
 
-! LaTeX Error: Not in outer par mode.
+ <./figs/Figure_1_Algorithm.pdf>]
+<./rachelfigs/fig2cropped.pdf, id=408, 1019.81pt x 1693.32625pt>
+File: ./rachelfigs/fig2cropped.pdf Graphic file (type pdf)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.780 \end{figure}
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\caption@ORI@xfloat ... \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.780 \end{figure}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.780 \end{figure}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.780 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.784 \includegraphics[width=0.60\textwidth]
-                                            {./rachelfigs/fig2cropped.pdf}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.784 \includegraphics[width=0.60\textwidth]
-                                            {./rachelfigs/fig2cropped.pdf}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+<use ./rachelfigs/fig2cropped.pdf>
+Package pdftex.def Info: ./rachelfigs/fig2cropped.pdf used on input line 786.
+(pdftex.def)             Requested size: 216.6022pt x 359.63974pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 788.
+(caption)                particular \caption on input line 790.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (12.4pt too wide) in paragraph at lines 788--788
+Overfull \hbox (12.4pt too wide) in paragraph at lines 790--790
 [] [] 
  []
 
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.793 \includegraphics[width=1.00\textwidth]
-                                            {./figs/Figure_3_Coagulation_v4....
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+[16
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.793 \includegraphics[width=1.00\textwidth]
-                                            {./figs/Figure_3_Coagulation_v4....
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+ <./rachelfigs/fig2cropped.pdf>]
+<./figs/Figure_3_Coagulation_v4.pdf, id=442, 794.97pt x 614.295pt>
+File: ./figs/Figure_3_Coagulation_v4.pdf Graphic file (type pdf)
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.793 ...hics[width=1.00\textwidth]{./figs/Figure_
-                                                  3_Coagulation_v4.pdf}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Double subscript.
-l.793 ...cs[width=1.00\textwidth]{./figs/Figure_3_
-                                                  Coagulation_v4.pdf}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-! Extra }, or forgotten $.
-l.793 ...idth]{./figs/Figure_3_Coagulation_v4.pdf}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+<use ./figs/Figure_3_Coagulation_v4.pdf>
+Package pdftex.def Info: ./figs/Figure_3_Coagulation_v4.pdf used on input line 
+797.
+(pdftex.def)             Requested size: 361.0pt x 278.961pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 794.
+(caption)                particular \caption on input line 798.
 See the caption package documentation for explanation.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.794 ...ic cleavage of fV/FVa and fVIII/FVIIIa. }
-                                                  \label{fig-coagulation-net...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-
-Overfull \hbox (12.4pt too wide) in paragraph at lines 794--794
-[] [] 
+Overfull \hbox (12.5pt too wide) in paragraph at lines 797--798
+ [][] 
  []
 
 
-! LaTeX Error: Not in outer par mode.
+Overfull \hbox (12.4pt too wide) in paragraph at lines 798--798
+[] [] 
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.795 \end{figure}
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+[17
 
-! Undefined control sequence.
-\caption@ORI@xfloat ... \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.795 \end{figure}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+ <./figs/Figure_3_Coagulation_v4.pdf>]
+<./rachelfigs/RecreateFigure4.pdf, id=1374, 614.295pt x 794.97pt>
+File: ./rachelfigs/RecreateFigure4.pdf Graphic file (type pdf)
 
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.795 \end{figure}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.795 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.800 ... 8cm 3cm 7cm }, clip,width=1.0\textwidth]
-                                                  {./rachelfigs/RecreateFigu...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.800 ... 8cm 3cm 7cm }, clip,width=1.0\textwidth]
-                                                  {./rachelfigs/RecreateFigu...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+<use ./rachelfigs/RecreateFigure4.pdf>
+Package pdftex.def Info: ./rachelfigs/RecreateFigure4.pdf used on input line 80
+6.
+(pdftex.def)             Requested size: 361.0pt x 299.64445pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 804.
+(caption)                particular \caption on input line 810.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (12.4pt too wide) in paragraph at lines 804--804
+Overfull \hbox (12.5pt too wide) in paragraph at lines 806--810
+ [][] 
+ []
+
+
+Overfull \hbox (12.4pt too wide) in paragraph at lines 810--810
 [] [] 
  []
 
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.810 ... 6cm 7cm 6cm }, clip,width=1.0\textwidth]
-                                                  {./rachelfigs/ReplicateFig...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+[18
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.810 ... 6cm 7cm 6cm }, clip,width=1.0\textwidth]
-                                                  {./rachelfigs/ReplicateFig...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+ <./rachelfigs/RecreateFigure4.pdf>]
+<./rachelfigs/ReplicateFigure5DivBySqrtN.pdf, id=1385, 614.295pt x 794.97pt>
+File: ./rachelfigs/ReplicateFigure5DivBySqrtN.pdf Graphic file (type pdf)
 
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 812.
-See the caption package documentation for explanation.
-
-
-Overfull \hbox (12.4pt too wide) in paragraph at lines 812--812
-[] [] 
- []
-
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.818 ... 6cm 3cm 6cm }, clip,width=1.0\textwidth]
-                                                  {./rachelfigs/ReplicateFig...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.818 ... 6cm 3cm 6cm }, clip,width=1.0\textwidth]
-                                                  {./rachelfigs/ReplicateFig...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+<use ./rachelfigs/ReplicateFigure5DivBySqrtN.pdf>
+Package pdftex.def Info: ./rachelfigs/ReplicateFigure5DivBySqrtN.pdf used on in
+put line 818.
+(pdftex.def)             Requested size: 361.0pt x 394.42867pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -1113,801 +859,346 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 
+Overfull \hbox (12.5pt too wide) in paragraph at lines 818--820
+ [][] 
+ []
+
+
 Overfull \hbox (12.4pt too wide) in paragraph at lines 820--820
 [] [] 
  []
 
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.826 \includegraphics[width = 1.0\textwidth]
-                                             {./rachelfigs/RecreateFigure7}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+[19
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.826 \includegraphics[width = 1.0\textwidth]
-                                             {./rachelfigs/RecreateFigure7}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+ <./rachelfigs/ReplicateFigure5DivBySqrtN.pdf>]
+<./rachelfigs/ReplicateFigure6DivBySqrtN.pdf, id=2401, 614.295pt x 794.97pt>
+File: ./rachelfigs/ReplicateFigure6DivBySqrtN.pdf Graphic file (type pdf)
+
+<use ./rachelfigs/ReplicateFigure6DivBySqrtN.pdf>
+Package pdftex.def Info: ./rachelfigs/ReplicateFigure6DivBySqrtN.pdf used on in
+put line 828.
+(pdftex.def)             Requested size: 361.0pt x 369.1138pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 834.
+(caption)                particular \caption on input line 830.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (12.4pt too wide) in paragraph at lines 834--834
+Overfull \hbox (12.5pt too wide) in paragraph at lines 828--830
+ [][] 
+ []
+
+
+Overfull \hbox (12.4pt too wide) in paragraph at lines 830--830
 [] [] 
  []
 
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.838 \includegraphics[width = 1.0\textwidth]
-                                             {./rachelfigs/expDOPSvsDOPS-cro...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+[20
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.838 \includegraphics[width = 1.0\textwidth]
-                                             {./rachelfigs/expDOPSvsDOPS-cro...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+ <./rachelfigs/ReplicateFigure6DivBySqrtN.pdf>]
+<./rachelfigs/RecreateFigure7.pdf, id=3624, 939.51pt x 939.51pt>
+File: ./rachelfigs/RecreateFigure7.pdf Graphic file (type pdf)
+
+<use ./rachelfigs/RecreateFigure7.pdf>
+Package pdftex.def Info: ./rachelfigs/RecreateFigure7.pdf used on input line 83
+8.
+(pdftex.def)             Requested size: 361.0pt x 361.00285pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 841.
+(caption)                particular \caption on input line 846.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (12.4pt too wide) in paragraph at lines 841--841
-[] [] 
+Overfull \hbox (12.5pt too wide) in paragraph at lines 838--846
+ [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (12.4pt too wide) in paragraph at lines 846--846
+[] [] 
+ []
+
+[21
+
+ <./rachelfigs/RecreateFigure7.pdf>]
+<./rachelfigs/expDOPSvsDOPS-crop.pdf, id=3633, 1872.9975pt x 1756.5625pt>
+File: ./rachelfigs/expDOPSvsDOPS-crop.pdf Graphic file (type pdf)
+
+<use ./rachelfigs/expDOPSvsDOPS-crop.pdf>
+Package pdftex.def Info: ./rachelfigs/expDOPSvsDOPS-crop.pdf used on input line
+ 852.
+(pdftex.def)             Requested size: 361.0pt x 338.54807pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 848.
+(caption)                particular \caption on input line 855.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (12.4pt too wide) in paragraph at lines 848--848
-[] [] 
+Overfull \hbox (12.5pt too wide) in paragraph at lines 852--855
+ [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig-sims-b1' on page 15 undefined on input line 920.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.924 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/RecreatedFigureS1u...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.924 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/RecreatedFigureS1u...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.924 ...]{./rachelfigs/RecreatedFigureS1usingMS2_
-                                                  save.pdf}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.924 ...lfigs/RecreatedFigureS1usingMS2_save.pdf}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 926.
-See the caption package documentation for explanation.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.926 }
-       \label{fig-sims-b1}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (12.4pt too wide) in paragraph at lines 926--926
+Overfull \hbox (12.4pt too wide) in paragraph at lines 855--855
 [] [] 
  []
 
+[22
 
-! LaTeX Error: Not in outer par mode.
+ <./rachelfigs/expDOPSvsDOPS-crop.pdf>] [23
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.927 \end{figure}
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\caption@ORI@xfloat ... \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.927 \end{figure}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.927 \end{figure}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.927 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[15
+] [24
 
 ]
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.932 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/RecreatedFigureS2}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.932 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/RecreatedFigureS2}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+<./rachelfigs/RecreatedFigureS1usingMS2_save.pdf, id=3671, 939.51pt x 939.51pt>
+File: ./rachelfigs/RecreatedFigureS1usingMS2_save.pdf Graphic file (type pdf)
+<use ./rachelfigs/RecreatedFigureS1usingMS2_save.pdf>
+Package pdftex.def Info: ./rachelfigs/RecreatedFigureS1usingMS2_save.pdf used o
+n input line 937.
+(pdftex.def)             Requested size: 361.0pt x 361.00285pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 934.
+(caption)                particular \caption on input line 939.
 See the caption package documentation for explanation.
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 937--939
+ [] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.939 }
+       \label{fig-sims-b1}
+Overfull \hbox (12.4pt too wide) in paragraph at lines 939--939
+[] [] 
+ []
+
+<./rachelfigs/RecreatedFigureS2.pdf, id=3673, 614.295pt x 794.97pt>
+File: ./rachelfigs/RecreatedFigureS2.pdf Graphic file (type pdf)
+
+<use ./rachelfigs/RecreatedFigureS2.pdf>
+Package pdftex.def Info: ./rachelfigs/RecreatedFigureS2.pdf used on input line 
+945.
+(pdftex.def)             Requested size: 361.0pt x 467.18443pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 947.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 945--947
+ [] 
+ []
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.934 }
+l.947 }
        \label{fig-sims-b4}
-Overfull \hbox (12.4pt too wide) in paragraph at lines 934--934
+Overfull \hbox (12.4pt too wide) in paragraph at lines 947--947
 [] [] 
  []
 
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.940 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/fig_s3-crop.pdf}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+<./rachelfigs/fig_s3-crop.pdf, id=3674, 1870.99pt x 2062.70625pt>
+File: ./rachelfigs/fig_s3-crop.pdf Graphic file (type pdf)
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.940 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/fig_s3-crop.pdf}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.940 ...s[width=1.00\textwidth]{./rachelfigs/fig_
-                                                  s3-crop.pdf}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.940 ...\textwidth]{./rachelfigs/fig_s3-crop.pdf}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+<use ./rachelfigs/fig_s3-crop.pdf>
+Package pdftex.def Info: ./rachelfigs/fig_s3-crop.pdf used on input line 953.
+(pdftex.def)             Requested size: 361.0pt x 397.99281pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 942.
+(caption)                particular \caption on input line 955.
 See the caption package documentation for explanation.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.942 }
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 953--955
+ [] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.955 }
        \label{fig-benchmark}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (12.4pt too wide) in paragraph at lines 942--942
+Overfull \hbox (12.4pt too wide) in paragraph at lines 955--955
 [] [] 
  []
 
+<./rachelfigs/TimeComparsion.pdf, id=3675, 614.295pt x 794.97pt>
+File: ./rachelfigs/TimeComparsion.pdf Graphic file (type pdf)
 
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.943 \end{figure}
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\caption@ORI@xfloat ... \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.943 \end{figure}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.943 \end{figure}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.943 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.948 ... 5cm 0 5cm }, clip, width=1.00\textwidth]
-                                                  {./rachelfigs/TimeComparsi...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.948 ... 5cm 0 5cm }, clip, width=1.00\textwidth]
-                                                  {./rachelfigs/TimeComparsi...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 950.
-See the caption package documentation for explanation.
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
-s been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.950 }
-       \label{fig-time-comparsion}
-Overfull \hbox (12.4pt too wide) in paragraph at lines 950--950
-[] [] 
- []
-
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.955 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/fig_s4-crop}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.955 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/fig_s4-crop}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.955 ...s[width=1.00\textwidth]{./rachelfigs/fig_
-                                                  s4-crop}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.955 ...1.00\textwidth]{./rachelfigs/fig_s4-crop}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 956.
-See the caption package documentation for explanation.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.956 ...finds it with fewer function evaluations}
-                                                  %
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
-s been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.956 ...finds it with fewer function evaluations}
-                                                  %
-Overfull \hbox (12.4pt too wide) in paragraph at lines 956--956
-[] [] 
- []
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.958 \end{figure}
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\caption@ORI@xfloat ... \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.958 \end{figure}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.958 \end{figure}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.958 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.962 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/fig_s5-crop}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.962 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/fig_s5-crop}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.962 ...s[width=1.00\textwidth]{./rachelfigs/fig_
-                                                  s5-crop}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.962 ...1.00\textwidth]{./rachelfigs/fig_s5-crop}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+<use ./rachelfigs/TimeComparsion.pdf>
+Package pdftex.def Info: ./rachelfigs/TimeComparsion.pdf used on input line 961
+.
+(pdftex.def)             Requested size: 361.0pt x 299.97455pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 963.
 See the caption package documentation for explanation.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.963 ...th $\mathcal{T}$ = 25 trials per method.}
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 961--963
+ [] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.963 }
+       \label{fig-time-comparsion}
+Overfull \hbox (12.4pt too wide) in paragraph at lines 963--963
+[] [] 
+ []
+
+<./rachelfigs/fig_s4-crop.pdf, id=3677, 1807.75375pt x 858.20625pt>
+File: ./rachelfigs/fig_s4-crop.pdf Graphic file (type pdf)
+
+<use ./rachelfigs/fig_s4-crop.pdf>
+Package pdftex.def Info: ./rachelfigs/fig_s4-crop.pdf used on input line 968.
+(pdftex.def)             Requested size: 361.0pt x 171.3763pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 969.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 968--969
+ [] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.969 ...finds it with fewer function evaluations}
                                                   %
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+Overfull \hbox (12.4pt too wide) in paragraph at lines 969--969
+[] [] 
+ []
+
+<./rachelfigs/fig_s5-crop.pdf, id=3678, 1734.48pt x 865.2325pt>
+File: ./rachelfigs/fig_s5-crop.pdf Graphic file (type pdf)
+
+<use ./rachelfigs/fig_s5-crop.pdf>
+Package pdftex.def Info: ./rachelfigs/fig_s5-crop.pdf used on input line 975.
+(pdftex.def)             Requested size: 361.0pt x 180.08029pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 976.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 975--976
+ [] 
+ []
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.963 ...th $\mathcal{T}$ = 25 trials per method.}
+l.976 ...th $\mathcal{T}$ = 25 trials per method.}
                                                   %
-Overfull \hbox (12.4pt too wide) in paragraph at lines 963--963
+Overfull \hbox (12.4pt too wide) in paragraph at lines 976--976
 [] [] 
  []
 
+<./rachelfigs/dispersion_curves-crop.pdf, id=3679, 1742.51pt x 865.2325pt>
+File: ./rachelfigs/dispersion_curves-crop.pdf Graphic file (type pdf)
 
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.965 \end{figure}
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\caption@ORI@xfloat ... \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.965 \end{figure}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.965 \end{figure}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.965 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[16]
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.969 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/dispersion_curves-...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.969 \includegraphics[width=1.00\textwidth]
-                                            {./rachelfigs/dispersion_curves-...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.969 ...=1.00\textwidth]{./rachelfigs/dispersion_
-                                                  curves-crop}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.969 ...dth]{./rachelfigs/dispersion_curves-crop}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+<use ./rachelfigs/dispersion_curves-crop.pdf>
+Package pdftex.def Info: ./rachelfigs/dispersion_curves-crop.pdf used on input 
+line 982.
+(pdftex.def)             Requested size: 361.0pt x 179.24855pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 970.
+(caption)                particular \caption on input line 983.
 See the caption package documentation for explanation.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.970 ... $\mathcal{T}$ = 25 trials per problem .}
-                                                  %
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 982--983
+ [] 
+ []
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.970 ... $\mathcal{T}$ = 25 trials per problem .}
+l.983 ... $\mathcal{T}$ = 25 trials per problem .}
                                                   %
-Overfull \hbox (12.4pt too wide) in paragraph at lines 970--970
+Overfull \hbox (12.4pt too wide) in paragraph at lines 983--983
 [] [] 
  []
 
+[25
 
-! LaTeX Error: Not in outer par mode.
+ <./rachelfigs/RecreatedFigureS1usingMS2_save.pdf>] [26 <./rachelfigs/Recreated
+FigureS2.pdf>] [27 <./rachelfigs/fig_s3-crop.pdf>] [28 <./rachelfigs/TimeCompar
+sion.pdf> <./rachelfigs/fig_s4-crop.pdf
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.972 \end{figure}
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+pdfTeX warning: pdflatex (file ./rachelfigs/fig_s4-crop.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>] [29 <./rachelfigs/fig_s5-crop.pdf> <./rachelfigs/dispersion_curves-crop.pdf
 
-! Undefined control sequence.
-\caption@ORI@xfloat ... \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.972 \end{figure}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.972 \end{figure}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.972 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[17]
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.978 \includegraphics[width=1.0\textwidth]
-                                           {./rachelfigs/compare_functional_...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.978 \includegraphics[width=1.0\textwidth]
-                                           {./rachelfigs/compare_functional_...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.978 ...idth=1.0\textwidth]{./rachelfigs/compare_
-                                                  functional_vals-crop}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.978 .../rachelfigs/compare_functional_vals-crop}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+pdfTeX warning: pdflatex (file ./rachelfigs/dispersion_curves-crop.pdf): PDF in
+clusion: multiple pdfs with page group included in a single page
+>]
+<./rachelfigs/compare_functional_vals-crop.pdf, id=3810, 1764.5925pt x 1654.18p
+t>
+File: ./rachelfigs/compare_functional_vals-crop.pdf Graphic file (type pdf)
+ <use ./rachelfigs/compare_functional_vals-crop.pdf>
+Package pdftex.def Info: ./rachelfigs/compare_functional_vals-crop.pdf used on 
+input line 991.
+(pdftex.def)             Requested size: 361.0pt x 338.40236pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 979.
+(caption)                particular \caption on input line 992.
 See the caption package documentation for explanation.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.979 ...ensional (c) CHO model (d) coagulation. }
-                                                  %
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+
+Overfull \hbox (12.5pt too wide) in paragraph at lines 991--992
+ [] 
+ []
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.979 ...ensional (c) CHO model (d) coagulation. }
+l.992 ...ensional (c) CHO model (d) coagulation. }
                                                   %
-Overfull \hbox (12.4pt too wide) in paragraph at lines 979--979
+Overfull \hbox (12.4pt too wide) in paragraph at lines 992--992
 [] [] 
  []
 
 
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.981 \end{figure}
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\caption@ORI@xfloat ... \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.981 \end{figure}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.981 \end{figure}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.981 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 AED: lastpage setting LastPage
-[18
+[30
 
-]
+ <./rachelfigs/compare_functional_vals-crop.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 984.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 984.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 997.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 997.
 (./Paper_v7.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 984.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 984.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 997.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 997.
 Package rerunfilecheck Info: File `Paper_v7.out' has not changed.
 (rerunfilecheck)             Checksum: ED3CDF9133C37D676C26CC0D4896F289;44.
 
@@ -1918,16 +1209,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 984.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 997.
  ) 
 Here is how much of TeX's memory you used:
- 10418 strings out of 493089
- 151358 string characters out of 6134842
- 283007 words of memory out of 5000000
- 13591 multiletter control sequences out of 15000+600000
+ 10521 strings out of 493089
+ 154495 string characters out of 6134842
+ 283135 words of memory out of 5000000
+ 13655 multiletter control sequences out of 15000+600000
  18257 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,15n,39p,1892b,672s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1957,10 +1245,10 @@ e1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/urw/courier/ucrr8a.pfb>
-Output written on Paper_v7.pdf (18 pages, 357501 bytes).
+Output written on Paper_v7.pdf (30 pages, 2976648 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 436 compressed objects within 5 object streams
- 182 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3963 PDF objects out of 4296 (max. 8388607)
+ 3456 compressed objects within 35 object streams
+ 202 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
